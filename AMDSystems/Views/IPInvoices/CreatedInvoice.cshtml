@@ -1,0 +1,1720 @@
+﻿
+<div class="invoicehead-main">
+    <div id="headerbar">
+        <h1>
+            Invoice 87
+        </h1>
+
+        <div class="pull-right btn-group">
+
+            <div class="options btn-group pull-left">
+                <a class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" href="#">
+                    <i class="fa fa-caret-down no-margin"></i> Options
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="#add-invoice-tax" data-toggle="modal">
+                            <i class="fa fa-plus fa-margin"></i> Add Invoice Tax
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="btn_create_credit" data-invoice-id="87">
+                            <i class="fa fa-minus fa-margin"></i> Create credit invoice
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="invoice-add-payment" data-invoice-id="87" data-invoice-balance="0.00" data-invoice-payment-method="0">
+                            <i class="fa fa-credit-card fa-margin"></i>
+                            Enter Payment
+                        </a>
+                    </li>
+
+
+                    <li class="divider"></li>
+                    <li>
+                        <a href="#" id="btn_create_recurring" data-invoice-id="87">
+                            <i class="fa fa-repeat fa-margin"></i>
+                            Create Recurring
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="btn_copy_invoice" data-invoice-id="87">
+                            <i class="fa fa-copy fa-margin"></i>
+                            Copy Invoice
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#delete-invoice" data-toggle="modal">
+                            <i class="fa fa-trash-o fa-margin"></i>
+                            Delete
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <a href="http://amdsystems.in/billing/mailer/invoice/87" class="btn_add_row btn btn-sm btn-default">
+                <i class="fa fa-send fa-margin"></i>
+                Send Email
+            </a>
+            <a href="http://amdsystems.in/billing/IPInvoices/CreateDocument/" id="btn_generate_pdf" data-invoice-id="87" class="btn btn-sm btn-default">
+                <i class="fa fa-print fa-margin"></i>
+                Download PDF
+            </a>
+            <a href="#" class="btn btn-sm btn-success ajax-loader" id="btn_save_invoice">
+                <i class="fa fa-check"></i> Save
+            </a>
+        </div>
+
+        <div class="invoice-labels pull-right">
+        </div>
+
+    </div>
+
+    <div id="content">
+
+
+        <div class="alert alert-success">Record successfully created</div>
+
+
+
+        <form id="invoice_form" class="form-horizontal">
+
+            <div class="invoice">
+
+                <div class="cf row">
+
+                    <div class="col-xs-12 col-md-5">
+                        <div class="pull-left">
+
+                            <h2>
+                                <a href="http://amdsystems.in/billing/clients/view/24">AMD</a>
+                                <span id="invoice_change_client" class="fa fa-edit cursor-pointer small" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Change Client"></span>
+                            </h2><br>
+                            <span>
+                                <br>IN
+                            </span>
+                            <br><br>
+
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-md-7">
+
+                        <div class="details-box">
+
+                            <div class=" row">
+
+
+                                <div class="col-xs-12 col-sm-6">
+
+                                    <div class="invoice-properties">
+                                        <label>Invoice #</label>
+                                        <input type="text" id="invoice_number" class="input-sm form-control" placeholder="Not set yet">
+                                    </div>
+
+                                    <div class="invoice-properties has-feedback">
+                                        <label>Date</label>
+
+                                        <div class="input-group">
+                                            <input name="invoice_date_created" id="invoice_date_created" class="form-control datepicker" value="09-Jun-2018">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-calendar fa-fw"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="invoice-properties has-feedback">
+                                        <label>Due Date</label>
+
+                                        <div class="input-group">
+                                            <input name="invoice_date_due" id="invoice_date_due" class="form-control datepicker" value="09-Jul-2018">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-calendar fa-fw"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="invoice-properties has-feedback">
+
+                                        <label>Delivery Notes</label>
+                                        <input type="text" class="form-control " name="custom[invoice_custom_delivery_note]" id="invoice_custom_delivery_note" placeholder="Delivery Notes" value="">
+                                    </div>
+                                    <div class="invoice-properties has-feedback">
+                                        <label>Order No</label>
+                                        <input type="text" class="form-control " name="custom[invoice_custom_order_no]" id="invoice_custom_order_no" placeholder="Order No" value="">
+
+
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="col-xs-12 col-sm-6">
+
+                                    <div class="invoice-properties">
+                                        <label>Status <span class="small">(Can be changed)</span>                                    </label>
+                                        <select name="invoice_status_id" id="invoice_status_id" class="form-control">
+                                            <option value="1" selected="selected">
+                                                Draft
+                                            </option>
+                                            <option value="2">
+                                                Sent
+                                            </option>
+                                            <option value="3">
+                                                Viewed
+                                            </option>
+                                            <option value="4">
+                                                Paid
+                                            </option>
+                                        </select>
+                                    </div>
+
+                                    <div class="invoice-properties">
+                                        <label>Payment Method</label>
+                                        <select name="payment_method" id="payment_method" class="form-control">
+                                            <option value="0">Select the Payment Method</option>
+                                            <option value="4">
+                                                CASH
+                                            </option>
+                                            <option value="5">
+                                                CHEQ
+                                            </option>
+                                            <option value="6">
+                                                PDC 06
+                                            </option>
+                                            <option value="7">
+                                                PDC 12
+                                            </option>
+                                            <option value="8">
+                                                PDC 24
+                                            </option>
+                                            <option value="9">
+                                                PDC 50
+                                            </option>
+                                        </select>
+                                    </div>
+
+                                    <div class="invoice-properties">
+                                        <label>PDF password (optional)</label>
+                                        <input type="text" id="invoice_password" class="input-sm form-control" value="">
+                                    </div>
+
+                                    <div class="invoice-properties">
+                                        <label>Delivery date</label>
+                                        <input type="text" class="form-control " name="custom[invoice_custom_delivery_date]" id="invoice_custom_delivery_date" placeholder="Delivery date" value="">
+
+
+                                    </div>
+                                    <div class="invoice-properties">
+
+                                        <label>Order Date</label>
+                                        <input type="text" class="form-control " name="custom[invoice_custom_order_date]" id="invoice_custom_order_date" placeholder="Order Date" value="">
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <script type="text/javascript">
+    $().ready(function () {
+$('.disp_text').focus();
+var ajax='';
+ $('.disp_text').on('input', function(){
+//alert('sdasdadsa');
+console.log(ajax);
+if(ajax)
+ajax.abort();
+            var value=$(this).val();
+
+ajax=$.post("http://amdsystems.in/billing/products/ajax/process_product_selections_value", {
+                product_ids: value
+            }, function (data) {
+                                 items = JSON.parse(data);
+
+                for (var key in items) {
+                    // Set default tax rate id if empty
+                    if (!items[key].tax_rate_id) items[key].tax_rate_id = 0;
+
+                    //if ($('#item_table tbody:last input[name=item_hidden_name]').val() !== '') {
+                        $('#new_row').clone().appendTo('#item_table').removeAttr('id').addClass('item').hide();
+                    //}
+
+                    var last_item_row = $('#item_table tbody:last');
+
+                    last_item_row.find('input[name=item_hidden_name]').val(items[key].product_name);
+                    last_item_row.find('input[name=item_description]').val(items[key].product_description);
+                    last_item_row.find('input[name=item_price]').val(items[key].product_price);
+                    last_item_row.find('input[name=item_quantity]').val('1');
+                    last_item_row.find('select[name=item_tax_rate_id]').val(items[key].tax_rate_id);
+                    last_item_row.find('input[name=item_product_id]').val(items[key].product_id);
+
+                    $('#modal-choose-items').modal('hide');
+                }
+               // $('#fullpage-loader').show();
+                 var items = [];
+            var item_order = 1;
+
+            $('table tbody.item').each(function (key) {
+
+
+              //  if(key !=0 || $('table tbody.item').length == 1){
+                var row = {};
+                $(this).find('input,select,textarea').each(function () {
+                    if ($(this).is(':checkbox')) {
+                        row[$(this).attr('name')] = $(this).is(':checked');
+                    } else {
+
+                        if($(this).attr('name') != undefined){
+                            if($(this).attr('name') == 'item_hidden_name')
+                                row['item_name'] = $(this).val();
+                                else
+
+                        row[$(this).attr('name')] = $(this).val();
+                    }
+                    }
+                });
+                row['item_order'] = item_order;
+                item_order++;
+                items.push(row);
+                console.log(items);
+           // }
+console.log(items);
+            });
+
+            $.post("http://amdsystems.in/billing/invoices/ajax/save", {
+                    invoice_id: 87,
+                    invoice_number: $('#invoice_number').val(),
+                    invoice_date_created: $('#invoice_date_created').val(),
+                    invoice_date_due: $('#invoice_date_due').val(),
+                    invoice_status_id: $('#invoice_status_id').val(),
+                    invoice_password: $('#invoice_password').val(),
+                    items: JSON.stringify(items),
+                    invoice_discount_amount: $('#invoice_discount_amount').val(),
+                    invoice_discount_percent: $('#invoice_discount_percent').val(),
+                    invoice_terms: $('#invoice_terms').val(),
+                    custom: $('input[name^=custom]').serializeArray(),
+                    payment_method: $('#payment_method').val()
+                },
+                function (data) {
+                                        var response = JSON.parse(data);
+
+                  // $('#btn_generate_pdf').trigger('click');
+                    if (response.success == '1') {
+                        window.location = "http://amdsystems.in/billing/invoices/view/" + 87;
+                    }
+                    else {
+                        $('#fullpage-loader').hide();
+                        $('.control-group').removeClass('has-error');
+                        $('div.alert[class*="alert-"]').remove();
+                        var resp_errors = response.validation_errors,
+                            all_resp_errors = '';
+                        for (var key in resp_errors) {
+                            $('#' + key).parent().addClass('has-error');
+                            all_resp_errors += resp_errors[key];
+                        }
+                        $('#invoice_form').prepend('<div class="alert alert-danger">' + all_resp_errors + '</div>');
+                    }
+                });
+
+                        //$('#fullpage-loader').hide();
+            });
+
+
+        })
+
+        // $("[name='item_name']").tokenInput(,{onAdd: function (item) {
+        //     console.log(item);
+        //     submit_val(item.id);
+
+        // }});
+
+         $("[name='item_name']").select2({
+            data:[{"id":"307","name":"24PORT PATCH PANNEL DLINK","text":"24PORT PATCH PANNEL DLINK"},{"id":"315","name":"24PORT PATCH PANNEL DLINK","text":"24PORT PATCH PANNEL DLINK"},{"id":"323","name":"24PORT PATCH PANNEL DLINK","text":"24PORT PATCH PANNEL DLINK"},{"id":"331","name":"24PORT PATCH PANNEL DLINK","text":"24PORT PATCH PANNEL DLINK"},{"id":"339","name":"24PORT PATCH PANNEL DLINK","text":"24PORT PATCH PANNEL DLINK"},{"id":"302","name":"24PORT POE SWITCH FOR NETWORKING","text":"24PORT POE SWITCH FOR NETWORKING"},{"id":"310","name":"24PORT POE SWITCH FOR NETWORKING","text":"24PORT POE SWITCH FOR NETWORKING"},{"id":"318","name":"24PORT POE SWITCH FOR NETWORKING","text":"24PORT POE SWITCH FOR NETWORKING"},{"id":"326","name":"24PORT POE SWITCH FOR NETWORKING","text":"24PORT POE SWITCH FOR NETWORKING"},{"id":"334","name":"24PORT POE SWITCH FOR NETWORKING","text":"24PORT POE SWITCH FOR NETWORKING"},{"id":"342","name":"24PORT POE SWITCH FOR NETWORKING","text":"24PORT POE SWITCH FOR NETWORKING"},{"id":"303","name":"4TB WD VIDEO HARDDISK","text":"4TB WD VIDEO HARDDISK"},{"id":"311","name":"4TB WD VIDEO HARDDISK","text":"4TB WD VIDEO HARDDISK"},{"id":"319","name":"4TB WD VIDEO HARDDISK","text":"4TB WD VIDEO HARDDISK"},{"id":"327","name":"4TB WD VIDEO HARDDISK","text":"4TB WD VIDEO HARDDISK"},{"id":"335","name":"4TB WD VIDEO HARDDISK","text":"4TB WD VIDEO HARDDISK"},{"id":"98","name":"asd","text":"asd"},{"id":"79","name":"bush","text":"bush"},{"id":"81","name":"bush","text":"bush"},{"id":"82","name":"bushblus dvr xvr1200","text":"bushblus dvr xvr1200"},{"id":"78","name":"bushplus","text":"bushplus"},{"id":"80","name":"bushplus","text":"bushplus"},{"id":"292","name":"connector","text":"connector"},{"id":"285","name":"Cp Plus 2.4 Mp","text":"Cp Plus 2.4 Mp"},{"id":"83","name":"cpplus nvr","text":"cpplus nvr"},{"id":"298","name":"DLINK CAT6E 100METER","text":"DLINK CAT6E 100METER"},{"id":"306","name":"DLINK CAT6E 100METER","text":"DLINK CAT6E 100METER"},{"id":"314","name":"DLINK CAT6E 100METER","text":"DLINK CAT6E 100METER"},{"id":"322","name":"DLINK CAT6E 100METER","text":"DLINK CAT6E 100METER"},{"id":"330","name":"DLINK CAT6E 100METER","text":"DLINK CAT6E 100METER"},{"id":"338","name":"DLINK CAT6E 100METER","text":"DLINK CAT6E 100METER"},{"id":"76","name":"hgvhgbjhy","text":"hgvhgbjhy"},{"id":"77","name":"hgvhgbjhy","text":"hgvhgbjhy"},{"id":"84","name":"hikvision","text":"hikvision"},{"id":"296","name":"HIKVISION 16CH 4K NVR DUAL HARDDISK SPEC: Third-party network cameras supported \u2022 Up to 8 Megapixels resolution recording \u2022 Support 1-ch HDMI, 1-ch VGA, HMDI at up to 4K(3840x2160) resolution \u2022 16\/32-ch network cameras can be connected with 160M\/256M incoming bandwidth \u2022 Up to 4 SATA interfaces \u2022 Plug & Play with up to 16 independent PoE network interfaces \u2022 Support dual-os to ensure high reliablility of system running \u2022Support various VCA detection alarm and VCA search \u2022Support H.265\/H.264\/MPEG4 video formats 8MP\/6MP\/5MP\/4MP\/3MP\/1080p\/UXGA\/720p\/VGA\/4CIF\/DCIF\/2CIF\/CIF\/QCIF","text":"HIKVISION 16CH 4K NVR DUAL HARDDISK SPEC: Third-party network cameras supported \u2022 Up to 8 Megapixels resolution recording \u2022 Support 1-ch HDMI, 1-ch VGA, HMDI at up to 4K(3840x2160) resolution \u2022 16\/32-ch network cameras can be connected with 160M\/256M incoming bandwidth \u2022 Up to 4 SATA interfaces \u2022 Plug & Play with up to 16 independent PoE network interfaces \u2022 Support dual-os to ensure high reliablility of system running \u2022Support various VCA detection alarm and VCA search \u2022Support H.265\/H.264\/MPEG4 video formats 8MP\/6MP\/5MP\/4MP\/3MP\/1080p\/UXGA\/720p\/VGA\/4CIF\/DCIF\/2CIF\/CIF\/QCIF"},{"id":"304","name":"HIKVISION 16CH 4K NVR DUAL HARDDISK SPEC: Third-party network cameras supported \u2022 Up to 8 Megapixels resolution recording \u2022 Support 1-ch HDMI, 1-ch VGA, HMDI at up to 4K(3840x2160) resolution \u2022 16\/32-ch network cameras can be connected with 160M\/256M incoming bandwidth \u2022 Up to 4 SATA interfaces \u2022 Plug & Play with up to 16 independent PoE network interfaces \u2022 Support dual-os to ensure high reliablility of system running \u2022Support various VCA detection alarm and VCA search \u2022Support H.265\/H.264\/MPEG4 video formats 8MP\/6MP\/5MP\/4MP\/3MP\/1080p\/UXGA\/720p\/VGA\/4CIF\/DCIF\/2CIF\/CIF\/QCIF","text":"HIKVISION 16CH 4K NVR DUAL HARDDISK SPEC: Third-party network cameras supported \u2022 Up to 8 Megapixels resolution recording \u2022 Support 1-ch HDMI, 1-ch VGA, HMDI at up to 4K(3840x2160) resolution \u2022 16\/32-ch network cameras can be connected with 160M\/256M incoming bandwidth \u2022 Up to 4 SATA interfaces \u2022 Plug & Play with up to 16 independent PoE network interfaces \u2022 Support dual-os to ensure high reliablility of system running \u2022Support various VCA detection alarm and VCA search \u2022Support H.265\/H.264\/MPEG4 video formats 8MP\/6MP\/5MP\/4MP\/3MP\/1080p\/UXGA\/720p\/VGA\/4CIF\/DCIF\/2CIF\/CIF\/QCIF"},{"id":"312","name":"HIKVISION 16CH 4K NVR DUAL HARDDISK SPEC: Third-party network cameras supported \u2022 Up to 8 Megapixels resolution recording \u2022 Support 1-ch HDMI, 1-ch VGA, HMDI at up to 4K(3840x2160) resolution \u2022 16\/32-ch network cameras can be connected with 160M\/256M incoming bandwidth \u2022 Up to 4 SATA interfaces \u2022 Plug & Play with up to 16 independent PoE network interfaces \u2022 Support dual-os to ensure high reliablility of system running \u2022Support various VCA detection alarm and VCA search \u2022Support H.265\/H.264\/MPEG4 video formats 8MP\/6MP\/5MP\/4MP\/3MP\/1080p\/UXGA\/720p\/VGA\/4CIF\/DCIF\/2CIF\/CIF\/QCIF","text":"HIKVISION 16CH 4K NVR DUAL HARDDISK SPEC: Third-party network cameras supported \u2022 Up to 8 Megapixels resolution recording \u2022 Support 1-ch HDMI, 1-ch VGA, HMDI at up to 4K(3840x2160) resolution \u2022 16\/32-ch network cameras can be connected with 160M\/256M incoming bandwidth \u2022 Up to 4 SATA interfaces \u2022 Plug & Play with up to 16 independent PoE network interfaces \u2022 Support dual-os to ensure high reliablility of system running \u2022Support various VCA detection alarm and VCA search \u2022Support H.265\/H.264\/MPEG4 video formats 8MP\/6MP\/5MP\/4MP\/3MP\/1080p\/UXGA\/720p\/VGA\/4CIF\/DCIF\/2CIF\/CIF\/QCIF"},{"id":"320","name":"HIKVISION 16CH 4K NVR DUAL HARDDISK SPEC: Third-party network cameras supported \u2022 Up to 8 Megapixels resolution recording \u2022 Support 1-ch HDMI, 1-ch VGA, HMDI at up to 4K(3840x2160) resolution \u2022 16\/32-ch network cameras can be connected with 160M\/256M incoming bandwidth \u2022 Up to 4 SATA interfaces \u2022 Plug & Play with up to 16 independent PoE network interfaces \u2022 Support dual-os to ensure high reliablility of system running \u2022Support various VCA detection alarm and VCA search \u2022Support H.265\/H.264\/MPEG4 video formats 8MP\/6MP\/5MP\/4MP\/3MP\/1080p\/UXGA\/720p\/VGA\/4CIF\/DCIF\/2CIF\/CIF\/QCIF","text":"HIKVISION 16CH 4K NVR DUAL HARDDISK SPEC: Third-party network cameras supported \u2022 Up to 8 Megapixels resolution recording \u2022 Support 1-ch HDMI, 1-ch VGA, HMDI at up to 4K(3840x2160) resolution \u2022 16\/32-ch network cameras can be connected with 160M\/256M incoming bandwidth \u2022 Up to 4 SATA interfaces \u2022 Plug & Play with up to 16 independent PoE network interfaces \u2022 Support dual-os to ensure high reliablility of system running \u2022Support various VCA detection alarm and VCA search \u2022Support H.265\/H.264\/MPEG4 video formats 8MP\/6MP\/5MP\/4MP\/3MP\/1080p\/UXGA\/720p\/VGA\/4CIF\/DCIF\/2CIF\/CIF\/QCIF"},{"id":"328","name":"HIKVISION 16CH 4K NVR DUAL HARDDISK SPEC: Third-party network cameras supported \u2022 Up to 8 Megapixels resolution recording \u2022 Support 1-ch HDMI, 1-ch VGA, HMDI at up to 4K(3840x2160) resolution \u2022 16\/32-ch network cameras can be connected with 160M\/256M incoming bandwidth \u2022 Up to 4 SATA interfaces \u2022 Plug & Play with up to 16 independent PoE network interfaces \u2022 Support dual-os to ensure high reliablility of system running \u2022Support various VCA detection alarm and VCA search \u2022Support H.265\/H.264\/MPEG4 video formats 8MP\/6MP\/5MP\/4MP\/3MP\/1080p\/UXGA\/720p\/VGA\/4CIF\/DCIF\/2CIF\/CIF\/QCIF","text":"HIKVISION 16CH 4K NVR DUAL HARDDISK SPEC: Third-party network cameras supported \u2022 Up to 8 Megapixels resolution recording \u2022 Support 1-ch HDMI, 1-ch VGA, HMDI at up to 4K(3840x2160) resolution \u2022 16\/32-ch network cameras can be connected with 160M\/256M incoming bandwidth \u2022 Up to 4 SATA interfaces \u2022 Plug & Play with up to 16 independent PoE network interfaces \u2022 Support dual-os to ensure high reliablility of system running \u2022Support various VCA detection alarm and VCA search \u2022Support H.265\/H.264\/MPEG4 video formats 8MP\/6MP\/5MP\/4MP\/3MP\/1080p\/UXGA\/720p\/VGA\/4CIF\/DCIF\/2CIF\/CIF\/QCIF"},{"id":"336","name":"HIKVISION 16CH 4K NVR DUAL HARDDISK SPEC: Third-party network cameras supported \u2022 Up to 8 Megapixels resolution recording \u2022 Support 1-ch HDMI, 1-ch VGA, HMDI at up to 4K(3840x2160) resolution \u2022 16\/32-ch network cameras can be connected with 160M\/256M incoming bandwidth \u2022 Up to 4 SATA interfaces \u2022 Plug & Play with up to 16 independent PoE network interfaces \u2022 Support dual-os to ensure high reliablility of system running \u2022Support various VCA detection alarm and VCA search \u2022Support H.265\/H.264\/MPEG4 video formats 8MP\/6MP\/5MP\/4MP\/3MP\/1080p\/UXGA\/720p\/VGA\/4CIF\/DCIF\/2CIF\/CIF\/QCIF","text":"HIKVISION 16CH 4K NVR DUAL HARDDISK SPEC: Third-party network cameras supported \u2022 Up to 8 Megapixels resolution recording \u2022 Support 1-ch HDMI, 1-ch VGA, HMDI at up to 4K(3840x2160) resolution \u2022 16\/32-ch network cameras can be connected with 160M\/256M incoming bandwidth \u2022 Up to 4 SATA interfaces \u2022 Plug & Play with up to 16 independent PoE network interfaces \u2022 Support dual-os to ensure high reliablility of system running \u2022Support various VCA detection alarm and VCA search \u2022Support H.265\/H.264\/MPEG4 video formats 8MP\/6MP\/5MP\/4MP\/3MP\/1080p\/UXGA\/720p\/VGA\/4CIF\/DCIF\/2CIF\/CIF\/QCIF"},{"id":"297","name":"HIKVISION 5MP IPCAMERA 5MP FULL HD h265+","text":"HIKVISION 5MP IPCAMERA 5MP FULL HD h265+"},{"id":"305","name":"HIKVISION 5MP IPCAMERA 5MP FULL HD h265+","text":"HIKVISION 5MP IPCAMERA 5MP FULL HD h265+"},{"id":"313","name":"HIKVISION 5MP IPCAMERA 5MP FULL HD h265+","text":"HIKVISION 5MP IPCAMERA 5MP FULL HD h265+"},{"id":"321","name":"HIKVISION 5MP IPCAMERA 5MP FULL HD h265+","text":"HIKVISION 5MP IPCAMERA 5MP FULL HD h265+"},{"id":"329","name":"HIKVISION 5MP IPCAMERA 5MP FULL HD h265+","text":"HIKVISION 5MP IPCAMERA 5MP FULL HD h265+"},{"id":"337","name":"HIKVISION 5MP IPCAMERA 5MP FULL HD h265+","text":"HIKVISION 5MP IPCAMERA 5MP FULL HD h265+"},{"id":"100","name":"linex os ","text":"linex os "},{"id":"300","name":"NT CABLE MANAGER","text":"NT CABLE MANAGER"},{"id":"308","name":"NT CABLE MANAGER","text":"NT CABLE MANAGER"},{"id":"316","name":"NT CABLE MANAGER","text":"NT CABLE MANAGER"},{"id":"324","name":"NT CABLE MANAGER","text":"NT CABLE MANAGER"},{"id":"332","name":"NT CABLE MANAGER","text":"NT CABLE MANAGER"},{"id":"340","name":"NT CABLE MANAGER","text":"NT CABLE MANAGER"},{"id":"301","name":"PIPES,CLAMP,SCREWS,IOBOX,STRUCTURED CABLING,","text":"PIPES,CLAMP,SCREWS,IOBOX,STRUCTURED CABLING,"},{"id":"309","name":"PIPES,CLAMP,SCREWS,IOBOX,STRUCTURED CABLING,","text":"PIPES,CLAMP,SCREWS,IOBOX,STRUCTURED CABLING,"},{"id":"317","name":"PIPES,CLAMP,SCREWS,IOBOX,STRUCTURED CABLING,","text":"PIPES,CLAMP,SCREWS,IOBOX,STRUCTURED CABLING,"},{"id":"325","name":"PIPES,CLAMP,SCREWS,IOBOX,STRUCTURED CABLING,","text":"PIPES,CLAMP,SCREWS,IOBOX,STRUCTURED CABLING,"},{"id":"333","name":"PIPES,CLAMP,SCREWS,IOBOX,STRUCTURED CABLING,","text":"PIPES,CLAMP,SCREWS,IOBOX,STRUCTURED CABLING,"},{"id":"341","name":"PIPES,CLAMP,SCREWS,IOBOX,STRUCTURED CABLING,","text":"PIPES,CLAMP,SCREWS,IOBOX,STRUCTURED CABLING,"},{"id":"99","name":"sad","text":"sad"},{"id":"75","name":"sfsdffdsd","text":"sfsdffdsd"},{"id":"85","name":"unicam","text":"unicam"},{"id":"64","name":"ANTEC","text":"ANTEC"},{"id":"49","name":"corsier atx cabin with smps","text":"corsier atx cabin with smps"},{"id":"288","name":"cpplus cable 90meter","text":"cpplus cable 90meter"},{"id":"71","name":"DLINK","text":"DLINK"},{"id":"89","name":"Canon EOS 5D Mark IV","text":"Canon EOS 5D Mark IV"},{"id":"295","name":"CP-PLUS BIOMETRIC","text":"CP-PLUS BIOMETRIC"},{"id":"90","name":"PXW-X200 XDCAM Handheld Camcorder","text":"PXW-X200 XDCAM Handheld Camcorder"},{"id":"67","name":"BROTHER","text":"BROTHER"},{"id":"293","name":"Aten HDMI HDBaseT Extender with USB VE813","text":"Aten HDMI HDBaseT Extender with USB VE813"},{"id":"294","name":"NTI 100METER IP EXTENDER - ST-IPHD-LC","text":"NTI 100METER IP EXTENDER - ST-IPHD-LC"},{"id":"290","name":"Cp-plus 4 mp Bullet","text":"Cp-plus 4 mp Bullet"},{"id":"289","name":"Cp-plus 4 mp Doom","text":"Cp-plus 4 mp Doom"},{"id":"291","name":"Cp-plus 5 mp dvr","text":"Cp-plus 5 mp dvr"},{"id":"286","name":"dvr Cp Plus 2.4 Mp ","text":"dvr Cp Plus 2.4 Mp "},{"id":"97","name":"HIKVISION 2MP METAL DVR UP TO 2MP","text":"HIKVISION 2MP METAL DVR UP TO 2MP"},{"id":"7","name":"HIKVISION BULLET 1MP","text":"HIKVISION BULLET 1MP"},{"id":"8","name":"HIKVISION BULLET 1MP","text":"HIKVISION BULLET 1MP"},{"id":"9","name":"HIKVISION BULLET 1MP","text":"HIKVISION BULLET 1MP"},{"id":"10","name":"HIKVISION BULLET 1MP","text":"HIKVISION BULLET 1MP"},{"id":"105","name":"HIKVISION BULLET 1MP","text":"HIKVISION BULLET 1MP"},{"id":"106","name":"HIKVISION BULLET 1MP","text":"HIKVISION BULLET 1MP"},{"id":"107","name":"HIKVISION BULLET 1MP","text":"HIKVISION BULLET 1MP"},{"id":"108","name":"HIKVISION BULLET 1MP","text":"HIKVISION BULLET 1MP"},{"id":"151","name":"HIKVISION BULLET 1MP","text":"HIKVISION BULLET 1MP"},{"id":"152","name":"HIKVISION BULLET 1MP","text":"HIKVISION BULLET 1MP"},{"id":"153","name":"HIKVISION BULLET 1MP","text":"HIKVISION BULLET 1MP"},{"id":"154","name":"HIKVISION BULLET 1MP","text":"HIKVISION BULLET 1MP"},{"id":"197","name":"HIKVISION BULLET 1MP","text":"HIKVISION BULLET 1MP"},{"id":"198","name":"HIKVISION BULLET 1MP","text":"HIKVISION BULLET 1MP"},{"id":"199","name":"HIKVISION BULLET 1MP","text":"HIKVISION BULLET 1MP"},{"id":"200","name":"HIKVISION BULLET 1MP","text":"HIKVISION BULLET 1MP"},{"id":"243","name":"HIKVISION BULLET 1MP","text":"HIKVISION BULLET 1MP"},{"id":"244","name":"HIKVISION BULLET 1MP","text":"HIKVISION BULLET 1MP"},{"id":"245","name":"HIKVISION BULLET 1MP","text":"HIKVISION BULLET 1MP"},{"id":"246","name":"HIKVISION BULLET 1MP","text":"HIKVISION BULLET 1MP"},{"id":"11","name":"HIKVISION BULLET 2MP","text":"HIKVISION BULLET 2MP"},{"id":"12","name":"HIKVISION BULLET 2MP","text":"HIKVISION BULLET 2MP"},{"id":"13","name":"HIKVISION BULLET 2MP","text":"HIKVISION BULLET 2MP"},{"id":"14","name":"HIKVISION BULLET 2MP","text":"HIKVISION BULLET 2MP"},{"id":"15","name":"HIKVISION BULLET 2MP","text":"HIKVISION BULLET 2MP"},{"id":"16","name":"HIKVISION BULLET 2MP","text":"HIKVISION BULLET 2MP"},{"id":"18","name":"HIKVISION BULLET 2MP","text":"HIKVISION BULLET 2MP"},{"id":"109","name":"HIKVISION BULLET 2MP","text":"HIKVISION BULLET 2MP"},{"id":"110","name":"HIKVISION BULLET 2MP","text":"HIKVISION BULLET 2MP"},{"id":"111","name":"HIKVISION BULLET 2MP","text":"HIKVISION BULLET 2MP"},{"id":"112","name":"HIKVISION BULLET 2MP","text":"HIKVISION BULLET 2MP"},{"id":"113","name":"HIKVISION BULLET 2MP","text":"HIKVISION BULLET 2MP"},{"id":"114","name":"HIKVISION BULLET 2MP","text":"HIKVISION BULLET 2MP"},{"id":"116","name":"HIKVISION BULLET 2MP","text":"HIKVISION BULLET 2MP"},{"id":"155","name":"HIKVISION BULLET 2MP","text":"HIKVISION BULLET 2MP"},{"id":"156","name":"HIKVISION BULLET 2MP","text":"HIKVISION BULLET 2MP"},{"id":"157","name":"HIKVISION BULLET 2MP","text":"HIKVISION BULLET 2MP"},{"id":"158","name":"HIKVISION BULLET 2MP","text":"HIKVISION BULLET 2MP"},{"id":"159","name":"HIKVISION BULLET 2MP","text":"HIKVISION BULLET 2MP"},{"id":"160","name":"HIKVISION BULLET 2MP","text":"HIKVISION BULLET 2MP"},{"id":"162","name":"HIKVISION BULLET 2MP","text":"HIKVISION BULLET 2MP"},{"id":"201","name":"HIKVISION BULLET 2MP","text":"HIKVISION BULLET 2MP"},{"id":"202","name":"HIKVISION BULLET 2MP","text":"HIKVISION BULLET 2MP"},{"id":"203","name":"HIKVISION BULLET 2MP","text":"HIKVISION BULLET 2MP"},{"id":"204","name":"HIKVISION BULLET 2MP","text":"HIKVISION BULLET 2MP"},{"id":"205","name":"HIKVISION BULLET 2MP","text":"HIKVISION BULLET 2MP"},{"id":"206","name":"HIKVISION BULLET 2MP","text":"HIKVISION BULLET 2MP"},{"id":"208","name":"HIKVISION BULLET 2MP","text":"HIKVISION BULLET 2MP"},{"id":"247","name":"HIKVISION BULLET 2MP","text":"HIKVISION BULLET 2MP"},{"id":"248","name":"HIKVISION BULLET 2MP","text":"HIKVISION BULLET 2MP"},{"id":"249","name":"HIKVISION BULLET 2MP","text":"HIKVISION BULLET 2MP"},{"id":"250","name":"HIKVISION BULLET 2MP","text":"HIKVISION BULLET 2MP"},{"id":"251","name":"HIKVISION BULLET 2MP","text":"HIKVISION BULLET 2MP"},{"id":"252","name":"HIKVISION BULLET 2MP","text":"HIKVISION BULLET 2MP"},{"id":"254","name":"HIKVISION BULLET 2MP","text":"HIKVISION BULLET 2MP"},{"id":"17","name":"HIKVISION BULLET 3MP","text":"HIKVISION BULLET 3MP"},{"id":"115","name":"HIKVISION BULLET 3MP","text":"HIKVISION BULLET 3MP"},{"id":"161","name":"HIKVISION BULLET 3MP","text":"HIKVISION BULLET 3MP"},{"id":"207","name":"HIKVISION BULLET 3MP","text":"HIKVISION BULLET 3MP"},{"id":"253","name":"HIKVISION BULLET 3MP","text":"HIKVISION BULLET 3MP"},{"id":"3","name":"HIKVISION DOOM 1MP","text":"HIKVISION DOOM 1MP"},{"id":"4","name":"HIKVISION DOOM 1MP","text":"HIKVISION DOOM 1MP"},{"id":"101","name":"HIKVISION DOOM 1MP","text":"HIKVISION DOOM 1MP"},{"id":"102","name":"HIKVISION DOOM 1MP","text":"HIKVISION DOOM 1MP"},{"id":"147","name":"HIKVISION DOOM 1MP","text":"HIKVISION DOOM 1MP"},{"id":"148","name":"HIKVISION DOOM 1MP","text":"HIKVISION DOOM 1MP"},{"id":"193","name":"HIKVISION DOOM 1MP","text":"HIKVISION DOOM 1MP"},{"id":"194","name":"HIKVISION DOOM 1MP","text":"HIKVISION DOOM 1MP"},{"id":"239","name":"HIKVISION DOOM 1MP","text":"HIKVISION DOOM 1MP"},{"id":"240","name":"HIKVISION DOOM 1MP","text":"HIKVISION DOOM 1MP"},{"id":"5","name":"HIKVISION DOOM 2MP","text":"HIKVISION DOOM 2MP"},{"id":"103","name":"HIKVISION DOOM 2MP","text":"HIKVISION DOOM 2MP"},{"id":"149","name":"HIKVISION DOOM 2MP","text":"HIKVISION DOOM 2MP"},{"id":"195","name":"HIKVISION DOOM 2MP","text":"HIKVISION DOOM 2MP"},{"id":"241","name":"HIKVISION DOOM 2MP","text":"HIKVISION DOOM 2MP"},{"id":"6","name":"HIKVISION DOOM 3MP","text":"HIKVISION DOOM 3MP"},{"id":"104","name":"HIKVISION DOOM 3MP","text":"HIKVISION DOOM 3MP"},{"id":"150","name":"HIKVISION DOOM 3MP","text":"HIKVISION DOOM 3MP"},{"id":"196","name":"HIKVISION DOOM 3MP","text":"HIKVISION DOOM 3MP"},{"id":"242","name":"HIKVISION DOOM 3MP","text":"HIKVISION DOOM 3MP"},{"id":"21","name":"HIKVISION DVR 16 CHANNEL","text":"HIKVISION DVR 16 CHANNEL"},{"id":"24","name":"HIKVISION DVR 16 CHANNEL","text":"HIKVISION DVR 16 CHANNEL"},{"id":"28","name":"HIKVISION DVR 16 CHANNEL","text":"HIKVISION DVR 16 CHANNEL"},{"id":"31","name":"HIKVISION DVR 16 CHANNEL","text":"HIKVISION DVR 16 CHANNEL"},{"id":"32","name":"HIKVISION DVR 16 CHANNEL","text":"HIKVISION DVR 16 CHANNEL"},{"id":"35","name":"HIKVISION DVR 16 CHANNEL","text":"HIKVISION DVR 16 CHANNEL"},{"id":"119","name":"HIKVISION DVR 16 CHANNEL","text":"HIKVISION DVR 16 CHANNEL"},{"id":"122","name":"HIKVISION DVR 16 CHANNEL","text":"HIKVISION DVR 16 CHANNEL"},{"id":"126","name":"HIKVISION DVR 16 CHANNEL","text":"HIKVISION DVR 16 CHANNEL"},{"id":"129","name":"HIKVISION DVR 16 CHANNEL","text":"HIKVISION DVR 16 CHANNEL"},{"id":"130","name":"HIKVISION DVR 16 CHANNEL","text":"HIKVISION DVR 16 CHANNEL"},{"id":"133","name":"HIKVISION DVR 16 CHANNEL","text":"HIKVISION DVR 16 CHANNEL"},{"id":"165","name":"HIKVISION DVR 16 CHANNEL","text":"HIKVISION DVR 16 CHANNEL"},{"id":"168","name":"HIKVISION DVR 16 CHANNEL","text":"HIKVISION DVR 16 CHANNEL"},{"id":"172","name":"HIKVISION DVR 16 CHANNEL","text":"HIKVISION DVR 16 CHANNEL"},{"id":"175","name":"HIKVISION DVR 16 CHANNEL","text":"HIKVISION DVR 16 CHANNEL"},{"id":"176","name":"HIKVISION DVR 16 CHANNEL","text":"HIKVISION DVR 16 CHANNEL"},{"id":"179","name":"HIKVISION DVR 16 CHANNEL","text":"HIKVISION DVR 16 CHANNEL"},{"id":"211","name":"HIKVISION DVR 16 CHANNEL","text":"HIKVISION DVR 16 CHANNEL"},{"id":"214","name":"HIKVISION DVR 16 CHANNEL","text":"HIKVISION DVR 16 CHANNEL"},{"id":"218","name":"HIKVISION DVR 16 CHANNEL","text":"HIKVISION DVR 16 CHANNEL"},{"id":"221","name":"HIKVISION DVR 16 CHANNEL","text":"HIKVISION DVR 16 CHANNEL"},{"id":"222","name":"HIKVISION DVR 16 CHANNEL","text":"HIKVISION DVR 16 CHANNEL"},{"id":"225","name":"HIKVISION DVR 16 CHANNEL","text":"HIKVISION DVR 16 CHANNEL"},{"id":"257","name":"HIKVISION DVR 16 CHANNEL","text":"HIKVISION DVR 16 CHANNEL"},{"id":"260","name":"HIKVISION DVR 16 CHANNEL","text":"HIKVISION DVR 16 CHANNEL"},{"id":"264","name":"HIKVISION DVR 16 CHANNEL","text":"HIKVISION DVR 16 CHANNEL"},{"id":"267","name":"HIKVISION DVR 16 CHANNEL","text":"HIKVISION DVR 16 CHANNEL"},{"id":"268","name":"HIKVISION DVR 16 CHANNEL","text":"HIKVISION DVR 16 CHANNEL"},{"id":"271","name":"HIKVISION DVR 16 CHANNEL","text":"HIKVISION DVR 16 CHANNEL"},{"id":"25","name":"HIKVISION DVR 32 CHANNEL","text":"HIKVISION DVR 32 CHANNEL"},{"id":"123","name":"HIKVISION DVR 32 CHANNEL","text":"HIKVISION DVR 32 CHANNEL"},{"id":"169","name":"HIKVISION DVR 32 CHANNEL","text":"HIKVISION DVR 32 CHANNEL"},{"id":"215","name":"HIKVISION DVR 32 CHANNEL","text":"HIKVISION DVR 32 CHANNEL"},{"id":"261","name":"HIKVISION DVR 32 CHANNEL","text":"HIKVISION DVR 32 CHANNEL"},{"id":"19","name":"HIKVISION DVR 4 CHANNEL","text":"HIKVISION DVR 4 CHANNEL"},{"id":"22","name":"HIKVISION DVR 4 CHANNEL","text":"HIKVISION DVR 4 CHANNEL"},{"id":"26","name":"HIKVISION DVR 4 CHANNEL","text":"HIKVISION DVR 4 CHANNEL"},{"id":"29","name":"HIKVISION DVR 4 CHANNEL","text":"HIKVISION DVR 4 CHANNEL"},{"id":"33","name":"HIKVISION DVR 4 CHANNEL","text":"HIKVISION DVR 4 CHANNEL"},{"id":"44","name":"HIKVISION DVR 4 CHANNEL","text":"HIKVISION DVR 4 CHANNEL"},{"id":"117","name":"HIKVISION DVR 4 CHANNEL","text":"HIKVISION DVR 4 CHANNEL"},{"id":"120","name":"HIKVISION DVR 4 CHANNEL","text":"HIKVISION DVR 4 CHANNEL"},{"id":"124","name":"HIKVISION DVR 4 CHANNEL","text":"HIKVISION DVR 4 CHANNEL"},{"id":"127","name":"HIKVISION DVR 4 CHANNEL","text":"HIKVISION DVR 4 CHANNEL"},{"id":"131","name":"HIKVISION DVR 4 CHANNEL","text":"HIKVISION DVR 4 CHANNEL"},{"id":"142","name":"HIKVISION DVR 4 CHANNEL","text":"HIKVISION DVR 4 CHANNEL"},{"id":"163","name":"HIKVISION DVR 4 CHANNEL","text":"HIKVISION DVR 4 CHANNEL"},{"id":"166","name":"HIKVISION DVR 4 CHANNEL","text":"HIKVISION DVR 4 CHANNEL"},{"id":"170","name":"HIKVISION DVR 4 CHANNEL","text":"HIKVISION DVR 4 CHANNEL"},{"id":"173","name":"HIKVISION DVR 4 CHANNEL","text":"HIKVISION DVR 4 CHANNEL"},{"id":"177","name":"HIKVISION DVR 4 CHANNEL","text":"HIKVISION DVR 4 CHANNEL"},{"id":"188","name":"HIKVISION DVR 4 CHANNEL","text":"HIKVISION DVR 4 CHANNEL"},{"id":"209","name":"HIKVISION DVR 4 CHANNEL","text":"HIKVISION DVR 4 CHANNEL"},{"id":"212","name":"HIKVISION DVR 4 CHANNEL","text":"HIKVISION DVR 4 CHANNEL"},{"id":"216","name":"HIKVISION DVR 4 CHANNEL","text":"HIKVISION DVR 4 CHANNEL"},{"id":"219","name":"HIKVISION DVR 4 CHANNEL","text":"HIKVISION DVR 4 CHANNEL"},{"id":"223","name":"HIKVISION DVR 4 CHANNEL","text":"HIKVISION DVR 4 CHANNEL"},{"id":"234","name":"HIKVISION DVR 4 CHANNEL","text":"HIKVISION DVR 4 CHANNEL"},{"id":"255","name":"HIKVISION DVR 4 CHANNEL","text":"HIKVISION DVR 4 CHANNEL"},{"id":"258","name":"HIKVISION DVR 4 CHANNEL","text":"HIKVISION DVR 4 CHANNEL"},{"id":"262","name":"HIKVISION DVR 4 CHANNEL","text":"HIKVISION DVR 4 CHANNEL"},{"id":"265","name":"HIKVISION DVR 4 CHANNEL","text":"HIKVISION DVR 4 CHANNEL"},{"id":"269","name":"HIKVISION DVR 4 CHANNEL","text":"HIKVISION DVR 4 CHANNEL"},{"id":"280","name":"HIKVISION DVR 4 CHANNEL","text":"HIKVISION DVR 4 CHANNEL"},{"id":"20","name":"HIKVISION DVR 8 CHANNEL","text":"HIKVISION DVR 8 CHANNEL"},{"id":"23","name":"HIKVISION DVR 8 CHANNEL","text":"HIKVISION DVR 8 CHANNEL"},{"id":"27","name":"HIKVISION DVR 8 CHANNEL","text":"HIKVISION DVR 8 CHANNEL"},{"id":"30","name":"HIKVISION DVR 8 CHANNEL","text":"HIKVISION DVR 8 CHANNEL"},{"id":"34","name":"HIKVISION DVR 8 CHANNEL","text":"HIKVISION DVR 8 CHANNEL"},{"id":"118","name":"HIKVISION DVR 8 CHANNEL","text":"HIKVISION DVR 8 CHANNEL"},{"id":"121","name":"HIKVISION DVR 8 CHANNEL","text":"HIKVISION DVR 8 CHANNEL"},{"id":"125","name":"HIKVISION DVR 8 CHANNEL","text":"HIKVISION DVR 8 CHANNEL"},{"id":"128","name":"HIKVISION DVR 8 CHANNEL","text":"HIKVISION DVR 8 CHANNEL"},{"id":"132","name":"HIKVISION DVR 8 CHANNEL","text":"HIKVISION DVR 8 CHANNEL"},{"id":"164","name":"HIKVISION DVR 8 CHANNEL","text":"HIKVISION DVR 8 CHANNEL"},{"id":"167","name":"HIKVISION DVR 8 CHANNEL","text":"HIKVISION DVR 8 CHANNEL"},{"id":"171","name":"HIKVISION DVR 8 CHANNEL","text":"HIKVISION DVR 8 CHANNEL"},{"id":"174","name":"HIKVISION DVR 8 CHANNEL","text":"HIKVISION DVR 8 CHANNEL"},{"id":"178","name":"HIKVISION DVR 8 CHANNEL","text":"HIKVISION DVR 8 CHANNEL"},{"id":"210","name":"HIKVISION DVR 8 CHANNEL","text":"HIKVISION DVR 8 CHANNEL"},{"id":"213","name":"HIKVISION DVR 8 CHANNEL","text":"HIKVISION DVR 8 CHANNEL"},{"id":"217","name":"HIKVISION DVR 8 CHANNEL","text":"HIKVISION DVR 8 CHANNEL"},{"id":"220","name":"HIKVISION DVR 8 CHANNEL","text":"HIKVISION DVR 8 CHANNEL"},{"id":"224","name":"HIKVISION DVR 8 CHANNEL","text":"HIKVISION DVR 8 CHANNEL"},{"id":"256","name":"HIKVISION DVR 8 CHANNEL","text":"HIKVISION DVR 8 CHANNEL"},{"id":"259","name":"HIKVISION DVR 8 CHANNEL","text":"HIKVISION DVR 8 CHANNEL"},{"id":"263","name":"HIKVISION DVR 8 CHANNEL","text":"HIKVISION DVR 8 CHANNEL"},{"id":"266","name":"HIKVISION DVR 8 CHANNEL","text":"HIKVISION DVR 8 CHANNEL"},{"id":"270","name":"HIKVISION DVR 8 CHANNEL","text":"HIKVISION DVR 8 CHANNEL"},{"id":"96","name":"HIKVISION HD BULLET 2 MP","text":"HIKVISION HD BULLET 2 MP"},{"id":"95","name":"HIKVISION HD DOME 2 MP ","text":"HIKVISION HD DOME 2 MP "},{"id":"37","name":"HIKVISION IP BULLET 1.3 MP","text":"HIKVISION IP BULLET 1.3 MP"},{"id":"135","name":"HIKVISION IP BULLET 1.3 MP","text":"HIKVISION IP BULLET 1.3 MP"},{"id":"181","name":"HIKVISION IP BULLET 1.3 MP","text":"HIKVISION IP BULLET 1.3 MP"},{"id":"227","name":"HIKVISION IP BULLET 1.3 MP","text":"HIKVISION IP BULLET 1.3 MP"},{"id":"273","name":"HIKVISION IP BULLET 1.3 MP","text":"HIKVISION IP BULLET 1.3 MP"},{"id":"39","name":"HIKVISION IP BULLET 2.0 MP","text":"HIKVISION IP BULLET 2.0 MP"},{"id":"137","name":"HIKVISION IP BULLET 2.0 MP","text":"HIKVISION IP BULLET 2.0 MP"},{"id":"183","name":"HIKVISION IP BULLET 2.0 MP","text":"HIKVISION IP BULLET 2.0 MP"},{"id":"229","name":"HIKVISION IP BULLET 2.0 MP","text":"HIKVISION IP BULLET 2.0 MP"},{"id":"275","name":"HIKVISION IP BULLET 2.0 MP","text":"HIKVISION IP BULLET 2.0 MP"},{"id":"41","name":"HIKVISION IP BULLET 4.0 MP","text":"HIKVISION IP BULLET 4.0 MP"},{"id":"139","name":"HIKVISION IP BULLET 4.0 MP","text":"HIKVISION IP BULLET 4.0 MP"},{"id":"185","name":"HIKVISION IP BULLET 4.0 MP","text":"HIKVISION IP BULLET 4.0 MP"},{"id":"231","name":"HIKVISION IP BULLET 4.0 MP","text":"HIKVISION IP BULLET 4.0 MP"},{"id":"277","name":"HIKVISION IP BULLET 4.0 MP","text":"HIKVISION IP BULLET 4.0 MP"},{"id":"43","name":"HIKVISION IP BULLET 5.0 MP","text":"HIKVISION IP BULLET 5.0 MP"},{"id":"141","name":"HIKVISION IP BULLET 5.0 MP","text":"HIKVISION IP BULLET 5.0 MP"},{"id":"187","name":"HIKVISION IP BULLET 5.0 MP","text":"HIKVISION IP BULLET 5.0 MP"},{"id":"233","name":"HIKVISION IP BULLET 5.0 MP","text":"HIKVISION IP BULLET 5.0 MP"},{"id":"279","name":"HIKVISION IP BULLET 5.0 MP","text":"HIKVISION IP BULLET 5.0 MP"},{"id":"36","name":"HIKVISION IP DOOM 1.3 MP","text":"HIKVISION IP DOOM 1.3 MP"},{"id":"134","name":"HIKVISION IP DOOM 1.3 MP","text":"HIKVISION IP DOOM 1.3 MP"},{"id":"180","name":"HIKVISION IP DOOM 1.3 MP","text":"HIKVISION IP DOOM 1.3 MP"},{"id":"226","name":"HIKVISION IP DOOM 1.3 MP","text":"HIKVISION IP DOOM 1.3 MP"},{"id":"272","name":"HIKVISION IP DOOM 1.3 MP","text":"HIKVISION IP DOOM 1.3 MP"},{"id":"38","name":"HIKVISION IP DOOM 2.0 MP","text":"HIKVISION IP DOOM 2.0 MP"},{"id":"136","name":"HIKVISION IP DOOM 2.0 MP","text":"HIKVISION IP DOOM 2.0 MP"},{"id":"182","name":"HIKVISION IP DOOM 2.0 MP","text":"HIKVISION IP DOOM 2.0 MP"},{"id":"228","name":"HIKVISION IP DOOM 2.0 MP","text":"HIKVISION IP DOOM 2.0 MP"},{"id":"274","name":"HIKVISION IP DOOM 2.0 MP","text":"HIKVISION IP DOOM 2.0 MP"},{"id":"40","name":"HIKVISION IP DOOM 4.0 MP","text":"HIKVISION IP DOOM 4.0 MP"},{"id":"138","name":"HIKVISION IP DOOM 4.0 MP","text":"HIKVISION IP DOOM 4.0 MP"},{"id":"184","name":"HIKVISION IP DOOM 4.0 MP","text":"HIKVISION IP DOOM 4.0 MP"},{"id":"230","name":"HIKVISION IP DOOM 4.0 MP","text":"HIKVISION IP DOOM 4.0 MP"},{"id":"276","name":"HIKVISION IP DOOM 4.0 MP","text":"HIKVISION IP DOOM 4.0 MP"},{"id":"42","name":"HIKVISION IP DOOM 5.0 MP","text":"HIKVISION IP DOOM 5.0 MP"},{"id":"140","name":"HIKVISION IP DOOM 5.0 MP","text":"HIKVISION IP DOOM 5.0 MP"},{"id":"186","name":"HIKVISION IP DOOM 5.0 MP","text":"HIKVISION IP DOOM 5.0 MP"},{"id":"232","name":"HIKVISION IP DOOM 5.0 MP","text":"HIKVISION IP DOOM 5.0 MP"},{"id":"278","name":"HIKVISION IP DOOM 5.0 MP","text":"HIKVISION IP DOOM 5.0 MP"},{"id":"47","name":"HIKVISION NVR 16 CHANNEL","text":"HIKVISION NVR 16 CHANNEL"},{"id":"48","name":"HIKVISION NVR 16 CHANNEL","text":"HIKVISION NVR 16 CHANNEL"},{"id":"145","name":"HIKVISION NVR 16 CHANNEL","text":"HIKVISION NVR 16 CHANNEL"},{"id":"146","name":"HIKVISION NVR 16 CHANNEL","text":"HIKVISION NVR 16 CHANNEL"},{"id":"191","name":"HIKVISION NVR 16 CHANNEL","text":"HIKVISION NVR 16 CHANNEL"},{"id":"192","name":"HIKVISION NVR 16 CHANNEL","text":"HIKVISION NVR 16 CHANNEL"},{"id":"237","name":"HIKVISION NVR 16 CHANNEL","text":"HIKVISION NVR 16 CHANNEL"},{"id":"238","name":"HIKVISION NVR 16 CHANNEL","text":"HIKVISION NVR 16 CHANNEL"},{"id":"283","name":"HIKVISION NVR 16 CHANNEL","text":"HIKVISION NVR 16 CHANNEL"},{"id":"284","name":"HIKVISION NVR 16 CHANNEL","text":"HIKVISION NVR 16 CHANNEL"},{"id":"45","name":"HIKVISION NVR 8 CHANNEL","text":"HIKVISION NVR 8 CHANNEL"},{"id":"46","name":"HIKVISION NVR 8 CHANNEL","text":"HIKVISION NVR 8 CHANNEL"},{"id":"143","name":"HIKVISION NVR 8 CHANNEL","text":"HIKVISION NVR 8 CHANNEL"},{"id":"144","name":"HIKVISION NVR 8 CHANNEL","text":"HIKVISION NVR 8 CHANNEL"},{"id":"189","name":"HIKVISION NVR 8 CHANNEL","text":"HIKVISION NVR 8 CHANNEL"},{"id":"190","name":"HIKVISION NVR 8 CHANNEL","text":"HIKVISION NVR 8 CHANNEL"},{"id":"235","name":"HIKVISION NVR 8 CHANNEL","text":"HIKVISION NVR 8 CHANNEL"},{"id":"236","name":"HIKVISION NVR 8 CHANNEL","text":"HIKVISION NVR 8 CHANNEL"},{"id":"281","name":"HIKVISION NVR 8 CHANNEL","text":"HIKVISION NVR 8 CHANNEL"},{"id":"282","name":"HIKVISION NVR 8 CHANNEL","text":"HIKVISION NVR 8 CHANNEL"},{"id":"50","name":"logitech combo","text":"logitech combo"},{"id":"87","name":"LENOVO IDEAPAD 310-15ISK","text":"LENOVO IDEAPAD 310-15ISK"},{"id":"88","name":"LENOVO IDEAPAD 310-15ISK","text":"LENOVO IDEAPAD 310-15ISK"},{"id":"51","name":"corsaier memory module","text":"corsaier memory module"},{"id":"62","name":"CORSAIR ","text":"CORSAIR "},{"id":"63","name":"ZION","text":"ZION"},{"id":"52","name":"asus 7th gen mainboard","text":"asus 7th gen mainboard"},{"id":"60","name":"GIGABYTE GA-B250M-DS3H","text":"GIGABYTE GA-B250M-DS3H"},{"id":"59","name":"GIGABYTE GA-H110M-H","text":"GIGABYTE GA-H110M-H"},{"id":"65","name":"LAPCARE","text":"LAPCARE"},{"id":"74","name":"Microsoft Corporation ","text":"Microsoft Corporation "},{"id":"86","name":"WINDOWS 10 HOME","text":"WINDOWS 10 HOME"},{"id":"53","name":"optical drive","text":"optical drive"},{"id":"66","name":"ANTEC","text":"ANTEC"},{"id":"287","name":"cctv powersupply","text":"cctv powersupply"},{"id":"68","name":"HP ALLIN ONE","text":"HP ALLIN ONE"},{"id":"94","name":"HP DeskJet Ink Advantage 2676 All-in-One Printer","text":"HP DeskJet Ink Advantage 2676 All-in-One Printer"},{"id":"91","name":"HP LaserJet 1020 Printer","text":"HP LaserJet 1020 Printer"},{"id":"73","name":"HP LaserJet M1005 Multifunction Printer","text":"HP LaserJet M1005 Multifunction Printer"},{"id":"72","name":"HP LaserJet Ultra MFP M134a (G3Q66A)","text":"HP LaserJet Ultra MFP M134a (G3Q66A)"},{"id":"92","name":"LASER SHOT LBP2900B","text":"LASER SHOT LBP2900B"},{"id":"93","name":"PRINTER CONFIGURATION ","text":"PRINTER CONFIGURATION "},{"id":"58","name":"INTEL DUAL CORE","text":"INTEL DUAL CORE"},{"id":"57","name":"PROCESSER","text":"PROCESSER"},{"id":"55","name":"processer 6th gen","text":"processer 6th gen"},{"id":"54","name":"processer 7th gen","text":"processer 7th gen"},{"id":"70","name":"OS INSTALLATION","text":"OS INSTALLATION"},{"id":"69","name":"SERVICE CHARGE ","text":"SERVICE CHARGE "},{"id":"56","name":"storage ","text":"storage "},{"id":"61","name":"western digital","text":"western digital"}],
+            text:'name',
+            placeholder: "Items",
+  allowClear: true
+
+    });
+$("[name='item_name']").on("select2:select", function(e) {
+var item=$(this).val();
+  submit_val(item);
+});
+       function submit_val(value){
+  //  $('#fullpage-loader').show();
+           // var value=[];
+            //var karthi=$(this).val();//
+            if(value != ''){
+          // var karthi=$(this).val();
+          $.post("http://amdsystems.in/billing/products/ajax/process_product_selections", {
+                product_ids: value
+            }, function (data) {
+                                items = JSON.parse(data);
+
+                for (var key in items) {
+                    // Set default tax rate id if empty
+                    if (!items[key].tax_rate_id) items[key].tax_rate_id = 0;
+
+                    //if ($('#item_table tbody:last input[name=item_hidden_name]').val() !== '') {
+                        $('#new_row').clone().appendTo('#item_table').removeAttr('id').addClass('item').hide();
+                    //}
+
+                    var last_item_row = $('#item_table tbody:last');
+
+                    last_item_row.find('input[name=item_hidden_name]').val(items[key].product_name);
+                    last_item_row.find('input[name=item_description]').val(items[key].product_description);
+                    last_item_row.find('input[name=item_price]').val(items[key].product_price);
+                    last_item_row.find('input[name=item_quantity]').val('1');
+                    last_item_row.find('select[name=item_tax_rate_id]').val(items[key].tax_rate_id);
+                    last_item_row.find('input[name=item_product_id]').val(items[key].product_id);
+
+                    $('#modal-choose-items').modal('hide');
+                }
+               // $('#fullpage-loader').show();
+                 var items = [];
+            var item_order = 1;
+
+            $('table tbody.item').each(function (key) {
+
+
+              //  if(key !=0 || $('table tbody.item').length == 1){
+                var row = {};
+                $(this).find('input,select,textarea').each(function () {
+                    if ($(this).is(':checkbox')) {
+                        row[$(this).attr('name')] = $(this).is(':checked');
+                    } else {
+
+                        if($(this).attr('name') != undefined){
+                            if($(this).attr('name') == 'item_hidden_name')
+                                row['item_name'] = $(this).val();
+                                else
+
+                        row[$(this).attr('name')] = $(this).val();
+                    }
+                    }
+                });
+                row['item_order'] = item_order;
+                item_order++;
+                items.push(row);
+                console.log(items);
+           // }
+console.log(items);
+            });
+            $.post("http://amdsystems.in/billing/invoices/ajax/save", {
+                    invoice_id: 87,
+                    invoice_number: $('#invoice_number').val(),
+                    invoice_date_created: $('#invoice_date_created').val(),
+                    invoice_date_due: $('#invoice_date_due').val(),
+                    invoice_status_id: $('#invoice_status_id').val(),
+                    invoice_password: $('#invoice_password').val(),
+                    items: JSON.stringify(items),
+                    invoice_discount_amount: $('#invoice_discount_amount').val(),
+                    invoice_discount_percent: $('#invoice_discount_percent').val(),
+                    invoice_terms: $('#invoice_terms').val(),
+                    custom: $('input[name^=custom]').serializeArray(),
+                    payment_method: $('#payment_method').val()
+                },
+                function (data) {
+                                        var response = JSON.parse(data);
+                  // $('#btn_generate_pdf').trigger('click');
+                    if (response.success == '1') {
+                        window.location = "http://amdsystems.in/billing/invoices/view/" + 87;
+                    }
+                    else {
+                        $('#fullpage-loader').hide();
+                        $('.control-group').removeClass('has-error');
+                        $('div.alert[class*="alert-"]').remove();
+                        var resp_errors = response.validation_errors,
+                            all_resp_errors = '';
+                        for (var key in resp_errors) {
+                            $('#' + key).parent().addClass('has-error');
+                            all_resp_errors += resp_errors[key];
+                        }
+                        $('#invoice_form').prepend('<div class="alert alert-danger">' + all_resp_errors + '</div>');
+                    }
+                });
+
+                        //$('#fullpage-loader').hide();
+            });
+      }
+
+       //$('#btn_save_invoice').trigger('click');
+         }
+    });
+                </script>
+
+                <div class="table-responsive">
+                    <div id="invoice_discount_percent"></div>
+                    <div id="invoice_discount_amount"></div>
+                    <table id="item_table" class="items table table-condensed table-bordered ui-sortable">
+                        <thead style="display: none">
+                            <tr>
+                                <th></th>
+                                <th>Item</th>
+                                <th>Description</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                <th>Tax Rate</th>
+                                <th>Subtotal</th>
+                                <th>Tax</th>
+                                <th>Total</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="new_row" class="ui-sortable-handle">
+                            <tr>
+                                <td class="td-icon"><i class="fa fa-arrows cursor-move"></i></td>
+
+
+                                <td class="td-textarea">
+                                    <div class="input-group">
+
+                                        <input name="item_serial" class="input-sm form-control disp_text" placeholder="Serial No">
+                                        <input name="item_description" class="input-sm form-control" placeholder="Serial No" type="hidden">
+                                    </div>
+                                </td>
+                                <td class="td-text" colspan="2">
+                                    <input type="hidden" name="invoice_id" value="87">
+                                    <input type="hidden" name="item_id" value="">
+                                    <input type="hidden" name="item_product_id" value="">
+
+                                    <div class="input-group">
+
+                                        <input type="text" name="item_name" id="get_imp_id" class="input-sm form-control select2-hidden-accessible" placeholder="Item" value="" tabindex="-1" aria-hidden="true"><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 139px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-get_imp_id-container"><span class="select2-selection__rendered" id="select2-get_imp_id-container"><span class="select2-selection__placeholder">Items</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                        <input type="hidden" name="item_hidden_name" class="input-sm form-control" placeholder="Item" value="">
+                                    </div>
+                                </td>
+                                <td class="td-amount td-quantity">
+                                    <div class="input-group">
+
+                                        <input type="text" name="item_quantity" class="input-sm form-control amount" placeholder="Quantity" value="">
+                                    </div>
+                                </td>
+                                <td class="td-amount">
+                                    <div class="input-group">
+
+                                        <input type="text" name="item_price" class="input-sm form-control amount" placeholder="Price" value="">
+                                    </div>
+                                </td>
+                                <td class="td-amount ">
+                                    <div class="input-group">
+
+                                        <input type="text" name="item_discount_amount" class="input-sm form-control amount" placeholder="Item Discount" value="" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="‎₹ per Item">
+                                    </div>
+                                </td>
+                                <td class="td-amount">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Tax Rate</span>
+                                        <select name="item_tax_rate_id" class="form-control input-sm" disabled="">
+                                            <option value="0">None</option>
+                                            <option value="68">
+                                                0.00% - HP ALLIN ONE
+                                            </option>
+                                            <option value="69">
+                                                0.00% - SERVICE CHARGE
+                                            </option>
+                                            <option value="70">
+                                                0.00% - OS INSTALLATION
+                                            </option>
+                                            <option value="93">
+                                                0.00% - PRINTER CONFIGURATION
+                                            </option>
+                                            <option value="100">
+                                                0.00% - linex os
+                                            </option>
+                                            <option value="292">
+                                                0.00% - connector
+                                            </option>
+                                            <option value="344">
+                                                0.00% - DISCOUNT AMOUNT
+                                            </option>
+                                            <option value="85">
+                                                5.00% - unicam
+                                            </option>
+                                            <option value="301">
+                                                5.00% - PIPES,CLAMP,SCREWS,IOBOX,STRUCTURED CABLING,
+                                            </option>
+                                            <option value="309">
+                                                5.00% - PIPES,CLAMP,SCREWS,IOBOX,STRUCTURED CABLING,
+                                            </option>
+                                            <option value="317">
+                                                5.00% - PIPES,CLAMP,SCREWS,IOBOX,STRUCTURED CABLING,
+                                            </option>
+                                            <option value="325">
+                                                5.00% - PIPES,CLAMP,SCREWS,IOBOX,STRUCTURED CABLING,
+                                            </option>
+                                            <option value="333">
+                                                5.00% - PIPES,CLAMP,SCREWS,IOBOX,STRUCTURED CABLING,
+                                            </option>
+                                            <option value="341">
+                                                5.00% - PIPES,CLAMP,SCREWS,IOBOX,STRUCTURED CABLING,
+                                            </option>
+                                            <option value="66">
+                                                10.00% - ANTEC
+                                            </option>
+                                            <option value="84">
+                                                12.00% - hikvision
+                                            </option>
+                                            <option value="3">
+                                                18.00% - HIKVISION DOOM 1MP
+                                            </option>
+                                            <option value="4">
+                                                18.00% - HIKVISION DOOM 1MP
+                                            </option>
+                                            <option value="5">
+                                                18.00% - HIKVISION DOOM 2MP
+                                            </option>
+                                            <option value="6">
+                                                18.00% - HIKVISION DOOM 3MP
+                                            </option>
+                                            <option value="7">
+                                                18.00% - HIKVISION BULLET 1MP
+                                            </option>
+                                            <option value="8">
+                                                18.00% - HIKVISION BULLET 1MP
+                                            </option>
+                                            <option value="9">
+                                                18.00% - HIKVISION BULLET 1MP
+                                            </option>
+                                            <option value="10">
+                                                18.00% - HIKVISION BULLET 1MP
+                                            </option>
+                                            <option value="11">
+                                                18.00% - HIKVISION BULLET 2MP
+                                            </option>
+                                            <option value="12">
+                                                18.00% - HIKVISION BULLET 2MP
+                                            </option>
+                                            <option value="13">
+                                                18.00% - HIKVISION BULLET 2MP
+                                            </option>
+                                            <option value="14">
+                                                18.00% - HIKVISION BULLET 2MP
+                                            </option>
+                                            <option value="15">
+                                                18.00% - HIKVISION BULLET 2MP
+                                            </option>
+                                            <option value="16">
+                                                18.00% - HIKVISION BULLET 2MP
+                                            </option>
+                                            <option value="17">
+                                                18.00% - HIKVISION BULLET 3MP
+                                            </option>
+                                            <option value="18">
+                                                18.00% - HIKVISION BULLET 2MP
+                                            </option>
+                                            <option value="19">
+                                                18.00% - HIKVISION DVR 4 CHANNEL
+                                            </option>
+                                            <option value="20">
+                                                18.00% - HIKVISION DVR 8 CHANNEL
+                                            </option>
+                                            <option value="21">
+                                                18.00% - HIKVISION DVR 16 CHANNEL
+                                            </option>
+                                            <option value="22">
+                                                18.00% - HIKVISION DVR 4 CHANNEL
+                                            </option>
+                                            <option value="23">
+                                                18.00% - HIKVISION DVR 8 CHANNEL
+                                            </option>
+                                            <option value="24">
+                                                18.00% - HIKVISION DVR 16 CHANNEL
+                                            </option>
+                                            <option value="25">
+                                                18.00% - HIKVISION DVR 32 CHANNEL
+                                            </option>
+                                            <option value="26">
+                                                18.00% - HIKVISION DVR 4 CHANNEL
+                                            </option>
+                                            <option value="27">
+                                                18.00% - HIKVISION DVR 8 CHANNEL
+                                            </option>
+                                            <option value="28">
+                                                18.00% - HIKVISION DVR 16 CHANNEL
+                                            </option>
+                                            <option value="29">
+                                                18.00% - HIKVISION DVR 4 CHANNEL
+                                            </option>
+                                            <option value="30">
+                                                18.00% - HIKVISION DVR 8 CHANNEL
+                                            </option>
+                                            <option value="31">
+                                                18.00% - HIKVISION DVR 16 CHANNEL
+                                            </option>
+                                            <option value="32">
+                                                18.00% - HIKVISION DVR 16 CHANNEL
+                                            </option>
+                                            <option value="33">
+                                                18.00% - HIKVISION DVR 4 CHANNEL
+                                            </option>
+                                            <option value="34">
+                                                18.00% - HIKVISION DVR 8 CHANNEL
+                                            </option>
+                                            <option value="35">
+                                                18.00% - HIKVISION DVR 16 CHANNEL
+                                            </option>
+                                            <option value="36">
+                                                18.00% - HIKVISION IP DOOM 1.3 MP
+                                            </option>
+                                            <option value="37">
+                                                18.00% - HIKVISION IP BULLET 1.3 MP
+                                            </option>
+                                            <option value="38">
+                                                18.00% - HIKVISION IP DOOM 2.0 MP
+                                            </option>
+                                            <option value="39">
+                                                18.00% - HIKVISION IP BULLET 2.0 MP
+                                            </option>
+                                            <option value="40">
+                                                18.00% - HIKVISION IP DOOM 4.0 MP
+                                            </option>
+                                            <option value="41">
+                                                18.00% - HIKVISION IP BULLET 4.0 MP
+                                            </option>
+                                            <option value="42">
+                                                18.00% - HIKVISION IP DOOM 5.0 MP
+                                            </option>
+                                            <option value="43">
+                                                18.00% - HIKVISION IP BULLET 5.0 MP
+                                            </option>
+                                            <option value="44">
+                                                18.00% - HIKVISION DVR 4 CHANNEL
+                                            </option>
+                                            <option value="45">
+                                                18.00% - HIKVISION NVR 8 CHANNEL
+                                            </option>
+                                            <option value="46">
+                                                18.00% - HIKVISION NVR 8 CHANNEL
+                                            </option>
+                                            <option value="47">
+                                                18.00% - HIKVISION NVR 16 CHANNEL
+                                            </option>
+                                            <option value="48">
+                                                18.00% - HIKVISION NVR 16 CHANNEL
+                                            </option>
+                                            <option value="50">
+                                                18.00% - logitech combo
+                                            </option>
+                                            <option value="51">
+                                                18.00% - corsaier memory module
+                                            </option>
+                                            <option value="52">
+                                                18.00% - asus 7th gen mainboard
+                                            </option>
+                                            <option value="53">
+                                                18.00% - optical drive
+                                            </option>
+                                            <option value="54">
+                                                18.00% - processer 7th gen
+                                            </option>
+                                            <option value="55">
+                                                18.00% - processer 6th gen
+                                            </option>
+                                            <option value="56">
+                                                18.00% - storage
+                                            </option>
+                                            <option value="57">
+                                                18.00% - PROCESSER
+                                            </option>
+                                            <option value="58">
+                                                18.00% - INTEL DUAL CORE
+                                            </option>
+                                            <option value="59">
+                                                18.00% - GIGABYTE GA-H110M-H
+                                            </option>
+                                            <option value="60">
+                                                18.00% - GIGABYTE GA-B250M-DS3H
+                                            </option>
+                                            <option value="61">
+                                                18.00% - western digital
+                                            </option>
+                                            <option value="62">
+                                                18.00% - CORSAIR
+                                            </option>
+                                            <option value="63">
+                                                18.00% - ZION
+                                            </option>
+                                            <option value="64">
+                                                18.00% - ANTEC
+                                            </option>
+                                            <option value="65">
+                                                18.00% - LAPCARE
+                                            </option>
+                                            <option value="67">
+                                                18.00% - BROTHER
+                                            </option>
+                                            <option value="74">
+                                                18.00% - Microsoft Corporation
+                                            </option>
+                                            <option value="75">
+                                                18.00% - sfsdffdsd
+                                            </option>
+                                            <option value="76">
+                                                18.00% - hgvhgbjhy
+                                            </option>
+                                            <option value="77">
+                                                18.00% - hgvhgbjhy
+                                            </option>
+                                            <option value="78">
+                                                18.00% - bushplus
+                                            </option>
+                                            <option value="80">
+                                                18.00% - bushplus
+                                            </option>
+                                            <option value="82">
+                                                18.00% - bushblus dvr xvr1200
+                                            </option>
+                                            <option value="86">
+                                                18.00% - WINDOWS 10 HOME
+                                            </option>
+                                            <option value="87">
+                                                18.00% - LENOVO IDEAPAD 310-15ISK
+                                            </option>
+                                            <option value="88">
+                                                18.00% - LENOVO IDEAPAD 310-15ISK
+                                            </option>
+                                            <option value="91">
+                                                18.00% - HP LaserJet 1020 Printer
+                                            </option>
+                                            <option value="92">
+                                                18.00% - LASER SHOT LBP2900B
+                                            </option>
+                                            <option value="95">
+                                                18.00% - HIKVISION HD DOME 2 MP
+                                            </option>
+                                            <option value="96">
+                                                18.00% - HIKVISION HD BULLET 2 MP
+                                            </option>
+                                            <option value="97">
+                                                18.00% - HIKVISION 2MP METAL DVR UP TO 2MP
+                                            </option>
+                                            <option value="98">
+                                                18.00% - asd
+                                            </option>
+                                            <option value="99">
+                                                18.00% - sad
+                                            </option>
+                                            <option value="102">
+                                                18.00% - HIKVISION DOOM 1MP
+                                            </option>
+                                            <option value="103">
+                                                18.00% - HIKVISION DOOM 2MP
+                                            </option>
+                                            <option value="119">
+                                                18.00% - HIKVISION DVR 16 CHANNEL
+                                            </option>
+                                            <option value="120">
+                                                18.00% - HIKVISION DVR 4 CHANNEL
+                                            </option>
+                                            <option value="121">
+                                                18.00% - HIKVISION DVR 8 CHANNEL
+                                            </option>
+                                            <option value="122">
+                                                18.00% - HIKVISION DVR 16 CHANNEL
+                                            </option>
+                                            <option value="141">
+                                                18.00% - HIKVISION IP BULLET 5.0 MP
+                                            </option>
+                                            <option value="142">
+                                                18.00% - HIKVISION DVR 4 CHANNEL
+                                            </option>
+                                            <option value="143">
+                                                18.00% - HIKVISION NVR 8 CHANNEL
+                                            </option>
+                                            <option value="144">
+                                                18.00% - HIKVISION NVR 8 CHANNEL
+                                            </option>
+                                            <option value="145">
+                                                18.00% - HIKVISION NVR 16 CHANNEL
+                                            </option>
+                                            <option value="146">
+                                                18.00% - HIKVISION NVR 16 CHANNEL
+                                            </option>
+                                            <option value="148">
+                                                18.00% - HIKVISION DOOM 1MP
+                                            </option>
+                                            <option value="149">
+                                                18.00% - HIKVISION DOOM 2MP
+                                            </option>
+                                            <option value="165">
+                                                18.00% - HIKVISION DVR 16 CHANNEL
+                                            </option>
+                                            <option value="166">
+                                                18.00% - HIKVISION DVR 4 CHANNEL
+                                            </option>
+                                            <option value="167">
+                                                18.00% - HIKVISION DVR 8 CHANNEL
+                                            </option>
+                                            <option value="168">
+                                                18.00% - HIKVISION DVR 16 CHANNEL
+                                            </option>
+                                            <option value="187">
+                                                18.00% - HIKVISION IP BULLET 5.0 MP
+                                            </option>
+                                            <option value="188">
+                                                18.00% - HIKVISION DVR 4 CHANNEL
+                                            </option>
+                                            <option value="189">
+                                                18.00% - HIKVISION NVR 8 CHANNEL
+                                            </option>
+                                            <option value="190">
+                                                18.00% - HIKVISION NVR 8 CHANNEL
+                                            </option>
+                                            <option value="191">
+                                                18.00% - HIKVISION NVR 16 CHANNEL
+                                            </option>
+                                            <option value="192">
+                                                18.00% - HIKVISION NVR 16 CHANNEL
+                                            </option>
+                                            <option value="194">
+                                                18.00% - HIKVISION DOOM 1MP
+                                            </option>
+                                            <option value="195">
+                                                18.00% - HIKVISION DOOM 2MP
+                                            </option>
+                                            <option value="211">
+                                                18.00% - HIKVISION DVR 16 CHANNEL
+                                            </option>
+                                            <option value="212">
+                                                18.00% - HIKVISION DVR 4 CHANNEL
+                                            </option>
+                                            <option value="213">
+                                                18.00% - HIKVISION DVR 8 CHANNEL
+                                            </option>
+                                            <option value="214">
+                                                18.00% - HIKVISION DVR 16 CHANNEL
+                                            </option>
+                                            <option value="233">
+                                                18.00% - HIKVISION IP BULLET 5.0 MP
+                                            </option>
+                                            <option value="234">
+                                                18.00% - HIKVISION DVR 4 CHANNEL
+                                            </option>
+                                            <option value="235">
+                                                18.00% - HIKVISION NVR 8 CHANNEL
+                                            </option>
+                                            <option value="236">
+                                                18.00% - HIKVISION NVR 8 CHANNEL
+                                            </option>
+                                            <option value="237">
+                                                18.00% - HIKVISION NVR 16 CHANNEL
+                                            </option>
+                                            <option value="238">
+                                                18.00% - HIKVISION NVR 16 CHANNEL
+                                            </option>
+                                            <option value="240">
+                                                18.00% - HIKVISION DOOM 1MP
+                                            </option>
+                                            <option value="241">
+                                                18.00% - HIKVISION DOOM 2MP
+                                            </option>
+                                            <option value="257">
+                                                18.00% - HIKVISION DVR 16 CHANNEL
+                                            </option>
+                                            <option value="258">
+                                                18.00% - HIKVISION DVR 4 CHANNEL
+                                            </option>
+                                            <option value="259">
+                                                18.00% - HIKVISION DVR 8 CHANNEL
+                                            </option>
+                                            <option value="260">
+                                                18.00% - HIKVISION DVR 16 CHANNEL
+                                            </option>
+                                            <option value="279">
+                                                18.00% - HIKVISION IP BULLET 5.0 MP
+                                            </option>
+                                            <option value="280">
+                                                18.00% - HIKVISION DVR 4 CHANNEL
+                                            </option>
+                                            <option value="281">
+                                                18.00% - HIKVISION NVR 8 CHANNEL
+                                            </option>
+                                            <option value="282">
+                                                18.00% - HIKVISION NVR 8 CHANNEL
+                                            </option>
+                                            <option value="283">
+                                                18.00% - HIKVISION NVR 16 CHANNEL
+                                            </option>
+                                            <option value="284">
+                                                18.00% - HIKVISION NVR 16 CHANNEL
+                                            </option>
+                                            <option value="285">
+                                                18.00% - Cp Plus 2.4 Mp
+                                            </option>
+                                            <option value="286">
+                                                18.00% - dvr Cp Plus 2.4 Mp
+                                            </option>
+                                            <option value="287">
+                                                18.00% - cctv powersupply
+                                            </option>
+                                            <option value="288">
+                                                18.00% - cpplus cable 90meter
+                                            </option>
+                                            <option value="289">
+                                                18.00% - Cp-plus 4 mp Doom
+                                            </option>
+                                            <option value="290">
+                                                18.00% - Cp-plus 4 mp Bullet
+                                            </option>
+                                            <option value="291">
+                                                18.00% - Cp-plus 5 mp dvr
+                                            </option>
+                                            <option value="293">
+                                                18.00% - Aten HDMI HDBaseT Extender with USB VE813
+                                            </option>
+                                            <option value="294">
+                                                18.00% - NTI 100METER IP EXTENDER - ST-IPHD-LC
+                                            </option>
+                                            <option value="295">
+                                                18.00% - CP-PLUS BIOMETRIC
+                                            </option>
+                                            <option value="296">
+                                                18.00% - HIKVISION 16CH 4K NVR DUAL HARDDISK SPEC: Third-party network cameras supported • Up to 8 Megapixels resolution recording • Support 1-ch HDMI, 1-ch VGA, HMDI at up to 4K(3840x2160) resolution • 16/32-ch network cameras can be connected with 160M/256M incoming bandwidth • Up to 4 SATA interfaces • Plug &amp; Play with up to 16 independent PoE network interfaces • Support dual-os to ensure high reliablility of system running •Support various VCA detection alarm and VCA search •Support H.265/H.264/MPEG4 video formats 8MP/6MP/5MP/4MP/3MP/1080p/UXGA/720p/VGA/4CIF/DCIF/2CIF/CIF/QCIF
+                                            </option>
+                                            <option value="297">
+                                                18.00% - HIKVISION 5MP IPCAMERA 5MP FULL HD h265+
+                                            </option>
+                                            <option value="298">
+                                                18.00% - DLINK CAT6E 100METER
+                                            </option>
+                                            <option value="299">
+                                                18.00% - 24PORT PATCH PANNEL DLINK
+                                            </option>
+                                            <option value="300">
+                                                18.00% - NT CABLE MANAGER
+                                            </option>
+                                            <option value="302">
+                                                18.00% - 24PORT POE SWITCH FOR NETWORKING
+                                            </option>
+                                            <option value="303">
+                                                18.00% - 4TB WD VIDEO HARDDISK
+                                            </option>
+                                            <option value="304">
+                                                18.00% - HIKVISION 16CH 4K NVR DUAL HARDDISK SPEC: Third-party network cameras supported • Up to 8 Megapixels resolution recording • Support 1-ch HDMI, 1-ch VGA, HMDI at up to 4K(3840x2160) resolution • 16/32-ch network cameras can be connected with 160M/256M incoming bandwidth • Up to 4 SATA interfaces • Plug &amp; Play with up to 16 independent PoE network interfaces • Support dual-os to ensure high reliablility of system running •Support various VCA detection alarm and VCA search •Support H.265/H.264/MPEG4 video formats 8MP/6MP/5MP/4MP/3MP/1080p/UXGA/720p/VGA/4CIF/DCIF/2CIF/CIF/QCIF
+                                            </option>
+                                            <option value="305">
+                                                18.00% - HIKVISION 5MP IPCAMERA 5MP FULL HD h265+
+                                            </option>
+                                            <option value="306">
+                                                18.00% - DLINK CAT6E 100METER
+                                            </option>
+                                            <option value="307">
+                                                18.00% - 24PORT PATCH PANNEL DLINK
+                                            </option>
+                                            <option value="308">
+                                                18.00% - NT CABLE MANAGER
+                                            </option>
+                                            <option value="310">
+                                                18.00% - 24PORT POE SWITCH FOR NETWORKING
+                                            </option>
+                                            <option value="311">
+                                                18.00% - 4TB WD VIDEO HARDDISK
+                                            </option>
+                                            <option value="312">
+                                                18.00% - HIKVISION 16CH 4K NVR DUAL HARDDISK SPEC: Third-party network cameras supported • Up to 8 Megapixels resolution recording • Support 1-ch HDMI, 1-ch VGA, HMDI at up to 4K(3840x2160) resolution • 16/32-ch network cameras can be connected with 160M/256M incoming bandwidth • Up to 4 SATA interfaces • Plug &amp; Play with up to 16 independent PoE network interfaces • Support dual-os to ensure high reliablility of system running •Support various VCA detection alarm and VCA search •Support H.265/H.264/MPEG4 video formats 8MP/6MP/5MP/4MP/3MP/1080p/UXGA/720p/VGA/4CIF/DCIF/2CIF/CIF/QCIF
+                                            </option>
+                                            <option value="313">
+                                                18.00% - HIKVISION 5MP IPCAMERA 5MP FULL HD h265+
+                                            </option>
+                                            <option value="314">
+                                                18.00% - DLINK CAT6E 100METER
+                                            </option>
+                                            <option value="315">
+                                                18.00% - 24PORT PATCH PANNEL DLINK
+                                            </option>
+                                            <option value="316">
+                                                18.00% - NT CABLE MANAGER
+                                            </option>
+                                            <option value="318">
+                                                18.00% - 24PORT POE SWITCH FOR NETWORKING
+                                            </option>
+                                            <option value="319">
+                                                18.00% - 4TB WD VIDEO HARDDISK
+                                            </option>
+                                            <option value="320">
+                                                18.00% - HIKVISION 16CH 4K NVR DUAL HARDDISK SPEC: Third-party network cameras supported • Up to 8 Megapixels resolution recording • Support 1-ch HDMI, 1-ch VGA, HMDI at up to 4K(3840x2160) resolution • 16/32-ch network cameras can be connected with 160M/256M incoming bandwidth • Up to 4 SATA interfaces • Plug &amp; Play with up to 16 independent PoE network interfaces • Support dual-os to ensure high reliablility of system running •Support various VCA detection alarm and VCA search •Support H.265/H.264/MPEG4 video formats 8MP/6MP/5MP/4MP/3MP/1080p/UXGA/720p/VGA/4CIF/DCIF/2CIF/CIF/QCIF
+                                            </option>
+                                            <option value="321">
+                                                18.00% - HIKVISION 5MP IPCAMERA 5MP FULL HD h265+
+                                            </option>
+                                            <option value="322">
+                                                18.00% - DLINK CAT6E 100METER
+                                            </option>
+                                            <option value="323">
+                                                18.00% - 24PORT PATCH PANNEL DLINK
+                                            </option>
+                                            <option value="324">
+                                                18.00% - NT CABLE MANAGER
+                                            </option>
+                                            <option value="326">
+                                                18.00% - 24PORT POE SWITCH FOR NETWORKING
+                                            </option>
+                                            <option value="327">
+                                                18.00% - 4TB WD VIDEO HARDDISK
+                                            </option>
+                                            <option value="328">
+                                                18.00% - HIKVISION 16CH 4K NVR DUAL HARDDISK SPEC: Third-party network cameras supported • Up to 8 Megapixels resolution recording • Support 1-ch HDMI, 1-ch VGA, HMDI at up to 4K(3840x2160) resolution • 16/32-ch network cameras can be connected with 160M/256M incoming bandwidth • Up to 4 SATA interfaces • Plug &amp; Play with up to 16 independent PoE network interfaces • Support dual-os to ensure high reliablility of system running •Support various VCA detection alarm and VCA search •Support H.265/H.264/MPEG4 video formats 8MP/6MP/5MP/4MP/3MP/1080p/UXGA/720p/VGA/4CIF/DCIF/2CIF/CIF/QCIF
+                                            </option>
+                                            <option value="329">
+                                                18.00% - HIKVISION 5MP IPCAMERA 5MP FULL HD h265+
+                                            </option>
+                                            <option value="330">
+                                                18.00% - DLINK CAT6E 100METER
+                                            </option>
+                                            <option value="331">
+                                                18.00% - 24PORT PATCH PANNEL DLINK
+                                            </option>
+                                            <option value="332">
+                                                18.00% - NT CABLE MANAGER
+                                            </option>
+                                            <option value="334">
+                                                18.00% - 24PORT POE SWITCH FOR NETWORKING
+                                            </option>
+                                            <option value="335">
+                                                18.00% - 4TB WD VIDEO HARDDISK
+                                            </option>
+                                            <option value="336">
+                                                18.00% - HIKVISION 16CH 4K NVR DUAL HARDDISK SPEC: Third-party network cameras supported • Up to 8 Megapixels resolution recording • Support 1-ch HDMI, 1-ch VGA, HMDI at up to 4K(3840x2160) resolution • 16/32-ch network cameras can be connected with 160M/256M incoming bandwidth • Up to 4 SATA interfaces • Plug &amp; Play with up to 16 independent PoE network interfaces • Support dual-os to ensure high reliablility of system running •Support various VCA detection alarm and VCA search •Support H.265/H.264/MPEG4 video formats 8MP/6MP/5MP/4MP/3MP/1080p/UXGA/720p/VGA/4CIF/DCIF/2CIF/CIF/QCIF
+                                            </option>
+                                            <option value="337">
+                                                18.00% - HIKVISION 5MP IPCAMERA 5MP FULL HD h265+
+                                            </option>
+                                            <option value="338">
+                                                18.00% - DLINK CAT6E 100METER
+                                            </option>
+                                            <option value="339">
+                                                18.00% - 24PORT PATCH PANNEL DLINK
+                                            </option>
+                                            <option value="340">
+                                                18.00% - NT CABLE MANAGER
+                                            </option>
+                                            <option value="342">
+                                                18.00% - 24PORT POE SWITCH FOR NETWORKING
+                                            </option>
+                                            <option value="343">
+                                                18.00% - 4TB WD VIDEO HARDDISK
+                                            </option>
+                                            <option value="49">
+                                                28.00% - corsier atx cabin with smps
+                                            </option>
+                                            <option value="71">
+                                                28.00% - DLINK
+                                            </option>
+                                            <option value="72">
+                                                28.00% - HP LaserJet Ultra MFP M134a (G3Q66A)
+                                            </option>
+                                            <option value="73">
+                                                28.00% - HP LaserJet M1005 Multifunction Printer
+                                            </option>
+                                            <option value="79">
+                                                28.00% - bush
+                                            </option>
+                                            <option value="81">
+                                                28.00% - bush
+                                            </option>
+                                            <option value="83">
+                                                28.00% - cpplus nvr
+                                            </option>
+                                            <option value="89">
+                                                28.00% - Canon EOS 5D Mark IV
+                                            </option>
+                                            <option value="90">
+                                                28.00% - PXW-X200 XDCAM Handheld Camcorder
+                                            </option>
+                                            <option value="94">
+                                                28.00% - HP DeskJet Ink Advantage 2676 All-in-One Printer
+                                            </option>
+                                            <option value="101">
+                                                28.00% - HIKVISION DOOM 1MP
+                                            </option>
+                                            <option value="104">
+                                                28.00% - HIKVISION DOOM 3MP
+                                            </option>
+                                            <option value="105">
+                                                28.00% - HIKVISION BULLET 1MP
+                                            </option>
+                                            <option value="106">
+                                                28.00% - HIKVISION BULLET 1MP
+                                            </option>
+                                            <option value="107">
+                                                28.00% - HIKVISION BULLET 1MP
+                                            </option>
+                                            <option value="108">
+                                                28.00% - HIKVISION BULLET 1MP
+                                            </option>
+                                            <option value="109">
+                                                28.00% - HIKVISION BULLET 2MP
+                                            </option>
+                                            <option value="110">
+                                                28.00% - HIKVISION BULLET 2MP
+                                            </option>
+                                            <option value="111">
+                                                28.00% - HIKVISION BULLET 2MP
+                                            </option>
+                                            <option value="112">
+                                                28.00% - HIKVISION BULLET 2MP
+                                            </option>
+                                            <option value="113">
+                                                28.00% - HIKVISION BULLET 2MP
+                                            </option>
+                                            <option value="114">
+                                                28.00% - HIKVISION BULLET 2MP
+                                            </option>
+                                            <option value="115">
+                                                28.00% - HIKVISION BULLET 3MP
+                                            </option>
+                                            <option value="116">
+                                                28.00% - HIKVISION BULLET 2MP
+                                            </option>
+                                            <option value="117">
+                                                28.00% - HIKVISION DVR 4 CHANNEL
+                                            </option>
+                                            <option value="118">
+                                                28.00% - HIKVISION DVR 8 CHANNEL
+                                            </option>
+                                            <option value="123">
+                                                28.00% - HIKVISION DVR 32 CHANNEL
+                                            </option>
+                                            <option value="124">
+                                                28.00% - HIKVISION DVR 4 CHANNEL
+                                            </option>
+                                            <option value="125">
+                                                28.00% - HIKVISION DVR 8 CHANNEL
+                                            </option>
+                                            <option value="126">
+                                                28.00% - HIKVISION DVR 16 CHANNEL
+                                            </option>
+                                            <option value="127">
+                                                28.00% - HIKVISION DVR 4 CHANNEL
+                                            </option>
+                                            <option value="128">
+                                                28.00% - HIKVISION DVR 8 CHANNEL
+                                            </option>
+                                            <option value="129">
+                                                28.00% - HIKVISION DVR 16 CHANNEL
+                                            </option>
+                                            <option value="130">
+                                                28.00% - HIKVISION DVR 16 CHANNEL
+                                            </option>
+                                            <option value="131">
+                                                28.00% - HIKVISION DVR 4 CHANNEL
+                                            </option>
+                                            <option value="132">
+                                                28.00% - HIKVISION DVR 8 CHANNEL
+                                            </option>
+                                            <option value="133">
+                                                28.00% - HIKVISION DVR 16 CHANNEL
+                                            </option>
+                                            <option value="134">
+                                                28.00% - HIKVISION IP DOOM 1.3 MP
+                                            </option>
+                                            <option value="135">
+                                                28.00% - HIKVISION IP BULLET 1.3 MP
+                                            </option>
+                                            <option value="136">
+                                                28.00% - HIKVISION IP DOOM 2.0 MP
+                                            </option>
+                                            <option value="137">
+                                                28.00% - HIKVISION IP BULLET 2.0 MP
+                                            </option>
+                                            <option value="138">
+                                                28.00% - HIKVISION IP DOOM 4.0 MP
+                                            </option>
+                                            <option value="139">
+                                                28.00% - HIKVISION IP BULLET 4.0 MP
+                                            </option>
+                                            <option value="140">
+                                                28.00% - HIKVISION IP DOOM 5.0 MP
+                                            </option>
+                                            <option value="147">
+                                                28.00% - HIKVISION DOOM 1MP
+                                            </option>
+                                            <option value="150">
+                                                28.00% - HIKVISION DOOM 3MP
+                                            </option>
+                                            <option value="151">
+                                                28.00% - HIKVISION BULLET 1MP
+                                            </option>
+                                            <option value="152">
+                                                28.00% - HIKVISION BULLET 1MP
+                                            </option>
+                                            <option value="153">
+                                                28.00% - HIKVISION BULLET 1MP
+                                            </option>
+                                            <option value="154">
+                                                28.00% - HIKVISION BULLET 1MP
+                                            </option>
+                                            <option value="155">
+                                                28.00% - HIKVISION BULLET 2MP
+                                            </option>
+                                            <option value="156">
+                                                28.00% - HIKVISION BULLET 2MP
+                                            </option>
+                                            <option value="157">
+                                                28.00% - HIKVISION BULLET 2MP
+                                            </option>
+                                            <option value="158">
+                                                28.00% - HIKVISION BULLET 2MP
+                                            </option>
+                                            <option value="159">
+                                                28.00% - HIKVISION BULLET 2MP
+                                            </option>
+                                            <option value="160">
+                                                28.00% - HIKVISION BULLET 2MP
+                                            </option>
+                                            <option value="161">
+                                                28.00% - HIKVISION BULLET 3MP
+                                            </option>
+                                            <option value="162">
+                                                28.00% - HIKVISION BULLET 2MP
+                                            </option>
+                                            <option value="163">
+                                                28.00% - HIKVISION DVR 4 CHANNEL
+                                            </option>
+                                            <option value="164">
+                                                28.00% - HIKVISION DVR 8 CHANNEL
+                                            </option>
+                                            <option value="169">
+                                                28.00% - HIKVISION DVR 32 CHANNEL
+                                            </option>
+                                            <option value="170">
+                                                28.00% - HIKVISION DVR 4 CHANNEL
+                                            </option>
+                                            <option value="171">
+                                                28.00% - HIKVISION DVR 8 CHANNEL
+                                            </option>
+                                            <option value="172">
+                                                28.00% - HIKVISION DVR 16 CHANNEL
+                                            </option>
+                                            <option value="173">
+                                                28.00% - HIKVISION DVR 4 CHANNEL
+                                            </option>
+                                            <option value="174">
+                                                28.00% - HIKVISION DVR 8 CHANNEL
+                                            </option>
+                                            <option value="175">
+                                                28.00% - HIKVISION DVR 16 CHANNEL
+                                            </option>
+                                            <option value="176">
+                                                28.00% - HIKVISION DVR 16 CHANNEL
+                                            </option>
+                                            <option value="177">
+                                                28.00% - HIKVISION DVR 4 CHANNEL
+                                            </option>
+                                            <option value="178">
+                                                28.00% - HIKVISION DVR 8 CHANNEL
+                                            </option>
+                                            <option value="179">
+                                                28.00% - HIKVISION DVR 16 CHANNEL
+                                            </option>
+                                            <option value="180">
+                                                28.00% - HIKVISION IP DOOM 1.3 MP
+                                            </option>
+                                            <option value="181">
+                                                28.00% - HIKVISION IP BULLET 1.3 MP
+                                            </option>
+                                            <option value="182">
+                                                28.00% - HIKVISION IP DOOM 2.0 MP
+                                            </option>
+                                            <option value="183">
+                                                28.00% - HIKVISION IP BULLET 2.0 MP
+                                            </option>
+                                            <option value="184">
+                                                28.00% - HIKVISION IP DOOM 4.0 MP
+                                            </option>
+                                            <option value="185">
+                                                28.00% - HIKVISION IP BULLET 4.0 MP
+                                            </option>
+                                            <option value="186">
+                                                28.00% - HIKVISION IP DOOM 5.0 MP
+                                            </option>
+                                            <option value="193">
+                                                28.00% - HIKVISION DOOM 1MP
+                                            </option>
+                                            <option value="196">
+                                                28.00% - HIKVISION DOOM 3MP
+                                            </option>
+                                            <option value="197">
+                                                28.00% - HIKVISION BULLET 1MP
+                                            </option>
+                                            <option value="198">
+                                                28.00% - HIKVISION BULLET 1MP
+                                            </option>
+                                            <option value="199">
+                                                28.00% - HIKVISION BULLET 1MP
+                                            </option>
+                                            <option value="200">
+                                                28.00% - HIKVISION BULLET 1MP
+                                            </option>
+                                            <option value="201">
+                                                28.00% - HIKVISION BULLET 2MP
+                                            </option>
+                                            <option value="202">
+                                                28.00% - HIKVISION BULLET 2MP
+                                            </option>
+                                            <option value="203">
+                                                28.00% - HIKVISION BULLET 2MP
+                                            </option>
+                                            <option value="204">
+                                                28.00% - HIKVISION BULLET 2MP
+                                            </option>
+                                            <option value="205">
+                                                28.00% - HIKVISION BULLET 2MP
+                                            </option>
+                                            <option value="206">
+                                                28.00% - HIKVISION BULLET 2MP
+                                            </option>
+                                            <option value="207">
+                                                28.00% - HIKVISION BULLET 3MP
+                                            </option>
+                                            <option value="208">
+                                                28.00% - HIKVISION BULLET 2MP
+                                            </option>
+                                            <option value="209">
+                                                28.00% - HIKVISION DVR 4 CHANNEL
+                                            </option>
+                                            <option value="210">
+                                                28.00% - HIKVISION DVR 8 CHANNEL
+                                            </option>
+                                            <option value="215">
+                                                28.00% - HIKVISION DVR 32 CHANNEL
+                                            </option>
+                                            <option value="216">
+                                                28.00% - HIKVISION DVR 4 CHANNEL
+                                            </option>
+                                            <option value="217">
+                                                28.00% - HIKVISION DVR 8 CHANNEL
+                                            </option>
+                                            <option value="218">
+                                                28.00% - HIKVISION DVR 16 CHANNEL
+                                            </option>
+                                            <option value="219">
+                                                28.00% - HIKVISION DVR 4 CHANNEL
+                                            </option>
+                                            <option value="220">
+                                                28.00% - HIKVISION DVR 8 CHANNEL
+                                            </option>
+                                            <option value="221">
+                                                28.00% - HIKVISION DVR 16 CHANNEL
+                                            </option>
+                                            <option value="222">
+                                                28.00% - HIKVISION DVR 16 CHANNEL
+                                            </option>
+                                            <option value="223">
+                                                28.00% - HIKVISION DVR 4 CHANNEL
+                                            </option>
+                                            <option value="224">
+                                                28.00% - HIKVISION DVR 8 CHANNEL
+                                            </option>
+                                            <option value="225">
+                                                28.00% - HIKVISION DVR 16 CHANNEL
+                                            </option>
+                                            <option value="226">
+                                                28.00% - HIKVISION IP DOOM 1.3 MP
+                                            </option>
+                                            <option value="227">
+                                                28.00% - HIKVISION IP BULLET 1.3 MP
+                                            </option>
+                                            <option value="228">
+                                                28.00% - HIKVISION IP DOOM 2.0 MP
+                                            </option>
+                                            <option value="229">
+                                                28.00% - HIKVISION IP BULLET 2.0 MP
+                                            </option>
+                                            <option value="230">
+                                                28.00% - HIKVISION IP DOOM 4.0 MP
+                                            </option>
+                                            <option value="231">
+                                                28.00% - HIKVISION IP BULLET 4.0 MP
+                                            </option>
+                                            <option value="232">
+                                                28.00% - HIKVISION IP DOOM 5.0 MP
+                                            </option>
+                                            <option value="239">
+                                                28.00% - HIKVISION DOOM 1MP
+                                            </option>
+                                            <option value="242">
+                                                28.00% - HIKVISION DOOM 3MP
+                                            </option>
+                                            <option value="243">
+                                                28.00% - HIKVISION BULLET 1MP
+                                            </option>
+                                            <option value="244">
+                                                28.00% - HIKVISION BULLET 1MP
+                                            </option>
+                                            <option value="245">
+                                                28.00% - HIKVISION BULLET 1MP
+                                            </option>
+                                            <option value="246">
+                                                28.00% - HIKVISION BULLET 1MP
+                                            </option>
+                                            <option value="247">
+                                                28.00% - HIKVISION BULLET 2MP
+                                            </option>
+                                            <option value="248">
+                                                28.00% - HIKVISION BULLET 2MP
+                                            </option>
+                                            <option value="249">
+                                                28.00% - HIKVISION BULLET 2MP
+                                            </option>
+                                            <option value="250">
+                                                28.00% - HIKVISION BULLET 2MP
+                                            </option>
+                                            <option value="251">
+                                                28.00% - HIKVISION BULLET 2MP
+                                            </option>
+                                            <option value="252">
+                                                28.00% - HIKVISION BULLET 2MP
+                                            </option>
+                                            <option value="253">
+                                                28.00% - HIKVISION BULLET 3MP
+                                            </option>
+                                            <option value="254">
+                                                28.00% - HIKVISION BULLET 2MP
+                                            </option>
+                                            <option value="255">
+                                                28.00% - HIKVISION DVR 4 CHANNEL
+                                            </option>
+                                            <option value="256">
+                                                28.00% - HIKVISION DVR 8 CHANNEL
+                                            </option>
+                                            <option value="261">
+                                                28.00% - HIKVISION DVR 32 CHANNEL
+                                            </option>
+                                            <option value="262">
+                                                28.00% - HIKVISION DVR 4 CHANNEL
+                                            </option>
+                                            <option value="263">
+                                                28.00% - HIKVISION DVR 8 CHANNEL
+                                            </option>
+                                            <option value="264">
+                                                28.00% - HIKVISION DVR 16 CHANNEL
+                                            </option>
+                                            <option value="265">
+                                                28.00% - HIKVISION DVR 4 CHANNEL
+                                            </option>
+                                            <option value="266">
+                                                28.00% - HIKVISION DVR 8 CHANNEL
+                                            </option>
+                                            <option value="267">
+                                                28.00% - HIKVISION DVR 16 CHANNEL
+                                            </option>
+                                            <option value="268">
+                                                28.00% - HIKVISION DVR 16 CHANNEL
+                                            </option>
+                                            <option value="269">
+                                                28.00% - HIKVISION DVR 4 CHANNEL
+                                            </option>
+                                            <option value="270">
+                                                28.00% - HIKVISION DVR 8 CHANNEL
+                                            </option>
+                                            <option value="271">
+                                                28.00% - HIKVISION DVR 16 CHANNEL
+                                            </option>
+                                            <option value="272">
+                                                28.00% - HIKVISION IP DOOM 1.3 MP
+                                            </option>
+                                            <option value="273">
+                                                28.00% - HIKVISION IP BULLET 1.3 MP
+                                            </option>
+                                            <option value="274">
+                                                28.00% - HIKVISION IP DOOM 2.0 MP
+                                            </option>
+                                            <option value="275">
+                                                28.00% - HIKVISION IP BULLET 2.0 MP
+                                            </option>
+                                            <option value="276">
+                                                28.00% - HIKVISION IP DOOM 4.0 MP
+                                            </option>
+                                            <option value="277">
+                                                28.00% - HIKVISION IP BULLET 4.0 MP
+                                            </option>
+                                            <option value="278">
+                                                28.00% - HIKVISION IP DOOM 5.0 MP
+                                            </option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td class="td-icon text-right td-vert-middle"></td>
+                            </tr>
+                            <tr>
+
+                                <!--       <td colspan="2" class="td-amount td-vert-middle">
+                                          <span></span><br/>
+                                          <span name="subtotal" class="amount"></span>
+                                      </td>
+                                      <td class="td-amount td-vert-middle">
+                                          <span></span><br/>
+                                          <span name="item_discount_total" class="amount"></span>
+                                      </td>
+                                      <td class="td-amount td-vert-middle">
+                                          <span></span><br/>
+                                          <span name="item_tax_total" class="amount"></span>
+                                      </td>
+                                      <td class="td-amount td-vert-middle">
+                                          <span></span><br/>
+                                          <span name="item_total" class="amount"></span>
+                                      </td> -->
+                            </tr>
+
+                        </tbody>
+
+
+                    </table>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 col-md-4">
+                        <div class="btn-group">
+                            <a href="http://amdsystems.in/billing/products/view_index" class="btn_add_row btn btn-sm btn-default">
+                                <i class="fa fa-plus"></i> Add New Product
+                            </a>
+                            <a href="#" class="btn_add_product btn btn-sm btn-default">
+                                <i class="fa fa-database"></i>
+                                Add product
+                            </a>
+                        </div>
+                        <br><br>
+                    </div>
+
+                    <div class="col-xs-12 col-md-6 col-md-offset-2 col-lg-4 col-lg-offset-4">
+                        <table class="table table-condensed text-right">
+                            <tbody>
+                                <tr>
+                                    <td style="width: 40%;">Subtotal</td>
+                                    <td style="width: 60%;" class="amount">‎₹0.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="td-vert-middle">Discount</td>
+                                    <td class="clearfix">
+                                        ‎₹0.00
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>CGST</td>
+                                    <td class="amount">‎₹0.00</td>
+                                </tr>
+                                <tr>
+                                    <td>SGST</td>
+                                    <td class="amount">‎₹0.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Paid</td>
+                                    <td class="amount">‎₹0.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Balance</td>
+                                    <td class="amount">‎₹0.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Total</td>
+                                    <td class="amount"><b>‎₹0.00</b></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <script type="text/javascript">
+$(document).ready(function(){
+
+    $('input[name="item_quantity"]:eq(1)').focus();
+$('input[name="item_quantity"]').on('keypress',function(e){
+var x=e.keyCode;
+if(x == 13)
+{
+    var attr=$(this).attr('data-attr');
+var kart=$('#quantity_auto_change'+attr).val();
+var quantity=$(this).val();
+
+console.log(quantity);
+console.log(kart);
+$("#quantity_auto_change"+attr).val(kart*quantity);
+   // alert('dsasdasda');
+  $('#get_imp_id').focus()
+   var select2 = $("#get_imp_id").data('select2');
+   select2.open();
+}
+});
+$('input[name="item_price"]').on('keypress',function(e){
+var x=e.keyCode;
+if(x == 13)
+{
+
+  $('#get_imp_id').focus()
+   var select2 = $("#get_imp_id").data('select2');
+   select2.open();
+}
+});
+    });
+
+                </script>
+                <hr>
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-4">
+
+                        <label>Invoice Terms</label>
+                        <textarea id="invoice_terms" name="invoice_terms" class="form-control" rows="3">GREEATINGS FROM AMD SYSTEMS
+ABOVE MENTION PRODUCTS ARE CONTAIN ONE YEAR WARENTY
+75% PAYMENTS IN ADVANCE SHOULD BE PAY BY THE CUSTOMERS
+CHEQ IN THE NAME OF AMDSYSTEMS
+THIS IS COMPUTER GENERATED QUOTE NO SIGNATURE
+FOR FURTHER DETAIL CALL OUR SALES TEAM B.ARUNMOZHIDEVAN (+91
+9894789477)
+TIN - 33534224053
+CST - 934425</textarea>
+
+                    </div>
+                    <div class="col-xs-12 col-sm-8">
+
+                        <!-- <label class="control-label">Attachments</label> -->
+                        <br>
+                        <!-- The fileinput-button span is used to style the file input field as button -->
+                        <!--  <span class="btn btn-default fileinput-button">
+                             <i class="fa fa-plus"></i>
+                             <span>Add Files...</span>
+                         </span> -->
+                        <!-- dropzone -->
+                        <div class="row">
+                            <div id="actions" class="col-xs-12 col-sm-12">
+                                <div class="col-lg-7"></div>
+                                <div class="col-lg-5">
+                                    <!-- The global file processing state -->
+                                    <!-- <span class="fileupload-process">
+                                        <div id="total-progress" class="progress progress-striped active" role="progressbar"
+                                             aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                                            <div class="progress-bar progress-bar-success" style="width:0%;"
+                                                 data-dz-uploadprogress></div>
+                                        </div>
+                                    </span> -->
+                                </div>
+
+                                <div id="previews" class="table table-condensed table-striped files">
+
+                                </div>
+                            </div>
+                            <!-- stop dropzone -->
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+
+        </form>
+
+    </div>
+</div>

@@ -1,0 +1,707 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AMDModelStoreContainer" CdmEntityContainer="AMDSystemsEntities">
+    <EntitySetMapping Name="ip_client_custom">
+      <EntityTypeMapping TypeName="AMDModel.ip_client_custom">
+        <MappingFragment StoreEntitySet="ip_client_custom">
+          <ScalarProperty Name="client_id" ColumnName="client_id" />
+          <ScalarProperty Name="client_custom_id" ColumnName="client_custom_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_client_notes">
+      <EntityTypeMapping TypeName="AMDModel.ip_client_notes">
+        <MappingFragment StoreEntitySet="ip_client_notes">
+          <ScalarProperty Name="client_note" ColumnName="client_note" />
+          <ScalarProperty Name="client_note_date" ColumnName="client_note_date" />
+          <ScalarProperty Name="client_id" ColumnName="client_id" />
+          <ScalarProperty Name="client_note_id" ColumnName="client_note_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_clients">
+      <EntityTypeMapping TypeName="AMDModel.ip_clients">
+        <MappingFragment StoreEntitySet="ip_clients">
+          <ScalarProperty Name="clientType" ColumnName="clientType" />
+          <ScalarProperty Name="isdelete" ColumnName="isdelete" />
+          <ScalarProperty Name="client_active" ColumnName="client_active" />
+          <ScalarProperty Name="client_tax_code" ColumnName="client_tax_code" />
+          <ScalarProperty Name="client_vat_id" ColumnName="client_vat_id" />
+          <ScalarProperty Name="client_web" ColumnName="client_web" />
+          <ScalarProperty Name="client_email" ColumnName="client_email" />
+          <ScalarProperty Name="client_mobile" ColumnName="client_mobile" />
+          <ScalarProperty Name="client_fax" ColumnName="client_fax" />
+          <ScalarProperty Name="client_phone" ColumnName="client_phone" />
+          <ScalarProperty Name="client_country" ColumnName="client_country" />
+          <ScalarProperty Name="client_zip" ColumnName="client_zip" />
+          <ScalarProperty Name="client_state" ColumnName="client_state" />
+          <ScalarProperty Name="client_city" ColumnName="client_city" />
+          <ScalarProperty Name="client_address_2" ColumnName="client_address_2" />
+          <ScalarProperty Name="client_address_1" ColumnName="client_address_1" />
+          <ScalarProperty Name="client_name" ColumnName="client_name" />
+          <ScalarProperty Name="client_date_modified" ColumnName="client_date_modified" />
+          <ScalarProperty Name="client_date_created" ColumnName="client_date_created" />
+          <ScalarProperty Name="client_id" ColumnName="client_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_company">
+      <EntityTypeMapping TypeName="AMDModel.ip_company">
+        <MappingFragment StoreEntitySet="ip_company">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="company_name" ColumnName="company_name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_company_profile">
+      <EntityTypeMapping TypeName="AMDModel.ip_company_profile">
+        <MappingFragment StoreEntitySet="ip_company_profile">
+          <ScalarProperty Name="Prefix" ColumnName="Prefix" />
+          <ScalarProperty Name="Terms" ColumnName="Terms" />
+          <ScalarProperty Name="CloseMessage" ColumnName="CloseMessage" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="SenderId" ColumnName="SenderId" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Template" ColumnName="Template" />
+          <ScalarProperty Name="CompanyTINNumber" ColumnName="CompanyTINNumber" />
+          <ScalarProperty Name="CompanyLogo" ColumnName="CompanyLogo" />
+          <ScalarProperty Name="CompanyEmailId" ColumnName="CompanyEmailId" />
+          <ScalarProperty Name="CompanyPhoneNumber" ColumnName="CompanyPhoneNumber" />
+          <ScalarProperty Name="CompanyAddress" ColumnName="CompanyAddress" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_custom_fields">
+      <EntityTypeMapping TypeName="AMDModel.ip_custom_fields">
+        <MappingFragment StoreEntitySet="ip_custom_fields">
+          <ScalarProperty Name="custom_field_column" ColumnName="custom_field_column" />
+          <ScalarProperty Name="custom_field_label" ColumnName="custom_field_label" />
+          <ScalarProperty Name="custom_field_table" ColumnName="custom_field_table" />
+          <ScalarProperty Name="custom_field_id" ColumnName="custom_field_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_estimate">
+      <EntityTypeMapping TypeName="AMDModel.ip_estimate">
+        <MappingFragment StoreEntitySet="ip_estimate">
+          <ScalarProperty Name="notes" ColumnName="notes" />
+          <ScalarProperty Name="quote_password" ColumnName="quote_password" />
+          <ScalarProperty Name="quote_url_key" ColumnName="quote_url_key" />
+          <ScalarProperty Name="quote_discount_percent" ColumnName="quote_discount_percent" />
+          <ScalarProperty Name="quote_discount_amount" ColumnName="quote_discount_amount" />
+          <ScalarProperty Name="quote_number" ColumnName="quote_number" />
+          <ScalarProperty Name="quote_date_expires" ColumnName="quote_date_expires" />
+          <ScalarProperty Name="quote_date_modified" ColumnName="quote_date_modified" />
+          <ScalarProperty Name="quote_date_created" ColumnName="quote_date_created" />
+          <ScalarProperty Name="quote_status_id" ColumnName="quote_status_id" />
+          <ScalarProperty Name="invoice_group_id" ColumnName="invoice_group_id" />
+          <ScalarProperty Name="client_id" ColumnName="client_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="invoice_id" ColumnName="invoice_id" />
+          <ScalarProperty Name="quote_id" ColumnName="quote_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_estimate_items">
+      <EntityTypeMapping TypeName="AMDModel.ip_estimate_items">
+        <MappingFragment StoreEntitySet="ip_estimate_items">
+          <ScalarProperty Name="clientnum" ColumnName="clientnum" />
+          <ScalarProperty Name="clientname" ColumnName="clientname" />
+          <ScalarProperty Name="item_serial" ColumnName="item_serial" />
+          <ScalarProperty Name="item_order" ColumnName="item_order" />
+          <ScalarProperty Name="item_discount_amount" ColumnName="item_discount_amount" />
+          <ScalarProperty Name="item_price" ColumnName="item_price" />
+          <ScalarProperty Name="item_quantity" ColumnName="item_quantity" />
+          <ScalarProperty Name="item_description" ColumnName="item_description" />
+          <ScalarProperty Name="item_name" ColumnName="item_name" />
+          <ScalarProperty Name="item_date_added" ColumnName="item_date_added" />
+          <ScalarProperty Name="item_product_id" ColumnName="item_product_id" />
+          <ScalarProperty Name="item_tax_rate_id" ColumnName="item_tax_rate_id" />
+          <ScalarProperty Name="quote_id" ColumnName="quote_id" />
+          <ScalarProperty Name="item_id" ColumnName="item_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_families">
+      <EntityTypeMapping TypeName="AMDModel.ip_families">
+        <MappingFragment StoreEntitySet="ip_families">
+          <ScalarProperty Name="family_name" ColumnName="family_name" />
+          <ScalarProperty Name="family_id" ColumnName="family_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_import_details">
+      <EntityTypeMapping TypeName="AMDModel.ip_import_details">
+        <MappingFragment StoreEntitySet="ip_import_details">
+          <ScalarProperty Name="import_record_id" ColumnName="import_record_id" />
+          <ScalarProperty Name="import_table_name" ColumnName="import_table_name" />
+          <ScalarProperty Name="import_lang_key" ColumnName="import_lang_key" />
+          <ScalarProperty Name="import_id" ColumnName="import_id" />
+          <ScalarProperty Name="import_detail_id" ColumnName="import_detail_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_imports">
+      <EntityTypeMapping TypeName="AMDModel.ip_imports">
+        <MappingFragment StoreEntitySet="ip_imports">
+          <ScalarProperty Name="import_date" ColumnName="import_date" />
+          <ScalarProperty Name="import_id" ColumnName="import_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_invoice_amounts">
+      <EntityTypeMapping TypeName="AMDModel.ip_invoice_amounts">
+        <MappingFragment StoreEntitySet="ip_invoice_amounts">
+          <ScalarProperty Name="invoice_balance" ColumnName="invoice_balance" />
+          <ScalarProperty Name="invoice_paid" ColumnName="invoice_paid" />
+          <ScalarProperty Name="invoice_total" ColumnName="invoice_total" />
+          <ScalarProperty Name="invoice_tax_total" ColumnName="invoice_tax_total" />
+          <ScalarProperty Name="invoice_item_tax_total" ColumnName="invoice_item_tax_total" />
+          <ScalarProperty Name="invoice_item_subtotal" ColumnName="invoice_item_subtotal" />
+          <ScalarProperty Name="invoice_id" ColumnName="invoice_id" />
+          <ScalarProperty Name="invoice_amount_id" ColumnName="invoice_amount_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_invoice_custom">
+      <EntityTypeMapping TypeName="AMDModel.ip_invoice_custom">
+        <MappingFragment StoreEntitySet="ip_invoice_custom">
+          <ScalarProperty Name="invoice_custom_order_date" ColumnName="invoice_custom_order_date" />
+          <ScalarProperty Name="invoice_custom_order_no" ColumnName="invoice_custom_order_no" />
+          <ScalarProperty Name="invoice_custom_delivery_date" ColumnName="invoice_custom_delivery_date" />
+          <ScalarProperty Name="invoice_custom_delivery_note" ColumnName="invoice_custom_delivery_note" />
+          <ScalarProperty Name="invoice_id" ColumnName="invoice_id" />
+          <ScalarProperty Name="invoice_custom_id" ColumnName="invoice_custom_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_invoice_groups">
+      <EntityTypeMapping TypeName="AMDModel.ip_invoice_groups">
+        <MappingFragment StoreEntitySet="ip_invoice_groups">
+          <ScalarProperty Name="invoice_group_left_pad" ColumnName="invoice_group_left_pad" />
+          <ScalarProperty Name="invoice_group_next_id" ColumnName="invoice_group_next_id" />
+          <ScalarProperty Name="invoice_group_identifier_format" ColumnName="invoice_group_identifier_format" />
+          <ScalarProperty Name="invoice_group_name" ColumnName="invoice_group_name" />
+          <ScalarProperty Name="invoice_group_id" ColumnName="invoice_group_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_invoice_item_amounts">
+      <EntityTypeMapping TypeName="AMDModel.ip_invoice_item_amounts">
+        <MappingFragment StoreEntitySet="ip_invoice_item_amounts">
+          <ScalarProperty Name="item_total" ColumnName="item_total" />
+          <ScalarProperty Name="item_discount" ColumnName="item_discount" />
+          <ScalarProperty Name="item_tax_total" ColumnName="item_tax_total" />
+          <ScalarProperty Name="item_subtotal" ColumnName="item_subtotal" />
+          <ScalarProperty Name="item_id" ColumnName="item_id" />
+          <ScalarProperty Name="item_amount_id" ColumnName="item_amount_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_invoice_items">
+      <EntityTypeMapping TypeName="AMDModel.ip_invoice_items">
+        <MappingFragment StoreEntitySet="ip_invoice_items">
+          <ScalarProperty Name="item_serial" ColumnName="item_serial" />
+          <ScalarProperty Name="item_order" ColumnName="item_order" />
+          <ScalarProperty Name="item_discount_amount" ColumnName="item_discount_amount" />
+          <ScalarProperty Name="item_price" ColumnName="item_price" />
+          <ScalarProperty Name="item_quantity" ColumnName="item_quantity" />
+          <ScalarProperty Name="item_description" ColumnName="item_description" />
+          <ScalarProperty Name="item_name" ColumnName="item_name" />
+          <ScalarProperty Name="item_date_added" ColumnName="item_date_added" />
+          <ScalarProperty Name="item_product_id" ColumnName="item_product_id" />
+          <ScalarProperty Name="item_tax_rate_id" ColumnName="item_tax_rate_id" />
+          <ScalarProperty Name="invoice_id" ColumnName="invoice_id" />
+          <ScalarProperty Name="item_id" ColumnName="item_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_invoice_tax_rates">
+      <EntityTypeMapping TypeName="AMDModel.ip_invoice_tax_rates">
+        <MappingFragment StoreEntitySet="ip_invoice_tax_rates">
+          <ScalarProperty Name="invoice_tax_rate_amount" ColumnName="invoice_tax_rate_amount" />
+          <ScalarProperty Name="include_item_tax" ColumnName="include_item_tax" />
+          <ScalarProperty Name="tax_rate_id" ColumnName="tax_rate_id" />
+          <ScalarProperty Name="invoice_id" ColumnName="invoice_id" />
+          <ScalarProperty Name="invoice_tax_rate_id" ColumnName="invoice_tax_rate_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_invoices">
+      <EntityTypeMapping TypeName="AMDModel.ip_invoices">
+        <MappingFragment StoreEntitySet="ip_invoices">
+          <ScalarProperty Name="creditinvoice_parent_id" ColumnName="creditinvoice_parent_id" />
+          <ScalarProperty Name="payment_method" ColumnName="payment_method" />
+          <ScalarProperty Name="invoice_url_key" ColumnName="invoice_url_key" />
+          <ScalarProperty Name="invoice_terms" ColumnName="invoice_terms" />
+          <ScalarProperty Name="invoice_discount_percent" ColumnName="invoice_discount_percent" />
+          <ScalarProperty Name="invoice_discount_amount" ColumnName="invoice_discount_amount" />
+          <ScalarProperty Name="invoice_number" ColumnName="invoice_number" />
+          <ScalarProperty Name="invoice_date_due" ColumnName="invoice_date_due" />
+          <ScalarProperty Name="invoice_date_modified" ColumnName="invoice_date_modified" />
+          <ScalarProperty Name="invoice_time_created" ColumnName="invoice_time_created" />
+          <ScalarProperty Name="invoice_date_created" ColumnName="invoice_date_created" />
+          <ScalarProperty Name="invoice_password" ColumnName="invoice_password" />
+          <ScalarProperty Name="is_read_only" ColumnName="is_read_only" />
+          <ScalarProperty Name="invoice_status_id" ColumnName="invoice_status_id" />
+          <ScalarProperty Name="invoice_group_id" ColumnName="invoice_group_id" />
+          <ScalarProperty Name="client_id" ColumnName="client_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="invoice_id" ColumnName="invoice_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_invoices_recurring">
+      <EntityTypeMapping TypeName="AMDModel.ip_invoices_recurring">
+        <MappingFragment StoreEntitySet="ip_invoices_recurring">
+          <ScalarProperty Name="recur_next_date" ColumnName="recur_next_date" />
+          <ScalarProperty Name="recur_frequency" ColumnName="recur_frequency" />
+          <ScalarProperty Name="recur_end_date" ColumnName="recur_end_date" />
+          <ScalarProperty Name="recur_start_date" ColumnName="recur_start_date" />
+          <ScalarProperty Name="invoice_id" ColumnName="invoice_id" />
+          <ScalarProperty Name="invoice_recurring_id" ColumnName="invoice_recurring_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_job_portal">
+      <EntityTypeMapping TypeName="AMDModel.ip_job_portal">
+        <MappingFragment StoreEntitySet="ip_job_portal">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="terms_conditions" ColumnName="terms_conditions" />
+          <ScalarProperty Name="remarks" ColumnName="remarks" />
+          <ScalarProperty Name="problem" ColumnName="problem" />
+          <ScalarProperty Name="paidamount" ColumnName="paidamount" />
+          <ScalarProperty Name="gurantee" ColumnName="gurantee" />
+          <ScalarProperty Name="sl_no" ColumnName="sl_no" />
+          <ScalarProperty Name="model" ColumnName="model" />
+          <ScalarProperty Name="make" ColumnName="make" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="job_number" ColumnName="job_number" />
+          <ScalarProperty Name="company" ColumnName="company" />
+          <ScalarProperty Name="customer_address" ColumnName="customer_address" />
+          <ScalarProperty Name="customer_mobile" ColumnName="customer_mobile" />
+          <ScalarProperty Name="customer_name" ColumnName="customer_name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_make">
+      <EntityTypeMapping TypeName="AMDModel.ip_make">
+        <MappingFragment StoreEntitySet="ip_make">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="make_name" ColumnName="make_name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_merchant_responses">
+      <EntityTypeMapping TypeName="AMDModel.ip_merchant_responses">
+        <MappingFragment StoreEntitySet="ip_merchant_responses">
+          <ScalarProperty Name="merchant_response_reference" ColumnName="merchant_response_reference" />
+          <ScalarProperty Name="merchant_response" ColumnName="merchant_response" />
+          <ScalarProperty Name="merchant_response_driver" ColumnName="merchant_response_driver" />
+          <ScalarProperty Name="merchant_response_date" ColumnName="merchant_response_date" />
+          <ScalarProperty Name="invoice_id" ColumnName="invoice_id" />
+          <ScalarProperty Name="merchant_response_id" ColumnName="merchant_response_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_model">
+      <EntityTypeMapping TypeName="AMDModel.ip_model">
+        <MappingFragment StoreEntitySet="ip_model">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="modee_name" ColumnName="modee_name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_payment_custom">
+      <EntityTypeMapping TypeName="AMDModel.ip_payment_custom">
+        <MappingFragment StoreEntitySet="ip_payment_custom">
+          <ScalarProperty Name="payment_id" ColumnName="payment_id" />
+          <ScalarProperty Name="payment_custom_id" ColumnName="payment_custom_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_payment_methods">
+      <EntityTypeMapping TypeName="AMDModel.ip_payment_methods">
+        <MappingFragment StoreEntitySet="ip_payment_methods">
+          <ScalarProperty Name="payment_method_name" ColumnName="payment_method_name" />
+          <ScalarProperty Name="payment_method_id" ColumnName="payment_method_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_payments">
+      <EntityTypeMapping TypeName="AMDModel.ip_payments">
+        <MappingFragment StoreEntitySet="ip_payments">
+          <ScalarProperty Name="payment_note" ColumnName="payment_note" />
+          <ScalarProperty Name="payment_amount" ColumnName="payment_amount" />
+          <ScalarProperty Name="payment_date" ColumnName="payment_date" />
+          <ScalarProperty Name="payment_method_id" ColumnName="payment_method_id" />
+          <ScalarProperty Name="quote_id" ColumnName="quote_id" />
+          <ScalarProperty Name="payment_id" ColumnName="payment_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_products">
+      <EntityTypeMapping TypeName="AMDModel.ip_products">
+        <MappingFragment StoreEntitySet="ip_products">
+          <ScalarProperty Name="isdelete" ColumnName="isdelete" />
+          <ScalarProperty Name="purchase_org_price" ColumnName="purchase_org_price" />
+          <ScalarProperty Name="other_info" ColumnName="other_info" />
+          <ScalarProperty Name="selling_price" ColumnName="selling_price" />
+          <ScalarProperty Name="warenty_detail" ColumnName="warenty_detail" />
+          <ScalarProperty Name="supp_name" ColumnName="supp_name" />
+          <ScalarProperty Name="serial_number" ColumnName="serial_number" />
+          <ScalarProperty Name="sub_cate" ColumnName="sub_cate" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="tax_rate_id" ColumnName="tax_rate_id" />
+          <ScalarProperty Name="provider_name" ColumnName="provider_name" />
+          <ScalarProperty Name="purchase_price" ColumnName="purchase_price" />
+          <ScalarProperty Name="product_price" ColumnName="product_price" />
+          <ScalarProperty Name="product_description" ColumnName="product_description" />
+          <ScalarProperty Name="product_name" ColumnName="product_name" />
+          <ScalarProperty Name="product_sku" ColumnName="product_sku" />
+          <ScalarProperty Name="family_id" ColumnName="family_id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_projects">
+      <EntityTypeMapping TypeName="AMDModel.ip_projects">
+        <MappingFragment StoreEntitySet="ip_projects">
+          <ScalarProperty Name="project_name" ColumnName="project_name" />
+          <ScalarProperty Name="client_id" ColumnName="client_id" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_purchase">
+      <EntityTypeMapping TypeName="AMDModel.ip_purchase">
+        <MappingFragment StoreEntitySet="ip_purchase">
+          <ScalarProperty Name="notes" ColumnName="notes" />
+          <ScalarProperty Name="quote_password" ColumnName="quote_password" />
+          <ScalarProperty Name="quote_url_key" ColumnName="quote_url_key" />
+          <ScalarProperty Name="quote_discount_percent" ColumnName="quote_discount_percent" />
+          <ScalarProperty Name="quote_discount_amount" ColumnName="quote_discount_amount" />
+          <ScalarProperty Name="quote_number" ColumnName="quote_number" />
+          <ScalarProperty Name="quote_date_expires" ColumnName="quote_date_expires" />
+          <ScalarProperty Name="quote_date_modified" ColumnName="quote_date_modified" />
+          <ScalarProperty Name="quote_date_created" ColumnName="quote_date_created" />
+          <ScalarProperty Name="quote_status_id" ColumnName="quote_status_id" />
+          <ScalarProperty Name="invoice_group_id" ColumnName="invoice_group_id" />
+          <ScalarProperty Name="client_id" ColumnName="client_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="invoice_id" ColumnName="invoice_id" />
+          <ScalarProperty Name="quote_id" ColumnName="quote_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_purchase_amounts">
+      <EntityTypeMapping TypeName="AMDModel.ip_purchase_amounts">
+        <MappingFragment StoreEntitySet="ip_purchase_amounts">
+          <ScalarProperty Name="quote_total" ColumnName="quote_total" />
+          <ScalarProperty Name="quote_tax_total" ColumnName="quote_tax_total" />
+          <ScalarProperty Name="quote_item_tax_total" ColumnName="quote_item_tax_total" />
+          <ScalarProperty Name="quote_item_subtotal" ColumnName="quote_item_subtotal" />
+          <ScalarProperty Name="quote_id" ColumnName="quote_id" />
+          <ScalarProperty Name="quote_amount_id" ColumnName="quote_amount_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_purchase_custom">
+      <EntityTypeMapping TypeName="AMDModel.ip_purchase_custom">
+        <MappingFragment StoreEntitySet="ip_purchase_custom">
+          <ScalarProperty Name="quote_id" ColumnName="quote_id" />
+          <ScalarProperty Name="quote_custom_id" ColumnName="quote_custom_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_purchase_item_amounts">
+      <EntityTypeMapping TypeName="AMDModel.ip_purchase_item_amounts">
+        <MappingFragment StoreEntitySet="ip_purchase_item_amounts">
+          <ScalarProperty Name="item_total" ColumnName="item_total" />
+          <ScalarProperty Name="item_discount" ColumnName="item_discount" />
+          <ScalarProperty Name="item_tax_total" ColumnName="item_tax_total" />
+          <ScalarProperty Name="item_subtotal" ColumnName="item_subtotal" />
+          <ScalarProperty Name="item_id" ColumnName="item_id" />
+          <ScalarProperty Name="item_amount_id" ColumnName="item_amount_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_purchase_items">
+      <EntityTypeMapping TypeName="AMDModel.ip_purchase_items">
+        <MappingFragment StoreEntitySet="ip_purchase_items">
+          <ScalarProperty Name="item_serial" ColumnName="item_serial" />
+          <ScalarProperty Name="item_order" ColumnName="item_order" />
+          <ScalarProperty Name="item_discount_amount" ColumnName="item_discount_amount" />
+          <ScalarProperty Name="item_price" ColumnName="item_price" />
+          <ScalarProperty Name="item_quantity" ColumnName="item_quantity" />
+          <ScalarProperty Name="item_description" ColumnName="item_description" />
+          <ScalarProperty Name="item_name" ColumnName="item_name" />
+          <ScalarProperty Name="item_date_added" ColumnName="item_date_added" />
+          <ScalarProperty Name="item_product_id" ColumnName="item_product_id" />
+          <ScalarProperty Name="item_tax_rate_id" ColumnName="item_tax_rate_id" />
+          <ScalarProperty Name="quote_id" ColumnName="quote_id" />
+          <ScalarProperty Name="item_id" ColumnName="item_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_purchase_tax_rates">
+      <EntityTypeMapping TypeName="AMDModel.ip_purchase_tax_rates">
+        <MappingFragment StoreEntitySet="ip_purchase_tax_rates">
+          <ScalarProperty Name="quote_tax_rate_amount" ColumnName="quote_tax_rate_amount" />
+          <ScalarProperty Name="include_item_tax" ColumnName="include_item_tax" />
+          <ScalarProperty Name="tax_rate_id" ColumnName="tax_rate_id" />
+          <ScalarProperty Name="quote_id" ColumnName="quote_id" />
+          <ScalarProperty Name="quote_tax_rate_id" ColumnName="quote_tax_rate_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_quote_amounts">
+      <EntityTypeMapping TypeName="AMDModel.ip_quote_amounts">
+        <MappingFragment StoreEntitySet="ip_quote_amounts">
+          <ScalarProperty Name="quote_total" ColumnName="quote_total" />
+          <ScalarProperty Name="quote_tax_total" ColumnName="quote_tax_total" />
+          <ScalarProperty Name="quote_discount" ColumnName="quote_discount" />
+          <ScalarProperty Name="quote_item_subtotal" ColumnName="quote_item_subtotal" />
+          <ScalarProperty Name="quote_id" ColumnName="quote_id" />
+          <ScalarProperty Name="quote_amount_id" ColumnName="quote_amount_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_quote_custom">
+      <EntityTypeMapping TypeName="AMDModel.ip_quote_custom">
+        <MappingFragment StoreEntitySet="ip_quote_custom">
+          <ScalarProperty Name="quote_id" ColumnName="quote_id" />
+          <ScalarProperty Name="quote_custom_id" ColumnName="quote_custom_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_quote_item_amounts">
+      <EntityTypeMapping TypeName="AMDModel.ip_quote_item_amounts">
+        <MappingFragment StoreEntitySet="ip_quote_item_amounts">
+          <ScalarProperty Name="item_total" ColumnName="item_total" />
+          <ScalarProperty Name="item_discount" ColumnName="item_discount" />
+          <ScalarProperty Name="item_tax_total" ColumnName="item_tax_total" />
+          <ScalarProperty Name="item_subtotal" ColumnName="item_subtotal" />
+          <ScalarProperty Name="item_id" ColumnName="item_id" />
+          <ScalarProperty Name="item_amount_id" ColumnName="item_amount_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_quote_items">
+      <EntityTypeMapping TypeName="AMDModel.ip_quote_items">
+        <MappingFragment StoreEntitySet="ip_quote_items">
+          <ScalarProperty Name="item_serial" ColumnName="item_serial" />
+          <ScalarProperty Name="item_order" ColumnName="item_order" />
+          <ScalarProperty Name="item_discount_amount" ColumnName="item_discount_amount" />
+          <ScalarProperty Name="item_price" ColumnName="item_price" />
+          <ScalarProperty Name="item_quantity" ColumnName="item_quantity" />
+          <ScalarProperty Name="item_description" ColumnName="item_description" />
+          <ScalarProperty Name="item_name" ColumnName="item_name" />
+          <ScalarProperty Name="item_date_added" ColumnName="item_date_added" />
+          <ScalarProperty Name="item_product_id" ColumnName="item_product_id" />
+          <ScalarProperty Name="quote_id" ColumnName="quote_id" />
+          <ScalarProperty Name="item_id" ColumnName="item_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_quote_tax_rates">
+      <EntityTypeMapping TypeName="AMDModel.ip_quote_tax_rates">
+        <MappingFragment StoreEntitySet="ip_quote_tax_rates">
+          <ScalarProperty Name="quote_tax_rate_amount" ColumnName="quote_tax_rate_amount" />
+          <ScalarProperty Name="include_item_tax" ColumnName="include_item_tax" />
+          <ScalarProperty Name="tax_rate_id" ColumnName="tax_rate_id" />
+          <ScalarProperty Name="quote_id" ColumnName="quote_id" />
+          <ScalarProperty Name="quote_tax_rate_id" ColumnName="quote_tax_rate_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_quotes">
+      <EntityTypeMapping TypeName="AMDModel.ip_quotes">
+        <MappingFragment StoreEntitySet="ip_quotes">
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="taxType" ColumnName="taxType" />
+          <ScalarProperty Name="ispurchase" ColumnName="ispurchase" />
+          <ScalarProperty Name="is_quote_delete" ColumnName="is_quote_delete" />
+          <ScalarProperty Name="ispayment_completed" ColumnName="ispayment_completed" />
+          <ScalarProperty Name="payment_notes" ColumnName="payment_notes" />
+          <ScalarProperty Name="delivery_date" ColumnName="delivery_date" />
+          <ScalarProperty Name="delivery_notes" ColumnName="delivery_notes" />
+          <ScalarProperty Name="payment_method" ColumnName="payment_method" />
+          <ScalarProperty Name="is_quote" ColumnName="is_quote" />
+          <ScalarProperty Name="ip_quote_custom" ColumnName="ip_quote_custom" />
+          <ScalarProperty Name="notes" ColumnName="notes" />
+          <ScalarProperty Name="quote_password" ColumnName="quote_password" />
+          <ScalarProperty Name="quote_url_key" ColumnName="quote_url_key" />
+          <ScalarProperty Name="quote_discount_percent" ColumnName="quote_discount_percent" />
+          <ScalarProperty Name="quote_discount_amount" ColumnName="quote_discount_amount" />
+          <ScalarProperty Name="quote_number" ColumnName="quote_number" />
+          <ScalarProperty Name="quote_date_expires" ColumnName="quote_date_expires" />
+          <ScalarProperty Name="quote_date_modified" ColumnName="quote_date_modified" />
+          <ScalarProperty Name="quote_date_created" ColumnName="quote_date_created" />
+          <ScalarProperty Name="quote_status_id" ColumnName="quote_status_id" />
+          <ScalarProperty Name="invoice_group_id" ColumnName="invoice_group_id" />
+          <ScalarProperty Name="client_id" ColumnName="client_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="quote_id" ColumnName="quote_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_Spares">
+      <EntityTypeMapping TypeName="AMDModel.ip_Spares">
+        <MappingFragment StoreEntitySet="ip_Spares">
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="Spares_name" ColumnName="Spares_name" />
+          <ScalarProperty Name="JobId" ColumnName="JobId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_tax_rates">
+      <EntityTypeMapping TypeName="AMDModel.ip_tax_rates">
+        <MappingFragment StoreEntitySet="ip_tax_rates">
+          <ScalarProperty Name="tax_rate_percent" ColumnName="tax_rate_percent" />
+          <ScalarProperty Name="tax_rate_name" ColumnName="tax_rate_name" />
+          <ScalarProperty Name="tax_rate_id" ColumnName="tax_rate_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_user_clients">
+      <EntityTypeMapping TypeName="AMDModel.ip_user_clients">
+        <MappingFragment StoreEntitySet="ip_user_clients">
+          <ScalarProperty Name="client_id" ColumnName="client_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="user_client_id" ColumnName="user_client_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_user_custom">
+      <EntityTypeMapping TypeName="AMDModel.ip_user_custom">
+        <MappingFragment StoreEntitySet="ip_user_custom">
+          <ScalarProperty Name="user_custom_branch" ColumnName="user_custom_branch" />
+          <ScalarProperty Name="user_custom_ifsc_code" ColumnName="user_custom_ifsc_code" />
+          <ScalarProperty Name="user_custom_account_number" ColumnName="user_custom_account_number" />
+          <ScalarProperty Name="user_custom_bank_name" ColumnName="user_custom_bank_name" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="user_custom_id" ColumnName="user_custom_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_users">
+      <EntityTypeMapping TypeName="AMDModel.ip_users">
+        <MappingFragment StoreEntitySet="ip_users">
+          <ScalarProperty Name="user_passwordreset_token" ColumnName="user_passwordreset_token" />
+          <ScalarProperty Name="user_psalt" ColumnName="user_psalt" />
+          <ScalarProperty Name="user_tax_code" ColumnName="user_tax_code" />
+          <ScalarProperty Name="user_vat_id" ColumnName="user_vat_id" />
+          <ScalarProperty Name="user_web" ColumnName="user_web" />
+          <ScalarProperty Name="user_password" ColumnName="user_password" />
+          <ScalarProperty Name="user_email" ColumnName="user_email" />
+          <ScalarProperty Name="user_mobile" ColumnName="user_mobile" />
+          <ScalarProperty Name="user_fax" ColumnName="user_fax" />
+          <ScalarProperty Name="user_phone" ColumnName="user_phone" />
+          <ScalarProperty Name="user_country" ColumnName="user_country" />
+          <ScalarProperty Name="user_zip" ColumnName="user_zip" />
+          <ScalarProperty Name="user_state" ColumnName="user_state" />
+          <ScalarProperty Name="user_city" ColumnName="user_city" />
+          <ScalarProperty Name="user_address_2" ColumnName="user_address_2" />
+          <ScalarProperty Name="user_address_1" ColumnName="user_address_1" />
+          <ScalarProperty Name="user_company" ColumnName="user_company" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="user_date_modified" ColumnName="user_date_modified" />
+          <ScalarProperty Name="user_date_created" ColumnName="user_date_created" />
+          <ScalarProperty Name="user_active" ColumnName="user_active" />
+          <ScalarProperty Name="user_type" ColumnName="user_type" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_versions">
+      <EntityTypeMapping TypeName="AMDModel.ip_versions">
+        <MappingFragment StoreEntitySet="ip_versions">
+          <ScalarProperty Name="version_sql_errors" ColumnName="version_sql_errors" />
+          <ScalarProperty Name="version_file" ColumnName="version_file" />
+          <ScalarProperty Name="version_date_applied" ColumnName="version_date_applied" />
+          <ScalarProperty Name="version_id" ColumnName="version_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_email_templates">
+      <EntityTypeMapping TypeName="AMDModel.ip_email_templates">
+        <MappingFragment StoreEntitySet="ip_email_templates">
+          <ScalarProperty Name="email_template_pdf_template" ColumnName="email_template_pdf_template" />
+          <ScalarProperty Name="email_template_bcc" ColumnName="email_template_bcc" />
+          <ScalarProperty Name="email_template_cc" ColumnName="email_template_cc" />
+          <ScalarProperty Name="email_template_from_email" ColumnName="email_template_from_email" />
+          <ScalarProperty Name="email_template_from_name" ColumnName="email_template_from_name" />
+          <ScalarProperty Name="email_template_subject" ColumnName="email_template_subject" />
+          <ScalarProperty Name="email_template_body" ColumnName="email_template_body" />
+          <ScalarProperty Name="email_template_type" ColumnName="email_template_type" />
+          <ScalarProperty Name="email_template_title" ColumnName="email_template_title" />
+          <ScalarProperty Name="email_template_id" ColumnName="email_template_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_item_lookups">
+      <EntityTypeMapping TypeName="AMDModel.ip_item_lookups">
+        <MappingFragment StoreEntitySet="ip_item_lookups">
+          <ScalarProperty Name="item_price" ColumnName="item_price" />
+          <ScalarProperty Name="item_description" ColumnName="item_description" />
+          <ScalarProperty Name="item_name" ColumnName="item_name" />
+          <ScalarProperty Name="item_lookup_id" ColumnName="item_lookup_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_sessions">
+      <EntityTypeMapping TypeName="AMDModel.ip_sessions">
+        <MappingFragment StoreEntitySet="ip_sessions">
+          <ScalarProperty Name="user_data" ColumnName="user_data" />
+          <ScalarProperty Name="last_activity" ColumnName="last_activity" />
+          <ScalarProperty Name="user_agent" ColumnName="user_agent" />
+          <ScalarProperty Name="ip_address" ColumnName="ip_address" />
+          <ScalarProperty Name="session_id" ColumnName="session_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_settings">
+      <EntityTypeMapping TypeName="AMDModel.ip_settings">
+        <MappingFragment StoreEntitySet="ip_settings">
+          <ScalarProperty Name="setting_value" ColumnName="setting_value" />
+          <ScalarProperty Name="setting_key" ColumnName="setting_key" />
+          <ScalarProperty Name="setting_id" ColumnName="setting_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_tasks">
+      <EntityTypeMapping TypeName="AMDModel.ip_tasks">
+        <MappingFragment StoreEntitySet="ip_tasks">
+          <ScalarProperty Name="task_status" ColumnName="task_status" />
+          <ScalarProperty Name="task_finish_date" ColumnName="task_finish_date" />
+          <ScalarProperty Name="task_price" ColumnName="task_price" />
+          <ScalarProperty Name="task_description" ColumnName="task_description" />
+          <ScalarProperty Name="task_name" ColumnName="task_name" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="task_id" ColumnName="task_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ip_uploads">
+      <EntityTypeMapping TypeName="AMDModel.ip_uploads">
+        <MappingFragment StoreEntitySet="ip_uploads">
+          <ScalarProperty Name="uploaded_date" ColumnName="uploaded_date" />
+          <ScalarProperty Name="file_name_new" ColumnName="file_name_new" />
+          <ScalarProperty Name="file_name_original" ColumnName="file_name_original" />
+          <ScalarProperty Name="url_key" ColumnName="url_key" />
+          <ScalarProperty Name="client_id" ColumnName="client_id" />
+          <ScalarProperty Name="upload_id" ColumnName="upload_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

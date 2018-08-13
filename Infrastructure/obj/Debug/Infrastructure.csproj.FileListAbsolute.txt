@@ -1,0 +1,16 @@
+F:\Santhosh\SPCodePractice\AMDSystems\AMDSystems\Infrastructure\bin\Debug\App.Config
+F:\Santhosh\SPCodePractice\AMDSystems\AMDSystems\Infrastructure\bin\Debug\Infrastructure.dll.config
+F:\Santhosh\SPCodePractice\AMDSystems\AMDSystems\Infrastructure\bin\Debug\Infrastructure.dll
+F:\Santhosh\SPCodePractice\AMDSystems\AMDSystems\Infrastructure\bin\Debug\Infrastructure.pdb
+F:\Santhosh\SPCodePractice\AMDSystems\AMDSystems\Infrastructure\bin\Debug\Core Project.dll
+F:\Santhosh\SPCodePractice\AMDSystems\AMDSystems\Infrastructure\bin\Debug\EntityFramework.dll
+F:\Santhosh\SPCodePractice\AMDSystems\AMDSystems\Infrastructure\bin\Debug\EntityFramework.SqlServer.dll
+F:\Santhosh\SPCodePractice\AMDSystems\AMDSystems\Infrastructure\bin\Debug\Core Project.pdb
+F:\Santhosh\SPCodePractice\AMDSystems\AMDSystems\Infrastructure\bin\Debug\Core Project.dll.config
+F:\Santhosh\SPCodePractice\AMDSystems\AMDSystems\Infrastructure\bin\Debug\EntityFramework.xml
+F:\Santhosh\SPCodePractice\AMDSystems\AMDSystems\Infrastructure\bin\Debug\EntityFramework.SqlServer.xml
+F:\Santhosh\SPCodePractice\AMDSystems\AMDSystems\Infrastructure\obj\Debug\Infrastructure.csprojResolveAssemblyReference.cache
+F:\Santhosh\SPCodePractice\AMDSystems\AMDSystems\Infrastructure\obj\Debug\Infrastructure.csproj.CoreCompileInputs.cache
+F:\Santhosh\SPCodePractice\AMDSystems\AMDSystems\Infrastructure\obj\Debug\Infrastructure.csproj.CopyComplete
+F:\Santhosh\SPCodePractice\AMDSystems\AMDSystems\Infrastructure\obj\Debug\Infrastructure.dll
+F:\Santhosh\SPCodePractice\AMDSystems\AMDSystems\Infrastructure\obj\Debug\Infrastructure.pdb

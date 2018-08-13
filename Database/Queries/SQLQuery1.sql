@@ -1,0 +1,51 @@
+USE [amd2]
+GO
+
+INSERT INTO [dbo].[ip_users]
+           ([user_type]
+           ,[user_active]
+           ,[user_date_created]
+           ,[user_date_modified]
+           ,[user_name]
+           ,[user_company]
+           ,[user_address_1]
+           ,[user_address_2]
+           ,[user_city]
+           ,[user_state]
+           ,[user_zip]
+           ,[user_country]
+           ,[user_phone]
+           ,[user_fax]
+           ,[user_mobile]
+           ,[user_email]
+           ,[user_password]
+           ,[user_web]
+           ,[user_vat_id]
+           ,[user_tax_code]
+           ,[user_psalt]
+           ,[user_passwordreset_token])
+     VALUES
+           (1
+           ,1
+           ,'2-11-2018'
+           ,'2-11-2018'
+           ,'amd'
+           ,'amd'
+           ,'amd'
+           ,'amd'
+           ,'amd'
+           ,'amd'
+          ,'amd'
+           ,'amd'
+           ,'amd'
+           ,'amd'
+           ,'amd'
+           ,'amd'
+          ,'amd'
+           ,'amd'
+           ,'amd'
+           ,'amd'
+          ,'amd'
+           ,'amd')
+GO
+

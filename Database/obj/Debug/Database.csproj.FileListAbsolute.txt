@@ -1,0 +1,12 @@
+F:\Santhosh\SPCodePractice\AMDSystems\AMDSystems\Database\bin\Debug\Database.dll.config
+F:\Santhosh\SPCodePractice\AMDSystems\AMDSystems\Database\bin\Debug\Database.dll
+F:\Santhosh\SPCodePractice\AMDSystems\AMDSystems\Database\bin\Debug\Database.pdb
+F:\Santhosh\SPCodePractice\AMDSystems\AMDSystems\Database\bin\Debug\EntityFramework.dll
+F:\Santhosh\SPCodePractice\AMDSystems\AMDSystems\Database\bin\Debug\EntityFramework.SqlServer.dll
+F:\Santhosh\SPCodePractice\AMDSystems\AMDSystems\Database\bin\Debug\EntityFramework.xml
+F:\Santhosh\SPCodePractice\AMDSystems\AMDSystems\Database\bin\Debug\EntityFramework.SqlServer.xml
+F:\Santhosh\SPCodePractice\AMDSystems\AMDSystems\Database\obj\Debug\Database.csproj.CoreCompileInputs.cache
+F:\Santhosh\SPCodePractice\AMDSystems\AMDSystems\Database\obj\Debug\Database.csproj.CopyComplete
+F:\Santhosh\SPCodePractice\AMDSystems\AMDSystems\Database\obj\Debug\Database.dll
+F:\Santhosh\SPCodePractice\AMDSystems\AMDSystems\Database\obj\Debug\Database.pdb
+F:\Santhosh\SPCodePractice\AMDSystems\AMDSystems\Database\obj\Debug\Database.csprojResolveAssemblyReference.cache

@@ -1,0 +1,298 @@
+﻿
+@using Core_Project.Model;
+@model IEnumerable<IPClientsModel>
+
+
+<link href="../../Content/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
+
+
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+                <h4 class="page-title">View Clients</h4>
+                @*<h1 class="viewclient-heading">@Html.ActionLink("Add Client", "AddClient", "IPClients")</h1>*@
+                @*<div class="text-right" style="padding-left:40px;">
+            @using (Html.BeginForm(null, null, FormMethod.Post, new { @id = "SearchForm" }))
+    {
+
+
+            @Html.TextBox("SearchString")
+
+            <input type="submit" value="Search" />
+
+    }
+
+
+                    <input type="text" value="" id="txtSearchClient" placeholder="Search Client by Name/Email/Phone" />
+
+                    <input type="button" value="Search" id="btnSearchClient" />
+                </div>*@
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid">
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <div class="col-12">
+                
+
+                <div class="card">
+                    <div class="card-body">
+                        @*<h5 class="card-title text-right">@Html.ActionLink("Add Client", "AddClient", "IPClients")</h5>*@
+                        <h5 class="card-title text-right">
+                            <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("AddClient", "IPClients")'">Add Client</button>
+                        </h5>
+                        <div class="table-responsive">
+                            <table id="zero_config" class="table table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Client Name</th>
+                                        <th>Email Address</th>
+                                        <th>Phone Number</th>
+                                        <th>Balance</th>
+                                        <th>Active</th>
+                                        <th>Options</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @item.Client_Name
+                                            </td>
+                                            <td>
+                                                @item.Client_Email
+                                            </td>
+                                            <td>
+                                                @item.Client_Phone
+                                            </td>
+                                            <td>
+                                                --
+                                            </td>
+                                            <td>
+                                                @(item.Client_Active ?   "No":"Yes")
+                                                                                        </td>
+                                            @*<td>
+                                                    @item.Client_Zip
+                                                </td>*@
+                                            <td>
+                                                <div class="options btn-group open option-dropdown">
+                                                    <a class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="true">
+                                                        <i class="fa fa-cog"></i> Options
+                                                    </a>
+                                                    <ul class="dropdown-menu" style="padding-left:10px;">
+                                                        <li>
+                                                            <p>
+                                                                
+                                                                    <i class="fa fa-eye fa-margin"></i>
+                                                                @Html.ActionLink("View", "DetailsAll", "IPClients")
+                                                               
+                                                            </p>
+                                                            </li>
+                                                        <li>
+                                                            <p>
+                                                                <i class="fa fa-edit fa-margin"></i> @Html.ActionLink("Edit", "Edit", new
+                    {
+                        @item.Client_ID
+                    })
+                                                            </p>
+                                                        </li>
+                                                        @if(!item.Client_Active)
+                                                        { 
+                                                        <li>
+                                                            <p>
+                                                                <i class="fas fa-trash-alt fa-margin" aria-hidden="true"></i>
+                                                                @Html.ActionLink("Delete", "Delete","IPClients", new { id = item.Client_ID },
+
+               new { onclick = "return confirm('If you delete this client you will also delete invoices, quotes and payments related to this client. Are you sure you want to permanently delete this client?');" })
+
+                                                            </p>
+                                                        </li>
+
+                                                        <li>
+                                                            <p>
+                                                                <i class="fas fa-file"></i> 
+                                                                <a href="/IPQuote/CreateQuote?Client_ID=@item.Client_ID">Create Quote</a>
+                                                                
+                                                            </p>
+
+
+                                                        </li>
+
+                                                        <li>
+                                                            <p>
+                                                                <i class="fas fa-file-alt"></i> 
+                                                                 
+                                                                <a href="/IPInvoices/CreateInvoice?Client_ID=@item.Client_ID">Create Invoice</a>
+                 
+                                                            </p>
+                                                        </li>
+
+
+    <li>
+        <p>
+            <i class="fas fa-file-alt"></i>
+
+            <a href="/Billing/CreateBilling?Client_ID=@item.Client_ID">Create Billing</a>
+
+        </p>
+    </li>
+
+                                                        }
+
+                                                        @*<li>
+                                                                <a href="http://amdsystems.in/billing/clients/delete/25" onclick="return confirm('If you delete this client you will also delete any invoices, quotes and payments related to this client. Are you sure you want to permanently delete this client?');">
+                                                                    <i class="fa fa-trash-o fa-margin"></i> Delete
+                                                                </a>
+                                                            </li>*@
+                                                    </ul>
+                                                </div>
+                                            </td>
+
+                                            @*<td>
+                                                    @item.Client_State
+                                                </td>
+                                                <td>
+                                                    @item.Client_Country
+                                                </td>
+                                                <td>
+                                                    @item.Client_Mobile
+                                                </td>
+                                                <td>
+                                                    @item.Client_Phone
+                                                </td>
+                                                <td>
+                                                    @item.Client_Fax
+                                                </td>
+                                                <td>
+                                                    @item.Client_Email
+                                                </td>
+                                                <td>
+                                                    @item.Client_Tax_Code
+                                                </td>
+                                                <td>
+                                                    @item.Client_VAT_ID
+                                                </td>
+                                                <td>
+                                                    @item.Client_Web
+                                                </td>*@
+                                            @*<td>
+                                                                            @Html.ActionLink("Edit", "Edit", new
+                                                {
+                                                    @item.Client_ID
+                                                })
+                                                                        </td>*@
+                                        </tr>
+                                    }
+
+                                </tbody>
+
+                                @*<tfoot>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Position</th>
+                                            <th>Office</th>
+                                            <th>Age</th>
+                                            <th>Start date</th>
+                                            <th>Salary</th>
+                                        </tr>
+                                    </tfoot>*@
+                            </table>
+                            	
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End PAge Content -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Right sidebar -->
+        <!-- ============================================================== -->
+        <!-- .right-sidebar -->
+        <!-- ============================================================== -->
+        <!-- End Right sidebar -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Container fluid  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- footer -->
+    <!-- ============================================================== -->
+    @*<footer class="footer text-center">
+            All Rights Reserved by Matrix-admin. Designed and Developed by <a href="https://wrappixel.com">WrapPixel</a>.
+        </footer>*@
+    <!-- ============================================================== -->
+    <!-- End footer -->
+    <!-- ============================================================== -->
+
+
+
+
+
+<script src="../../Content/assets/extra-libs/DataTables/datatables.min.js"></script>
+<script>
+    /****************************************
+     *       Basic Table                   *
+     ****************************************/
+    $('#zero_config').DataTable({
+        columnDefs: [{ orderable: false, targets: [5] }]
+    });
+</script>
+
+
+@*<script>
+    $(".options.btn-group").removeClass("open");
+    $(document).ready(function () {
+        $("#btnSearchClient").click(function () {
+            window.location= "/IPClients/ViewAll?keyword="+$("#txtSearchClient").val();
+        });
+    });
+</script>*@
+
+<script>
+    var deleteLinkObj;
+    // delete Link
+    $('.delete-link').click(function () {
+        deleteLinkObj = $(this);  //for future use
+        $('#delete-dialog').dialog('open');
+        return false; // prevents the default behaviour
+    });
+
+
+    $('#delete-dialog').dialog({
+        autoOpen: false, width: 400, resizable: false, modal: true, //Dialog options
+        buttons: {
+            "Continue": function () {
+                $.post(deleteLinkObj[0].href, function (data) {  //Post to action
+                    if (data == '<%= Boolean.TrueString %>') {
+                        deleteLinkObj.closest("tr").hide('fast'); //Hide Row
+                        //(optional) Display Confirmation
+                    }
+                    else {
+                        //(optional) Display Error
+                    }
+                });
+                $(this).dialog("close");
+            },
+            "Cancel": function () {
+                $(this).dialog("close");
+            }
+        }
+    });
+    </script>

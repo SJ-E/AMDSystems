@@ -1,0 +1,12 @@
+F:\Santhosh\SPCodePractice\AMDSystems\AMDSystems\Core Project\bin\Debug\Core Project.dll.config
+F:\Santhosh\SPCodePractice\AMDSystems\AMDSystems\Core Project\bin\Debug\Core Project.dll
+F:\Santhosh\SPCodePractice\AMDSystems\AMDSystems\Core Project\bin\Debug\Core Project.pdb
+F:\Santhosh\SPCodePractice\AMDSystems\AMDSystems\Core Project\bin\Debug\EntityFramework.dll
+F:\Santhosh\SPCodePractice\AMDSystems\AMDSystems\Core Project\bin\Debug\EntityFramework.SqlServer.dll
+F:\Santhosh\SPCodePractice\AMDSystems\AMDSystems\Core Project\bin\Debug\EntityFramework.xml
+F:\Santhosh\SPCodePractice\AMDSystems\AMDSystems\Core Project\bin\Debug\EntityFramework.SqlServer.xml
+F:\Santhosh\SPCodePractice\AMDSystems\AMDSystems\Core Project\obj\Debug\Core Project.csproj.CoreCompileInputs.cache
+F:\Santhosh\SPCodePractice\AMDSystems\AMDSystems\Core Project\obj\Debug\Core Project.csproj.CopyComplete
+F:\Santhosh\SPCodePractice\AMDSystems\AMDSystems\Core Project\obj\Debug\Core Project.dll
+F:\Santhosh\SPCodePractice\AMDSystems\AMDSystems\Core Project\obj\Debug\Core Project.pdb
+F:\Santhosh\SPCodePractice\AMDSystems\AMDSystems\Core Project\obj\Debug\Core Project.csprojResolveAssemblyReference.cache

@@ -1,0 +1,83 @@
+﻿/* =============================================================================
+   InvoicePlane
+   Custom Stylesheet
+
+   All changes made in this file will override the default styles.
+   ===============================================.sidebar li a=========================== */
+.sideheader{width:150px !important;font-family:'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif !important;font-size:12px !important;min-height: 500px; padding-top:30px;}
+.sidebar li a
+{
+font-family:'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif !important;
+font-size:14px !important;
+color: #fff !important;
+background: #1e282c;
+text-align: left; 
+border-bottom: 0;
+font-weight: normal !important;
+}
+.sideheader .navbar-nav>li{width:100%;}
+.sideheader .container-fluid{padding-left: 0px;padding-right: 0px;}
+.navbar-nav>li>a{color:#fff;}
+.main-header{background-color: #0766C7;}
+.sideheader .navbar-nav i{float:right}
+.sideheader .dropdown .dropdown-menu{margin-left: 100%;}
+.main-header .logo{color:#fff}
+.sideheader .navbar-nav i{float:right}
+.main-header .dropdown-menu>li>a{color:#333 !important;}
+.invoicehead-main #headerbar {width:87%}
+.invoicehead-main #content{padding:0;width:88%}
+.table-content td{font-size:12px}
+.sideheader .navbar-nav span> i{float:left}
+.quotehead-main #headerbar {width:99%}
+.quotehead-main #content{padding:20px;width:99%}
+.table.items td.td-textarea{min-width:180px !important;}
+.quicktasks{list-style-type: none;margin: 5px -20px;}
+.quicktasks li { display: inline-block;text-align: center;margin: 5px;min-width: 110px;}
+.quicktasks li a span {margin-top: 5px;display: block;}
+.quicktasks li a {
+  color: #333333;
+  display: block;
+  white-space: nowrap;
+  padding: 8px 15px;
+  background-color: #f5f5f5;
+  background-image: -moz-linear-gradient(top, #fafafa, #ededed);
+  background-image: -ms-linear-gradient(top, #fafafa, #ededed);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fafafa), to(#ededed));
+  background-image: -webkit-linear-gradient(top, #fafafa, #ededed);
+  background-image: -o-linear-gradient(top, #fafafa, #ededed);
+  background-image: linear-gradient(top, #fafafa, #ededed);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafafa', endColorstr='#ededed', GradientType=0);
+  -webkit-box-shadow: inset 0 0 1px 1px #ffffff;
+  -moz-box-shadow: inset 0 0 1px 1px #ffffff;
+  box-shadow: inset 0 0 1px 1px #ffffff;
+  -webkit-border-radius: 3px 3px 3px 3px;
+  -moz-border-radius: 3px 3px 3px 3px;
+  border-radius: 3px 3px 3px 3px;
+  border: 1px solid #a6a6a6;
+}
+.quicktasks li a:hover {
+  text-decoration: none;
+  border: 1px solid #8c8c8c;
+  background-color: #e8e8e8;
+  background-image: -moz-linear-gradient(top, #f2f2f2, #d9d9d9);
+  background-image: -ms-linear-gradient(top, #f2f2f2, #d9d9d9);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f2f2f2), to(#d9d9d9));
+  background-image: -webkit-linear-gradient(top, #f2f2f2, #d9d9d9);
+  background-image: -o-linear-gradient(top, #f2f2f2, #d9d9d9);
+  background-image: linear-gradient(top, #f2f2f2, #d9d9d9);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2f2f2', endColorstr='#d9d9d9', GradientType=0);
+}
+
+.keyboard-keyslist{border: 1px solid #eee;border-radius: 5px;padding: 3px;background: aquamarine;}
+.keyboard-keyslist li{none;padding:2px;font-weight: 700;}
+.keyboard-keyslist p{font-weight: 700}
+.item-addviewmain #content{height:auto !important;}
+#btn-submit{right:15px;}
+.viewmore-link{margin-right: 20px;margin-bottom: 5px;}
+.product-table .product-tablebar img{height:50px;}
+/*#invoice_custom_delivery_note{width: 48%;margin-top: 5%;}
+#invoice_custom_delivery_date{width: 48%;position: relative;margin-top: -35px !important;margin-left: 285px;margin-top: 5%;}
+#invoice_custom_order_no {width: 48%;margin-top: 5%;}
+#invoice_custom_order_date{width: 48%;position: relative;margin-top: -35px !important;margin-left: 285px;margin-top: 5%;}*/

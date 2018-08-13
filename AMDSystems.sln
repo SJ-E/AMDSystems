@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2037
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMDSystems", "AMDSystems\AMDSystems.csproj", "{D5ABA384-845E-4ACC-A5E0-20758FD02F30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core Project", "Core Project\Core Project.csproj", "{CFDF68DC-3EC9-4276-9269-5139FCD72E8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{8861C562-EC5D-40B9-BEE5-9CE178A7D704}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "Database\Database.csproj", "{5977A856-AF45-480D-8260-3F2D80460EC1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D5ABA384-845E-4ACC-A5E0-20758FD02F30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5ABA384-845E-4ACC-A5E0-20758FD02F30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5ABA384-845E-4ACC-A5E0-20758FD02F30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5ABA384-845E-4ACC-A5E0-20758FD02F30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFDF68DC-3EC9-4276-9269-5139FCD72E8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFDF68DC-3EC9-4276-9269-5139FCD72E8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFDF68DC-3EC9-4276-9269-5139FCD72E8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFDF68DC-3EC9-4276-9269-5139FCD72E8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8861C562-EC5D-40B9-BEE5-9CE178A7D704}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8861C562-EC5D-40B9-BEE5-9CE178A7D704}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8861C562-EC5D-40B9-BEE5-9CE178A7D704}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8861C562-EC5D-40B9-BEE5-9CE178A7D704}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5977A856-AF45-480D-8260-3F2D80460EC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5977A856-AF45-480D-8260-3F2D80460EC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5977A856-AF45-480D-8260-3F2D80460EC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5977A856-AF45-480D-8260-3F2D80460EC1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {59F43957-C01A-468A-A1E2-51A639AE2BA6}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://spcodeproject.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = AMDSystems\\AMDSystems.csproj
+		SccProjectName1 = AMDSystems
+		SccLocalPath1 = AMDSystems
+		SccProjectUniqueName2 = Core\u0020Project\\Core\u0020Project.csproj
+		SccProjectName2 = Core\u0020Project
+		SccLocalPath2 = Core\u0020Project
+		SccProjectUniqueName3 = Infrastructure\\Infrastructure.csproj
+		SccProjectName3 = Infrastructure
+		SccLocalPath3 = Infrastructure
+		SccProjectUniqueName4 = Database\\Database.csproj
+		SccProjectName4 = Database
+		SccLocalPath4 = Database
+	EndGlobalSection
+EndGlobal

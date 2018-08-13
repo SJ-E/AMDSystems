@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5977A856-AF45-480D-8260-3F2D80460EC1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Database</RootNamespace>
+    <AssemblyName>Database</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>ea501af4</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="All Tables\IPClientCustom.sql" />
+    <Content Include="All Tables\IpClientNotes.sql" />
+    <Content Include="All Tables\IPClients.sql" />
+    <Content Include="All Tables\IPCompany.sql" />
+    <Content Include="All Tables\IPCompanyProfile.sql" />
+    <Content Include="All Tables\IPCustomFields.sql" />
+    <Content Include="All Tables\IPEmailTemplates.sql" />
+    <Content Include="All Tables\IPEstimate.sql" />
+    <Content Include="All Tables\IPEstimateItems.sql" />
+    <Content Include="All Tables\IPFamilies.sql" />
+    <Content Include="All Tables\IPImportDetails.sql" />
+    <Content Include="All Tables\IPImports.sql" />
+    <Content Include="All Tables\IPInvoiceAmounts.sql" />
+    <Content Include="All Tables\IPInvoiceCustom.sql" />
+    <Content Include="All Tables\IPInvoiceGroups.sql" />
+    <Content Include="All Tables\IPInvoiceItemAmounts.sql" />
+    <Content Include="All Tables\IPInvoiceItems.sql" />
+    <Content Include="All Tables\IPInvoices.sql" />
+    <Content Include="All Tables\IPInvoicesRecurring.sql" />
+    <Content Include="All Tables\IPInvoiceTaxRates.sql" />
+    <Content Include="All Tables\IPItemLookups.sql" />
+    <Content Include="All Tables\IPJobPortal.sql" />
+    <Content Include="All Tables\IPMake.sql" />
+    <Content Include="All Tables\IPMerchantResponses.sql" />
+    <Content Include="All Tables\IPModel.sql" />
+    <Content Include="All Tables\IPPaymentCustom.sql" />
+    <Content Include="All Tables\IPPaymentMethods.sql" />
+    <Content Include="All Tables\IPPayments.sql" />
+    <Content Include="All Tables\IPProducts.sql" />
+    <Content Include="All Tables\IPProjects.sql" />
+    <Content Include="All Tables\IPPurchase.sql" />
+    <Content Include="All Tables\IPPurchaseAmounts.sql" />
+    <Content Include="All Tables\IPPurchaseCustom.sql" />
+    <Content Include="All Tables\IPPurchaseItemAmounts.sql" />
+    <Content Include="All Tables\IPPurchaseItems.sql" />
+    <Content Include="All Tables\IPPurchaseTaxRates.sql" />
+    <Content Include="All Tables\IPQuoteAmounts.sql" />
+    <Content Include="All Tables\IPQuoteCustom.sql" />
+    <Content Include="All Tables\IPQuoteItemAmounts.sql" />
+    <Content Include="All Tables\IPQuoteItems.sql" />
+    <Content Include="All Tables\IPQuotes.sql" />
+    <Content Include="All Tables\IPQuoteTaxRates.sql" />
+    <Content Include="All Tables\IPSessions.sql" />
+    <Content Include="All Tables\IPSettings.sql" />
+    <Content Include="All Tables\IPSpares.sql" />
+    <Content Include="All Tables\IPTasks.sql" />
+    <Content Include="All Tables\IPTaxRates.sql" />
+    <Content Include="All Tables\IPUploads.sql" />
+    <Content Include="All Tables\IPUserClients.sql" />
+    <Content Include="All Tables\IPUserCustom.sql" />
+    <Content Include="All Tables\IPUsers.sql" />
+    <Content Include="All Tables\IPVersions.sql" />
+    <Content Include="Queries\Clienttype.sql" />
+    <Content Include="Queries\CREATE_IP_Client.sql" />
+    <Content Include="Queries\CREATE_IP_Client_Custom.sql" />
+    <Content Include="Queries\CREATE_IP_Client_Notes.sql" />
+    <Content Include="Queries\CREATE_IP_Families.sql" />
+    <Content Include="Queries\CREATE_IP_Invoices.sql" />
+    <Content Include="Queries\CREATE_IP_Invoice_Amounts.sql" />
+    <Content Include="Queries\CREATE_IP_Invoice_Custom.sql" />
+    <Content Include="Queries\CREATE_IP_Invoice_Groups.sql" />
+    <Content Include="Queries\CREATE_IP_Products.sql" />
+    <Content Include="Queries\CREATE_IP_Quotes.sql" />
+    <Content Include="Queries\CREATE_IP_Quotes_Amount.sql" />
+    <Content Include="Queries\CREATE_IP_Users.sql" />
+    <Content Include="Queries\INSERT_IP_Client.sql" />
+    <Content Include="Queries\INSERT_IP_Client_Custom.sql" />
+    <Content Include="Queries\INSERT_IP_Client_Notes.sql" />
+    <Content Include="Queries\PurchaseDefault Insert.sql" />
+    <Content Include="Queries\quoteTaxtype.sql" />
+    <Content Include="Queries\quoteType.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

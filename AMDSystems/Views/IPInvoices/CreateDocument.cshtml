@@ -1,0 +1,125 @@
+﻿
+@using Core_Project.Model
+@model IPQuotesModel
+
+ <!-- ============================================================== -->
+<!-- Bread crumb and right sidebar toggle -->
+<!-- ============================================================== -->
+<div class="page-breadcrumb">
+    <div class="row">
+        <div class="col-12 d-flex no-block align-items-center">
+            <h4 class="page-title">Create Invoice</h4>
+            
+        </div>
+    </div>
+</div>
+<br />
+<!-- ============================================================== -->
+<!-- End Bread crumb and right sidebar toggle -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- Container fluid  -->
+<!-- ============================================================== -->
+<div class="container-fluid">
+    <!-- ============================================================== -->
+    <!-- Start Page Content -->
+    <!-- ============================================================== -->
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card" style="width:920px; height:680px;">
+                <form class="form-horizontal" id="formCreateQuote" method="post" action="/IPInvoices/CreateDocument">
+
+
+                    <div class="card-body" style="width:520px; height:280px;">
+
+
+                    </div>
+
+                    <div class="border-top">
+                        <div class="card-body">
+                            @*<input type="submit" value="Save" class="btn btn-success btn-sm ajax-loader" />*@
+                            @*<button id="btn-submit" name="btn_submit" class="btn btn-success" value="1">
+                                <i class="fa fa-check"></i> Save
+                            </button>
+                            <button id="btn-cancel" name="btn_cancel" class="btn btn-danger btn-sm" value="1">
+                        <i class="fa fa-times"></i> Cancel
+                    </button>
+                                            <button id="btn-cancel" name="btn_cancel" class="btn btn-danger" value="1">
+                                                <i class="fa fa-times"></i> Cancel
+                                            </button>*@
+
+                            <button class="btn btn-success ajax-loader" id="quote_create_confirm" type="button">
+                                <i class="fa fa-check"></i> Next
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+
+
+        </div>
+
+    </div>
+    <!-- editor -->
+    <!-- ============================================================== -->
+    <!-- End PAge Content -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Right sidebar -->
+    <!-- ============================================================== -->
+    <!-- .right-sidebar -->
+    <!-- ============================================================== -->
+    <!-- End Right sidebar -->
+    <!-- ============================================================== -->
+</div>
+<!-- ============================================================== -->
+<!-- End Container fluid  -->
+<!-- ============================================================== -->
+
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            method: "GET",
+            url: "/IPClients/GetAllClients",
+        })
+            .done(function (data) {
+                var options = '';
+                $.each(data, function (index, object) {
+                    options = options + '<option value="' + object.Client_ID + '">' + object.Client_Name + '</option>'
+                });
+                $("#client_name").html(options);
+            });
+
+
+        $('#quote_create_confirm').click(function () {
+            $("#formCreateQuote").submit();
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+   
+

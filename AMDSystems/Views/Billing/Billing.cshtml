@@ -1,0 +1,735 @@
+﻿
+@{
+    ViewBag.Title = "Billing";
+    int i = -1;
+}
+@using Core_Project.Model
+@model IPQuotesModel
+
+
+<link rel="stylesheet" type="text/css" href="../../Content/assets/libs/select2/dist/css/select2.min.css">
+<link rel="stylesheet" type="text/css" href="../../Content/assets/libs/jquery-minicolors/jquery.minicolors.css">
+<link rel="stylesheet" type="text/css" href="../../Content/assets/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+<link rel="stylesheet" type="text/css" href="../../Content/assets/libs/quill/dist/quill.snow.css">
+<link href="../../Content/dist/css/style.min.css" rel="stylesheet">
+
+<form method="post" action="/Billing/UpdateBilling">
+    <!-- Page wrapper  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+                <h4 class="page-title">Billing</h4>
+                <div class="ml-auto text-right">
+                    <a class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="true">
+                        Options
+                    </a>
+
+                    <ul class="dropdown-menu" style="padding-left:10px; line-height:2.5;">
+
+                        <li>
+
+                            <a id="btn_generate_pdf" href="#" target="_self" data-quote-id="50">
+                                <i class="fa fa-print fa-margin"></i>
+                                DownloadPdf
+                            </a>
+
+                        </li>
+
+                        <li>
+                            <a href="http://amdsystems.in/billing/mailer/quote/50">
+                                <i class="fa fa-envelope fa-margin"></i>
+                                Send Email
+                            </a>
+                        </li>
+                        
+                    </ul>
+
+                    <input type="submit" value="Save" class="btn-success" />
+                    <input type="reset" value="Cancel" class="btn-danger" onclick="location.href = '@Url.Action("ViewBilling", "Billing")'" />
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid">
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-body printableArea">
+                    <h3><b>Billing</b> <span class="pull-right">#</span></h3>
+                    <hr>
+                    @Html.HiddenFor(e => e.quote_id)
+                    <div class="quote" style="padding:20px">
+                        @*<div class="row">
+                                <div class="pull-right">
+                                    <input type="submit" value="Save" class="btn-success" />
+                                </div>
+                            </div>*@
+
+
+                        <div class="cf row">
+
+                            <div class="col-xs-12 col-md-5">
+                                <div class="pull-left">
+                                    <div style="float:left">
+                                        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Client Change</a>
+
+                                        <div class="modal fade" id="myModal">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content" style="width:140%;">
+
+                                                    <div class="modal-header">
+                                                        @*<a href="#" class="close" data-dismiss="modal">&times;</a>*@
+                                                        <h5 class="modal-title">&nbsp;&nbsp;&nbsp;Client Name</h5>
+
+                                                    </div>
+
+                                                    <div class="modal-footer">
+
+
+                                                        <div class="col-md-12">
+                                                            <select id="client_name" class="select2 form-control" style="width: 50%; height:36px;">
+
+
+                                                                
+
+
+
+
+                                                            </select>&nbsp;
+                                                            <input value="submit" type="button" class="btn btn-success" onclick="ClickChangeClinet()" id="btnSubmit" />
+                                                            <a href="#" class="btn btn-danger" data-dismiss="modal">Cancel</a>
+
+                                                        </div>
+
+
+                                                        @*<select id="client_name"></select>
+
+
+                                                        <input value="submit" type="button" class="btn btn-success" onclick="ClickChangeClinet()" id="btnSubmit" />
+                                                        <a href="#" class="btn btn-danger" data-dismiss="modal">Cancel</a>*@
+
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+
+                                        <div>
+
+
+                                            <div class="quote-properties">
+                                                <label for="quote_number" id="clientName">
+                                                    @Model.client.Client_Name
+                                                </label>
+                                                <input type="hidden" value="@Model.client_id" name="client_id" id="clientId" />
+                                            </div>
+
+                                            <div class="quote-properties">
+                                                <label for="quote_number" id="clientPhone">
+                                                    Phone : @Model.client.Client_Phone
+                                                </label>
+
+                                            </div>
+
+                                            <div class="quote-properties">
+                                                <label for="quote_number" id="clientEmail">
+                                                    Email : @Model.client.Client_Email
+                                                </label>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-md-7">
+
+                                <div class="details-box">
+
+                                    <div class="row">
+
+                                        <div class="col-xs-12 col-sm-6">
+
+                                            <div class="quote-properties">
+                                                <label for="quote_number">
+                                                    Bill No #
+                                                </label>
+
+                                                <div class="controls">
+                                                    <input type="text" id="quote_number" class="form-control input-sm" value="@Model.quote_id" placeholder="Not set yet">
+                                                </div>
+                                            </div>
+
+                                            
+
+                                            @*<div class="quote-properties has-feedback">
+                                                <label for="quote_date_created">
+                                                    Expires
+                                                </label>
+
+                                                <div class="input-group-append col-md-13">
+
+                                                    <input type="text" class="form-control mydatepicker" placeholder="dd/mm/yyyy">
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                                    </div>
+                                                </div>
+                                            </div>*@
+
+                                        </div>
+
+                                        <div class="col-xs-12 col-sm-6">
+                                            <div class="quote-properties has-feedback">
+                                                <label for="quote_date_created">
+                                                    Bill Date
+                                                </label>
+
+                                                <div class="input-group-append col-md-13">
+
+                                                    <input type="text" class="form-control mydatepicker" placeholder="dd/mm/yyyy">
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            @*<div class="quote-properties">
+                                                <label for="quote_password">
+                                                    Quote PDF password (optional)
+                                                </label>
+
+                                                <div class="controls">
+                                                    <input type="text" id="quote_password" class="form-control input-sm" value="@Model.quote_password">
+                                                </div>
+                                            </div>*@
+
+                                            @*<div class="quote-properties">
+                                                <label for="quote_password">
+                                                    GST Type
+                                                </label>
+
+                                                <div class="controls">
+                                                    <select name="taxType" id="taxType" class="form-control input-sm">
+                                                        <option value="0">CGST/SGST</option>
+                                                        <option value="1">IGST</option>
+                                                    </select>
+                                                </div>
+                                            </div>*@
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <input type="button" value="Add Product" id="AddProduct" class="btn-success" />
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="table-responsive">
+                                <table id="products_table" class="table table-bordered table-striped">
+
+                                    <thead>
+                                        <tr>
+
+                                            <th>Product Code</th>
+                                            <th>Product name</th>
+                                            <th>Product description</th>
+                                            <th>Quantity</th>
+                                            <th class="text-right">Price</th>
+                                            <th class="text-right">Discount</th>
+                                            @*<th class="text-right">Price without Tax</th>*@
+                                            <th class="text-right">Total Price</th>
+                                            <th> Delete </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="itemsTable">
+
+                                        @foreach (IPQuoteItemsModel obj in Model.quote_items)
+                                        {
+
+                                            i = i + 1;
+                                            <tr data-item_price="@obj.product.selling_price" data-tax_rate="@obj.product.tax_Model.tax_rate_percent" class="js_price">
+                                                <td class="td-textarea"><div class="input-group"> @obj.product.product_sku  <input type="hidden" value="obj.product_id " name="quote_items[@i].item_product_id" /></div></td>
+                                                <td class="td-textarea"><div class="input-group"> @obj.product.product_name</div></td>
+                                                <td class="td-textarea"><div class="input-group"> @obj.product.product_description</div></td>
+                                                @*<td class="td-amount td-quantity "><div class="input-group"><input type="text" name="quote_items[@i].item_description" class="input-sm  form-control amount" placeholder="Description" value="@obj.item_description" /></div></td>*@
+
+                                                <td class="td-amount td-quantity"><div class="input-group"><input type="text" name="quote_items[@i].item_quantity" class="input-sm form-control js_quantity amount" placeholder="Quantity" value="@obj.item_quantity" /></div></td>
+
+                                                <td class="td-textarea ">
+                                                    <div class="input-group">@obj.product.selling_price</div><input type="hidden" value="@obj.item_product_id" name="quote_items[@i].item_product_id" />
+                                                    <input type="hidden" value="@obj.item_id" name="quote_items[@i].item_id" />
+                                                </td>
+
+                                                <td class="td-amount "><div class="input-group"><input type="text" name="quote_items[@i].item_discount_amount" class="input-sm form-control amount js_discount" placeholder="Item Discount" value="@obj.item_discount_amount" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="‎₹ per Item"></div></td>
+
+                                                @*<td class="td-textarea"><div class="input-group js_totalWithoutPrice"></div></td>*@
+                                                <td class="td-textarea"><div class="input-group js_totalPrice"></div></td>
+                                                <td class="td-textarea"></td>
+                                            </tr>
+
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+
+                        <div class="row" style="float:right">
+
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <tbody>
+                                        <tr>
+                                            <td style="width: 40%;">
+                                                Subtotal <input type="hidden" id="js-subTotal" name="quote_amount.quote_item_subtotal" />
+                                                <input type="hidden" id="js-quotediscount" name="quote_amount.quote_discount" />
+                                                <input type="hidden" id="js-quotetaxtotal" name="quote_amount.quote_tax_total" />
+                                                <input type="hidden" id="js-quotetotal" name="quote_amount.quote_total" />
+
+
+                                            </td>
+                                            <td style="width: 60%;" class="amount js-subTotal">‎</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="td-vert-middle">Discount</td>
+                                            <td class="clearfix js-quotediscount">
+                                                ‎₹0.00
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Total</b></td>
+                                            <td class="amount js-quotetotal"><b>‎</b></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- Modal -->
+                    <div id="addProductModal" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content" style="width:170%;">
+                                <div class="modal-header">
+                                    <a data-dismiss="modal" class="close"><i class="fa fa-close"></i></a>
+
+                                    <h3>Add product</h3>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        &nbsp;&nbsp;&nbsp;
+                                        <div class="col-xs-10">
+                                            <div class="form-inline">
+
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" name="filter_product" id="filter_product" placeholder="Product name" value="">
+                                                </div>&nbsp;
+                                                <button type="button" id="filter-button" class="btn btn-default" onclick="SearchProduct()">Search product</button>
+                                                <!-- ToDo
+                                                <button type="button" id="reset-button" class="btn btn-default">
+                                                                            </button>
+                                                -->
+                                            </div>
+                                        </div>
+                                        &nbsp;
+                                        <div class="col-xs-2 text-right" style="padding:0px">
+                                            <div class="btn-group">
+                                                <button class="select-items-confirm btn btn-success" type="button" onclick="GetSelectedProduct()">
+                                                    <i class="fa fa-check"></i>
+                                                    Submit
+                                                </button>
+                                                &nbsp;
+                                                <button class="btn btn-danger" type="button" id="CloseModal" data-dismiss="modal" onclick="CloseModel()">
+                                                    <i class="fa fa-times"></i>
+                                                    Cancel
+                                                </button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>&nbsp;</th>
+                                                    <th>Product Code</th>
+                                                    <th>Family Name</th>
+                                                    <th>Serial Number</th>
+                                                    <th>Product name</th>
+                                                    <th>Product description</th>
+                                                    <th>Price</th>
+                                                    <th>Supplier Name</th>
+                                                    <th class="text-right">Purchase Price</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="productListContent"></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <hr />
+                    <div class="form-group row">
+                        <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Notes:</label>
+                        <div class="col-sm-9">
+                            <textarea class="form-control" style="width:33%"></textarea>
+                        </div>
+                    </div>
+
+
+                    <script>
+    $(document).ready(function () {
+        $("#quote_status_id").val(@Model.quote_status_id);
+        $("#taxType").val(@Model.taxType);
+
+
+    });
+                    </script>
+                    <script>
+                        $(document).ready(function () {
+
+
+
+                            $("#AddProduct").click(function () {
+                                var keyword = '';
+                                var page = 1;
+                                filterProducts('', 1);
+                                $("#addProductModal").modal('show');
+
+                            });
+
+                            $(".js_quantity").change(function () {
+                                Calculate();
+                            });
+                            $(".js_discount").change(function () {
+                                Calculate();
+                            });
+
+                            Calculate();
+                            //$("#taxType").change(function () {
+                            //    Calculate();
+                            //});
+
+                        });
+
+                        function SearchProduct() {
+                            var keyword = $("#filter_product").val();
+                            var page = 1;
+                            filterProducts(keyword, 1);
+                        }
+
+                        function filterProducts(keyword, page) {
+                            var data = {};
+                            data.keyword = keyword;
+                            data.page = 1;
+                            $.ajax({
+                                url: "/IPProducts/FilterProduct",
+                                data: data
+
+                            }).done(function (data) {
+                                console.log(data);
+                                var template = '';
+                                for (var i = 0; i < data.length; i++) {
+
+                                    //template = template + '<tr class="product"><td class="text-left"><input type="checkbox" data-product_sku="' + data[i].product_sku + '" data-product_id="' + data[i].product_id + '" data-product_name="' + data[i].product_name + '" data-item_price="' + data[i].selling_price + '"/></td><td nowrap="" class="text-left"><b>' + data[i].product_sku + '</b></td><td nowrap="" class="text-left"><b>' + data[i].family_Model.family_name + '</b></td><td><b>' + data[i].product_name + '</b></td><td><b>' + data[i].product_description + '</b></td><td class="text-right">‎₹' + data[0].product_price + '</td></tr>';
+                                    template = template + '<tr class="product"><td class="text-left"><input type="checkbox" data-product_sku="' + data[i].product_sku + '" data-product_id="' + data[i].product_id + '" data-product_name="' + data[i].product_name + '"data-product_description="' + data[i].product_description + '"data-tax_rate ="' + data[i].tax_Model.tax_rate_percent + '" data-item_price="' + data[i].selling_price + '"/></td><td nowrap="" class="text-left"><b>' + data[i].product_sku + '</b></td><td nowrap="" class="text-left"><b>' + data[i].family_Model.family_name + '</b></td><td><b>' + data[i].serial_number + '</b></td><td><b>' + data[i].product_name + '</b></td><td><b>' + data[i].product_description + '</b></td><td>‎₹' + data[0].product_price + '</td><td><b>' + data[i].supp_name + '</b></td><td class="text-right">‎₹' + data[i].purchase_price + '</td></tr>';
+
+                                }
+                                $("#productListContent").html(template);
+                            });
+                        }
+
+
+                        function CloseModel() {
+                            $("#addProductModal").modal('hide');
+                        }
+
+                        function GetSelectedProduct() {
+                            var itemChecked = $('#productListContent input:checked');
+                            var template = "";
+                            var index = 0, existingIndex = $("#itemsTable tr").length;
+                            $.each(itemChecked, function (inx, value) {
+                                var obj = {};
+                                obj.product_sku = $(value).attr("data-product_sku");
+                                obj.product_id = $(value).attr("data-product_id");
+                                obj.product_name = $(value).attr("data-product_name");
+                                obj.product_description = $(value).attr("data-product_description");
+                                obj.item_price = $(value).attr("data-item_price");
+                                index = existingIndex + inx;
+                                var serialNoColumn = '<tr data-item_price="' + obj.item_price + '" data-tax_rate="' + obj.tax_rate + '"  class="js_price" >  <td class="td-textarea"><div class="input-group">' + obj.product_sku + ' <input type="hidden" value="' + obj.product_id + '" name="quote_items[' + index + '].item_product_id"/></div></td>';
+                                var productNameColumn = ' <td class="td-textarea"><div class="input-group">' + obj.product_name + ' <input type="hidden" value="' + obj.product_name + '" name="quote_items[' + index + '].item_product_id" /></div></td>';
+                                var descriptionColumn = ' <td class="td-textarea"><div class="input-group">' + obj.product_description + ' <input type="hidden" value="' + obj.product_description + '" name="quote_items[' + index + '].item_product_id" /></div></td>';
+
+                                //var descriptionColumn = '<td class="td-amount td-quantity "><div class="input-group"><input type="text" name="quote_items[' + index + '].item_description" class="input-sm  form-control amount"  placeholder="Description" value=""></div></td>';
+                                var quantityColumn = '<td class="td-amount td-quantity"><div class="input-group"><input type="text" name="quote_items[' + index + '].item_quantity" class="input-sm form-control js_quantity amount" placeholder="Quantity" value=""></div></td>';
+                                var priceColumn = '<td class="td-textarea "><div class="input-group">' + obj.item_price + ' </div><input type="hidden" value="' + obj.product_id + '" name="quote_items[' + index + '].item_product_id" /></td>';
+                                var discountColumn = '<td class="td-amount "><div class="input-group"><input type="text" name="quote_items[' + index + '].item_discount_amount" class="input-sm form-control amount js_discount" placeholder="Item Discount" value="" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="‎₹ per Item"></div></td>';
+                                //var totalWithoutTaxPriceColumn = '<td class="td-textarea"><div class="input-group js_totalWithoutPrice"></div></td>';
+                                var totalPriceColumn = '<td class="td-textarea"><div class="input-group js_totalPrice"></div></td>';
+                                var deletecolumn = '<td class="td-textarea"><button type="button" class="remCF">Delete</button></tr>';
+                                template = template + serialNoColumn + productNameColumn + descriptionColumn + quantityColumn + priceColumn + discountColumn + totalPriceColumn + deletecolumn;
+                            });
+                            if (itemChecked.length != 0) {
+                                template = $("#itemsTable").html() + template;
+                                $("#itemsTable").html(template);
+
+                                $(".js_quantity").change(function () {
+                                    Calculate();
+                                });
+                                $(".js_discount").change(function () {
+                                    Calculate();
+                                });
+                                $("#CloseModal").click();
+                            }
+                        }
+
+
+
+                        $("#itemsTable").on('click', '.remCF', function () {
+                            $(this).parent().parent().remove();
+                            Calculate();
+
+                        });
+
+                        function Calculate() {
+                            var rows = $("#itemsTable tr");
+                            var totalPrice = 0, totalGST = 0, totalDiscount = 0, subTotal = 0;
+                            $.each(rows, function (index, row) {
+                                var quantity = parseInt($(row).find(".js_quantity").val());
+                                if (!isNaN(quantity)) {
+                                    var price = parseInt($(row).attr("data-item_price"));
+                                    var discount = parseInt($(row).find(".js_discount").val());
+                                    discount = isNaN(discount) ? 0 : discount;
+                                    var tax = 0;/*parseInt($(row).attr("data-tax_rate"));*/
+                                    var calPrice = (quantity * price) - discount;
+                                    var calTax = 0;/*(calPrice) * (tax / 100);*/
+                                    totalPrice = totalPrice + calPrice + calTax;
+                                    //$(row).find(".js_totalWithoutPrice").text(calPrice);
+                                    $(row).find(".js_totalPrice").text(calPrice + calTax);
+                                    totalGST = totalGST + calTax;
+                                    totalDiscount = totalDiscount + discount;
+                                    subTotal = subTotal + quantity * price;
+                                }
+                            });
+
+                            $("#js-subTotal").val(subTotal);
+                            $("#js-quotediscount").val(totalDiscount);
+                            $("#js-quotetaxtotal").val(totalGST);
+                            $("#js-quotetotal").val(totalPrice);
+
+                            $(".js-subTotal").text(subTotal);
+                            $(".js-quotediscount").text(totalDiscount);
+                            $(".js-quotetotal").text(totalPrice);
+                            //$(".js-quotetaxIGST").text(totalGST);
+                            //$(".js-quotetaxCGST").text(totalGST / 2);
+                            //$(".js-quotetaxSGST").text(totalGST / 2);
+
+                            //if ($("#taxType").val() == 0) {
+
+                            //    $(".cgst").show();
+                            //    $(".igst").hide();
+                            //}
+
+                            //else {
+                            //    $(".cgst").hide();
+                            //    $(".igst").show();
+
+
+                            //}
+
+                        }
+
+
+                    </script>
+
+                    <script>
+                        $(document).ready(function () {
+                            $("#btnSubmit").click(function () {
+                                $("#myModal").modal("hide");
+                                $("#Client_Address_1").value('Test');
+                            })
+                        })
+                    </script>
+
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- End PAge Content -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Right sidebar -->
+        <!-- ============================================================== -->
+        <!-- .right-sidebar -->
+        <!-- ============================================================== -->
+        <!-- End Right sidebar -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Container fluid  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- footer -->
+    <!-- ============================================================== -->
+    @*<footer class="footer text-center">
+            All Rights Reserved by Matrix-admin. Designed and Developed by <a href="https://wrappixel.com">WrapPixel</a>.
+        </footer>*@
+    <!-- ============================================================== -->
+    <!-- End footer -->
+    <!-- ============================================================== -->
+</form>
+
+<!-- This Page JS -->
+<script src="../../Content/assets/libs/inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
+<script src="../../Content/dist/js/pages/mask/mask.init.js"></script>
+<script src="../../Content/assets/libs/select2/dist/js/select2.full.min.js"></script>
+<script src="../../Content/assets/libs/select2/dist/js/select2.min.js"></script>
+<script src="../../Content/assets/libs/jquery-asColor/dist/jquery-asColor.min.js"></script>
+<script src="../../Content/assets/libs/jquery-asGradient/dist/jquery-asGradient.js"></script>
+<script src="../../Content/assets/libs/jquery-asColorPicker/dist/jquery-asColorPicker.min.js"></script>
+<script src="../../Content/assets/libs/jquery-minicolors/jquery.minicolors.min.js"></script>
+<script src="../../Content/assets/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<script src="../../Content/assets/libs/quill/dist/quill.min.js"></script>
+<script>
+
+
+    //function ClickChangeClinet() {
+    //    var option = $("#client_name option:selected");
+
+    //    $("#clientId").val($(option).val());
+    //    $("#clientEmail").text("Email:  " + $(option).attr("js-ClientEmail"));
+    //    $("#clientPhone").text("Phone: " + $(option).attr("js-ClientPhone"));
+    //    $("#clientName").text($(option).attr("js-ClientName"));
+    //}
+    //$(".select2").select2();
+
+
+    //$(document).ready(function () {
+    //    $.ajax({
+    //        method: "GET",
+    //        url: "/IPClients/GetAllClients",
+    //    })
+    //        .done(function (data) {
+
+    //            var options = '';
+    //            $.each(data, function (index, object) {
+    //                options = options + '<option  js-ClientEmail= "' + object.Client_Email + '"  js-ClientPhone= "' + object.Client_Phone + '"   js-ClientName= "' + object.Client_Name + '" value="' + object.Client_ID + '">' + object.Client_Name + '</option>'
+    //            });
+    //            $("#client_name").html(options);
+    //        });
+
+    //});
+
+
+
+    function ClickChangeClinet() {
+        var option = $("#client_name option:selected");
+
+        $("#clientId").val($(option).val());
+        $("#clientEmail").text("Email:  " + $(option).attr("js-ClientEmail"));
+        $("#clientPhone").text("Phone: " + $(option).attr("js-ClientPhone"));
+        $("#clientName").text($(option).attr("js-ClientName"));
+    }
+    $(".select2").select2();
+
+
+    $(document).ready(function () {
+        $.ajax({
+            method: "GET",
+            url: "/IPClients/GetAllClients",
+        })
+            .done(function (data) {
+
+                var options = '';
+                $.each(data, function (index, object) {
+                    options = options + '<option  js-ClientEmail= "' + object.Client_Email + '"  js-ClientPhone= "' + object.Client_Phone + '"   js-ClientName= "' + object.Client_Name + '" value="' + object.Client_ID + '">' + object.Client_Name + '</option>'
+                });
+                $("#client_name").html(options);
+            });
+
+    });
+    //***********************************//
+    // For select 2
+    //***********************************//
+    $(".select2").select2();
+
+    /*colorpicker*/
+    $('.demo').each(function () {
+        //
+        // Dear reader, it's actually very easy to initialize MiniColors. For example:
+        //
+        //  $(selector).minicolors();
+        //
+        // The way I've done it below is just for the demo, so don't get confused
+        // by it. Also, data- attributes aren't supported at this time...they're
+        // only used for this demo.
+        //
+        $(this).minicolors({
+            control: $(this).attr('data-control') || 'hue',
+            position: $(this).attr('data-position') || 'bottom left',
+
+            change: function (value, opacity) {
+                if (!value) return;
+                if (opacity) value += ', ' + opacity;
+                if (typeof console === 'object') {
+                    console.log(value);
+                }
+            },
+            theme: 'bootstrap'
+        });
+
+    });
+    /*datwpicker*/
+    jQuery('.mydatepicker').datepicker({
+        format: 'dd/mm/yyyy',
+
+    });
+    jQuery('#datepicker-autoclose').datepicker({
+        format: 'dd/mm/yyyy',
+        autoclose: true,
+        todayHighlight: true
+    });
+    var quill = new Quill('#editor', {
+        theme: 'snow'
+    });
+
+</script>

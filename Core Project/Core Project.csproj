@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CFDF68DC-3EC9-4276-9269-5139FCD72E8D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Core_Project</RootNamespace>
+    <AssemblyName>Core Project</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <NuGetPackageImportStamp>83838c1a</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.Composition.Registration" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\AddProductModel.cs" />
+    <Compile Include="Model\IPClientCustomModel.cs" />
+    <Compile Include="Model\IPClientNotesModel.cs" />
+    <Compile Include="Model\IPClientsModel.cs" />
+    <Compile Include="Model\IPCompanyModel.cs" />
+    <Compile Include="Model\IPCompanyProfileModel.cs" />
+    <Compile Include="Model\IPCustomFieldsModel.cs" />
+    <Compile Include="Model\IPEmailTemplatesModel.cs" />
+    <Compile Include="Model\IPEstimateItemsModel.cs" />
+    <Compile Include="Model\IPEstimateModel.cs" />
+    <Compile Include="Model\IPFamiliesModel.cs" />
+    <Compile Include="Model\IPImportDetailsModel.cs" />
+    <Compile Include="Model\IPImportsModel.cs" />
+    <Compile Include="Model\IPInvoiceAmountsModel.cs" />
+    <Compile Include="Model\IPInvoiceCustomModel.cs" />
+    <Compile Include="Model\IPInvoiceGroupsModel.cs" />
+    <Compile Include="Model\IPInvoiceItemAmountsModel.cs" />
+    <Compile Include="Model\IPInvoiceItemsModel.cs" />
+    <Compile Include="Model\IPInvoicesModel.cs" />
+    <Compile Include="Model\IPInvoicesRecurringModel.cs" />
+    <Compile Include="Model\IPInvoiceTaxRatesModel.cs" />
+    <Compile Include="Model\IPItemsLookupModel.cs" />
+    <Compile Include="Model\IPJobPortalModel.cs" />
+    <Compile Include="Model\IPMakeModel.cs" />
+    <Compile Include="Model\IPMerchantResponsesModel.cs" />
+    <Compile Include="Model\IPModelModel.cs" />
+    <Compile Include="Model\IPPaymentCustomModel.cs" />
+    <Compile Include="Model\IPPaymentMethodsModel.cs" />
+    <Compile Include="Model\IPPaymentsModel.cs" />
+    <Compile Include="Model\IPProductsModel.cs" />
+    <Compile Include="Model\IPProjectsModel.cs" />
+    <Compile Include="Model\IPPurchaseAmountsModel.cs" />
+    <Compile Include="Model\IPPurchaseCustomModel.cs" />
+    <Compile Include="Model\IPPurchaseItemAmountsModel.cs" />
+    <Compile Include="Model\IPPurchaseItemsModel.cs" />
+    <Compile Include="Model\IPPurchaseModel.cs" />
+    <Compile Include="Model\IPPurchaseTaxRatesModel.cs" />
+    <Compile Include="Model\IPQuoteAmountsModel.cs" />
+    <Compile Include="Model\IPQuoteCustomModel.cs" />
+    <Compile Include="Model\IPQuoteItemAmountsModel.cs" />
+    <Compile Include="Model\IPQuoteItemsModel.cs" />
+    <Compile Include="Model\IPQuotesModel.cs" />
+    <Compile Include="Model\IPQuoteTaxRatesModel.cs" />
+    <Compile Include="Model\IPSessionsModel.cs" />
+    <Compile Include="Model\IPSettingsModel.cs" />
+    <Compile Include="Model\IPSparesModel.cs" />
+    <Compile Include="Model\IPTasksModel.cs" />
+    <Compile Include="Model\IPTaxRatesModel.cs" />
+    <Compile Include="Model\IPUploadsModel.cs" />
+    <Compile Include="Model\IPUserClientsModel.cs" />
+    <Compile Include="Model\IPUserCustomModel.cs" />
+    <Compile Include="Model\IPUsersModel.cs" />
+    <Compile Include="Model\IPVersionsModel.cs" />
+    <Compile Include="Model\ReportSearch.cs" />
+    <Compile Include="Model\StockReport\ProductDetails.cs" />
+    <Compile Include="Model\StockReport\QuoteItemsDetails.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\IIPClientCustom.cs" />
+    <Compile Include="Service\IIPClientNotes.cs" />
+    <Compile Include="Service\IIPClients.cs" />
+    <Compile Include="Service\IIPCompany.cs" />
+    <Compile Include="Service\IIPCompanyProfile.cs" />
+    <Compile Include="Service\IIPCustomFields.cs" />
+    <Compile Include="Service\IIPEmailTemplates.cs" />
+    <Compile Include="Service\IIPEstimate.cs" />
+    <Compile Include="Service\IIPEstimateItems.cs" />
+    <Compile Include="Service\IIPFamilies.cs" />
+    <Compile Include="Service\IIPImports.cs" />
+    <Compile Include="Service\IIPImportDetails.cs" />
+    <Compile Include="Service\IIPInvoiceAmounts.cs" />
+    <Compile Include="Service\IIPInvoiceCustom.cs" />
+    <Compile Include="Service\IIPInvoiceGroups.cs" />
+    <Compile Include="Service\IIPInvoiceItemAmounts.cs" />
+    <Compile Include="Service\IIPInvoiceItems.cs" />
+    <Compile Include="Service\IIPInvoices.cs" />
+    <Compile Include="Service\IIPInvoicesRecurring.cs" />
+    <Compile Include="Service\IIPInvoiceTaxRates.cs" />
+    <Compile Include="Service\IIPItemsLookup.cs" />
+    <Compile Include="Service\IIPJobPortal.cs" />
+    <Compile Include="Service\IIPMake.cs" />
+    <Compile Include="Service\IIPMerchantResponses.cs" />
+    <Compile Include="Service\IIPModel.cs" />
+    <Compile Include="Service\IIPPaymentCustom.cs" />
+    <Compile Include="Service\IIPPaymentMethods.cs" />
+    <Compile Include="Service\IIPPayments.cs" />
+    <Compile Include="Service\IIPProducts.cs" />
+    <Compile Include="Service\IIPProjects.cs" />
+    <Compile Include="Service\IIPPurchase.cs" />
+    <Compile Include="Service\IIPPurchaseAmounts.cs" />
+    <Compile Include="Service\IIPPurchaseCustom.cs" />
+    <Compile Include="Service\IIPPurchaseItemAmounts.cs" />
+    <Compile Include="Service\IIPPurchaseItems.cs" />
+    <Compile Include="Service\IIPPurchaseTaxRates.cs" />
+    <Compile Include="Service\IIPQuoteAmounts.cs" />
+    <Compile Include="Service\IIPQuoteCustom.cs" />
+    <Compile Include="Service\IIPQuoteItemAmounts.cs" />
+    <Compile Include="Service\IIPQuoteItems.cs" />
+    <Compile Include="Service\IIPQuotes.cs" />
+    <Compile Include="Service\IIPQuoteTaxRates.cs" />
+    <Compile Include="Service\IIPSessions.cs" />
+    <Compile Include="Service\IIPSettings.cs" />
+    <Compile Include="Service\IIPSpares.cs" />
+    <Compile Include="Service\IIPTasks.cs" />
+    <Compile Include="Service\IIPTaxRates.cs" />
+    <Compile Include="Service\IIPUploads.cs" />
+    <Compile Include="Service\IIPUserClients.cs" />
+    <Compile Include="Service\IIPUserCustom.cs" />
+    <Compile Include="Service\IIPUsers.cs" />
+    <Compile Include="Service\IIPVersions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

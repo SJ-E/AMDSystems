@@ -1,0 +1,83 @@
+﻿
+<div id="main-area">
+
+    <div id="modal-placeholder" class="modal-placeholder"></div>
+
+    <div id="headerbar">
+        <h1>Recurring Invoices</h1>
+
+        <div class="pull-right">
+            <div class="btn-group"><a class="btn btn-default btn-sm disabled" href="#" title="First"><i class="fa fa-fast-backward no-margin"></i></a><a class="btn btn-default btn-sm disabled" href="#" title="Prev"><i class="fa fa-backward no-margin"></i></a><a class="btn btn-default disabled btn-sm" href="#" title="Next"><i class="fa fa-forward no-margin"></i></a><a class="btn btn-default disabled btn-sm" href="#" title="Last"><i class="fa fa-fast-forward no-margin"></i></a></div>
+        </div>
+    </div>
+
+    <div id="content" class="table-content" style="height: 541px;">
+
+        <div id="filter_results">
+            <div class="table-responsive">
+                <table class="table table-striped">
+
+                    <thead>
+                        <tr>
+                            <th>Status</th>
+                            <th>Base Invoice</th>
+                            <th>Client</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Every</th>
+                            <th>Next Date</th>
+                            <th>Options</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>
+                                <span class="label
+                            label-success">
+                                    Active
+                                </span>
+                            </td>
+                            <td>
+                                <a href="http://amdsystems.in/billing/invoices/view/63">
+                                </a>
+                            </td>
+                            <td>
+                                <a href="http://amdsystems.in/billing/clients/view/39">Client Name *123</a>
+                            </td>
+                            <td>
+                                16-Feb-2018
+                            </td>
+                            <td></td>
+                           <td></td>
+                            <td>
+                                16-Feb-2018
+                            </td>
+                            <td>
+                                <div class="options btn-group">
+                                    <a class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" href="#">
+                                        <i class="fa fa-cog"></i> Options
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="http://amdsystems.in/billing/invoices/recurring/stop/1">
+                                                <i class="fa fa-ban fa-margin"></i> Stop
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="http://amdsystems.in/billing/invoices/recurring/delete/1" onclick="return confirm('Are you sure you wish to delete this record?');">
+                                                <i class="fa fa-trash-o fa-margin"></i> Delete
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,283 @@
+﻿@using Core_Project.Model
+@model IPQuotesModel
+
+
+<link rel="stylesheet" type="text/css" href="../../Content/assets/libs/select2/dist/css/select2.min.css">
+<link rel="stylesheet" type="text/css" href="../../Content/assets/libs/jquery-minicolors/jquery.minicolors.css">
+<link rel="stylesheet" type="text/css" href="../../Content/assets/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+<link rel="stylesheet" type="text/css" href="../../Content/assets/libs/quill/dist/quill.snow.css">
+<link href="../../Content/dist/css/style.min.css" rel="stylesheet">
+
+
+<!-- ============================================================== -->
+<!-- Bread crumb and right sidebar toggle -->
+<!-- ============================================================== -->
+<div class="page-breadcrumb">
+    <div class="row">
+        <div class="col-12 d-flex no-block align-items-center">
+            <h4 class="page-title">Create Billing</h4>
+
+        </div>
+    </div>
+</div>
+<br />
+<!-- ============================================================== -->
+<!-- End Bread crumb and right sidebar toggle -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- Container fluid  -->
+<!-- ============================================================== -->
+<div class="container-fluid">
+    <!-- ============================================================== -->
+    <!-- Start Page Content -->
+    <!-- ============================================================== -->
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card" style="width:920px; height:680px;">
+                <form class="form-horizontal" id="formCreateQuote" method="post" action="/Billing/CreateBilling">
+
+
+                    <div class="card-body" style="width:520px; height:auto;">
+
+
+                        <div class="form-group row">
+                            <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Client Name:</label>
+                            <div class="col-sm-9">
+                                <select name="client_id" id="client_name" class="form-control" autofocus="autofocus" tabindex="-1" aria-hidden="true" style="width: 100%; height:36px;"></select>
+                                @*<select id="client_active" name="client_active" class="select2 form-control custom-select" style="width: 100%; height:36px;">
+
+                                    </select>*@
+                            </div>
+                        </div>
+
+                        @*<div class="form-group row">
+                                @*<label for="fname" class="col-sm-3 text-right control-label col-form-label"> Name</label>
+                                <label for="quote_password" class="col-sm-3 text-right control-label col-form-label">Created Date</label>
+                                <div class="col-sm-9">
+                                    <input type="date" name="quote_date_created" id="quote_date_created" class="form-control" value="02-Jun-2018">
+                                </div>
+                            </div>*@
+                        <div class="form-group row">
+                            <label class="col-sm-3 text-right control-label col-form-label">Billing Date</label>
+
+                            <div class="input-group-append col-md-9">
+
+                                <input type="text" class="form-control mydatepicker" placeholder="dd/mm/yyyy">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        @*<div class="form-group row">
+    <label for="fname" class="col-sm-3 text-right control-label col-form-label"> Name</label>
+                            <label for="quote_password" class="col-sm-3 text-right control-label col-form-label">Quote PDF password (optional)</label>
+                            <div class="col-sm-9">
+
+                                <input type="text" name="quote_password" id="quote_password" class="form-control" value="" style="margin: 0 auto;" autocomplete="off">
+                                @Html.TextBoxFor(e => e.Client_Name)
+                                    @Html.ValidationMessageFor(e => e.Client_Name)
+                            </div>
+                        </div>*@
+
+
+                       @* <div class="form-group row">
+    <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Invoice Group:</label>
+    <div class="col-sm-9">
+       <select name="client_id" id="client_name" class="form-control" autofocus="autofocus" tabindex="-1" aria-hidden="true" style="width: 100%; height:36px;"></select>
+                                <select name="invoice_group_id" id="invoice_group_id" class="form-control" style="width: 100%; height:36px;">
+                                    <option value="1">Invoice Default</option>
+                                    <option value="2" selected="selected">Quote Default</option>
+                                </select>
+                                <select id="client_active" name="client_active" class="select2 form-control custom-select" style="width: 100%; height:36px;">
+
+                                    </select>
+                            </div>
+                        </div>
+                    </div>*@
+
+
+
+
+
+
+
+                    <div class="ml-auto text-right">
+                        <div class="card-body">
+                            @*<input type="submit" value="Save" class="btn btn-success btn-sm ajax-loader" />*@
+                            @*<button id="btn-submit" name="btn_submit" class="btn btn-success" value="1">
+                                            <i class="fa fa-check"></i> Save
+                                        </button>
+                                        <button id="btn-cancel" name="btn_cancel" class="btn btn-danger btn-sm" value="1">
+                                    <i class="fa fa-times"></i> Cancel
+                                </button>
+                                                        <button id="btn-cancel" name="btn_cancel" class="btn btn-danger" value="1">
+                                                            <i class="fa fa-times"></i> Cancel
+                                                        </button>*@
+
+                            <button class="btn btn-success ajax-loader" id="quote_create_confirm" type="button">
+                                <i class="fa fa-check"></i> Next
+                            </button>
+
+
+
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+
+
+
+
+
+            @*    <div class="form-group">
+                                 <label for="tax_rate_id">
+                                     Tax Rate
+                                 </label>
+
+                                 <div class="controls">
+                                     <select name="quote_tax_rate.tax_rate_id" id="tax_rate_id" class="form-control">
+                                         <option value="1">18.00% - storage</option>
+                                     </select>
+                                 </div>
+                             </div>
+
+                            <div class="form-group">
+                                 <label for="include_item_tax">
+                                     Tax Rate Placement
+                                 </label>
+
+                                 <div class="controls">
+                                     <select name="include_item_tax" id="include_item_tax" class="form-control">
+                                         <option value="0">
+                                             Apply Before Item Tax
+                                         </option>
+                                         <option value="1">
+                                             Apply After Item Tax
+                                         </option>
+                                     </select>
+                                 </div>
+                             </div>
+
+
+
+                        <div class="form-group">
+                            <label for="invoice_group_id">Invoice Group: </label>
+
+                            <div class="controls">
+                                <select name="invoice_group_id" id="invoice_group_id" class="form-control">
+                                    <option value="1">Invoice Default</option>
+                                    <option value="2" selected="selected">Quote Default</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="modal-footer">
+                        <div class="btn-group">
+                            <button class="btn btn-success ajax-loader" id="quote_create_confirm" type="button">
+                                <i class="fa fa-check"></i> Next
+                            </button>
+                        </div>
+                    </div>
+                </form>*@
+
+            <script>
+                    $(document).ready(function () {
+                        $.ajax({
+                            method: "GET",
+                            url: "/IPClients/GetAllClients",
+                        })
+                            .done(function (data) {
+                                var options = '';
+                                $.each(data, function (index, object) {
+                                    options = options + '<option value="' + object.Client_ID + '">' + object.Client_Name + '</option>'
+                                });
+                                $("#client_name").html(options);
+                                $("#client_name").val(@Model.client_id);
+                            });
+
+
+                    $('#quote_create_confirm').click(function () {
+                        $("#formCreateQuote").submit();
+                    });
+                });
+            </script>
+</div></div></div>
+
+
+            <!-- This Page JS -->
+            <script src="../../Content/assets/libs/inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
+            <script src="../../Content/dist/js/pages/mask/mask.init.js"></script>
+            <script src="../../Content/assets/libs/select2/dist/js/select2.full.min.js"></script>
+            <script src="../../Content/assets/libs/select2/dist/js/select2.min.js"></script>
+            <script src="../../Content/assets/libs/jquery-asColor/dist/jquery-asColor.min.js"></script>
+            <script src="../../Content/assets/libs/jquery-asGradient/dist/jquery-asGradient.js"></script>
+            <script src="../../Content/assets/libs/jquery-asColorPicker/dist/jquery-asColorPicker.min.js"></script>
+            <script src="../../Content/assets/libs/jquery-minicolors/jquery.minicolors.min.js"></script>
+            <script src="../../Content/assets/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+            <script src="../../Content/assets/libs/quill/dist/quill.min.js"></script>
+            <script>
+                //***********************************//
+                // For select 2
+                //***********************************//
+                $(".select2").select2();
+
+                /*colorpicker*/
+                $('.demo').each(function () {
+                    //
+                    // Dear reader, it's actually very easy to initialize MiniColors. For example:
+                    //
+                    //  $(selector).minicolors();
+                    //
+                    // The way I've done it below is just for the demo, so don't get confused
+                    // by it. Also, data- attributes aren't supported at this time...they're
+                    // only used for this demo.
+                    //
+                    $(this).minicolors({
+                        control: $(this).attr('data-control') || 'hue',
+                        position: $(this).attr('data-position') || 'bottom left',
+
+                        change: function (value, opacity) {
+                            if (!value) return;
+                            if (opacity) value += ', ' + opacity;
+                            if (typeof console === 'object') {
+                                console.log(value);
+                            }
+                        },
+                        theme: 'bootstrap'
+                    });
+
+                });
+                /*datwpicker*/
+                jQuery('.mydatepicker').datepicker({
+                    format: 'dd/mm/yyyy',
+                    todayHighlight: true
+                });
+                jQuery('#datepicker-autoclose').datepicker({
+                    format: 'dd/mm/yyyy',
+                    autoclose: true,
+                    todayHighlight: true
+                });
+                var quill = new Quill('#editor', {
+                    theme: 'snow'
+                });
+
+            </script>
+
+
+
+            <script>
+                $(document).ready(function () {
+
+                });
+
+
+            </script>
