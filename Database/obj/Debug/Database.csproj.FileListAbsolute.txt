@@ -10,3 +10,15 @@ F:\Santhosh\SPCodePractice\AMDSystems\AMDSystems\Database\obj\Debug\Database.csp
 F:\Santhosh\SPCodePractice\AMDSystems\AMDSystems\Database\obj\Debug\Database.dll
 F:\Santhosh\SPCodePractice\AMDSystems\AMDSystems\Database\obj\Debug\Database.pdb
 F:\Santhosh\SPCodePractice\AMDSystems\AMDSystems\Database\obj\Debug\Database.csprojResolveAssemblyReference.cache
+F:\Santhosh\SJ-E\AMDSystems\Database\bin\Debug\Database.dll.config
+F:\Santhosh\SJ-E\AMDSystems\Database\bin\Debug\Database.dll
+F:\Santhosh\SJ-E\AMDSystems\Database\bin\Debug\Database.pdb
+F:\Santhosh\SJ-E\AMDSystems\Database\bin\Debug\EntityFramework.dll
+F:\Santhosh\SJ-E\AMDSystems\Database\bin\Debug\EntityFramework.SqlServer.dll
+F:\Santhosh\SJ-E\AMDSystems\Database\bin\Debug\EntityFramework.xml
+F:\Santhosh\SJ-E\AMDSystems\Database\bin\Debug\EntityFramework.SqlServer.xml
+F:\Santhosh\SJ-E\AMDSystems\Database\obj\Debug\Database.csprojResolveAssemblyReference.cache
+F:\Santhosh\SJ-E\AMDSystems\Database\obj\Debug\Database.csproj.CoreCompileInputs.cache
+F:\Santhosh\SJ-E\AMDSystems\Database\obj\Debug\Database.csproj.CopyComplete
+F:\Santhosh\SJ-E\AMDSystems\Database\obj\Debug\Database.dll
+F:\Santhosh\SJ-E\AMDSystems\Database\obj\Debug\Database.pdb
