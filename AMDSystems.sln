@@ -11,6 +11,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastru
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "Database\Database.csproj", "{5977A856-AF45-480D-8260-3F2D80460EC1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{03741070-5AFC-4B8B-97B6-CDE3FA49F694}"
+	ProjectSection(SolutionItems) = preProject
+		Test Sync-Pull.txt = Test Sync-Pull.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,23 +44,5 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {59F43957-C01A-468A-A1E2-51A639AE2BA6}
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 5
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://spcodeproject.visualstudio.com/
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = AMDSystems\\AMDSystems.csproj
-		SccProjectName1 = AMDSystems
-		SccLocalPath1 = AMDSystems
-		SccProjectUniqueName2 = Core\u0020Project\\Core\u0020Project.csproj
-		SccProjectName2 = Core\u0020Project
-		SccLocalPath2 = Core\u0020Project
-		SccProjectUniqueName3 = Infrastructure\\Infrastructure.csproj
-		SccProjectName3 = Infrastructure
-		SccLocalPath3 = Infrastructure
-		SccProjectUniqueName4 = Database\\Database.csproj
-		SccProjectName4 = Database
-		SccLocalPath4 = Database
 	EndGlobalSection
 EndGlobal
