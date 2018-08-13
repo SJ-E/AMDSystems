@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8861C562-EC5D-40B9-BEE5-9CE178A7D704}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Infrastructure</RootNamespace>
+    <AssemblyName>Infrastructure</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <NuGetPackageImportStamp>19506456</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Mapper.cs" />
+    <Compile Include="Data\AMDSystems.Context.cs">
+      <DependentUpon>AMDSystems.Context.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Data\AMDSystems.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Data\AMDSystems.Designer.cs">
+      <DependentUpon>AMDSystems.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Data\ip_clients.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_client_custom.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_client_notes.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_company.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_company_profile.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_custom_fields.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_email_templates.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_estimate.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_estimate_items.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_families.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_imports.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_import_details.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_invoices.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_invoices_recurring.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_invoice_amounts.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_invoice_custom.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_invoice_groups.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_invoice_items.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_invoice_item_amounts.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_invoice_tax_rates.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_item_lookups.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_job_portal.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_make.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_merchant_responses.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_model.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_payments.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_payment_custom.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_payment_methods.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_products.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_projects.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_purchase.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_purchase_amounts.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_purchase_custom.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_purchase_items.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_purchase_item_amounts.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_purchase_tax_rates.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_quotes.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_quote_amounts.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_quote_custom.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_quote_items.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_quote_item_amounts.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_quote_tax_rates.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_sessions.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_settings.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_Spares.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_tasks.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_tax_rates.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_uploads.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_users.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_user_clients.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_user_custom.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ip_versions.cs">
+      <DependentUpon>AMDSystems.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\IPClientCustomRepository.cs" />
+    <Compile Include="Repository\IPClientNotesRepository.cs" />
+    <Compile Include="Repository\IPClientsRepository.cs" />
+    <Compile Include="Repository\IPCompanyProfileRepository.cs" />
+    <Compile Include="Repository\IPCompanyRepository.cs" />
+    <Compile Include="Repository\IPCustomFieldsRepository.cs" />
+    <Compile Include="Repository\IPEmailTemplatesRepository.cs" />
+    <Compile Include="Repository\IPEstimateItemsRepository.cs" />
+    <Compile Include="Repository\IPEstimateRepository.cs" />
+    <Compile Include="Repository\IPFamiliesRepository.cs" />
+    <Compile Include="Repository\IPImportDetailsRepository.cs" />
+    <Compile Include="Repository\IPImportsRepository.cs" />
+    <Compile Include="Repository\IPInvoiceAmountsRepository.cs" />
+    <Compile Include="Repository\IPInvoiceCustomRepository.cs" />
+    <Compile Include="Repository\IPInvoiceGroupsRepository.cs" />
+    <Compile Include="Repository\IPInvoiceItemAmountsRepository.cs" />
+    <Compile Include="Repository\IPInvoiceItemsRepository.cs" />
+    <Compile Include="Repository\IPInvoicesRecurringRepository.cs" />
+    <Compile Include="Repository\IPInvoicesRepository.cs" />
+    <Compile Include="Repository\IPInvoiceTaxRatesRepository.cs" />
+    <Compile Include="Repository\IPItemsLookupRepository.cs" />
+    <Compile Include="Repository\IPJobPortalRepository.cs" />
+    <Compile Include="Repository\IPMakeRepository.cs" />
+    <Compile Include="Repository\IPMerchantResponsesRepository.cs" />
+    <Compile Include="Repository\IPModelRepository.cs" />
+    <Compile Include="Repository\IPPaymentCustomRepository.cs" />
+    <Compile Include="Repository\IPPaymentMethodsRepositorty.cs" />
+    <Compile Include="Repository\IPPaymentsRepository.cs" />
+    <Compile Include="Repository\IPProductsRepository.cs" />
+    <Compile Include="Repository\IPProjectsRepository.cs" />
+    <Compile Include="Repository\IPPurchaseAmountsRepository.cs" />
+    <Compile Include="Repository\IPPurchaseCustomRepository.cs" />
+    <Compile Include="Repository\IPPurchaseItemAmountsRepository.cs" />
+    <Compile Include="Repository\IPPurchaseItemsRepository.cs" />
+    <Compile Include="Repository\IPPurchaseRepository.cs" />
+    <Compile Include="Repository\IPPurchaseTaxRatesRepository.cs" />
+    <Compile Include="Repository\IPQuoteAmountsRepository.cs" />
+    <Compile Include="Repository\IPQuoteCustomRepository.cs" />
+    <Compile Include="Repository\IPQuoteItemAmountsRepository.cs" />
+    <Compile Include="Repository\IPQuoteItemsRepository.cs" />
+    <Compile Include="Repository\IPQuotesRepository.cs" />
+    <Compile Include="Repository\IPQuoteTaxRatesRepository.cs" />
+    <Compile Include="Repository\IPSessionsRepository.cs" />
+    <Compile Include="Repository\IPSettingsRepository.cs" />
+    <Compile Include="Repository\IPSparesRepository.cs" />
+    <Compile Include="Repository\IPTasksRepository.cs" />
+    <Compile Include="Repository\IPTaxRatesRepository.cs" />
+    <Compile Include="Repository\IPUploadsRepository.cs" />
+    <Compile Include="Repository\IPUserClientsRepository.cs" />
+    <Compile Include="Repository\IPUserCustomRepository.cs" />
+    <Compile Include="Repository\IPUsersRepository.cs" />
+    <Compile Include="Repository\IPVersionsRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\AMDSystems.edmx.diagram">
+      <DependentUpon>AMDSystems.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core Project\Core Project.csproj">
+      <Project>{cfdf68dc-3ec9-4276-9269-5139fcd72e8d}</Project>
+      <Name>Core Project</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Data\AMDSystems.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AMDSystems.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\AMDSystems.Context.tt">
+      <DependentUpon>AMDSystems.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AMDSystems.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Data\AMDSystems.tt">
+      <DependentUpon>AMDSystems.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AMDSystems.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

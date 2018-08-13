@@ -1,0 +1,511 @@
+﻿@*<div id="main-area">
+
+    <div id="modal-placeholder" class="modal-placeholder"></div>
+
+    <script type="text/javascript">
+    $(function () {
+        $('#invoice_id').focus();
+
+        amounts = JSON.parse('{"invoice90":"9.00","invoice89":"9.00","invoice83":"9,358.00","invoice81":"153,300.00","invoice80":"150,955.00","invoice78":"147,073.00","invoice76":"154,153.00","invoice75":"151,203.00","invoice74":"147,427.00","invoice72":"179,789.00","invoice71":"7,500.00","invoice70":"0.00","invoice69":"2,349.00","invoice67":"31,394.00","invoice66":"16,149.00","invoice65":"14,683,042.00","invoice64":"3,395,217.00","invoice63":"20,000.00","invoice59":"14,810.00","invoice55":"36,000.00","invoice52":"5,490.00","invoice51":"8,850.00","invoice50":"11,860.00","invoice48":"8,320.00","invoice44":"4,720.00","invoice43":"8,320.00","invoice42":"6,490.00","invoice40":"93,324.00","invoice27":"6,490.00","invoice25":"381,999.00","invoice24":"0.00","invoice23":"35,809.00","invoice22":"67,325.00","invoice21":"148,100.00","invoice19":"148,100.00","invoice18":"11,800.00","invoice17":"11,800.00","invoice16":"11,800.00","invoice15":"13,799.00","invoice13":"25,493.00","invoice12":"33,050.00","invoice11":"5,500.00","invoice9":"1,460.00","invoice8":"4,380.00","invoice7":"130,900.00","invoice6":"6,840.00"}');
+        invoice_payment_methods = JSON.parse('{"invoice90":"0","invoice89":"0","invoice83":"0","invoice81":"5","invoice80":"0","invoice78":"0","invoice76":"0","invoice75":"0","invoice74":"0","invoice72":"0","invoice71":"5","invoice70":"5","invoice69":"0","invoice67":"4","invoice66":"0","invoice65":"0","invoice64":"0","invoice63":"0","invoice59":"0","invoice55":"5","invoice52":"0","invoice51":"0","invoice50":"0","invoice48":"0","invoice44":"0","invoice43":"0","invoice42":"0","invoice40":"5","invoice27":"0","invoice25":"0","invoice24":"0","invoice23":"0","invoice22":"0","invoice21":"0","invoice19":"0","invoice18":"0","invoice17":"0","invoice16":"0","invoice15":"0","invoice13":"0","invoice12":"0","invoice11":"0","invoice9":"0","invoice8":"0","invoice7":"0","invoice6":"0"}');
+        $('#invoice_id').change(function () {
+            var invoice_identifier = "invoice" + $('#invoice_id').val();
+            $('#payment_amount').val(amounts[invoice_identifier].replace("&nbsp;", " "));
+            $('#total_amount').val(amounts[invoice_identifier].replace("&nbsp;", " "));
+            $('#hidden_amount').val(amounts[invoice_identifier].replace("&nbsp;", " "));
+            $('#payment_method_id option[value="' + invoice_payment_methods[invoice_identifier] + '"]').prop('selected', true);
+
+            if (invoice_payment_methods[invoice_identifier] != 0) {
+                $('.payment-method-wrapper').append("<input type='hidden' name='payment_method_id' id='payment-method-id-hidden' class='hidden' value='" + invoice_payment_methods[invoice_identifier] + "'>");
+                $('#payment_method_id').prop('disabled', true);
+            } else {
+                $('#payment-method-id-hidden').remove();
+                $('#payment_method_id').prop('disabled', false);
+            }
+        });
+$('#payment_amount').on('keyup',function(){
+   var value = $('#hidden_amount').val();
+   var kar=$(this).val();
+value=value.replace(",", "");
+kar=kar.replace(",", "");
+   var tot =parseInt(value)-parseInt(kar);
+
+   $('#total_amount').val(tot);
+})
+    });
+    </script>
+
+    <form method="post" class="form-horizontal">
+
+        <input type="hidden" name="karthi" id="hidden_amount" value="">
+        <div id="headerbar">
+            <h1>Payment Form</h1>
+            <div class="pull-right btn-group">
+                <button id="btn-submit" name="btn_submit" class="btn btn-success btn-sm ajax-loader" value="1">
+                    <i class="fa fa-check"></i> Save
+                </button>
+                <button id="btn-cancel" name="btn_cancel" class="btn btn-danger btn-sm" value="1">
+                    <i class="fa fa-times"></i> Cancel
+                </button>
+            </div>
+        </div>
+
+        <div id="content" style="height: 541px;">
+
+
+
+
+
+            <div class="form-group">
+                <div class="col-xs-12 col-sm-2 text-right text-left-xs">
+                    <label for="invoice_id" class="control-label">Invoice</label>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <select name="invoice_id" id="invoice_id" class="form-control">
+                        <option value=""></option>
+                        <option value="90"> - 1 - ‎₹9.00</option>
+                        <option value="89"> - 1 - ‎₹9.00</option>
+                        <option value="83"> - AMD - ‎₹9,358.00</option>
+                        <option value="81">INV00075 - HONORARY CORRESPONDENT,MNC VIVEKANANDA VIDYALAYA,KUNDRATHUR, Tamil Nadu 600069 - ‎₹153,300.00</option>
+                        <option value="80">INV1512 - HONORARY CORRESPONDENT,MNC VIVEKANANDA VIDYALAYA,KUNDRATHUR, Tamil Nadu 600069 - ‎₹150,955.00</option>
+                        <option value="78">INV1509 - HONORARY CORRESPONDENT,MNC VIVEKANANDA VIDYALAYA,KUNDRATHUR, Tamil Nadu 600069 - ‎₹147,073.00</option>
+                        <option value="76">INV1507 - HONORARY CORRESPONDENT,MNC VIVEKANANDA VIDYALAYA,KUNDRATHUR, Tamil Nadu 600069 - ‎₹154,153.00</option>
+                        <option value="75">INV1508 - HONORARY CORRESPONDENT,MNC VIVEKANANDA VIDYALAYA,KUNDRATHUR, Tamil Nadu 600069 - ‎₹151,203.00</option>
+                        <option value="74">INV1504 - HONORARY CORRESPONDENT,MNC VIVEKANANDA VIDYALAYA,KUNDRATHUR, Tamil Nadu 600069 - ‎₹147,427.00</option>
+                        <option value="72">inv1503 - HONORARY CORRESPONDENT,MNC VIVEKANANDA VIDYALAYA,KUNDRATHUR, Tamil Nadu 600069 - ‎₹179,789.00</option>
+                        <option value="71">INV000165 - Selvam motors - ‎₹7,500.00</option>
+                        <option value="70">INV 00150 - Selvam motors - ‎₹0.00</option>
+                        <option value="69"> - Selvam motors - ‎₹2,349.00</option>
+                        <option value="67"> - venkatesan - ‎₹31,394.00</option>
+                        <option value="66">inv000123 - Selvam motors - ‎₹16,149.00</option>
+                        <option value="65"> - amd - ‎₹14,683,042.00</option>
+                        <option value="64"> - amd - ‎₹3,395,217.00</option>
+                        <option value="63"> - Client Name *123 - ‎₹20,000.00</option>
+                        <option value="59"> - amd - ‎₹14,810.00</option>
+                        <option value="55">inv000055 - HONORARY CORRESPONDENT,MNC VIVEKANANDA VIDYALAYA, - ‎₹36,000.00</option>
+                        <option value="52"> - amd - ‎₹5,490.00</option>
+                        <option value="51"> - amd - ‎₹8,850.00</option>
+                        <option value="50"> - amd - ‎₹11,860.00</option>
+                        <option value="48"> - amd - ‎₹8,320.00</option>
+                        <option value="44">ci0001 - amd - ‎₹4,720.00</option>
+                        <option value="43"> - arun - ‎₹8,320.00</option>
+                        <option value="42"> - arun - ‎₹6,490.00</option>
+                        <option value="40">inv00026 - HONORARY CORRESPONDENT,MNC VIVEKANANDA VIDYALAYA, - ‎₹93,324.00</option>
+                        <option value="27"> - arun - ‎₹6,490.00</option>
+                        <option value="25"> - BESTVIDEOS - ‎₹381,999.00</option>
+                        <option value="24"> - S.GOVINDAN - ‎₹0.00</option>
+                        <option value="23"> - arun - ‎₹35,809.00</option>
+                        <option value="22"> - devan - ‎₹67,325.00</option>
+                        <option value="21"> - devan - ‎₹148,100.00</option>
+                        <option value="19">inv000001 - devan - ‎₹148,100.00</option>
+                        <option value="18"> - jhb - ‎₹11,800.00</option>
+                        <option value="17"> - jhb - ‎₹11,800.00</option>
+                        <option value="16"> - fdssdffds - ‎₹11,800.00</option>
+                        <option value="15">INV1002 - HONORARY CORRESPONDENT,MNC VIVEKANANDA VIDYALAYA, - ‎₹13,799.00</option>
+                        <option value="13">INV1001 - HONORARY CORRESPONDENT,MNC VIVEKANANDA VIDYALAYA, - ‎₹25,493.00</option>
+                        <option value="12">INV1000 - HONORARY CORRESPONDENT,MNC VIVEKANANDA VIDYALAYA, - ‎₹33,050.00</option>
+                        <option value="11"> - arun - ‎₹5,500.00</option>
+                        <option value="9"> - arun - ‎₹1,460.00</option>
+                        <option value="8"> - arun - ‎₹4,380.00</option>
+                        <option value="7"> - arun - ‎₹130,900.00</option>
+                        <option value="6"> - hai - ‎₹6,840.00</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group has-feedback">
+                <div class="col-xs-12 col-sm-2 text-right text-left-xs">
+                    <label for="payment_date" class="control-label">Date</label>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <div class="input-group">
+                        <input name="payment_date" id="payment_date" class="form-control datepicker" value="09-Jun-2018">
+                        <span class="input-group-addon">
+                            <i class="fa fa-calendar fa-fw"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-xs-12 col-sm-2 text-right text-left-xs">
+                    <label for="payment_amount" class="control-label">Amount</label>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <input type="text" name="payment_amount" id="payment_amount" class="form-control" value="">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-12 col-sm-2 text-right text-left-xs">
+                    <label for="payment_amount" class="control-label">Total</label>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <input type="text" readonly="" name="total_amount" id="total_amount" class="form-control" value="">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-12 col-sm-2 text-right text-left-xs">
+                    <label for="payment_method_id" class="control-label">
+                        Payment Method
+                    </label>
+                </div>
+                <div class="col-xs-12 col-sm-6 payment-method-wrapper">
+
+
+                    <select id="payment_method_id" name="payment_method_id" class="form-control">
+
+                        <option value="4">
+                            CASH
+                        </option>
+                        <option value="5">
+                            CHEQ
+                        </option>
+                        <option value="6">
+                            PDC 06
+                        </option>
+                        <option value="7">
+                            PDC 12
+                        </option>
+                        <option value="8">
+                            PDC 24
+                        </option>
+                        <option value="9">
+                            PDC 50
+                        </option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-xs-12 col-sm-2 text-right text-left-xs">
+                    <label for="payment_note" class="control-label">Note</label>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <textarea name="payment_note" class="form-control"></textarea>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </form>
+
+</div>*@
+
+@using Core_Project.Model
+@model IPQuotesModel
+
+<link rel="stylesheet" type="text/css" href="../../Content/assets/libs/select2/dist/css/select2.min.css">
+<link rel="stylesheet" type="text/css" href="../../Content/assets/libs/jquery-minicolors/jquery.minicolors.css">
+<link rel="stylesheet" type="text/css" href="../../Content/assets/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+<link rel="stylesheet" type="text/css" href="../../Content/assets/libs/quill/dist/quill.snow.css">
+
+<script type="text/javascript">
+    $(function () {
+        $('#invoice_id').focus();
+
+        amounts = JSON.parse('{"invoice90":"9.00","invoice89":"9.00","invoice83":"9,358.00","invoice81":"153,300.00","invoice80":"150,955.00","invoice78":"147,073.00","invoice76":"154,153.00","invoice75":"151,203.00","invoice74":"147,427.00","invoice72":"179,789.00","invoice71":"7,500.00","invoice70":"0.00","invoice69":"2,349.00","invoice67":"31,394.00","invoice66":"16,149.00","invoice65":"14,683,042.00","invoice64":"3,395,217.00","invoice63":"20,000.00","invoice59":"14,810.00","invoice55":"36,000.00","invoice52":"5,490.00","invoice51":"8,850.00","invoice50":"11,860.00","invoice48":"8,320.00","invoice44":"4,720.00","invoice43":"8,320.00","invoice42":"6,490.00","invoice40":"93,324.00","invoice27":"6,490.00","invoice25":"381,999.00","invoice24":"0.00","invoice23":"35,809.00","invoice22":"67,325.00","invoice21":"148,100.00","invoice19":"148,100.00","invoice18":"11,800.00","invoice17":"11,800.00","invoice16":"11,800.00","invoice15":"13,799.00","invoice13":"25,493.00","invoice12":"33,050.00","invoice11":"5,500.00","invoice9":"1,460.00","invoice8":"4,380.00","invoice7":"130,900.00","invoice6":"6,840.00"}');
+        invoice_payment_methods = JSON.parse('{"invoice90":"0","invoice89":"0","invoice83":"0","invoice81":"5","invoice80":"0","invoice78":"0","invoice76":"0","invoice75":"0","invoice74":"0","invoice72":"0","invoice71":"5","invoice70":"5","invoice69":"0","invoice67":"4","invoice66":"0","invoice65":"0","invoice64":"0","invoice63":"0","invoice59":"0","invoice55":"5","invoice52":"0","invoice51":"0","invoice50":"0","invoice48":"0","invoice44":"0","invoice43":"0","invoice42":"0","invoice40":"5","invoice27":"0","invoice25":"0","invoice24":"0","invoice23":"0","invoice22":"0","invoice21":"0","invoice19":"0","invoice18":"0","invoice17":"0","invoice16":"0","invoice15":"0","invoice13":"0","invoice12":"0","invoice11":"0","invoice9":"0","invoice8":"0","invoice7":"0","invoice6":"0"}');
+        $('#invoice_id').change(function () {
+            var invoice_identifier = "invoice" + $('#invoice_id').val();
+            $('#payment_amount').val(amounts[invoice_identifier].replace("&nbsp;", " "));
+            $('#total_amount').val(amounts[invoice_identifier].replace("&nbsp;", " "));
+            $('#hidden_amount').val(amounts[invoice_identifier].replace("&nbsp;", " "));
+            $('#payment_method_id option[value="' + invoice_payment_methods[invoice_identifier] + '"]').prop('selected', true);
+
+            if (invoice_payment_methods[invoice_identifier] != 0) {
+                $('.payment-method-wrapper').append("<input type='hidden' name='payment_method_id' id='payment-method-id-hidden' class='hidden' value='" + invoice_payment_methods[invoice_identifier] + "'>");
+                $('#payment_method_id').prop('disabled', true);
+            } else {
+                $('#payment-method-id-hidden').remove();
+                $('#payment_method_id').prop('disabled', false);
+            }
+        });
+        $('#payment_amount').on('keyup', function () {
+            var value = $('#hidden_amount').val();
+            var kar = $(this).val();
+            value = value.replace(",", "");
+            kar = kar.replace(",", "");
+            var tot = parseInt(value) - parseInt(kar);
+
+            $('#total_amount').val(tot);
+        })
+    });
+</script>
+ <!-- ============================================================== -->
+<!-- Bread crumb and right sidebar toggle -->
+<!-- ============================================================== -->
+<div class="page-breadcrumb">
+    <div class="row">
+        <div class="col-12 d-flex no-block align-items-center">
+            <h4 class="page-title">Payment Form</h4>
+
+        </div>
+    </div>
+</div>
+<br />
+<!-- ============================================================== -->
+<!-- End Bread crumb and right sidebar toggle -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- Container fluid  -->
+<!-- ============================================================== -->
+<div class="container-fluid">
+    <!-- ============================================================== -->
+    <!-- Start Page Content -->
+    <!-- ============================================================== -->
+    <div class="row">
+         <div class="col-md-6">
+                        <div class="card">
+                            <form class="form-horizontal">
+                                <div class="card-body">
+                                    <div class="input-group">
+                                        <label class="col-md-2 m-t-15">Invoice</label>
+                                        <div class="col-md-9">
+                                            <select class="select2 form-control custom-select" name="invoice_id" id="invoice_id" style="width: 100%; height:36px;">
+                                                 
+                                                <option value=""></option>
+                                                <option value="90"> - 1 - ‎₹9.00</option>
+                                                <option value="89"> - 1 - ‎₹9.00</option>
+                                                <option value="83"> - AMD - ‎₹9,358.00</option>
+                                                <option value="81">INV00075 - HONORARY CORRESPONDENT,MNC VIVEKANANDA VIDYALAYA,KUNDRATHUR, Tamil Nadu 600069 - ‎₹153,300.00</option>
+                                                <option value="80">INV1512 - HONORARY CORRESPONDENT,MNC VIVEKANANDA VIDYALAYA,KUNDRATHUR, Tamil Nadu 600069 - ‎₹150,955.00</option>
+                                                <option value="78">INV1509 - HONORARY CORRESPONDENT,MNC VIVEKANANDA VIDYALAYA,KUNDRATHUR, Tamil Nadu 600069 - ‎₹147,073.00</option>
+                                                <option value="76">INV1507 - HONORARY CORRESPONDENT,MNC VIVEKANANDA VIDYALAYA,KUNDRATHUR, Tamil Nadu 600069 - ‎₹154,153.00</option>
+                                                <option value="75">INV1508 - HONORARY CORRESPONDENT,MNC VIVEKANANDA VIDYALAYA,KUNDRATHUR, Tamil Nadu 600069 - ‎₹151,203.00</option>
+                                                <option value="74">INV1504 - HONORARY CORRESPONDENT,MNC VIVEKANANDA VIDYALAYA,KUNDRATHUR, Tamil Nadu 600069 - ‎₹147,427.00</option>
+                                                <option value="72">inv1503 - HONORARY CORRESPONDENT,MNC VIVEKANANDA VIDYALAYA,KUNDRATHUR, Tamil Nadu 600069 - ‎₹179,789.00</option>
+                                                <option value="71">INV000165 - Selvam motors - ‎₹7,500.00</option>
+                                                <option value="70">INV 00150 - Selvam motors - ‎₹0.00</option>
+                                                <option value="69"> - Selvam motors - ‎₹2,349.00</option>
+                                                <option value="67"> - venkatesan - ‎₹31,394.00</option>
+                                                <option value="66">inv000123 - Selvam motors - ‎₹16,149.00</option>
+                                                <option value="65"> - amd - ‎₹14,683,042.00</option>
+                                                <option value="64"> - amd - ‎₹3,395,217.00</option>
+                                                <option value="63"> - Client Name *123 - ‎₹20,000.00</option>
+                                                <option value="59"> - amd - ‎₹14,810.00</option>
+                                                <option value="55">inv000055 - HONORARY CORRESPONDENT,MNC VIVEKANANDA VIDYALAYA, - ‎₹36,000.00</option>
+                                                <option value="52"> - amd - ‎₹5,490.00</option>
+                                                <option value="51"> - amd - ‎₹8,850.00</option>
+                                                <option value="50"> - amd - ‎₹11,860.00</option>
+                                                <option value="48"> - amd - ‎₹8,320.00</option>
+                                                <option value="44">ci0001 - amd - ‎₹4,720.00</option>
+                                                <option value="43"> - arun - ‎₹8,320.00</option>
+                                                <option value="42"> - arun - ‎₹6,490.00</option>
+                                                <option value="40">inv00026 - HONORARY CORRESPONDENT,MNC VIVEKANANDA VIDYALAYA, - ‎₹93,324.00</option>
+                                                <option value="27"> - arun - ‎₹6,490.00</option>
+                                                <option value="25"> - BESTVIDEOS - ‎₹381,999.00</option>
+                                                <option value="24"> - S.GOVINDAN - ‎₹0.00</option>
+                                                <option value="23"> - arun - ‎₹35,809.00</option>
+                                                <option value="22"> - devan - ‎₹67,325.00</option>
+                                                <option value="21"> - devan - ‎₹148,100.00</option>
+                                                <option value="19">inv000001 - devan - ‎₹148,100.00</option>
+                                                <option value="18"> - jhb - ‎₹11,800.00</option>
+                                                <option value="17"> - jhb - ‎₹11,800.00</option>
+                                                <option value="16"> - fdssdffds - ‎₹11,800.00</option>
+                                                <option value="15">INV1002 - HONORARY CORRESPONDENT,MNC VIVEKANANDA VIDYALAYA, - ‎₹13,799.00</option>
+                                                <option value="13">INV1001 - HONORARY CORRESPONDENT,MNC VIVEKANANDA VIDYALAYA, - ‎₹25,493.00</option>
+                                                <option value="12">INV1000 - HONORARY CORRESPONDENT,MNC VIVEKANANDA VIDYALAYA, - ‎₹33,050.00</option>
+                                                <option value="11"> - arun - ‎₹5,500.00</option>
+                                                <option value="9"> - arun - ‎₹1,460.00</option>
+                                                <option value="8"> - arun - ‎₹4,380.00</option>
+                                                <option value="7"> - arun - ‎₹130,900.00</option>
+                                                <option value="6"> - hai - ‎₹6,840.00</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+                                    <br />
+                                    
+                                    <div class="input-group">
+                                        <label class=" col-md-2 m-t-10">Date</label>
+
+                                        <div class="input-group-append col-md-9">
+
+                                            <input type="text" class="form-control mydatepicker" placeholder="mm/dd/yyyy">
+                                            <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="input-group">
+                                        <label class=" col-md-2 m-t-15">Total</label>
+
+                                        <div class="input-group-append col-md-9">
+
+                                            <input type="text" class="form-control">
+
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="input-group">
+                                        <label class="">Amount to<br />be Paid</label>
+                                        &nbsp;&nbsp;&nbsp;
+                                        <div class="col-md-9">
+
+                                            <input type="text" class="form-control" id="payment_amount">
+
+                                        </div>
+                                    </div>
+                                    
+                                    <br />
+                                    <div class="input-group">
+                                        <label class="col-md-2 m-t-15">Balance</label>
+
+                                        <div class="col-md-9">
+
+                                            <input type="text" class="form-control">
+
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="input-group">
+                                        <label class="col-md-2 m-t-15">Payment Method</label>
+                                        <div class="col-md-9">
+                                            <select class="select2 form-control custom-select" id="payment_method_id" name="payment_method_id" style="width: 100%; height:36px;">
+
+                                                <option value="4">
+                                                    CASH
+                                                </option>
+                                                <option value="5">
+                                                    CHEQ
+                                                </option>
+                                                <option value="6">
+                                                    PDC 06
+                                                </option>
+                                                <option value="7">
+                                                    PDC 12
+                                                </option>
+                                                <option value="8">
+                                                    PDC 24
+                                                </option>
+                                                <option value="9">
+                                                    PDC 50
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <br />
+                                    <div class="input-group">
+                                        <label class="col-md-2 m-t-15">Note</label>
+                                        <div class="col-md-9">
+                                            <textarea class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                </div>
+                                <div class="border-top">
+                                    <div class="card-body">
+                                        <button type="button" id="btn-submit" name="btn_submit" class="btn btn-success btn-sm ajax-loader" value="1"> <i class="fa fa-check"></i> Save</button>
+                                        <button type="button" id="btn-cancel" name="btn_cancel" class="btn btn-danger btn-sm" value="1"> <i class="fa fa-times"></i> Cancel</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                       
+                                
+                                
+                                
+             
+                            
+                           
+                                
+                                
+
+                            </div>
+                            
+                        
+
+                    
+                    @*<div class="col-md-6">
+                        <div class="card">
+                            
+                        </div>
+                        <div class="card">
+                            
+                        </div>
+                        <div class="card">
+                            
+                        </div>
+                    </div>*@
+
+    </div>
+    <br />
+    <!-- editor -->
+    <!-- ============================================================== -->
+    <!-- End PAge Content -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Right sidebar -->
+    <!-- ============================================================== -->
+    <!-- .right-sidebar -->
+    <!-- ============================================================== -->
+    <!-- End Right sidebar -->
+    <!-- ============================================================== -->
+</div>
+<!-- ============================================================== -->
+<!-- End Container fluid  -->
+<!-- ============================================================== -->
+
+
+<!-- This Page JS -->
+<script src="../../Content/assets/libs/inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
+<script src="../../Content/dist/js/pages/mask/mask.init.js"></script>
+<script src="../../Content/assets/libs/select2/dist/js/select2.full.min.js"></script>
+<script src="../../Content/assets/libs/select2/dist/js/select2.min.js"></script>
+<script src="../../Content/assets/libs/jquery-asColor/dist/jquery-asColor.min.js"></script>
+<script src="../../Content/assets/libs/jquery-asGradient/dist/jquery-asGradient.js"></script>
+<script src="../../Content/assets/libs/jquery-asColorPicker/dist/jquery-asColorPicker.min.js"></script>
+<script src="../../Content/assets/libs/jquery-minicolors/jquery.minicolors.min.js"></script>
+<script src="../../Content/assets/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<script src="../../Content/assets/libs/quill/dist/quill.min.js"></script>
+<script>
+    //***********************************//
+    // For select 2
+    //***********************************//
+    $(".select2").select2();
+
+    /*colorpicker*/
+    $('.demo').each(function () {
+        //
+        // Dear reader, it's actually very easy to initialize MiniColors. For example:
+        //
+        //  $(selector).minicolors();
+        //
+        // The way I've done it below is just for the demo, so don't get confused
+        // by it. Also, data- attributes aren't supported at this time...they're
+        // only used for this demo.
+        //
+        $(this).minicolors({
+            control: $(this).attr('data-control') || 'hue',
+            position: $(this).attr('data-position') || 'bottom left',
+
+            change: function (value, opacity) {
+                if (!value) return;
+                if (opacity) value += ', ' + opacity;
+                if (typeof console === 'object') {
+                    console.log(value);
+                }
+            },
+            theme: 'bootstrap'
+        });
+
+    });
+    /*datwpicker*/
+    jQuery('.mydatepicker').datepicker({
+        format: 'dd/mm/yyyy'
+    });
+    jQuery('#datepicker-autoclose').datepicker({
+        format: 'dd/mm/yyyy',
+        autoclose: true,
+        todayHighlight: true
+    });
+    var quill = new Quill('#editor', {
+        theme: 'snow'
+    });
+
+</script>

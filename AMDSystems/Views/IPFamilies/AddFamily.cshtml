@@ -1,0 +1,117 @@
+﻿@using Core_Project.Model
+@model IPFamiliesModel
+
+@*<form method="post" action="/IPFamilies/AddFamily">
+
+    <div id="headerbar">
+        <h1>Add Family</h1>  
+    </div>
+
+
+    <div id="content">
+
+        <div class="form-group textbox-width">
+            @Html.LabelFor(model => model.family_name)
+            @Html.TextBoxFor(model => model.family_name)
+        </div>
+
+        <div id="headerbar">
+            <input value="Submit" type="submit" />
+            @Html.ActionLink("Cancel", "Cancel", "IPFamilies")
+        </div>
+
+
+     </div>
+
+
+</form>*@
+
+
+
+
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+                <h4 class="page-title">Add Family</h4>
+                
+            </div>
+        </div>
+    </div>
+    <br />
+    <!-- ============================================================== -->
+    <!-- End Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid">
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <form class="form-horizontal" method="post" action="/IPFamilies/AddFamily">
+
+                        
+                        <div class="card-body">
+                            <h4 class="card-title">&nbsp;</h4>
+
+                            <div class="form-group row">
+                                <label for="fname" class="control-label col-form-label"> @Html.LabelFor(model => model.family_name)</label>
+                                <div class="col-sm-9">
+                                  @Html.TextBoxFor(model => model.family_name)
+                                </div>
+                            </div>
+
+                            
+
+
+                        </div>
+
+                        <div class="border-top">
+                            <div class="card-body">
+                                @*<input type="submit" value="Save" class="btn btn-success btn-sm ajax-loader" />*@
+                                <button id="btn-submit" name="btn_submit" class="btn btn-success" value="1">
+                                    <i class="fa fa-check"></i> Submit
+                                </button>
+                                @*<button id="btn-cancel" name="btn_cancel" class="btn btn-danger btn-sm" value="1">
+                        <i class="fa fa-times"></i> Cancel
+                    </button>*@
+                                <button id="btn-cancel" name="btn_cancel" class="btn btn-danger"  value="1">
+                                    <i class="fa fa-times"></i> @Html.ActionLink("Cancel", "Cancel", "IPFamilies", new { Style = "color:White" })
+                                </button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+
+
+
+            </div>
+
+        </div>
+        <!-- editor -->
+        <!-- ============================================================== -->
+        <!-- End PAge Content -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Right sidebar -->
+        <!-- ============================================================== -->
+        <!-- .right-sidebar -->
+        <!-- ============================================================== -->
+        <!-- End Right sidebar -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Container fluid  -->
+    <!-- ============================================================== -->
+
+
+
+
+

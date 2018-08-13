@@ -1,0 +1,317 @@
+﻿@*<div id="main-area">
+
+    <div id="modal-placeholder" class="modal-placeholder"></div>
+
+    <div id="headerbar">
+        <h1>Sales by Client</h1>
+    </div>
+
+    <div id="content" style="height: 541px;">
+
+
+
+
+
+        <div id="report_options" class="panel panel-default">
+
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <i class="fa fa-print"></i>
+                    Report Options
+                </h3>
+            </div>
+
+            <div class="panel-body">
+
+                <form method="post" target="_blank" action="http://amdsystems.in/billing/reports/payment_history">
+
+                    <div class="form-group has-feedback">
+                        <label for="from_date">
+                            From Date
+                        </label>
+
+                        <div class="input-group">
+                            <input name="from_date" id="from_date" class="form-control datepicker">
+                            <span class="input-group-addon">
+                                <i class="fa fa-calendar fa-fw"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group has-feedback">
+                        <label for="to_date">
+                            To Date
+                        </label>
+
+                        <div class="input-group">
+                            <input name="to_date" id="to_date" class="form-control datepicker">
+                            <span class="input-group-addon">
+                                <i class="fa fa-calendar fa-fw"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <input type="submit" class="btn btn-success" name="btn_submit" value="Run Report">
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>*@
+@using Core_Project.Model
+@model ReportSearch
+
+<link rel="stylesheet" type="text/css" href="../../Content/assets/libs/select2/dist/css/select2.min.css">
+<link rel="stylesheet" type="text/css" href="../../Content/assets/libs/jquery-minicolors/jquery.minicolors.css">
+<link rel="stylesheet" type="text/css" href="../../Content/assets/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+<link rel="stylesheet" type="text/css" href="../../Content/assets/libs/quill/dist/quill.snow.css">
+<link href="../../Content/dist/css/style.min.css" rel="stylesheet">
+
+
+<div>
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+                <h4 class="page-title">Sales by Client</h4>
+                
+            </div>
+        </div>
+    </div>
+    <br />
+    <!-- ============================================================== -->
+    <!-- End Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid">
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <form class="form-horizontal" method="post" action="/Reports/InvoiceAging">
+
+                            <div class="form-group row">
+                                <label>Choose Client:</label>
+                                <div class="col-md-3">
+                                    <select class="select2 form-control">
+                                        <option>Select</option>
+
+                                        
+
+                                        
+                                    </select>
+                                </div>
+                                &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                                <label>Sale Type:</label>
+                                <div class="col-md-3">
+                                    <select class="select2 form-control">
+                                        
+                                        <option selected="selected">All</option>
+                                        <option>Invoice</option>
+                                        <option>Cash</option>
+
+
+
+                                    </select>
+                                </div>
+
+                            </div>
+                            <br />
+
+                            <div class="row mb-3">
+                                <div class="col-lg-4">
+                                    <label>From Date</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control mydatepicker" placeholder="dd/mm/yyyy">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <label class="m-t-15">To Date</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control mydatepicker1" placeholder="dd/mm/yyyy">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="m-t-0">&nbsp;</label>
+                                    <div class="input-group">
+
+                                        <input type="submit"  class="btn btn-success" name="btn_submit" value="RunReport">
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <br />
+
+
+
+                            <a href="http://amdsystems.in/billing/profit/print_pdf" target="_blank" class="btn btn-sm btn-default pull-right">
+                                <i class="fa fa-print fa-margin"></i>
+                                Download PDF
+                            </a>
+                            &nbsp;&nbsp;
+                            <a href="http://amdsystems.in/billing/profit/print_pdf" target="_blank" class="btn btn-sm btn-default pull-right">
+                                <i class="fa fa-print fa-margin"></i>
+                                Download Excel
+                            </a>
+
+
+                            <div class="card">
+                                <div class="card-body">
+
+                                    <div class="table-responsive">
+                                        <table id="zero_config" class="table table-striped table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    
+
+                                                    <th>Client Name</th>
+                                                    <th>Product Name</th>
+                                                    <th>Date</th>
+                                                    <th>Sale Type</th>
+                                                    <th>Amount</th>
+                                                    <th>Paid</th>
+                                                    <th>Balance</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                               
+                                                    <tr>
+                                                        <td></td>
+                                                        <td>
+                                                            
+                                                        </td>
+                                                        <td>
+                                                            
+                                                        </td>
+                                                        <td>
+                                                           
+                                                        </td>
+                                                        <td>
+                                                            
+                                                        </td>
+                                                        <td>
+                                                            
+                                                        </td>
+                                                        <td></td>
+                                                    
+                                                    </tr>
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+        <br />
+        <!-- editor -->
+        <!-- ============================================================== -->
+        <!-- End PAge Content -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Right sidebar -->
+        <!-- ============================================================== -->
+        <!-- .right-sidebar -->
+        <!-- ============================================================== -->
+        <!-- End Right sidebar -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Container fluid  -->
+    <!-- ============================================================== -->
+
+
+</div>
+
+<!-- This Page JS -->
+<script src="../../Content/assets/libs/inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
+<script src="../../Content/dist/js/pages/mask/mask.init.js"></script>
+<script src="../../Content/assets/libs/select2/dist/js/select2.full.min.js"></script>
+<script src="../../Content/assets/libs/select2/dist/js/select2.min.js"></script>
+<script src="../../Content/assets/libs/jquery-asColor/dist/jquery-asColor.min.js"></script>
+<script src="../../Content/assets/libs/jquery-asGradient/dist/jquery-asGradient.js"></script>
+<script src="../../Content/assets/libs/jquery-asColorPicker/dist/jquery-asColorPicker.min.js"></script>
+<script src="../../Content/assets/libs/jquery-minicolors/jquery.minicolors.min.js"></script>
+<script src="../../Content/assets/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<script src="../../Content/assets/libs/quill/dist/quill.min.js"></script>
+<script>
+    //***********************************//
+    // For select 2
+    //***********************************//
+    $(".select2").select2();
+
+    /*colorpicker*/
+    $('.demo').each(function () {
+        //
+        // Dear reader, it's actually very easy to initialize MiniColors. For example:
+        //
+        //  $(selector).minicolors();
+        //
+        // The way I've done it below is just for the demo, so don't get confused
+        // by it. Also, data- attributes aren't supported at this time...they're
+        // only used for this demo.
+        //
+        $(this).minicolors({
+            control: $(this).attr('data-control') || 'hue',
+            position: $(this).attr('data-position') || 'bottom left',
+
+            change: function (value, opacity) {
+                if (!value) return;
+                if (opacity) value += ', ' + opacity;
+                if (typeof console === 'object') {
+                    console.log(value);
+                }
+            },
+            theme: 'bootstrap'
+        });
+
+    });
+    /*datwpicker*/
+    jQuery('.mydatepicker').datepicker({
+        format: 'dd/mm/yyyy'
+    });
+    jQuery('.mydatepicker1').datepicker({
+        format: 'dd/mm/yyyy',
+        todayHighlight: true
+    });
+    jQuery('#datepicker-autoclose').datepicker({
+        format: 'dd/mm/yyyy',
+        autoclose: true,
+        todayHighlight: true
+    });
+    var quill = new Quill('#editor', {
+        theme: 'snow'
+    });
+
+</script>
+

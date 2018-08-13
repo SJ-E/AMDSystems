@@ -1,0 +1,99 @@
+﻿@using Core_Project.Model;
+@model IEnumerable<IPTaxRatesModel>
+
+<link href="../../Content/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
+<style type="text/css">
+    div #resp-table {
+        width: 100%;
+        display:block;
+        overflow:auto;
+    }
+
+        div #resp-table table thead tr th {
+            font-weight: bold;
+        }
+
+    /*div #resp-table table tbody tr td {
+        padding: 10px;
+        border-bottom: 1px solid black;
+    }*/
+
+    
+</style>
+
+<!-- ============================================================== -->
+<!-- Bread crumb and right sidebar toggle -->
+<!-- ============================================================== -->
+<div class="page-breadcrumb">
+  
+</div>
+<!-- ============================================================== -->
+<!-- End Bread crumb and right sidebar toggle -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- Container fluid  -->
+<!-- ============================================================== -->
+<div class="container-fluid">
+    <!-- ============================================================== -->
+    <!-- Start Page Content -->
+    <!-- ============================================================== -->
+    <div class="row">
+        <div class="col-12">
+            
+            
+            
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Tax Rates List</h4>
+                    <p class="table-responsive">This table Containslist of tax rates</p>
+                    <hr />
+                    <br />
+                    <div id="resp-table">
+                        <table id="zero_config" class="table table-sm">
+                            <thead>
+                                <tr>                                    
+                                    <th>Title</th>
+                                    <th>Tax Rate</th>
+                                </tr>
+                            </thead>
+                       <tbody>
+                          @foreach (IPTaxRatesModel item in Model)
+{
+    <tr>
+        <td>
+            <a href="/IPTaxRates/EditTaxrates/@item.tax_rate_id">@item.tax_rate_name</a>
+        </td>
+        <td>@item.tax_rate_percent</td>
+    </tr>
+}
+                       </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End PAge Content -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Right sidebar -->
+    <!-- ============================================================== -->
+    <!-- .right-sidebar -->
+    <!-- ============================================================== -->
+    <!-- End Right sidebar -->
+    <!-- ============================================================== -->
+</div>
+<!-- ============================================================== -->
+<!-- End Container fluid  -->
+<!-- ============================================================== -->
+
+
+<script src="../../Content/assets/extra-libs/DataTables/datatables.min.js"></script>
+<script>
+    /****************************************
+     *       Basic Table                   *
+     ****************************************/
+    $('#zero_config').DataTable();
+</script>

@@ -1,0 +1,307 @@
+﻿@using Core_Project.Model
+@model AddProductModel
+
+
+
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+                <h4 class="page-title">Product Form</h4>
+                 
+                
+            </div>
+        </div>
+    </div>
+    <br />
+    <!-- ============================================================== -->
+    <!-- End Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid">
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+        <form class="form-horizontal" method="post" action="/IPProducts/AddProducts">
+
+            @{
+                ViewBag.Title = "Add Products";
+            }
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+
+
+                        @*<script type="text/javascript">
+                    $(function () {
+                        $('#client_name').focus();
+                        $("#client_country").select2({
+                            placeholder: "Country",
+                            allowClear: true,
+
+                        });
+                    });
+                </script>*@
+                        <div class="card-body">
+                            <h4 class="card-title">&nbsp;</h4>
+
+                            <div class="form-group row">
+                                <label for="cono1" class="col-sm-3 text-right control-label col-form-label">@Html.LabelFor(model => model.iPProductsModel.family_id)</label>
+                                <div class="col-sm-5">
+                                    @Html.DropDownListFor(model => @Model.iPProductsModel.family_id, new SelectList(@Model.iPFamiliesModels, "family_id", "family_name"), new
+                {
+                    @class = "select2 form-control custom-select"
+                })
+                                    @Html.ValidationMessageFor(model => model.iPProductsModel.family_id)
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="fname" class="col-sm-3 text-right control-label col-form-label"> @Html.LabelFor(model => model.iPProductsModel.sub_cate)</label>
+                                <div class="col-sm-9">
+                                    @Html.TextBoxFor(model => model.iPProductsModel.sub_cate)
+                                    @Html.ValidationMessageFor(model => model.iPProductsModel.sub_cate)
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="fname" class="col-sm-3 text-right control-label col-form-label"> @Html.LabelFor(model => model.iPProductsModel.serial_number)</label>
+                                <div class="col-sm-9">
+                                    @Html.TextBoxFor(model => model.iPProductsModel.serial_number)
+                                    @Html.ValidationMessageFor(model => model.iPProductsModel.serial_number)
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="fname" class="col-sm-3 text-right control-label col-form-label">HSN / SAC Code:</label>
+                                <div class="col-sm-9">
+                                    @Html.TextBoxFor(model => model.iPProductsModel.product_sku)
+                                    @Html.ValidationMessageFor(model => model.iPProductsModel.product_sku)
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Product Name</label>
+                                <div class="col-sm-9">
+                                    @Html.TextBoxFor(model => model.iPProductsModel.product_name)
+                                    @Html.ValidationMessageFor(model => model.iPProductsModel.product_name)
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Product Description</label>
+                                <div class="col-sm-9">
+                                    @Html.TextBoxFor(model => model.iPProductsModel.product_description)
+                                    @Html.ValidationMessageFor(model => model.iPProductsModel.product_description)
+                                </div>
+                            </div>
+
+
+                            </div>
+                    </div>
+
+
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        Extra information
+                                    </h4>
+
+                                    <div class="form-group row">
+                                        <label for="cono1" class="col-sm-3 text-right control-label col-form-label">@Html.LabelFor(model => model.iPProductsModel.provider_name)</label>
+                                        <div class="col-sm-5">
+                                            <select id="supplier_name" name="iPProductsModel.provider_name"></select>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="form-group row">
+                                        <label for="fname" class="col-sm-3 text-right control-label col-form-label"> Purchase Price</label>
+                                        <div class="col-sm-9">
+                                            @Html.TextBoxFor(model => model.iPProductsModel.purchase_org_price)
+                                            @Html.ValidationMessageFor(model => model.iPProductsModel.purchase_org_price)
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="cono1" class="col-sm-3 text-right control-label col-form-label">@Html.LabelFor(model => model.iPProductsModel.supp_name)</label>
+                                        <div class="col-sm-9">
+                                            @Html.TextBoxFor(model => model.iPProductsModel.supp_name)
+                                            @Html.ValidationMessageFor(model => model.iPProductsModel.supp_name)
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="fname" class="col-sm-3 text-right control-label col-form-label"> @Html.LabelFor(model => model.iPProductsModel.warenty_detail)</label>
+                                        <div class="col-sm-9">
+                                            @Html.TextBoxFor(model => model.iPProductsModel.warenty_detail)
+                                            @Html.ValidationMessageFor(model => model.iPProductsModel.warenty_detail)
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="fname" class="col-sm-3 text-right control-label col-form-label"> @Html.LabelFor(model => model.iPProductsModel.selling_price)</label>
+                                        <div class="col-sm-9">
+                                            @Html.TextBoxFor(model => model.iPProductsModel.selling_price)
+                                            @Html.ValidationMessageFor(model => model.iPProductsModel.selling_price)
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="fname" class="col-sm-3 text-right control-label col-form-label"> @Html.LabelFor(model => model.iPProductsModel.other_info)</label>
+                                        <div class="col-sm-9">
+                                            @Html.TextBoxFor(model => model.iPProductsModel.other_info)
+                                            @Html.ValidationMessageFor(model => model.iPProductsModel.other_info)
+                                        </div>
+                                    </div>
+
+                            
+
+                        </div>
+                    </div>
+                </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title m-b-0">
+                                    Price</h4>
+                                    
+
+                                    <div class="form-group row">
+                                        <label for="fname" class="col-sm-3 text-right control-label col-form-label"> @Html.LabelFor(model => model.iPProductsModel.tax_rate_id)</label>
+                                        <div class="col-sm-9">
+                                            <select name="iPProductsModel.tax_rate_id" id="taxDropdown"></select>
+                                            @Html.ValidationMessageFor(model => model.iPProductsModel.tax_rate_id)
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="form-group row">
+                                        <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Price before GST </label>
+                                        <div class="col-sm-9">
+                                            @Html.TextBoxFor(model => model.iPProductsModel.purchase_price)
+                                            @Html.ValidationMessageFor(model => model.iPProductsModel.purchase_price)
+
+                                            <input type="hidden" name="iPProductsModel.product_price" id="product_price" value="0" />
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="cono1" class="col-sm-3 text-right control-label col-form-label">@Html.LabelFor(model => model.iPProductsModel.product_price)</label>
+                                        <div class="col-sm-9">
+                                            @Html.TextBoxFor(model => model.iPProductsModel.product_price)
+                                            @Html.ValidationMessageFor(model => model.iPProductsModel.product_price)
+
+                                            <input type="hidden" name="iPProductsModel.product_price" id="product_price" value="0" />
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group row">
+                                        <label for="fname" class="col-sm-3 text-right control-label col-form-label"> @Html.LabelFor(model => model.iPProductsModel.quantity)</label>
+                                        <div class="col-sm-9">
+                                            @Html.TextBoxFor(model => model.iPProductsModel.quantity)
+                                            @Html.ValidationMessageFor(model => model.iPProductsModel.quantity)
+                                        </div>
+
+                                    </div>
+                            </div>
+                            </div></div>
+
+<div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <button id="btn-submit" name="btn_submit" class="btn btn-success" value="1">
+                                <i class="fa fa-check"></i> Save
+                            </button>
+
+                            <button id="btn-cancel" name="btn_cancel"
+                                    onclick="location.href='@Url.Action("ViewAll", "IPProducts")'"
+                                    class="btn btn-danger" value="reset">
+                                Cancel
+                            </button>
+
+
+
+                        </div>
+                    </div>
+                </div>
+</div>
+
+                            
+
+</form>
+        <!-- editor -->
+        <!-- ============================================================== -->
+        <!-- End PAge Content -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Right sidebar -->
+        <!-- ============================================================== -->
+        <!-- .right-sidebar -->
+        <!-- ============================================================== -->
+        <!-- End Right sidebar -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Container fluid  -->
+    <!-- ============================================================== -->
+
+
+
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            url: "/IPTaxRates/GetAllTaxRate",
+
+        }).done(function (data) {
+            console.log(data);
+            var template = '';
+            for (var i = 0; i < data.length; i++) {
+
+                template = template + '<option value="' + data[i].tax_rate_id + '" data-tax="' + data[i].tax_rate_percent + '">' + data[i].tax_rate_percent + ' - ' + data[i].tax_rate_name + '</option>';
+            }
+            $("#taxDropdown").html(template);
+        });
+
+        $("#taxDropdown").change(function () {
+            if (!isNaN($("#iPProductsModel_purchase_price").val())) {
+                // $("#iPProductsModel_selling_price").val(parseFloat($("#iPProductsModel_purchase_price").val()) + ($("#iPProductsModel_purchase_price").val() * $("#taxDropdown option:selected").attr("data-tax") / 100));
+                $("#iPProductsModel_product_price").val(parseFloat($("#iPProductsModel_purchase_price").val()) + ($("#iPProductsModel_purchase_price").val() * $("#taxDropdown option:selected").attr("data-tax") / 100));
+            }
+        });
+
+        $("#iPProductsModel_purchase_price").change(function () {
+            if (!isNaN($("#iPProductsModel_purchase_price").val())) {
+                //  $("#iPProductsModel_selling_price").val(parseFloat($("#iPProductsModel_purchase_price").val()) + ($("#iPProductsModel_purchase_price").val() * $("#taxDropdown option:selected").attr("data-tax") / 100));
+                $("#iPProductsModel_product_price").val(parseFloat($("#iPProductsModel_purchase_price").val()) + ($("#iPProductsModel_purchase_price").val() * $("#taxDropdown option:selected").attr("data-tax") / 100));
+            }
+        });
+        $.ajax({
+            method: "GET",
+            url: "/IPClients/GetAllClients",
+        })
+            .done(function (data) {
+                var options = '';
+                $.each(data, function (index, object) {
+                    options = options + '<option value="' + object.Client_ID + '">' + object.Client_Name + '</option>'
+                });
+                $("#supplier_name").html(options);
+            });
+
+
+            
+
+
+        
+    });
+
+
+</script>

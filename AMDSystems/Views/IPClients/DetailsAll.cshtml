@@ -1,0 +1,2433 @@
+﻿
+@using Core_Project.Model;
+@model IEnumerable<IPQuotesModel>
+
+
+<link href="../../Content/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
+
+
+
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+                @*<h4 class="page-title">Invoice</h4>*@
+                @*<div class="ml-auto text-right">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Library</li>
+                        </ol>
+                    </nav>
+                </div>*@
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid">
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+        <div class="card">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#details" role="tab"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">Details</span></a> </li>
+                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#quotes" role="tab"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">Quotes</span></a> </li>
+                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#invoices" role="tab"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">Invoices</span></a> </li>
+                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#payments" role="tab"><span class="hidden-sm-up"></span> <span class="hidden-xs-down">Payments</span></a> </li>
+
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content tabcontent-border">
+                <div class="tab-pane active" id="details" role="tabpanel">
+                    <br />
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-8">
+                            <h3>1</h3>
+
+                            <p>
+                            </p>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                            <table class="table table-condensed table-bordered">
+                                <tbody>
+                                    <tr>
+                                        <th>
+                                            Total Billed
+                                        </th>
+                                        <td class="td-amount">
+                                            &lrm;₹9.00
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            Total Paid
+                                        </th>
+                                        <th class="td-amount">
+                                            &lrm;₹0.00
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            Total Balance
+                                        </th>
+                                        <td class="td-amount">
+                                            &lrm;₹9.00
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <h4>Contact Information</h4>
+                            <br>
+                            <table class="table table-condensed table-striped">
+                                <tbody>
+                                    <tr>
+                                        <th>Email</th>
+                                        <td>
+                                            <script type="text/javascript">
+                                                //<![CDATA[
+                                                var l = new Array();
+                                                l[0] = '>'; l[1] = 'a'; l[2] = '/'; l[3] = '<'; l[4] = '|99'; l[5] = '|46'; l[6] = '|98'; l[7] = '|64'; l[8] = '|97'; l[9] = '>'; l[10] = '"'; l[11] = '|99'; l[12] = '|46'; l[13] = '|98'; l[14] = '|64'; l[15] = '|97'; l[16] = ':'; l[17] = 'o'; l[18] = 't'; l[19] = 'l'; l[20] = 'i'; l[21] = 'a'; l[22] = 'm'; l[23] = '"'; l[24] = '='; l[25] = 'f'; l[26] = 'e'; l[27] = 'r'; l[28] = 'h'; l[29] = ' '; l[30] = 'a'; l[31] = '<';
+                                                for (var i = l.length - 1; i >= 0; i = i - 1) {
+                                                    if (l[i].substring(0, 1) == '|') document.write("&#" + unescape(l[i].substring(1)) + ";");
+                                                    else document.write(unescape(l[i]));
+                                                }
+                                                //]]>
+                                            </script><a href="mailto:a@b.c">a@b.c</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Mobile</th>
+                                        <td>-11234567890</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <h4>Taxes Information</h4>
+                            <br>
+                            <table class="table table-condensed table-striped"></table>
+                        </div>
+                    </div>
+
+
+                    <hr>
+
+                    <div>
+                        <h4>Notes</h4>
+                        <br>
+
+                        <div id="notes_list">
+                        </div>
+                        <div class="panel panel-default panel-body">
+                            <form class="row">
+                                <div class="col-xs-12 col-md-10">
+                                    <input type="hidden" name="client_id" id="client_id" value="55">
+                                    <textarea id="client_note" class="form-control" rows="1"></textarea>
+                                </div>
+                                <div class="col-xs-12 col-md-2 text-center">
+                                    <input type="button" id="save_client_note" class="btn btn-default btn-block" value="Add Notes">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane  p-20" id="quotes" role="tabpanel">
+                    <br />
+                    <div class="table-responsive">
+                        <table id="zero_config" class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+
+                                    <th>Status</th>
+                                    <th>Quote</th>
+                                    <th>Created</th>
+                                    <th>Due Date</th>
+                                    <th>Client Name</th>
+                                    <th>Amount</th>
+                                    <th>Options</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                       
+
+
+
+                                        @switch (item.quote_status_id)
+                                        {
+                                            case 0:
+                                            default:
+
+                                                <td>
+
+                                                    Draft
+                                                </td>
+                                                break;
+                                            case 1:
+                                            <td>
+
+                                                Sent
+                                            </td>
+                                                break;
+                                            case 2:
+                                            <td>
+
+                                                Viewed
+                                            </td>
+                                                break;
+                                            case 3:
+                                            <td>
+
+                                                Approved
+                                            </td>
+                                                break;
+                                            case 4:
+                                            <td>
+
+                                                Rejected
+                                            </td>
+                                                break;
+                                            case 5:
+                                            <td>
+
+                                                Canceled
+                                            </td>
+                                                break;
+
+                                        }
+
+
+                                        <td>
+                                            @item.quote_number
+                                        </td>
+                                        <td>
+                                            @*@Convert.ToDateTime(item.quote_date_created).ToString("dd/MM/yyyy")*@
+                                            @item.quote_date_created.ToString("dd/MM/yyyy")
+                                        </td>
+                                        <td>
+                                            @*@Convert.ToDateTime(item.quote_date_modified).ToString("dd/MM/yyyy")*@
+                                            @item.quote_date_modified.ToString("dd/MM/yyyy")
+                                        </td>
+                                        <td>
+                                            @item.client_name
+                                        </td>
+
+                                        <td></td>
+                                       
+
+                                        <td>
+                                            <div class="options btn-group open option-dropdown">
+                                                <a class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="true">
+                                                    <i class="fa fa-cog"></i> Options
+                                                </a>
+                                                <ul class="dropdown-menu" style="padding-left:10px;">
+                                          <li>
+                                                        <p>
+                                                            <i class="fa fa-edit fa-margin"></i> <a href="/IPQuote/Quote/@item.quote_id">Edit</a>
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <p>
+                                                            <i class="fas fa-trash-alt fa-margin"></i> @Html.ActionLink("Delete", "Delete", "IPQuote", new { id = item.quote_id },
+
+               new { onclick = "return confirm('Are you sure you want to permanently delete this record?');" })
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <p>
+                                                            <i class="fas fa-envelope fa-margin"></i> <a href="/Download/SendEmail/@item.quote_id">SendEmail</a>
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <p>
+                                                            <i class="fas fa-download fa-margin"></i> <a href="/Download/DownloadPDF/@item.quote_id">Download Pdf</a>
+                                                        </p>
+                                                    </li>
+
+                                                   
+                                                </ul>
+                                            </div>
+                                        </td>
+                                       
+                                    </tr>
+                                }
+
+                            </tbody>
+
+                        </table>
+                    </div>
+
+                </div>
+                <div class="tab-pane p-20" id="invoices" role="tabpanel">
+                    <div class="table-responsive">
+                        <br />
+                        <table id="zero_config" class="table table-striped table-bordered">
+                            
+                            <thead>
+                                <tr>
+                                    <th>Status</th>
+                                    <th>Invoices</th>
+                                    <th>Created</th>
+                                    <th>Due Date</th>
+                                    <th>Client Name</th>
+                                    <th>Amount</th>
+                                    <th>Balance</th>
+                                    <th>Options</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <span class="label draft">
+                                            Draft
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <a href="http://amdsystems.in/billing/invoices/view/102" title="Edit">
+                                            102
+                                        </a>
+                                    </td>
+
+                                    <td>
+                                        28-Jun-2018
+                                    </td>
+
+                                    <td>
+                                        <span class="">
+                                            28-Jul-2018
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <a href="http://amdsystems.in/billing/clients/view/55" title="View Client">
+                                            1
+                                        </a>
+                                    </td>
+
+                                    <td class="amount ">
+                                        &lrm;₹0.00
+                                    </td>
+
+                                    <td class="amount">
+                                        &lrm;₹0.00
+                                    </td>
+
+                                    <td>
+                                        <div class="options btn-group">
+                                            <a class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" href="#">
+                                                <i class="fa fa-cog"></i> Options
+                                            </a>
+                                            <ul class="dropdown-menu" style="padding-left:10px;">
+                                                <li>
+                                                    <a href="http://amdsystems.in/billing/invoices/view/102">
+                                                        <i class="fa fa-edit fa-margin"></i> Edit
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="http://amdsystems.in/billing/invoices/generate_pdf/102" target="_blank">
+                                                        <i class="fa fa-print fa-margin"></i> Download PDF
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="http://amdsystems.in/billing/invoices/generate_report/102" target="_blank">
+                                                        <i class="fa fa-print fa-margin"></i> Delivery Report
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="http://amdsystems.in/billing/mailer/invoice/102">
+                                                        <i class="fas fa-envelope fa-margin"></i> Send Email
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="invoice-add-payment" data-invoice-id="102" data-invoice-balance="0.00" data-invoice-payment-method="0">
+                                                        <i class="fas fa-money-bill-alt fa-margin"></i>
+                                                        Enter Payment
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="http://amdsystems.in/billing/invoices/delete/102" onclick="return confirm('If you delete this invoice you will not be able to recover it later. Are you sure you want to permanently delete this invoice?');">
+                                                        <i class="fas fa-trash fa-margin"></i> Delete
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="label draft">
+                                            Draft
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <a href="http://amdsystems.in/billing/invoices/view/100" title="Edit">
+                                            100
+                                        </a>
+                                    </td>
+
+                                    <td>
+                                        27-Jun-2018
+                                    </td>
+
+                                    <td>
+                                        <span class="">
+                                            27-Jul-2018
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <a href="http://amdsystems.in/billing/clients/view/55" title="View Client">
+                                            1
+                                        </a>
+                                    </td>
+
+                                    <td class="amount ">
+                                        &lrm;₹0.00
+                                    </td>
+
+                                    <td class="amount">
+                                        &lrm;₹0.00
+                                    </td>
+
+                                    <td>
+                                        <div class="options btn-group">
+                                            <a class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" href="#">
+                                                <i class="fa fa-cog"></i> Options
+                                            </a>
+                                            <ul class="dropdown-menu" style="padding-left:10px;">
+                                                <li>
+                                                    <a href="http://amdsystems.in/billing/invoices/view/102">
+                                                        <i class="fa fa-edit fa-margin"></i> Edit
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="http://amdsystems.in/billing/invoices/generate_pdf/102" target="_blank">
+                                                        <i class="fa fa-print fa-margin"></i> Download PDF
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="http://amdsystems.in/billing/invoices/generate_report/102" target="_blank">
+                                                        <i class="fa fa-print fa-margin"></i> Delivery Report
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="http://amdsystems.in/billing/mailer/invoice/102">
+                                                        <i class="fas fa-envelope fa-margin"></i> Send Email
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="invoice-add-payment" data-invoice-id="102" data-invoice-balance="0.00" data-invoice-payment-method="0">
+                                                        <i class="fas fa-money-bill-alt fa-margin"></i>
+                                                        Enter Payment
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="http://amdsystems.in/billing/invoices/delete/102" onclick="return confirm('If you delete this invoice you will not be able to recover it later. Are you sure you want to permanently delete this invoice?');">
+                                                        <i class="fas fa-trash fa-margin"></i> Delete
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="label draft">
+                                            Draft
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <a href="http://amdsystems.in/billing/invoices/view/89" title="Edit">
+                                            89
+                                        </a>
+                                    </td>
+
+                                    <td></td>
+
+                                    <td>
+                                        <span class="">
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <a href="http://amdsystems.in/billing/clients/view/55" title="View Client">
+                                            1
+                                        </a>
+                                    </td>
+
+                                    <td class="amount ">
+                                        &lrm;₹9.00
+                                    </td>
+
+                                    <td class="amount">
+                                        &lrm;₹9.00
+                                    </td>
+
+                                    <td>
+                                        <div class="options btn-group">
+                                            <a class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" href="#">
+                                                <i class="fa fa-cog"></i> Options
+                                            </a>
+                                            <ul class="dropdown-menu" style="padding-left:10px;">
+                                                <li>
+                                                    <a href="http://amdsystems.in/billing/invoices/view/102">
+                                                        <i class="fa fa-edit fa-margin"></i> Edit
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="http://amdsystems.in/billing/invoices/generate_pdf/102" target="_blank">
+                                                        <i class="fa fa-print fa-margin"></i> Download PDF
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="http://amdsystems.in/billing/invoices/generate_report/102" target="_blank">
+                                                        <i class="fa fa-print fa-margin"></i> Delivery Report
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="http://amdsystems.in/billing/mailer/invoice/102">
+                                                        <i class="fas fa-envelope fa-margin"></i> Send Email
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="invoice-add-payment" data-invoice-id="102" data-invoice-balance="0.00" data-invoice-payment-method="0">
+                                                        <i class="fas fa-money-bill-alt fa-margin"></i>
+                                                        Enter Payment
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="http://amdsystems.in/billing/invoices/delete/102" onclick="return confirm('If you delete this invoice you will not be able to recover it later. Are you sure you want to permanently delete this invoice?');">
+                                                        <i class="fas fa-trash fa-margin"></i> Delete
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+
+                <div class="tab-pane p-20" id="payments" role="tabpanel">
+                    <div class="table-responsive">
+                        <br />
+                        <table id="zero_config" class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Payment Date</th>
+                                    <th>Invoice Date</th>
+                                    <th>Invoice</th>
+                                    <th>Client</th>
+                                    <th>Amount</th>
+                                    <th>Payment Method</th>
+                                    <th>Note</th>
+                                    <th>Options</th>
+                                </tr>
+                            </thead>
+
+                            <tbody></tbody>
+
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        @*<div class="panel panel-default" style="width: 800px; padding: 10px; margin: 10px">
+            <div id="Tabs" role="tabpanel">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="active">
+                        <a href="#details" aria-controls="details" role="tab" data-toggle="tab">
+                            Details
+                        </a>
+                    </li>&nbsp;
+                    <li><a href="#quotes" aria-controls="employment" role="tab" data-toggle="tab">Quotes</a></li>&nbsp;
+                    <li><a href="#invoices" aria-controls="student" role="tab" data-toggle="tab">Invoices</a></li>&nbsp;
+                    <li><a href="#payments" aria-controls="student" role="tab" data-toggle="tab">Payments</a></li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content" style="padding-top: 20px">
+                    <div role="tabpanel" class="tab-pane active" id="details">
+                        <div id="content" class="tabbable tabs-below">
+
+                            <div class="tab-content table-content">
+
+                                <div id="clientDetails" class="tab-pane tab-info active">
+
+
+
+
+
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-8">
+                                            <h3>1</h3>
+
+                                            <p>
+                                            </p>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                                            <table class="table table-condensed table-bordered">
+                                                <tbody>
+                                                    <tr>
+                                                        <th>
+                                                            Total Billed
+                                                        </th>
+                                                        <td class="td-amount">
+                                                            &lrm;₹9.00
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>
+                                                            Total Paid
+                                                        </th>
+                                                        <th class="td-amount">
+                                                            &lrm;₹0.00
+                                                        </th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>
+                                                            Total Balance
+                                                        </th>
+                                                        <td class="td-amount">
+                                                            &lrm;₹9.00
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-6">
+                                            <h4>Contact Information</h4>
+                                            <br>
+                                            <table class="table table-condensed table-striped">
+                                                <tbody>
+                                                    <tr>
+                                                        <th>Email</th>
+                                                        <td>
+                                                            <script type="text/javascript">
+                                                            //<![CDATA[
+                                                            var l = new Array();
+                                                            l[0] = '>'; l[1] = 'a'; l[2] = '/'; l[3] = '<'; l[4] = '|99'; l[5] = '|46'; l[6] = '|98'; l[7] = '|64'; l[8] = '|97'; l[9] = '>'; l[10] = '"'; l[11] = '|99'; l[12] = '|46'; l[13] = '|98'; l[14] = '|64'; l[15] = '|97'; l[16] = ':'; l[17] = 'o'; l[18] = 't'; l[19] = 'l'; l[20] = 'i'; l[21] = 'a'; l[22] = 'm'; l[23] = '"'; l[24] = '='; l[25] = 'f'; l[26] = 'e'; l[27] = 'r'; l[28] = 'h'; l[29] = ' '; l[30] = 'a'; l[31] = '<';
+                                                            for (var i = l.length - 1; i >= 0; i = i - 1) {
+                                                                if (l[i].substring(0, 1) == '|') document.write("&#" + unescape(l[i].substring(1)) + ";");
+                                                                else document.write(unescape(l[i]));
+                                                            }
+                                                            //]]>
+                                                            </script><a href="mailto:a@b.c">a@b.c</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>Mobile</th>
+                                                        <td>-11234567890</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="col-xs-12 col-md-6">
+                                            <h4>Taxes Information</h4>
+                                            <br>
+                                            <table class="table table-condensed table-striped"></table>
+                                        </div>
+                                    </div>
+
+
+                                    <hr>
+
+                                    <div>
+                                        <h4>Notes</h4>
+                                        <br>
+
+                                        <div id="notes_list">
+                                        </div>
+                                        <div class="panel panel-default panel-body">
+                                            <form class="row">
+                                                <div class="col-xs-12 col-md-10">
+                                                    <input type="hidden" name="client_id" id="client_id" value="55">
+                                                    <textarea id="client_note" class="form-control" rows="1"></textarea>
+                                                </div>
+                                                <div class="col-xs-12 col-md-2 text-center">
+                                                    <input type="button" id="save_client_note" class="btn btn-default btn-block" value="Add Notes">
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div id="clientQuotes" class="tab-pane table-content">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped">
+
+                                            <thead>
+                                                <tr>
+                                                    <th>Status</th>
+                                                    <th>Quote</th>
+                                                    <th>Created</th>
+                                                    <th>Due Date</th>
+                                                    <th>Client Name</th>
+                                                    <th style="text-align: right; padding-right: 25px;">Amount</th>
+                                                    <th>Options</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <span class="label draft">Draft</span>
+                                                    </td>
+                                                    <td>
+                                                        <a href="http://amdsystems.in/billing/quotes/view/72" title="Edit">
+                                                            72
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        30-Jun-2018
+                                                    </td>
+                                                    <td>
+                                                        15-Jul-2018
+                                                    </td>
+                                                    <td>
+                                                        <a href="http://amdsystems.in/billing/clients/view/55" title="View Client">
+                                                            1
+                                                        </a>
+                                                    </td>
+                                                    <td style="text-align: right; padding-right: 25px;">
+                                                        &lrm;₹0.00
+                                                    </td>
+                                                    <td>
+                                                        <div class="options btn-group">
+                                                            <a class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" href="#">
+                                                                <i class="fa fa-cog"></i> Options
+                                                            </a>
+                                                            <ul class="dropdown-menu">
+                                                                <li>
+                                                                    <a href="http://amdsystems.in/billing/quotes/view/72">
+                                                                        <i class="fa fa-edit fa-margin"></i> Edit
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://amdsystems.in/billing/quotes/generate_pdf/72" target="_blank">
+                                                                        <i class="fa fa-print fa-margin"></i> Download PDF
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://amdsystems.in/billing/quotes/generate_pdf/72" target="_blank">
+                                                                        <i class="fa fa-print fa-margin"></i> Download PDF
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://amdsystems.in/billing/mailer/quote/72">
+                                                                        <i class="fa fa-send fa-margin"></i> Send Email
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://amdsystems.in/billing/quotes/delete/72" onclick="return confirm('If you delete this quote you will not be able to recover it later. Are you sure you want to permanently delete this quote?');">
+                                                                        <i class="fa fa-trash-o fa-margin"></i> Delete
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span class="label draft">Draft</span>
+                                                    </td>
+                                                    <td>
+                                                        <a href="http://amdsystems.in/billing/quotes/view/66" title="Edit">
+                                                            66
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        29-Jun-2018
+                                                    </td>
+                                                    <td>
+                                                        14-Jul-2018
+                                                    </td>
+                                                    <td>
+                                                        <a href="http://amdsystems.in/billing/clients/view/55" title="View Client">
+                                                            1
+                                                        </a>
+                                                    </td>
+                                                    <td style="text-align: right; padding-right: 25px;">
+                                                        &lrm;₹0.00
+                                                    </td>
+                                                    <td>
+                                                        <div class="options btn-group">
+                                                            <a class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" href="#">
+                                                                <i class="fa fa-cog"></i> Options
+                                                            </a>
+                                                            <ul class="dropdown-menu">
+                                                                <li>
+                                                                    <a href="http://amdsystems.in/billing/quotes/view/66">
+                                                                        <i class="fa fa-edit fa-margin"></i> Edit
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://amdsystems.in/billing/quotes/generate_pdf/66" target="_blank">
+                                                                        <i class="fa fa-print fa-margin"></i> Download PDF
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://amdsystems.in/billing/quotes/generate_pdf/66" target="_blank">
+                                                                        <i class="fa fa-print fa-margin"></i> Download PDF
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://amdsystems.in/billing/mailer/quote/66">
+                                                                        <i class="fa fa-send fa-margin"></i> Send Email
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://amdsystems.in/billing/quotes/delete/66" onclick="return confirm('If you delete this quote you will not be able to recover it later. Are you sure you want to permanently delete this quote?');">
+                                                                        <i class="fa fa-trash-o fa-margin"></i> Delete
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span class="label draft">Draft</span>
+                                                    </td>
+                                                    <td>
+                                                        <a href="http://amdsystems.in/billing/quotes/view/65" title="Edit">
+                                                            65
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        29-Jun-2018
+                                                    </td>
+                                                    <td>
+                                                        14-Jul-2018
+                                                    </td>
+                                                    <td>
+                                                        <a href="http://amdsystems.in/billing/clients/view/55" title="View Client">
+                                                            1
+                                                        </a>
+                                                    </td>
+                                                    <td style="text-align: right; padding-right: 25px;">
+                                                        &lrm;₹0.00
+                                                    </td>
+                                                    <td>
+                                                        <div class="options btn-group">
+                                                            <a class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" href="#">
+                                                                <i class="fa fa-cog"></i> Options
+                                                            </a>
+                                                            <ul class="dropdown-menu">
+                                                                <li>
+                                                                    <a href="http://amdsystems.in/billing/quotes/view/65">
+                                                                        <i class="fa fa-edit fa-margin"></i> Edit
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://amdsystems.in/billing/quotes/generate_pdf/65" target="_blank">
+                                                                        <i class="fa fa-print fa-margin"></i> Download PDF
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://amdsystems.in/billing/quotes/generate_pdf/65" target="_blank">
+                                                                        <i class="fa fa-print fa-margin"></i> Download PDF
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://amdsystems.in/billing/mailer/quote/65">
+                                                                        <i class="fa fa-send fa-margin"></i> Send Email
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://amdsystems.in/billing/quotes/delete/65" onclick="return confirm('If you delete this quote you will not be able to recover it later. Are you sure you want to permanently delete this quote?');">
+                                                                        <i class="fa fa-trash-o fa-margin"></i> Delete
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span class="label draft">Draft</span>
+                                                    </td>
+                                                    <td>
+                                                        <a href="http://amdsystems.in/billing/quotes/view/63" title="Edit">
+                                                            63
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        28-Jun-2018
+                                                    </td>
+                                                    <td>
+                                                        13-Jul-2018
+                                                    </td>
+                                                    <td>
+                                                        <a href="http://amdsystems.in/billing/clients/view/55" title="View Client">
+                                                            1
+                                                        </a>
+                                                    </td>
+                                                    <td style="text-align: right; padding-right: 25px;">
+                                                        &lrm;₹0.00
+                                                    </td>
+                                                    <td>
+                                                        <div class="options btn-group">
+                                                            <a class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" href="#">
+                                                                <i class="fa fa-cog"></i> Options
+                                                            </a>
+                                                            <ul class="dropdown-menu">
+                                                                <li>
+                                                                    <a href="http://amdsystems.in/billing/quotes/view/63">
+                                                                        <i class="fa fa-edit fa-margin"></i> Edit
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://amdsystems.in/billing/quotes/generate_pdf/63" target="_blank">
+                                                                        <i class="fa fa-print fa-margin"></i> Download PDF
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://amdsystems.in/billing/quotes/generate_pdf/63" target="_blank">
+                                                                        <i class="fa fa-print fa-margin"></i> Download PDF
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://amdsystems.in/billing/mailer/quote/63">
+                                                                        <i class="fa fa-send fa-margin"></i> Send Email
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://amdsystems.in/billing/quotes/delete/63" onclick="return confirm('If you delete this quote you will not be able to recover it later. Are you sure you want to permanently delete this quote?');">
+                                                                        <i class="fa fa-trash-o fa-margin"></i> Delete
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span class="label draft">Draft</span>
+                                                    </td>
+                                                    <td>
+                                                        <a href="http://amdsystems.in/billing/quotes/view/61" title="Edit">
+                                                            61
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        28-Jun-2018
+                                                    </td>
+                                                    <td>
+                                                        13-Jul-2018
+                                                    </td>
+                                                    <td>
+                                                        <a href="http://amdsystems.in/billing/clients/view/55" title="View Client">
+                                                            1
+                                                        </a>
+                                                    </td>
+                                                    <td style="text-align: right; padding-right: 25px;">
+                                                        &lrm;₹0.00
+                                                    </td>
+                                                    <td>
+                                                        <div class="options btn-group">
+                                                            <a class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" href="#">
+                                                                <i class="fa fa-cog"></i> Options
+                                                            </a>
+                                                            <ul class="dropdown-menu">
+                                                                <li>
+                                                                    <a href="http://amdsystems.in/billing/quotes/view/61">
+                                                                        <i class="fa fa-edit fa-margin"></i> Edit
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://amdsystems.in/billing/quotes/generate_pdf/61" target="_blank">
+                                                                        <i class="fa fa-print fa-margin"></i> Download PDF
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://amdsystems.in/billing/quotes/generate_pdf/61" target="_blank">
+                                                                        <i class="fa fa-print fa-margin"></i> Download PDF
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://amdsystems.in/billing/mailer/quote/61">
+                                                                        <i class="fa fa-send fa-margin"></i> Send Email
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://amdsystems.in/billing/quotes/delete/61" onclick="return confirm('If you delete this quote you will not be able to recover it later. Are you sure you want to permanently delete this quote?');">
+                                                                        <i class="fa fa-trash-o fa-margin"></i> Delete
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span class="label draft">Draft</span>
+                                                    </td>
+                                                    <td>
+                                                        <a href="http://amdsystems.in/billing/quotes/view/47" title="Edit">
+                                                            47
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        25-Jun-2018
+                                                    </td>
+                                                    <td>
+                                                        10-Jul-2018
+                                                    </td>
+                                                    <td>
+                                                        <a href="http://amdsystems.in/billing/clients/view/55" title="View Client">
+                                                            1
+                                                        </a>
+                                                    </td>
+                                                    <td style="text-align: right; padding-right: 25px;">
+                                                        &lrm;₹0.00
+                                                    </td>
+                                                    <td>
+                                                        <div class="options btn-group">
+                                                            <a class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" href="#">
+                                                                <i class="fa fa-cog"></i> Options
+                                                            </a>
+                                                            <ul class="dropdown-menu">
+                                                                <li>
+                                                                    <a href="http://amdsystems.in/billing/quotes/view/47">
+                                                                        <i class="fa fa-edit fa-margin"></i> Edit
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://amdsystems.in/billing/quotes/generate_pdf/47" target="_blank">
+                                                                        <i class="fa fa-print fa-margin"></i> Download PDF
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://amdsystems.in/billing/quotes/generate_pdf/47" target="_blank">
+                                                                        <i class="fa fa-print fa-margin"></i> Download PDF
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://amdsystems.in/billing/mailer/quote/47">
+                                                                        <i class="fa fa-send fa-margin"></i> Send Email
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://amdsystems.in/billing/quotes/delete/47" onclick="return confirm('If you delete this quote you will not be able to recover it later. Are you sure you want to permanently delete this quote?');">
+                                                                        <i class="fa fa-trash-o fa-margin"></i> Delete
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div id="clientInvoices" class="tab-pane table-content">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped">
+
+                                            <thead>
+                                                <tr>
+                                                    <th>Status</th>
+                                                    <th>Invoice</th>
+                                                    <th>Created</th>
+                                                    <th>Due Date</th>
+                                                    <th>Client Name</th>
+                                                    <th style="text-align: right;">Amount</th>
+                                                    <th style="text-align: right;">Balance</th>
+                                                    <th>Options</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <span class="label draft">
+                                                            Draft
+                                                        </span>
+                                                    </td>
+
+                                                    <td>
+                                                        <a href="http://amdsystems.in/billing/invoices/view/102" title="Edit">
+                                                            102
+                                                        </a>
+                                                    </td>
+
+                                                    <td>
+                                                        28-Jun-2018
+                                                    </td>
+
+                                                    <td>
+                                                        <span class="">
+                                                            28-Jul-2018
+                                                        </span>
+                                                    </td>
+
+                                                    <td>
+                                                        <a href="http://amdsystems.in/billing/clients/view/55" title="View Client">
+                                                            1
+                                                        </a>
+                                                    </td>
+
+                                                    <td class="amount ">
+                                                        &lrm;₹0.00
+                                                    </td>
+
+                                                    <td class="amount">
+                                                        &lrm;₹0.00
+                                                    </td>
+
+                                                    <td>
+                                                        <div class="options btn-group">
+                                                            <a class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" href="#">
+                                                                <i class="fa fa-cog"></i> Options
+                                                            </a>
+                                                            <ul class="dropdown-menu">
+                                                                <li>
+                                                                    <a href="http://amdsystems.in/billing/invoices/view/102">
+                                                                        <i class="fa fa-edit fa-margin"></i> Edit
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://amdsystems.in/billing/invoices/generate_pdf/102" target="_blank">
+                                                                        <i class="fa fa-print fa-margin"></i> Download PDF
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://amdsystems.in/billing/invoices/generate_report/102" target="_blank">
+                                                                        <i class="fa fa-print fa-margin"></i> Delivery Report
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://amdsystems.in/billing/mailer/invoice/102">
+                                                                        <i class="fa fa-send fa-margin"></i> Send Email
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#" class="invoice-add-payment" data-invoice-id="102" data-invoice-balance="0.00" data-invoice-payment-method="0">
+                                                                        <i class="fa fa-money fa-margin"></i>
+                                                                        Enter Payment
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://amdsystems.in/billing/invoices/delete/102" onclick="return confirm('If you delete this invoice you will not be able to recover it later. Are you sure you want to permanently delete this invoice?');">
+                                                                        <i class="fa fa-trash-o fa-margin"></i> Delete
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span class="label draft">
+                                                            Draft
+                                                        </span>
+                                                    </td>
+
+                                                    <td>
+                                                        <a href="http://amdsystems.in/billing/invoices/view/100" title="Edit">
+                                                            100
+                                                        </a>
+                                                    </td>
+
+                                                    <td>
+                                                        27-Jun-2018
+                                                    </td>
+
+                                                    <td>
+                                                        <span class="">
+                                                            27-Jul-2018
+                                                        </span>
+                                                    </td>
+
+                                                    <td>
+                                                        <a href="http://amdsystems.in/billing/clients/view/55" title="View Client">
+                                                            1
+                                                        </a>
+                                                    </td>
+
+                                                    <td class="amount ">
+                                                        &lrm;₹0.00
+                                                    </td>
+
+                                                    <td class="amount">
+                                                        &lrm;₹0.00
+                                                    </td>
+
+                                                    <td>
+                                                        <div class="options btn-group">
+                                                            <a class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" href="#">
+                                                                <i class="fa fa-cog"></i> Options
+                                                            </a>
+                                                            <ul class="dropdown-menu">
+                                                                <li>
+                                                                    <a href="http://amdsystems.in/billing/invoices/view/100">
+                                                                        <i class="fa fa-edit fa-margin"></i> Edit
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://amdsystems.in/billing/invoices/generate_pdf/100" target="_blank">
+                                                                        <i class="fa fa-print fa-margin"></i> Download PDF
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://amdsystems.in/billing/invoices/generate_report/100" target="_blank">
+                                                                        <i class="fa fa-print fa-margin"></i> Delivery Report
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://amdsystems.in/billing/mailer/invoice/100">
+                                                                        <i class="fa fa-send fa-margin"></i> Send Email
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#" class="invoice-add-payment" data-invoice-id="100" data-invoice-balance="0.00" data-invoice-payment-method="0">
+                                                                        <i class="fa fa-money fa-margin"></i>
+                                                                        Enter Payment
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://amdsystems.in/billing/invoices/delete/100" onclick="return confirm('If you delete this invoice you will not be able to recover it later. Are you sure you want to permanently delete this invoice?');">
+                                                                        <i class="fa fa-trash-o fa-margin"></i> Delete
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span class="label draft">
+                                                            Draft
+                                                        </span>
+                                                    </td>
+
+                                                    <td>
+                                                        <a href="http://amdsystems.in/billing/invoices/view/89" title="Edit">
+                                                            89
+                                                        </a>
+                                                    </td>
+
+                                                    <td></td>
+
+                                                    <td>
+                                                        <span class="">
+                                                        </span>
+                                                    </td>
+
+                                                    <td>
+                                                        <a href="http://amdsystems.in/billing/clients/view/55" title="View Client">
+                                                            1
+                                                        </a>
+                                                    </td>
+
+                                                    <td class="amount ">
+                                                        &lrm;₹9.00
+                                                    </td>
+
+                                                    <td class="amount">
+                                                        &lrm;₹9.00
+                                                    </td>
+
+                                                    <td>
+                                                        <div class="options btn-group">
+                                                            <a class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" href="#">
+                                                                <i class="fa fa-cog"></i> Options
+                                                            </a>
+                                                            <ul class="dropdown-menu">
+                                                                <li>
+                                                                    <a href="http://amdsystems.in/billing/invoices/view/89">
+                                                                        <i class="fa fa-edit fa-margin"></i> Edit
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://amdsystems.in/billing/invoices/generate_pdf/89" target="_blank">
+                                                                        <i class="fa fa-print fa-margin"></i> Download PDF
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://amdsystems.in/billing/invoices/generate_report/89" target="_blank">
+                                                                        <i class="fa fa-print fa-margin"></i> Delivery Report
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://amdsystems.in/billing/mailer/invoice/89">
+                                                                        <i class="fa fa-send fa-margin"></i> Send Email
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="#" class="invoice-add-payment" data-invoice-id="89" data-invoice-balance="9.10" data-invoice-payment-method="0">
+                                                                        <i class="fa fa-money fa-margin"></i>
+                                                                        Enter Payment
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="http://amdsystems.in/billing/invoices/delete/89" onclick="return confirm('If you delete this invoice you will not be able to recover it later. Are you sure you want to permanently delete this invoice?');">
+                                                                        <i class="fa fa-trash-o fa-margin"></i> Delete
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div id="clientPayments" class="tab-pane table-content">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped">
+
+                                            <thead>
+                                                <tr>
+                                                    <th>Payment Date</th>
+                                                    <th>Invoice Date</th>
+                                                    <th>Invoice</th>
+                                                    <th>Client</th>
+                                                    <th>Amount</th>
+                                                    <th>Payment Method</th>
+                                                    <th>Note</th>
+                                                    <th>Options</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody></tbody>
+
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="quotes">
+                        <div class="tab-content table-content">
+
+                            <div id="clientDetails" class="tab-pane tab-info">
+
+
+
+
+
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-8">
+                                        <h3>1</h3>
+
+                                        <p>
+                                        </p>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                                        <table class="table table-condensed table-bordered">
+                                            <tbody>
+                                                <tr>
+                                                    <th>
+                                                        Total Billed
+                                                    </th>
+                                                    <td class="td-amount">
+                                                        &lrm;₹9.00
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>
+                                                        Total Paid
+                                                    </th>
+                                                    <th class="td-amount">
+                                                        &lrm;₹0.00
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <th>
+                                                        Total Balance
+                                                    </th>
+                                                    <td class="td-amount">
+                                                        &lrm;₹9.00
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <hr>
+
+                                <div class="row">
+                                    <div class="col-xs-12 col-md-6">
+                                        <h4>Contact Information</h4>
+                                        <br>
+                                        <table class="table table-condensed table-striped">
+                                            <tbody>
+                                                <tr>
+                                                    <th>Email</th>
+                                                    <td>
+                                                        <script type="text/javascript">
+                                                        //<![CDATA[
+                                                        var l = new Array();
+                                                        l[0] = '>'; l[1] = 'a'; l[2] = '/'; l[3] = '<'; l[4] = '|99'; l[5] = '|46'; l[6] = '|98'; l[7] = '|64'; l[8] = '|97'; l[9] = '>'; l[10] = '"'; l[11] = '|99'; l[12] = '|46'; l[13] = '|98'; l[14] = '|64'; l[15] = '|97'; l[16] = ':'; l[17] = 'o'; l[18] = 't'; l[19] = 'l'; l[20] = 'i'; l[21] = 'a'; l[22] = 'm'; l[23] = '"'; l[24] = '='; l[25] = 'f'; l[26] = 'e'; l[27] = 'r'; l[28] = 'h'; l[29] = ' '; l[30] = 'a'; l[31] = '<';
+                                                        for (var i = l.length - 1; i >= 0; i = i - 1) {
+                                                            if (l[i].substring(0, 1) == '|') document.write("&#" + unescape(l[i].substring(1)) + ";");
+                                                            else document.write(unescape(l[i]));
+                                                        }
+                                                        //]]>
+                                                        </script><a href="mailto:a@b.c">a@b.c</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Mobile</th>
+                                                    <td>-11234567890</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6">
+                                        <h4>Taxes Information</h4>
+                                        <br>
+                                        <table class="table table-condensed table-striped"></table>
+                                    </div>
+                                </div>
+
+
+                                <hr>
+
+                                <div>
+                                    <h4>Notes</h4>
+                                    <br>
+
+                                    <div id="notes_list">
+                                    </div>
+                                    <div class="panel panel-default panel-body">
+                                        <form class="row">
+                                            <div class="col-xs-12 col-md-10">
+                                                <input type="hidden" name="client_id" id="client_id" value="55">
+                                                <textarea id="client_note" class="form-control" rows="1"></textarea>
+                                            </div>
+                                            <div class="col-xs-12 col-md-2 text-center">
+                                                <input type="button" id="save_client_note" class="btn btn-default btn-block" value="Add Notes">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div id="clientQuotes" class="tab-pane table-content active">
+                                <div class="table-responsive">
+                                    <table class="table table-striped">
+
+                                        <thead>
+                                            <tr>
+                                                <th>Status</th>
+                                                <th>Quote</th>
+                                                <th>Created</th>
+                                                <th>Due Date</th>
+                                                <th>Client Name</th>
+                                                <th style="text-align: right; padding-right: 25px;">Amount</th>
+                                                <th>Options</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <span class="label draft">Draft</span>
+                                                </td>
+                                                <td>
+                                                    <a href="http://amdsystems.in/billing/quotes/view/72" title="Edit">
+                                                        72
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    30-Jun-2018
+                                                </td>
+                                                <td>
+                                                    15-Jul-2018
+                                                </td>
+                                                <td>
+                                                    <a href="http://amdsystems.in/billing/clients/view/55" title="View Client">
+                                                        1
+                                                    </a>
+                                                </td>
+                                                <td style="text-align: right; padding-right: 25px;">
+                                                    &lrm;₹0.00
+                                                </td>
+                                                <td>
+                                                    <div class="options btn-group">
+                                                        <a class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" href="#">
+                                                            <i class="fa fa-cog"></i> Options
+                                                        </a>
+                                                        <ul class="dropdown-menu">
+                                                            <li>
+                                                                <a href="http://amdsystems.in/billing/quotes/view/72">
+                                                                    <i class="fa fa-edit fa-margin"></i> Edit
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://amdsystems.in/billing/quotes/generate_pdf/72" target="_blank">
+                                                                    <i class="fa fa-print fa-margin"></i> Download PDF
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://amdsystems.in/billing/quotes/generate_pdf/72" target="_blank">
+                                                                    <i class="fa fa-print fa-margin"></i> Download PDF
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://amdsystems.in/billing/mailer/quote/72">
+                                                                    <i class="fa fa-send fa-margin"></i> Send Email
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://amdsystems.in/billing/quotes/delete/72" onclick="return confirm('If you delete this quote you will not be able to recover it later. Are you sure you want to permanently delete this quote?');">
+                                                                    <i class="fa fa-trash-o fa-margin"></i> Delete
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="label draft">Draft</span>
+                                                </td>
+                                                <td>
+                                                    <a href="http://amdsystems.in/billing/quotes/view/66" title="Edit">
+                                                        66
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    29-Jun-2018
+                                                </td>
+                                                <td>
+                                                    14-Jul-2018
+                                                </td>
+                                                <td>
+                                                    <a href="http://amdsystems.in/billing/clients/view/55" title="View Client">
+                                                        1
+                                                    </a>
+                                                </td>
+                                                <td style="text-align: right; padding-right: 25px;">
+                                                    &lrm;₹0.00
+                                                </td>
+                                                <td>
+                                                    <div class="options btn-group">
+                                                        <a class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" href="#">
+                                                            <i class="fa fa-cog"></i> Options
+                                                        </a>
+                                                        <ul class="dropdown-menu">
+                                                            <li>
+                                                                <a href="http://amdsystems.in/billing/quotes/view/66">
+                                                                    <i class="fa fa-edit fa-margin"></i> Edit
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://amdsystems.in/billing/quotes/generate_pdf/66" target="_blank">
+                                                                    <i class="fa fa-print fa-margin"></i> Download PDF
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://amdsystems.in/billing/quotes/generate_pdf/66" target="_blank">
+                                                                    <i class="fa fa-print fa-margin"></i> Download PDF
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://amdsystems.in/billing/mailer/quote/66">
+                                                                    <i class="fa fa-send fa-margin"></i> Send Email
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://amdsystems.in/billing/quotes/delete/66" onclick="return confirm('If you delete this quote you will not be able to recover it later. Are you sure you want to permanently delete this quote?');">
+                                                                    <i class="fa fa-trash-o fa-margin"></i> Delete
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="label draft">Draft</span>
+                                                </td>
+                                                <td>
+                                                    <a href="http://amdsystems.in/billing/quotes/view/65" title="Edit">
+                                                        65
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    29-Jun-2018
+                                                </td>
+                                                <td>
+                                                    14-Jul-2018
+                                                </td>
+                                                <td>
+                                                    <a href="http://amdsystems.in/billing/clients/view/55" title="View Client">
+                                                        1
+                                                    </a>
+                                                </td>
+                                                <td style="text-align: right; padding-right: 25px;">
+                                                    &lrm;₹0.00
+                                                </td>
+                                                <td>
+                                                    <div class="options btn-group">
+                                                        <a class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" href="#">
+                                                            <i class="fa fa-cog"></i> Options
+                                                        </a>
+                                                        <ul class="dropdown-menu">
+                                                            <li>
+                                                                <a href="http://amdsystems.in/billing/quotes/view/65">
+                                                                    <i class="fa fa-edit fa-margin"></i> Edit
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://amdsystems.in/billing/quotes/generate_pdf/65" target="_blank">
+                                                                    <i class="fa fa-print fa-margin"></i> Download PDF
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://amdsystems.in/billing/quotes/generate_pdf/65" target="_blank">
+                                                                    <i class="fa fa-print fa-margin"></i> Download PDF
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://amdsystems.in/billing/mailer/quote/65">
+                                                                    <i class="fa fa-send fa-margin"></i> Send Email
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://amdsystems.in/billing/quotes/delete/65" onclick="return confirm('If you delete this quote you will not be able to recover it later. Are you sure you want to permanently delete this quote?');">
+                                                                    <i class="fa fa-trash-o fa-margin"></i> Delete
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="label draft">Draft</span>
+                                                </td>
+                                                <td>
+                                                    <a href="http://amdsystems.in/billing/quotes/view/63" title="Edit">
+                                                        63
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    28-Jun-2018
+                                                </td>
+                                                <td>
+                                                    13-Jul-2018
+                                                </td>
+                                                <td>
+                                                    <a href="http://amdsystems.in/billing/clients/view/55" title="View Client">
+                                                        1
+                                                    </a>
+                                                </td>
+                                                <td style="text-align: right; padding-right: 25px;">
+                                                    &lrm;₹0.00
+                                                </td>
+                                                <td>
+                                                    <div class="options btn-group">
+                                                        <a class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" href="#">
+                                                            <i class="fa fa-cog"></i> Options
+                                                        </a>
+                                                        <ul class="dropdown-menu">
+                                                            <li>
+                                                                <a href="http://amdsystems.in/billing/quotes/view/63">
+                                                                    <i class="fa fa-edit fa-margin"></i> Edit
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://amdsystems.in/billing/quotes/generate_pdf/63" target="_blank">
+                                                                    <i class="fa fa-print fa-margin"></i> Download PDF
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://amdsystems.in/billing/quotes/generate_pdf/63" target="_blank">
+                                                                    <i class="fa fa-print fa-margin"></i> Download PDF
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://amdsystems.in/billing/mailer/quote/63">
+                                                                    <i class="fa fa-send fa-margin"></i> Send Email
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://amdsystems.in/billing/quotes/delete/63" onclick="return confirm('If you delete this quote you will not be able to recover it later. Are you sure you want to permanently delete this quote?');">
+                                                                    <i class="fa fa-trash-o fa-margin"></i> Delete
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="label draft">Draft</span>
+                                                </td>
+                                                <td>
+                                                    <a href="http://amdsystems.in/billing/quotes/view/61" title="Edit">
+                                                        61
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    28-Jun-2018
+                                                </td>
+                                                <td>
+                                                    13-Jul-2018
+                                                </td>
+                                                <td>
+                                                    <a href="http://amdsystems.in/billing/clients/view/55" title="View Client">
+                                                        1
+                                                    </a>
+                                                </td>
+                                                <td style="text-align: right; padding-right: 25px;">
+                                                    &lrm;₹0.00
+                                                </td>
+                                                <td>
+                                                    <div class="options btn-group">
+                                                        <a class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" href="#">
+                                                            <i class="fa fa-cog"></i> Options
+                                                        </a>
+                                                        <ul class="dropdown-menu">
+                                                            <li>
+                                                                <a href="http://amdsystems.in/billing/quotes/view/61">
+                                                                    <i class="fa fa-edit fa-margin"></i> Edit
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://amdsystems.in/billing/quotes/generate_pdf/61" target="_blank">
+                                                                    <i class="fa fa-print fa-margin"></i> Download PDF
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://amdsystems.in/billing/quotes/generate_pdf/61" target="_blank">
+                                                                    <i class="fa fa-print fa-margin"></i> Download PDF
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://amdsystems.in/billing/mailer/quote/61">
+                                                                    <i class="fa fa-send fa-margin"></i> Send Email
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://amdsystems.in/billing/quotes/delete/61" onclick="return confirm('If you delete this quote you will not be able to recover it later. Are you sure you want to permanently delete this quote?');">
+                                                                    <i class="fa fa-trash-o fa-margin"></i> Delete
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="label draft">Draft</span>
+                                                </td>
+                                                <td>
+                                                    <a href="http://amdsystems.in/billing/quotes/view/47" title="Edit">
+                                                        47
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    25-Jun-2018
+                                                </td>
+                                                <td>
+                                                    10-Jul-2018
+                                                </td>
+                                                <td>
+                                                    <a href="http://amdsystems.in/billing/clients/view/55" title="View Client">
+                                                        1
+                                                    </a>
+                                                </td>
+                                                <td style="text-align: right; padding-right: 25px;">
+                                                    &lrm;₹0.00
+                                                </td>
+                                                <td>
+                                                    <div class="options btn-group">
+                                                        <a class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" href="#">
+                                                            <i class="fa fa-cog"></i> Options
+                                                        </a>
+                                                        <ul class="dropdown-menu">
+                                                            <li>
+                                                                <a href="http://amdsystems.in/billing/quotes/view/47">
+                                                                    <i class="fa fa-edit fa-margin"></i> Edit
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://amdsystems.in/billing/quotes/generate_pdf/47" target="_blank">
+                                                                    <i class="fa fa-print fa-margin"></i> Download PDF
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://amdsystems.in/billing/quotes/generate_pdf/47" target="_blank">
+                                                                    <i class="fa fa-print fa-margin"></i> Download PDF
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://amdsystems.in/billing/mailer/quote/47">
+                                                                    <i class="fa fa-send fa-margin"></i> Send Email
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://amdsystems.in/billing/quotes/delete/47" onclick="return confirm('If you delete this quote you will not be able to recover it later. Are you sure you want to permanently delete this quote?');">
+                                                                    <i class="fa fa-trash-o fa-margin"></i> Delete
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div id="clientInvoices" class="tab-pane table-content">
+                                <div class="table-responsive">
+                                    <table class="table table-striped">
+
+                                        <thead>
+                                            <tr>
+                                                <th>Status</th>
+                                                <th>Invoice</th>
+                                                <th>Created</th>
+                                                <th>Due Date</th>
+                                                <th>Client Name</th>
+                                                <th style="text-align: right;">Amount</th>
+                                                <th style="text-align: right;">Balance</th>
+                                                <th>Options</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <span class="label draft">
+                                                        Draft
+                                                    </span>
+                                                </td>
+
+                                                <td>
+                                                    <a href="http://amdsystems.in/billing/invoices/view/102" title="Edit">
+                                                        102
+                                                    </a>
+                                                </td>
+
+                                                <td>
+                                                    28-Jun-2018
+                                                </td>
+
+                                                <td>
+                                                    <span class="">
+                                                        28-Jul-2018
+                                                    </span>
+                                                </td>
+
+                                                <td>
+                                                    <a href="http://amdsystems.in/billing/clients/view/55" title="View Client">
+                                                        1
+                                                    </a>
+                                                </td>
+
+                                                <td class="amount ">
+                                                    &lrm;₹0.00
+                                                </td>
+
+                                                <td class="amount">
+                                                    &lrm;₹0.00
+                                                </td>
+
+                                                <td>
+                                                    <div class="options btn-group">
+                                                        <a class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" href="#">
+                                                            <i class="fa fa-cog"></i> Options
+                                                        </a>
+                                                        <ul class="dropdown-menu">
+                                                            <li>
+                                                                <a href="http://amdsystems.in/billing/invoices/view/102">
+                                                                    <i class="fa fa-edit fa-margin"></i> Edit
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://amdsystems.in/billing/invoices/generate_pdf/102" target="_blank">
+                                                                    <i class="fa fa-print fa-margin"></i> Download PDF
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://amdsystems.in/billing/invoices/generate_report/102" target="_blank">
+                                                                    <i class="fa fa-print fa-margin"></i> Delivery Report
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://amdsystems.in/billing/mailer/invoice/102">
+                                                                    <i class="fa fa-send fa-margin"></i> Send Email
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" class="invoice-add-payment" data-invoice-id="102" data-invoice-balance="0.00" data-invoice-payment-method="0">
+                                                                    <i class="fa fa-money fa-margin"></i>
+                                                                    Enter Payment
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://amdsystems.in/billing/invoices/delete/102" onclick="return confirm('If you delete this invoice you will not be able to recover it later. Are you sure you want to permanently delete this invoice?');">
+                                                                    <i class="fa fa-trash-o fa-margin"></i> Delete
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="label draft">
+                                                        Draft
+                                                    </span>
+                                                </td>
+
+                                                <td>
+                                                    <a href="http://amdsystems.in/billing/invoices/view/100" title="Edit">
+                                                        100
+                                                    </a>
+                                                </td>
+
+                                                <td>
+                                                    27-Jun-2018
+                                                </td>
+
+                                                <td>
+                                                    <span class="">
+                                                        27-Jul-2018
+                                                    </span>
+                                                </td>
+
+                                                <td>
+                                                    <a href="http://amdsystems.in/billing/clients/view/55" title="View Client">
+                                                        1
+                                                    </a>
+                                                </td>
+
+                                                <td class="amount ">
+                                                    &lrm;₹0.00
+                                                </td>
+
+                                                <td class="amount">
+                                                    &lrm;₹0.00
+                                                </td>
+
+                                                <td>
+                                                    <div class="options btn-group">
+                                                        <a class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" href="#">
+                                                            <i class="fa fa-cog"></i> Options
+                                                        </a>
+                                                        <ul class="dropdown-menu">
+                                                            <li>
+                                                                <a href="http://amdsystems.in/billing/invoices/view/100">
+                                                                    <i class="fa fa-edit fa-margin"></i> Edit
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://amdsystems.in/billing/invoices/generate_pdf/100" target="_blank">
+                                                                    <i class="fa fa-print fa-margin"></i> Download PDF
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://amdsystems.in/billing/invoices/generate_report/100" target="_blank">
+                                                                    <i class="fa fa-print fa-margin"></i> Delivery Report
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://amdsystems.in/billing/mailer/invoice/100">
+                                                                    <i class="fa fa-send fa-margin"></i> Send Email
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" class="invoice-add-payment" data-invoice-id="100" data-invoice-balance="0.00" data-invoice-payment-method="0">
+                                                                    <i class="fa fa-money fa-margin"></i>
+                                                                    Enter Payment
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://amdsystems.in/billing/invoices/delete/100" onclick="return confirm('If you delete this invoice you will not be able to recover it later. Are you sure you want to permanently delete this invoice?');">
+                                                                    <i class="fa fa-trash-o fa-margin"></i> Delete
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="label draft">
+                                                        Draft
+                                                    </span>
+                                                </td>
+
+                                                <td>
+                                                    <a href="http://amdsystems.in/billing/invoices/view/89" title="Edit">
+                                                        89
+                                                    </a>
+                                                </td>
+
+                                                <td></td>
+
+                                                <td>
+                                                    <span class="">
+                                                    </span>
+                                                </td>
+
+                                                <td>
+                                                    <a href="http://amdsystems.in/billing/clients/view/55" title="View Client">
+                                                        1
+                                                    </a>
+                                                </td>
+
+                                                <td class="amount ">
+                                                    &lrm;₹9.00
+                                                </td>
+
+                                                <td class="amount">
+                                                    &lrm;₹9.00
+                                                </td>
+
+                                                <td>
+                                                    <div class="options btn-group">
+                                                        <a class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" href="#">
+                                                            <i class="fa fa-cog"></i> Options
+                                                        </a>
+                                                        <ul class="dropdown-menu">
+                                                            <li>
+                                                                <a href="http://amdsystems.in/billing/invoices/view/89">
+                                                                    <i class="fa fa-edit fa-margin"></i> Edit
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://amdsystems.in/billing/invoices/generate_pdf/89" target="_blank">
+                                                                    <i class="fa fa-print fa-margin"></i> Download PDF
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://amdsystems.in/billing/invoices/generate_report/89" target="_blank">
+                                                                    <i class="fa fa-print fa-margin"></i> Delivery Report
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://amdsystems.in/billing/mailer/invoice/89">
+                                                                    <i class="fa fa-send fa-margin"></i> Send Email
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" class="invoice-add-payment" data-invoice-id="89" data-invoice-balance="9.10" data-invoice-payment-method="0">
+                                                                    <i class="fa fa-money fa-margin"></i>
+                                                                    Enter Payment
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="http://amdsystems.in/billing/invoices/delete/89" onclick="return confirm('If you delete this invoice you will not be able to recover it later. Are you sure you want to permanently delete this invoice?');">
+                                                                    <i class="fa fa-trash-o fa-margin"></i> Delete
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div id="clientPayments" class="tab-pane table-content">
+                                <div class="table-responsive">
+                                    <table class="table table-striped">
+
+                                        <thead>
+                                            <tr>
+                                                <th>Payment Date</th>
+                                                <th>Invoice Date</th>
+                                                <th>Invoice</th>
+                                                <th>Client</th>
+                                                <th>Amount</th>
+                                                <th>Payment Method</th>
+                                                <th>Note</th>
+                                                <th>Options</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody></tbody>
+
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="invoices">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+
+                                <thead>
+                                    <tr>
+                                        <th>Status</th>
+                                        <th>Invoice</th>
+                                        <th>Created</th>
+                                        <th>Due Date</th>
+                                        <th>Client Name</th>
+                                        <th style="text-align: right;">Amount</th>
+                                        <th style="text-align: right;">Balance</th>
+                                        <th>Options</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <span class="label draft">
+                                                Draft
+                                            </span>
+                                        </td>
+
+                                        <td>
+                                            <a href="http://amdsystems.in/billing/invoices/view/102" title="Edit">
+                                                102
+                                            </a>
+                                        </td>
+
+                                        <td>
+                                            28-Jun-2018
+                                        </td>
+
+                                        <td>
+                                            <span class="">
+                                                28-Jul-2018
+                                            </span>
+                                        </td>
+
+                                        <td>
+                                            <a href="http://amdsystems.in/billing/clients/view/55" title="View Client">
+                                                1
+                                            </a>
+                                        </td>
+
+                                        <td class="amount ">
+                                            &lrm;₹0.00
+                                        </td>
+
+                                        <td class="amount">
+                                            &lrm;₹0.00
+                                        </td>
+
+                                        <td>
+                                            <div class="options btn-group">
+                                                <a class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" href="#">
+                                                    <i class="fa fa-cog"></i> Options
+                                                </a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <a href="http://amdsystems.in/billing/invoices/view/102">
+                                                            <i class="fa fa-edit fa-margin"></i> Edit
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="http://amdsystems.in/billing/invoices/generate_pdf/102" target="_blank">
+                                                            <i class="fa fa-print fa-margin"></i> Download PDF
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="http://amdsystems.in/billing/invoices/generate_report/102" target="_blank">
+                                                            <i class="fa fa-print fa-margin"></i> Delivery Report
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="http://amdsystems.in/billing/mailer/invoice/102">
+                                                            <i class="fa fa-send fa-margin"></i> Send Email
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="invoice-add-payment" data-invoice-id="102" data-invoice-balance="0.00" data-invoice-payment-method="0">
+                                                            <i class="fa fa-money fa-margin"></i>
+                                                            Enter Payment
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="http://amdsystems.in/billing/invoices/delete/102" onclick="return confirm('If you delete this invoice you will not be able to recover it later. Are you sure you want to permanently delete this invoice?');">
+                                                            <i class="fa fa-trash-o fa-margin"></i> Delete
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="label draft">
+                                                Draft
+                                            </span>
+                                        </td>
+
+                                        <td>
+                                            <a href="http://amdsystems.in/billing/invoices/view/100" title="Edit">
+                                                100
+                                            </a>
+                                        </td>
+
+                                        <td>
+                                            27-Jun-2018
+                                        </td>
+
+                                        <td>
+                                            <span class="">
+                                                27-Jul-2018
+                                            </span>
+                                        </td>
+
+                                        <td>
+                                            <a href="http://amdsystems.in/billing/clients/view/55" title="View Client">
+                                                1
+                                            </a>
+                                        </td>
+
+                                        <td class="amount ">
+                                            &lrm;₹0.00
+                                        </td>
+
+                                        <td class="amount">
+                                            &lrm;₹0.00
+                                        </td>
+
+                                        <td>
+                                            <div class="options btn-group">
+                                                <a class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" href="#">
+                                                    <i class="fa fa-cog"></i> Options
+                                                </a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <a href="http://amdsystems.in/billing/invoices/view/100">
+                                                            <i class="fa fa-edit fa-margin"></i> Edit
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="http://amdsystems.in/billing/invoices/generate_pdf/100" target="_blank">
+                                                            <i class="fa fa-print fa-margin"></i> Download PDF
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="http://amdsystems.in/billing/invoices/generate_report/100" target="_blank">
+                                                            <i class="fa fa-print fa-margin"></i> Delivery Report
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="http://amdsystems.in/billing/mailer/invoice/100">
+                                                            <i class="fa fa-send fa-margin"></i> Send Email
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="invoice-add-payment" data-invoice-id="100" data-invoice-balance="0.00" data-invoice-payment-method="0">
+                                                            <i class="fa fa-money fa-margin"></i>
+                                                            Enter Payment
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="http://amdsystems.in/billing/invoices/delete/100" onclick="return confirm('If you delete this invoice you will not be able to recover it later. Are you sure you want to permanently delete this invoice?');">
+                                                            <i class="fa fa-trash-o fa-margin"></i> Delete
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="label draft">
+                                                Draft
+                                            </span>
+                                        </td>
+
+                                        <td>
+                                            <a href="http://amdsystems.in/billing/invoices/view/89" title="Edit">
+                                                89
+                                            </a>
+                                        </td>
+
+                                        <td></td>
+
+                                        <td>
+                                            <span class="">
+                                            </span>
+                                        </td>
+
+                                        <td>
+                                            <a href="http://amdsystems.in/billing/clients/view/55" title="View Client">
+                                                1
+                                            </a>
+                                        </td>
+
+                                        <td class="amount ">
+                                            &lrm;₹9.00
+                                        </td>
+
+                                        <td class="amount">
+                                            &lrm;₹9.00
+                                        </td>
+
+                                        <td>
+                                            <div class="options btn-group">
+                                                <a class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" href="#">
+                                                    <i class="fa fa-cog"></i> Options
+                                                </a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <a href="http://amdsystems.in/billing/invoices/view/89">
+                                                            <i class="fa fa-edit fa-margin"></i> Edit
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="http://amdsystems.in/billing/invoices/generate_pdf/89" target="_blank">
+                                                            <i class="fa fa-print fa-margin"></i> Download PDF
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="http://amdsystems.in/billing/invoices/generate_report/89" target="_blank">
+                                                            <i class="fa fa-print fa-margin"></i> Delivery Report
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="http://amdsystems.in/billing/mailer/invoice/89">
+                                                            <i class="fa fa-send fa-margin"></i> Send Email
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="invoice-add-payment" data-invoice-id="89" data-invoice-balance="9.10" data-invoice-payment-method="0">
+                                                            <i class="fa fa-money fa-margin"></i>
+                                                            Enter Payment
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="http://amdsystems.in/billing/invoices/delete/89" onclick="return confirm('If you delete this invoice you will not be able to recover it later. Are you sure you want to permanently delete this invoice?');">
+                                                            <i class="fa fa-trash-o fa-margin"></i> Delete
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="payments">
+                        <div class="table-responsive">
+                        <table class="table table-striped">
+
+                            <thead>
+                                <tr>
+                                    <th>Payment Date</th>
+                                    <th>Invoice Date</th>
+                                    <th>Invoice</th>
+                                    <th>Client</th>
+                                    <th>Amount</th>
+                                    <th>Payment Method</th>
+                                    <th>Note</th>
+                                    <th>Options</th>
+                                </tr>
+                            </thead>
+
+                            <tbody></tbody>
+
+                        </table>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+
+        <!-- ============================================================== -->
+        <!-- End PAge Content -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Right sidebar -->
+        <!-- ============================================================== -->
+        <!-- .right-sidebar -->
+        <!-- ============================================================== -->
+        <!-- End Right sidebar -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Container fluid  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- footer -->
+    <!-- ============================================================== -->
+    @*<footer class="footer text-center">
+        All Rights Reserved by Matrix-admin. Designed and Developed by <a href="https://wrappixel.com">WrapPixel</a>.
+    </footer>*@
+    <!-- ============================================================== -->
+    <!-- End footer -->
+    <!-- ============================================================== -->
+
+@*<script>
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+        e.target // newly activated tab
+        e.relatedTarget // previous active tab
+    })
+</script>*@
+
+
+
+
+
+
+<script src="../../Content/assets/extra-libs/DataTables/datatables.min.js"></script>
+<script>
+    /****************************************
+     *       Basic Table                   *
+     ****************************************/
+    $('#zero_config').DataTable({
+        columnDefs: [{ orderable: false, targets: [6] }]
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+

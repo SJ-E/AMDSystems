@@ -1,0 +1,1519 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AMDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="AMDSystemsEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ip_client_custom" EntityType="AMDModel.ip_client_custom" />
+    <EntitySet Name="ip_client_notes" EntityType="AMDModel.ip_client_notes" />
+    <EntitySet Name="ip_clients" EntityType="AMDModel.ip_clients" />
+    <EntitySet Name="ip_company" EntityType="AMDModel.ip_company" />
+    <EntitySet Name="ip_company_profile" EntityType="AMDModel.ip_company_profile" />
+    <EntitySet Name="ip_custom_fields" EntityType="AMDModel.ip_custom_fields" />
+    <EntitySet Name="ip_estimate" EntityType="AMDModel.ip_estimate" />
+    <EntitySet Name="ip_estimate_items" EntityType="AMDModel.ip_estimate_items" />
+    <EntitySet Name="ip_families" EntityType="AMDModel.ip_families" />
+    <EntitySet Name="ip_import_details" EntityType="AMDModel.ip_import_details" />
+    <EntitySet Name="ip_imports" EntityType="AMDModel.ip_imports" />
+    <EntitySet Name="ip_invoice_amounts" EntityType="AMDModel.ip_invoice_amounts" />
+    <EntitySet Name="ip_invoice_custom" EntityType="AMDModel.ip_invoice_custom" />
+    <EntitySet Name="ip_invoice_groups" EntityType="AMDModel.ip_invoice_groups" />
+    <EntitySet Name="ip_invoice_item_amounts" EntityType="AMDModel.ip_invoice_item_amounts" />
+    <EntitySet Name="ip_invoice_items" EntityType="AMDModel.ip_invoice_items" />
+    <EntitySet Name="ip_invoice_tax_rates" EntityType="AMDModel.ip_invoice_tax_rates" />
+    <EntitySet Name="ip_invoices" EntityType="AMDModel.ip_invoices" />
+    <EntitySet Name="ip_invoices_recurring" EntityType="AMDModel.ip_invoices_recurring" />
+    <EntitySet Name="ip_job_portal" EntityType="AMDModel.ip_job_portal" />
+    <EntitySet Name="ip_make" EntityType="AMDModel.ip_make" />
+    <EntitySet Name="ip_merchant_responses" EntityType="AMDModel.ip_merchant_responses" />
+    <EntitySet Name="ip_model" EntityType="AMDModel.ip_model" />
+    <EntitySet Name="ip_payment_custom" EntityType="AMDModel.ip_payment_custom" />
+    <EntitySet Name="ip_payment_methods" EntityType="AMDModel.ip_payment_methods" />
+    <EntitySet Name="ip_payments" EntityType="AMDModel.ip_payments" />
+    <EntitySet Name="ip_products" EntityType="AMDModel.ip_products" />
+    <EntitySet Name="ip_projects" EntityType="AMDModel.ip_projects" />
+    <EntitySet Name="ip_purchase" EntityType="AMDModel.ip_purchase" />
+    <EntitySet Name="ip_purchase_amounts" EntityType="AMDModel.ip_purchase_amounts" />
+    <EntitySet Name="ip_purchase_custom" EntityType="AMDModel.ip_purchase_custom" />
+    <EntitySet Name="ip_purchase_item_amounts" EntityType="AMDModel.ip_purchase_item_amounts" />
+    <EntitySet Name="ip_purchase_items" EntityType="AMDModel.ip_purchase_items" />
+    <EntitySet Name="ip_purchase_tax_rates" EntityType="AMDModel.ip_purchase_tax_rates" />
+    <EntitySet Name="ip_quote_amounts" EntityType="AMDModel.ip_quote_amounts" />
+    <EntitySet Name="ip_quote_custom" EntityType="AMDModel.ip_quote_custom" />
+    <EntitySet Name="ip_quote_item_amounts" EntityType="AMDModel.ip_quote_item_amounts" />
+    <EntitySet Name="ip_quote_items" EntityType="AMDModel.ip_quote_items" />
+    <EntitySet Name="ip_quote_tax_rates" EntityType="AMDModel.ip_quote_tax_rates" />
+    <EntitySet Name="ip_quotes" EntityType="AMDModel.ip_quotes" />
+    <EntitySet Name="ip_Spares" EntityType="AMDModel.ip_Spares" />
+    <EntitySet Name="ip_tax_rates" EntityType="AMDModel.ip_tax_rates" />
+    <EntitySet Name="ip_user_clients" EntityType="AMDModel.ip_user_clients" />
+    <EntitySet Name="ip_user_custom" EntityType="AMDModel.ip_user_custom" />
+    <EntitySet Name="ip_users" EntityType="AMDModel.ip_users" />
+    <EntitySet Name="ip_versions" EntityType="AMDModel.ip_versions" />
+    <EntitySet Name="ip_email_templates" EntityType="AMDModel.ip_email_templates" />
+    <EntitySet Name="ip_item_lookups" EntityType="AMDModel.ip_item_lookups" />
+    <EntitySet Name="ip_sessions" EntityType="AMDModel.ip_sessions" />
+    <EntitySet Name="ip_settings" EntityType="AMDModel.ip_settings" />
+    <EntitySet Name="ip_tasks" EntityType="AMDModel.ip_tasks" />
+    <EntitySet Name="ip_uploads" EntityType="AMDModel.ip_uploads" />
+    <AssociationSet Name="FK__ip_client__clien__060DEAE8" Association="AMDModel.FK__ip_client__clien__060DEAE8">
+      <End Role="ip_clients" EntitySet="ip_clients" />
+      <End Role="ip_client_custom" EntitySet="ip_client_custom" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ip_client__clien__5D95E53A" Association="AMDModel.FK__ip_client__clien__5D95E53A">
+      <End Role="ip_clients" EntitySet="ip_clients" />
+      <End Role="ip_client_custom" EntitySet="ip_client_custom" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ip_client__clien__5E8A0973" Association="AMDModel.FK__ip_client__clien__5E8A0973">
+      <End Role="ip_clients" EntitySet="ip_clients" />
+      <End Role="ip_client_custom" EntitySet="ip_client_custom" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ip_client__clien__5F7E2DAC" Association="AMDModel.FK__ip_client__clien__5F7E2DAC">
+      <End Role="ip_clients" EntitySet="ip_clients" />
+      <End Role="ip_client_custom" EntitySet="ip_client_custom" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ip_client__clien__607251E5" Association="AMDModel.FK__ip_client__clien__607251E5">
+      <End Role="ip_clients" EntitySet="ip_clients" />
+      <End Role="ip_client_custom" EntitySet="ip_client_custom" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ip_client__clien__6166761E" Association="AMDModel.FK__ip_client__clien__6166761E">
+      <End Role="ip_clients" EntitySet="ip_clients" />
+      <End Role="ip_client_custom" EntitySet="ip_client_custom" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ip_client__clien__625A9A57" Association="AMDModel.FK__ip_client__clien__625A9A57">
+      <End Role="ip_clients" EntitySet="ip_clients" />
+      <End Role="ip_client_custom" EntitySet="ip_client_custom" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ip_client__clien__634EBE90" Association="AMDModel.FK__ip_client__clien__634EBE90">
+      <End Role="ip_clients" EntitySet="ip_clients" />
+      <End Role="ip_client_custom" EntitySet="ip_client_custom" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ip_client__clien__6442E2C9" Association="AMDModel.FK__ip_client__clien__6442E2C9">
+      <End Role="ip_clients" EntitySet="ip_clients" />
+      <End Role="ip_client_custom" EntitySet="ip_client_custom" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ip_client__clien__0AD2A005" Association="AMDModel.FK__ip_client__clien__0AD2A005">
+      <End Role="ip_clients" EntitySet="ip_clients" />
+      <End Role="ip_client_notes" EntitySet="ip_client_notes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ip_client__clien__5BAD9CC8" Association="AMDModel.FK__ip_client__clien__5BAD9CC8">
+      <End Role="ip_clients" EntitySet="ip_clients" />
+      <End Role="ip_client_notes" EntitySet="ip_client_notes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ip_invoic__clien__31B762FC" Association="AMDModel.FK__ip_invoic__clien__31B762FC">
+      <End Role="ip_clients" EntitySet="ip_clients" />
+      <End Role="ip_invoices" EntitySet="ip_invoices" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ip_invoic__clien__32E0915F" Association="AMDModel.FK__ip_invoic__clien__32E0915F">
+      <End Role="ip_clients" EntitySet="ip_clients" />
+      <End Role="ip_invoices" EntitySet="ip_invoices" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ip_invoic__clien__5DCAEF64" Association="AMDModel.FK__ip_invoic__clien__5DCAEF64">
+      <End Role="ip_clients" EntitySet="ip_clients" />
+      <End Role="ip_invoices" EntitySet="ip_invoices" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ip_invoic__clien__5FB337D6" Association="AMDModel.FK__ip_invoic__clien__5FB337D6">
+      <End Role="ip_clients" EntitySet="ip_clients" />
+      <End Role="ip_invoices" EntitySet="ip_invoices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ip_quotes_ip_clients" Association="AMDModel.FK_ip_quotes_ip_clients">
+      <End Role="ip_clients" EntitySet="ip_clients" />
+      <End Role="ip_quotes" EntitySet="ip_quotes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ip_products_ip_families" Association="AMDModel.FK_ip_products_ip_families">
+      <End Role="ip_families" EntitySet="ip_families" />
+      <End Role="ip_products" EntitySet="ip_products" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ip_invoic__invoi__43D61337" Association="AMDModel.FK__ip_invoic__invoi__43D61337">
+      <End Role="ip_invoices" EntitySet="ip_invoices" />
+      <End Role="ip_invoice_amounts" EntitySet="ip_invoice_amounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ip_invoic__invoi__628FA481" Association="AMDModel.FK__ip_invoic__invoi__628FA481">
+      <End Role="ip_invoices" EntitySet="ip_invoices" />
+      <End Role="ip_invoice_amounts" EntitySet="ip_invoice_amounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ip_invoic__invoi__73BA3083" Association="AMDModel.FK__ip_invoic__invoi__73BA3083">
+      <End Role="ip_invoices" EntitySet="ip_invoices" />
+      <End Role="ip_invoice_amounts" EntitySet="ip_invoice_amounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ip_invoic__invoi__41EDCAC5" Association="AMDModel.FK__ip_invoic__invoi__41EDCAC5">
+      <End Role="ip_invoices" EntitySet="ip_invoices" />
+      <End Role="ip_invoice_custom" EntitySet="ip_invoice_custom" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ip_invoic__invoi__619B8048" Association="AMDModel.FK__ip_invoic__invoi__619B8048">
+      <End Role="ip_invoices" EntitySet="ip_invoices" />
+      <End Role="ip_invoice_custom" EntitySet="ip_invoice_custom" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ip_invoic__invoi__30F848ED" Association="AMDModel.FK__ip_invoic__invoi__30F848ED">
+      <End Role="ip_invoice_groups" EntitySet="ip_invoice_groups" />
+      <End Role="ip_invoices" EntitySet="ip_invoices" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ip_invoic__invoi__32AB8735" Association="AMDModel.FK__ip_invoic__invoi__32AB8735">
+      <End Role="ip_invoice_groups" EntitySet="ip_invoice_groups" />
+      <End Role="ip_invoices" EntitySet="ip_invoices" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ip_invoic__invoi__5BE2A6F2" Association="AMDModel.FK__ip_invoic__invoi__5BE2A6F2">
+      <End Role="ip_invoice_groups" EntitySet="ip_invoice_groups" />
+      <End Role="ip_invoices" EntitySet="ip_invoices" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ip_invoic__invoi__60A75C0F" Association="AMDModel.FK__ip_invoic__invoi__60A75C0F">
+      <End Role="ip_invoice_groups" EntitySet="ip_invoice_groups" />
+      <End Role="ip_invoices" EntitySet="ip_invoices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ip_quotes_ip_invoice_groups" Association="AMDModel.FK_ip_quotes_ip_invoice_groups">
+      <End Role="ip_invoice_groups" EntitySet="ip_invoice_groups" />
+      <End Role="ip_quotes" EntitySet="ip_quotes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ip_invoic__user___339FAB6E" Association="AMDModel.FK__ip_invoic__user___339FAB6E">
+      <End Role="ip_users" EntitySet="ip_users" />
+      <End Role="ip_invoices" EntitySet="ip_invoices" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ip_invoic__user___5CD6CB2B" Association="AMDModel.FK__ip_invoic__user___5CD6CB2B">
+      <End Role="ip_users" EntitySet="ip_users" />
+      <End Role="ip_invoices" EntitySet="ip_invoices" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ip_invoic__user___5EBF139D" Association="AMDModel.FK__ip_invoic__user___5EBF139D">
+      <End Role="ip_users" EntitySet="ip_users" />
+      <End Role="ip_invoices" EntitySet="ip_invoices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ip_quote_ip_payments" Association="AMDModel.FK_ip_quote_ip_payments">
+      <End Role="ip_quotes" EntitySet="ip_quotes" />
+      <End Role="ip_payments" EntitySet="ip_payments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ip_products_ip_tax_rates" Association="AMDModel.FK_ip_products_ip_tax_rates">
+      <End Role="ip_tax_rates" EntitySet="ip_tax_rates" />
+      <End Role="ip_products" EntitySet="ip_products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ip_quote_items_ip_products" Association="AMDModel.FK_ip_quote_items_ip_products">
+      <End Role="ip_products" EntitySet="ip_products" />
+      <End Role="ip_quote_items" EntitySet="ip_quote_items" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ip_quote___quote__5441852A" Association="AMDModel.FK__ip_quote___quote__5441852A">
+      <End Role="ip_quotes" EntitySet="ip_quotes" />
+      <End Role="ip_quote_amounts" EntitySet="ip_quote_amounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ip_quote_items_ip_quotes" Association="AMDModel.FK_ip_quote_items_ip_quotes">
+      <End Role="ip_quotes" EntitySet="ip_quotes" />
+      <End Role="ip_quote_items" EntitySet="ip_quote_items" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ip_quote_tax_rates_ip_quote_tax_rates" Association="AMDModel.FK_ip_quote_tax_rates_ip_quote_tax_rates">
+      <End Role="ip_quote_tax_rates" EntitySet="ip_quote_tax_rates" />
+      <End Role="ip_quote_tax_rates1" EntitySet="ip_quote_tax_rates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ip_quote_tax_rates_ip_tax_rates" Association="AMDModel.FK_ip_quote_tax_rates_ip_tax_rates">
+      <End Role="ip_tax_rates" EntitySet="ip_tax_rates" />
+      <End Role="ip_quote_tax_rates" EntitySet="ip_quote_tax_rates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ip_quotes_ip_users" Association="AMDModel.FK_ip_quotes_ip_users">
+      <End Role="ip_users" EntitySet="ip_users" />
+      <End Role="ip_quotes" EntitySet="ip_quotes" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ip_client_custom">
+    <Key>
+      <PropertyRef Name="client_custom_id" />
+    </Key>
+    <Property Name="client_custom_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="client_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ip_clients" Relationship="AMDModel.FK__ip_client__clien__060DEAE8" FromRole="ip_client_custom" ToRole="ip_clients" />
+    <NavigationProperty Name="ip_clients1" Relationship="AMDModel.FK__ip_client__clien__5D95E53A" FromRole="ip_client_custom" ToRole="ip_clients" />
+    <NavigationProperty Name="ip_clients2" Relationship="AMDModel.FK__ip_client__clien__5E8A0973" FromRole="ip_client_custom" ToRole="ip_clients" />
+    <NavigationProperty Name="ip_clients3" Relationship="AMDModel.FK__ip_client__clien__5F7E2DAC" FromRole="ip_client_custom" ToRole="ip_clients" />
+    <NavigationProperty Name="ip_clients4" Relationship="AMDModel.FK__ip_client__clien__607251E5" FromRole="ip_client_custom" ToRole="ip_clients" />
+    <NavigationProperty Name="ip_clients5" Relationship="AMDModel.FK__ip_client__clien__6166761E" FromRole="ip_client_custom" ToRole="ip_clients" />
+    <NavigationProperty Name="ip_clients6" Relationship="AMDModel.FK__ip_client__clien__625A9A57" FromRole="ip_client_custom" ToRole="ip_clients" />
+    <NavigationProperty Name="ip_clients7" Relationship="AMDModel.FK__ip_client__clien__634EBE90" FromRole="ip_client_custom" ToRole="ip_clients" />
+    <NavigationProperty Name="ip_clients8" Relationship="AMDModel.FK__ip_client__clien__6442E2C9" FromRole="ip_client_custom" ToRole="ip_clients" />
+  </EntityType>
+  <EntityType Name="ip_client_notes">
+    <Key>
+      <PropertyRef Name="client_note_id" />
+    </Key>
+    <Property Name="client_note_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="client_id" Type="Int32" Nullable="false" />
+    <Property Name="client_note_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="client_note" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ip_clients" Relationship="AMDModel.FK__ip_client__clien__0AD2A005" FromRole="ip_client_notes" ToRole="ip_clients" />
+    <NavigationProperty Name="ip_clients1" Relationship="AMDModel.FK__ip_client__clien__5BAD9CC8" FromRole="ip_client_notes" ToRole="ip_clients" />
+  </EntityType>
+  <EntityType Name="ip_clients">
+    <Key>
+      <PropertyRef Name="client_id" />
+    </Key>
+    <Property Name="client_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="client_date_created" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="client_date_modified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="client_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="client_address_1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="client_address_2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="client_city" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="client_state" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="client_zip" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="client_country" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="client_phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="client_fax" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="client_mobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="client_email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="client_web" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="client_vat_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="client_tax_code" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="client_active" Type="Int32" Nullable="false" />
+    <Property Name="isdelete" Type="Boolean" />
+    <Property Name="clientType" Type="Int32" />
+    <NavigationProperty Name="ip_client_custom" Relationship="AMDModel.FK__ip_client__clien__060DEAE8" FromRole="ip_clients" ToRole="ip_client_custom" />
+    <NavigationProperty Name="ip_client_custom1" Relationship="AMDModel.FK__ip_client__clien__5D95E53A" FromRole="ip_clients" ToRole="ip_client_custom" />
+    <NavigationProperty Name="ip_client_custom2" Relationship="AMDModel.FK__ip_client__clien__5E8A0973" FromRole="ip_clients" ToRole="ip_client_custom" />
+    <NavigationProperty Name="ip_client_custom3" Relationship="AMDModel.FK__ip_client__clien__5F7E2DAC" FromRole="ip_clients" ToRole="ip_client_custom" />
+    <NavigationProperty Name="ip_client_custom4" Relationship="AMDModel.FK__ip_client__clien__607251E5" FromRole="ip_clients" ToRole="ip_client_custom" />
+    <NavigationProperty Name="ip_client_custom5" Relationship="AMDModel.FK__ip_client__clien__6166761E" FromRole="ip_clients" ToRole="ip_client_custom" />
+    <NavigationProperty Name="ip_client_custom6" Relationship="AMDModel.FK__ip_client__clien__625A9A57" FromRole="ip_clients" ToRole="ip_client_custom" />
+    <NavigationProperty Name="ip_client_custom7" Relationship="AMDModel.FK__ip_client__clien__634EBE90" FromRole="ip_clients" ToRole="ip_client_custom" />
+    <NavigationProperty Name="ip_client_custom8" Relationship="AMDModel.FK__ip_client__clien__6442E2C9" FromRole="ip_clients" ToRole="ip_client_custom" />
+    <NavigationProperty Name="ip_client_notes" Relationship="AMDModel.FK__ip_client__clien__0AD2A005" FromRole="ip_clients" ToRole="ip_client_notes" />
+    <NavigationProperty Name="ip_client_notes1" Relationship="AMDModel.FK__ip_client__clien__5BAD9CC8" FromRole="ip_clients" ToRole="ip_client_notes" />
+    <NavigationProperty Name="ip_invoices" Relationship="AMDModel.FK__ip_invoic__clien__31B762FC" FromRole="ip_clients" ToRole="ip_invoices" />
+    <NavigationProperty Name="ip_invoices1" Relationship="AMDModel.FK__ip_invoic__clien__32E0915F" FromRole="ip_clients" ToRole="ip_invoices" />
+    <NavigationProperty Name="ip_invoices2" Relationship="AMDModel.FK__ip_invoic__clien__5DCAEF64" FromRole="ip_clients" ToRole="ip_invoices" />
+    <NavigationProperty Name="ip_invoices3" Relationship="AMDModel.FK__ip_invoic__clien__5FB337D6" FromRole="ip_clients" ToRole="ip_invoices" />
+    <NavigationProperty Name="ip_quotes" Relationship="AMDModel.FK_ip_quotes_ip_clients" FromRole="ip_clients" ToRole="ip_quotes" />
+  </EntityType>
+  <EntityType Name="ip_company">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="company_name" />
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="company_name" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ip_company_profile">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="CompanyName" />
+      <PropertyRef Name="CompanyAddress" />
+      <PropertyRef Name="CompanyPhoneNumber" />
+      <PropertyRef Name="CompanyEmailId" />
+      <PropertyRef Name="CompanyLogo" />
+      <PropertyRef Name="CompanyTINNumber" />
+      <PropertyRef Name="Template" />
+      <PropertyRef Name="Status" />
+      <PropertyRef Name="SenderId" />
+      <PropertyRef Name="Message" />
+      <PropertyRef Name="CloseMessage" />
+      <PropertyRef Name="Terms" />
+      <PropertyRef Name="Prefix" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="CompanyName" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyAddress" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyPhoneNumber" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyEmailId" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyLogo" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyTINNumber" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Template" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="SenderId" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="Message" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="CloseMessage" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="Terms" Type="String" Nullable="false" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="Prefix" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ip_custom_fields">
+    <Key>
+      <PropertyRef Name="custom_field_id" />
+    </Key>
+    <Property Name="custom_field_id" Type="Int32" Nullable="false" />
+    <Property Name="custom_field_table" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="custom_field_label" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="custom_field_column" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ip_estimate">
+    <Key>
+      <PropertyRef Name="quote_id" />
+      <PropertyRef Name="invoice_id" />
+      <PropertyRef Name="user_id" />
+      <PropertyRef Name="client_id" />
+      <PropertyRef Name="invoice_group_id" />
+      <PropertyRef Name="quote_status_id" />
+      <PropertyRef Name="quote_date_created" />
+      <PropertyRef Name="quote_date_modified" />
+      <PropertyRef Name="quote_date_expires" />
+      <PropertyRef Name="quote_url_key" />
+    </Key>
+    <Property Name="quote_id" Type="Int32" Nullable="false" />
+    <Property Name="invoice_id" Type="Int32" Nullable="false" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="client_id" Type="Int32" Nullable="false" />
+    <Property Name="invoice_group_id" Type="Int32" Nullable="false" />
+    <Property Name="quote_status_id" Type="Int16" Nullable="false" />
+    <Property Name="quote_date_created" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="quote_date_modified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="quote_date_expires" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="quote_number" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="quote_discount_amount" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="quote_discount_percent" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="quote_url_key" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="quote_password" Type="String" MaxLength="90" FixedLength="false" Unicode="false" />
+    <Property Name="notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ip_estimate_items">
+    <Key>
+      <PropertyRef Name="item_id" />
+      <PropertyRef Name="quote_id" />
+      <PropertyRef Name="item_tax_rate_id" />
+      <PropertyRef Name="item_date_added" />
+      <PropertyRef Name="item_order" />
+    </Key>
+    <Property Name="item_id" Type="Int32" Nullable="false" />
+    <Property Name="quote_id" Type="Int32" Nullable="false" />
+    <Property Name="item_tax_rate_id" Type="Int32" Nullable="false" />
+    <Property Name="item_product_id" Type="Int32" />
+    <Property Name="item_date_added" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="item_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="item_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="item_quantity" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="item_price" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="item_discount_amount" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="item_order" Type="Int32" Nullable="false" />
+    <Property Name="item_serial" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="clientname" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+    <Property Name="clientnum" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ip_families">
+    <Key>
+      <PropertyRef Name="family_id" />
+    </Key>
+    <Property Name="family_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="family_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ip_products" Relationship="AMDModel.FK_ip_products_ip_families" FromRole="ip_families" ToRole="ip_products" />
+  </EntityType>
+  <EntityType Name="ip_import_details">
+    <Key>
+      <PropertyRef Name="import_detail_id" />
+      <PropertyRef Name="import_id" />
+      <PropertyRef Name="import_lang_key" />
+      <PropertyRef Name="import_table_name" />
+      <PropertyRef Name="import_record_id" />
+    </Key>
+    <Property Name="import_detail_id" Type="Int32" Nullable="false" />
+    <Property Name="import_id" Type="Int32" Nullable="false" />
+    <Property Name="import_lang_key" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="import_table_name" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="import_record_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ip_imports">
+    <Key>
+      <PropertyRef Name="import_id" />
+      <PropertyRef Name="import_date" />
+    </Key>
+    <Property Name="import_id" Type="Int32" Nullable="false" />
+    <Property Name="import_date" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="ip_invoice_amounts">
+    <Key>
+      <PropertyRef Name="invoice_amount_id" />
+    </Key>
+    <Property Name="invoice_amount_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="invoice_id" Type="Int32" Nullable="false" />
+    <Property Name="invoice_item_subtotal" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="invoice_item_tax_total" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="invoice_tax_total" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="invoice_total" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="invoice_paid" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="invoice_balance" Type="Decimal" Precision="20" Scale="2" />
+    <NavigationProperty Name="ip_invoices" Relationship="AMDModel.FK__ip_invoic__invoi__43D61337" FromRole="ip_invoice_amounts" ToRole="ip_invoices" />
+    <NavigationProperty Name="ip_invoices1" Relationship="AMDModel.FK__ip_invoic__invoi__628FA481" FromRole="ip_invoice_amounts" ToRole="ip_invoices" />
+    <NavigationProperty Name="ip_invoices2" Relationship="AMDModel.FK__ip_invoic__invoi__73BA3083" FromRole="ip_invoice_amounts" ToRole="ip_invoices" />
+  </EntityType>
+  <EntityType Name="ip_invoice_custom">
+    <Key>
+      <PropertyRef Name="invoice_custom_id" />
+    </Key>
+    <Property Name="invoice_custom_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="invoice_id" Type="Int32" Nullable="false" />
+    <Property Name="invoice_custom_delivery_note" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="invoice_custom_delivery_date" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="invoice_custom_order_no" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="invoice_custom_order_date" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ip_invoices" Relationship="AMDModel.FK__ip_invoic__invoi__41EDCAC5" FromRole="ip_invoice_custom" ToRole="ip_invoices" />
+    <NavigationProperty Name="ip_invoices1" Relationship="AMDModel.FK__ip_invoic__invoi__619B8048" FromRole="ip_invoice_custom" ToRole="ip_invoices" />
+  </EntityType>
+  <EntityType Name="ip_invoice_groups">
+    <Key>
+      <PropertyRef Name="invoice_group_id" />
+    </Key>
+    <Property Name="invoice_group_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="invoice_group_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="invoice_group_identifier_format" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="invoice_group_next_id" Type="Int32" Nullable="false" />
+    <Property Name="invoice_group_left_pad" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ip_invoices" Relationship="AMDModel.FK__ip_invoic__invoi__30F848ED" FromRole="ip_invoice_groups" ToRole="ip_invoices" />
+    <NavigationProperty Name="ip_invoices1" Relationship="AMDModel.FK__ip_invoic__invoi__32AB8735" FromRole="ip_invoice_groups" ToRole="ip_invoices" />
+    <NavigationProperty Name="ip_invoices2" Relationship="AMDModel.FK__ip_invoic__invoi__5BE2A6F2" FromRole="ip_invoice_groups" ToRole="ip_invoices" />
+    <NavigationProperty Name="ip_invoices3" Relationship="AMDModel.FK__ip_invoic__invoi__60A75C0F" FromRole="ip_invoice_groups" ToRole="ip_invoices" />
+    <NavigationProperty Name="ip_quotes" Relationship="AMDModel.FK_ip_quotes_ip_invoice_groups" FromRole="ip_invoice_groups" ToRole="ip_quotes" />
+  </EntityType>
+  <EntityType Name="ip_invoice_item_amounts">
+    <Key>
+      <PropertyRef Name="item_amount_id" />
+      <PropertyRef Name="item_id" />
+    </Key>
+    <Property Name="item_amount_id" Type="Int32" Nullable="false" />
+    <Property Name="item_id" Type="Int32" Nullable="false" />
+    <Property Name="item_subtotal" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="item_tax_total" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="item_discount" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="item_total" Type="Decimal" Precision="20" Scale="2" />
+  </EntityType>
+  <EntityType Name="ip_invoice_items">
+    <Key>
+      <PropertyRef Name="item_id" />
+      <PropertyRef Name="invoice_id" />
+      <PropertyRef Name="item_tax_rate_id" />
+      <PropertyRef Name="item_date_added" />
+      <PropertyRef Name="item_quantity" />
+      <PropertyRef Name="item_order" />
+    </Key>
+    <Property Name="item_id" Type="Int32" Nullable="false" />
+    <Property Name="invoice_id" Type="Int32" Nullable="false" />
+    <Property Name="item_tax_rate_id" Type="Int32" Nullable="false" />
+    <Property Name="item_product_id" Type="Int32" />
+    <Property Name="item_date_added" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="item_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="item_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="item_quantity" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="item_price" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="item_discount_amount" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="item_order" Type="Int32" Nullable="false" />
+    <Property Name="item_serial" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ip_invoice_tax_rates">
+    <Key>
+      <PropertyRef Name="invoice_tax_rate_id" />
+      <PropertyRef Name="invoice_id" />
+      <PropertyRef Name="tax_rate_id" />
+      <PropertyRef Name="include_item_tax" />
+      <PropertyRef Name="invoice_tax_rate_amount" />
+    </Key>
+    <Property Name="invoice_tax_rate_id" Type="Int32" Nullable="false" />
+    <Property Name="invoice_id" Type="Int32" Nullable="false" />
+    <Property Name="tax_rate_id" Type="Int32" Nullable="false" />
+    <Property Name="include_item_tax" Type="Int32" Nullable="false" />
+    <Property Name="invoice_tax_rate_amount" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="ip_invoices">
+    <Key>
+      <PropertyRef Name="invoice_id" />
+    </Key>
+    <Property Name="invoice_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="client_id" Type="Int32" Nullable="false" />
+    <Property Name="invoice_group_id" Type="Int32" Nullable="false" />
+    <Property Name="invoice_status_id" Type="Int16" Nullable="false" />
+    <Property Name="is_read_only" Type="Int16" />
+    <Property Name="invoice_password" Type="String" MaxLength="90" FixedLength="false" Unicode="false" />
+    <Property Name="invoice_date_created" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="invoice_time_created" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="invoice_date_modified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="invoice_date_due" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="invoice_number" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="invoice_discount_amount" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="invoice_discount_percent" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="invoice_terms" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="invoice_url_key" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="payment_method" Type="Int32" Nullable="false" />
+    <Property Name="creditinvoice_parent_id" Type="Int32" />
+    <NavigationProperty Name="ip_clients" Relationship="AMDModel.FK__ip_invoic__clien__31B762FC" FromRole="ip_invoices" ToRole="ip_clients" />
+    <NavigationProperty Name="ip_clients1" Relationship="AMDModel.FK__ip_invoic__clien__32E0915F" FromRole="ip_invoices" ToRole="ip_clients" />
+    <NavigationProperty Name="ip_clients2" Relationship="AMDModel.FK__ip_invoic__clien__5DCAEF64" FromRole="ip_invoices" ToRole="ip_clients" />
+    <NavigationProperty Name="ip_clients3" Relationship="AMDModel.FK__ip_invoic__clien__5FB337D6" FromRole="ip_invoices" ToRole="ip_clients" />
+    <NavigationProperty Name="ip_invoice_amounts" Relationship="AMDModel.FK__ip_invoic__invoi__43D61337" FromRole="ip_invoices" ToRole="ip_invoice_amounts" />
+    <NavigationProperty Name="ip_invoice_amounts1" Relationship="AMDModel.FK__ip_invoic__invoi__628FA481" FromRole="ip_invoices" ToRole="ip_invoice_amounts" />
+    <NavigationProperty Name="ip_invoice_amounts2" Relationship="AMDModel.FK__ip_invoic__invoi__73BA3083" FromRole="ip_invoices" ToRole="ip_invoice_amounts" />
+    <NavigationProperty Name="ip_invoice_custom" Relationship="AMDModel.FK__ip_invoic__invoi__41EDCAC5" FromRole="ip_invoices" ToRole="ip_invoice_custom" />
+    <NavigationProperty Name="ip_invoice_custom1" Relationship="AMDModel.FK__ip_invoic__invoi__619B8048" FromRole="ip_invoices" ToRole="ip_invoice_custom" />
+    <NavigationProperty Name="ip_invoice_groups" Relationship="AMDModel.FK__ip_invoic__invoi__30F848ED" FromRole="ip_invoices" ToRole="ip_invoice_groups" />
+    <NavigationProperty Name="ip_invoice_groups1" Relationship="AMDModel.FK__ip_invoic__invoi__32AB8735" FromRole="ip_invoices" ToRole="ip_invoice_groups" />
+    <NavigationProperty Name="ip_invoice_groups2" Relationship="AMDModel.FK__ip_invoic__invoi__5BE2A6F2" FromRole="ip_invoices" ToRole="ip_invoice_groups" />
+    <NavigationProperty Name="ip_invoice_groups3" Relationship="AMDModel.FK__ip_invoic__invoi__60A75C0F" FromRole="ip_invoices" ToRole="ip_invoice_groups" />
+    <NavigationProperty Name="ip_users" Relationship="AMDModel.FK__ip_invoic__user___339FAB6E" FromRole="ip_invoices" ToRole="ip_users" />
+    <NavigationProperty Name="ip_users1" Relationship="AMDModel.FK__ip_invoic__user___5CD6CB2B" FromRole="ip_invoices" ToRole="ip_users" />
+    <NavigationProperty Name="ip_users2" Relationship="AMDModel.FK__ip_invoic__user___5EBF139D" FromRole="ip_invoices" ToRole="ip_users" />
+  </EntityType>
+  <EntityType Name="ip_invoices_recurring">
+    <Key>
+      <PropertyRef Name="invoice_recurring_id" />
+      <PropertyRef Name="invoice_id" />
+      <PropertyRef Name="recur_start_date" />
+      <PropertyRef Name="recur_end_date" />
+      <PropertyRef Name="recur_frequency" />
+      <PropertyRef Name="recur_next_date" />
+    </Key>
+    <Property Name="invoice_recurring_id" Type="Int32" Nullable="false" />
+    <Property Name="invoice_id" Type="Int32" Nullable="false" />
+    <Property Name="recur_start_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="recur_end_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="recur_frequency" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="recur_next_date" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="ip_job_portal">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="customer_name" />
+      <PropertyRef Name="customer_mobile" />
+      <PropertyRef Name="customer_address" />
+      <PropertyRef Name="company" />
+      <PropertyRef Name="job_number" />
+      <PropertyRef Name="date" />
+      <PropertyRef Name="make" />
+      <PropertyRef Name="model" />
+      <PropertyRef Name="sl_no" />
+      <PropertyRef Name="gurantee" />
+      <PropertyRef Name="paidamount" />
+      <PropertyRef Name="problem" />
+      <PropertyRef Name="remarks" />
+      <PropertyRef Name="terms_conditions" />
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="customer_name" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="customer_mobile" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="customer_address" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="company" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="job_number" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="make" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="model" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="sl_no" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="gurantee" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="paidamount" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+    <Property Name="problem" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="remarks" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="terms_conditions" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ip_make">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="make_name" />
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="make_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ip_merchant_responses">
+    <Key>
+      <PropertyRef Name="merchant_response_id" />
+      <PropertyRef Name="invoice_id" />
+      <PropertyRef Name="merchant_response_date" />
+      <PropertyRef Name="merchant_response_driver" />
+      <PropertyRef Name="merchant_response" />
+      <PropertyRef Name="merchant_response_reference" />
+    </Key>
+    <Property Name="merchant_response_id" Type="Int32" Nullable="false" />
+    <Property Name="invoice_id" Type="Int32" Nullable="false" />
+    <Property Name="merchant_response_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="merchant_response_driver" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="merchant_response" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="merchant_response_reference" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ip_model">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="modee_name" />
+      <PropertyRef Name="status" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="modee_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ip_payment_custom">
+    <Key>
+      <PropertyRef Name="payment_custom_id" />
+      <PropertyRef Name="payment_id" />
+    </Key>
+    <Property Name="payment_custom_id" Type="Int32" Nullable="false" />
+    <Property Name="payment_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ip_payment_methods">
+    <Key>
+      <PropertyRef Name="payment_method_id" />
+    </Key>
+    <Property Name="payment_method_id" Type="Int32" Nullable="false" />
+    <Property Name="payment_method_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ip_payments">
+    <Key>
+      <PropertyRef Name="payment_id" />
+    </Key>
+    <Property Name="payment_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="quote_id" Type="Int32" Nullable="false" />
+    <Property Name="payment_method_id" Type="Int32" Nullable="false" />
+    <Property Name="payment_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="payment_amount" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="payment_note" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ip_quotes" Relationship="AMDModel.FK_ip_quote_ip_payments" FromRole="ip_payments" ToRole="ip_quotes" />
+  </EntityType>
+  <EntityType Name="ip_products">
+    <Key>
+      <PropertyRef Name="product_id" />
+    </Key>
+    <Property Name="product_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="family_id" Type="Int32" />
+    <Property Name="product_sku" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="product_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="product_description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="product_price" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="purchase_price" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="provider_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="tax_rate_id" Type="Int32" />
+    <Property Name="quantity" Type="Int32" />
+    <Property Name="sub_cate" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="serial_number" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="supp_name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="warenty_detail" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="selling_price" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+    <Property Name="other_info" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+    <Property Name="purchase_org_price" Type="String" MaxLength="450" FixedLength="false" Unicode="false" />
+    <Property Name="isdelete" Type="Boolean" />
+    <NavigationProperty Name="ip_families" Relationship="AMDModel.FK_ip_products_ip_families" FromRole="ip_products" ToRole="ip_families" />
+    <NavigationProperty Name="ip_tax_rates" Relationship="AMDModel.FK_ip_products_ip_tax_rates" FromRole="ip_products" ToRole="ip_tax_rates" />
+    <NavigationProperty Name="ip_quote_items" Relationship="AMDModel.FK_ip_quote_items_ip_products" FromRole="ip_products" ToRole="ip_quote_items" />
+  </EntityType>
+  <EntityType Name="ip_projects">
+    <Key>
+      <PropertyRef Name="project_id" />
+      <PropertyRef Name="client_id" />
+    </Key>
+    <Property Name="project_id" Type="Int32" Nullable="false" />
+    <Property Name="client_id" Type="Int32" Nullable="false" />
+    <Property Name="project_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ip_purchase">
+    <Key>
+      <PropertyRef Name="quote_id" />
+      <PropertyRef Name="invoice_id" />
+      <PropertyRef Name="user_id" />
+      <PropertyRef Name="client_id" />
+      <PropertyRef Name="invoice_group_id" />
+      <PropertyRef Name="quote_status_id" />
+      <PropertyRef Name="quote_date_created" />
+      <PropertyRef Name="quote_date_modified" />
+      <PropertyRef Name="quote_date_expires" />
+      <PropertyRef Name="quote_url_key" />
+    </Key>
+    <Property Name="quote_id" Type="Int32" Nullable="false" />
+    <Property Name="invoice_id" Type="Int32" Nullable="false" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="client_id" Type="Int32" Nullable="false" />
+    <Property Name="invoice_group_id" Type="Int32" Nullable="false" />
+    <Property Name="quote_status_id" Type="Int16" Nullable="false" />
+    <Property Name="quote_date_created" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="quote_date_modified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="quote_date_expires" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="quote_number" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="quote_discount_amount" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="quote_discount_percent" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="quote_url_key" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="quote_password" Type="String" MaxLength="90" FixedLength="false" Unicode="false" />
+    <Property Name="notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ip_purchase_amounts">
+    <Key>
+      <PropertyRef Name="quote_amount_id" />
+      <PropertyRef Name="quote_id" />
+    </Key>
+    <Property Name="quote_amount_id" Type="Int32" Nullable="false" />
+    <Property Name="quote_id" Type="Int32" Nullable="false" />
+    <Property Name="quote_item_subtotal" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="quote_item_tax_total" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="quote_tax_total" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="quote_total" Type="Decimal" Precision="20" Scale="2" />
+  </EntityType>
+  <EntityType Name="ip_purchase_custom">
+    <Key>
+      <PropertyRef Name="quote_custom_id" />
+      <PropertyRef Name="quote_id" />
+    </Key>
+    <Property Name="quote_custom_id" Type="Int32" Nullable="false" />
+    <Property Name="quote_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ip_purchase_item_amounts">
+    <Key>
+      <PropertyRef Name="item_amount_id" />
+      <PropertyRef Name="item_id" />
+    </Key>
+    <Property Name="item_amount_id" Type="Int32" Nullable="false" />
+    <Property Name="item_id" Type="Int32" Nullable="false" />
+    <Property Name="item_subtotal" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="item_tax_total" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="item_discount" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="item_total" Type="Decimal" Precision="20" Scale="2" />
+  </EntityType>
+  <EntityType Name="ip_purchase_items">
+    <Key>
+      <PropertyRef Name="item_id" />
+      <PropertyRef Name="quote_id" />
+      <PropertyRef Name="item_tax_rate_id" />
+      <PropertyRef Name="item_date_added" />
+      <PropertyRef Name="item_order" />
+    </Key>
+    <Property Name="item_id" Type="Int32" Nullable="false" />
+    <Property Name="quote_id" Type="Int32" Nullable="false" />
+    <Property Name="item_tax_rate_id" Type="Int32" Nullable="false" />
+    <Property Name="item_product_id" Type="Int32" />
+    <Property Name="item_date_added" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="item_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="item_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="item_quantity" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="item_price" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="item_discount_amount" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="item_order" Type="Int32" Nullable="false" />
+    <Property Name="item_serial" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ip_purchase_tax_rates">
+    <Key>
+      <PropertyRef Name="quote_tax_rate_id" />
+      <PropertyRef Name="quote_id" />
+      <PropertyRef Name="tax_rate_id" />
+      <PropertyRef Name="include_item_tax" />
+    </Key>
+    <Property Name="quote_tax_rate_id" Type="Int32" Nullable="false" />
+    <Property Name="quote_id" Type="Int32" Nullable="false" />
+    <Property Name="tax_rate_id" Type="Int32" Nullable="false" />
+    <Property Name="include_item_tax" Type="Int32" Nullable="false" />
+    <Property Name="quote_tax_rate_amount" Type="Decimal" Precision="20" Scale="2" />
+  </EntityType>
+  <EntityType Name="ip_quote_amounts">
+    <Key>
+      <PropertyRef Name="quote_amount_id" />
+    </Key>
+    <Property Name="quote_amount_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="quote_id" Type="Int32" Nullable="false" />
+    <Property Name="quote_item_subtotal" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="quote_discount" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="quote_tax_total" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="quote_total" Type="Decimal" Precision="20" Scale="2" />
+    <NavigationProperty Name="ip_quotes" Relationship="AMDModel.FK__ip_quote___quote__5441852A" FromRole="ip_quote_amounts" ToRole="ip_quotes" />
+  </EntityType>
+  <EntityType Name="ip_quote_custom">
+    <Key>
+      <PropertyRef Name="quote_custom_id" />
+      <PropertyRef Name="quote_id" />
+    </Key>
+    <Property Name="quote_custom_id" Type="Int32" Nullable="false" />
+    <Property Name="quote_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ip_quote_item_amounts">
+    <Key>
+      <PropertyRef Name="item_amount_id" />
+      <PropertyRef Name="item_id" />
+    </Key>
+    <Property Name="item_amount_id" Type="Int32" Nullable="false" />
+    <Property Name="item_id" Type="Int32" Nullable="false" />
+    <Property Name="item_subtotal" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="item_tax_total" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="item_discount" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="item_total" Type="Decimal" Precision="20" Scale="2" />
+  </EntityType>
+  <EntityType Name="ip_quote_items">
+    <Key>
+      <PropertyRef Name="item_id" />
+    </Key>
+    <Property Name="item_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="quote_id" Type="Int32" Nullable="false" />
+    <Property Name="item_product_id" Type="Int32" />
+    <Property Name="item_date_added" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="item_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="item_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="item_quantity" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="item_price" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="item_discount_amount" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="item_order" Type="Int32" Nullable="false" />
+    <Property Name="item_serial" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ip_products" Relationship="AMDModel.FK_ip_quote_items_ip_products" FromRole="ip_quote_items" ToRole="ip_products" />
+    <NavigationProperty Name="ip_quotes" Relationship="AMDModel.FK_ip_quote_items_ip_quotes" FromRole="ip_quote_items" ToRole="ip_quotes" />
+  </EntityType>
+  <EntityType Name="ip_quote_tax_rates">
+    <Key>
+      <PropertyRef Name="quote_tax_rate_id" />
+    </Key>
+    <Property Name="quote_tax_rate_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="quote_id" Type="Int32" Nullable="false" />
+    <Property Name="tax_rate_id" Type="Int32" Nullable="false" />
+    <Property Name="include_item_tax" Type="Int32" Nullable="false" />
+    <Property Name="quote_tax_rate_amount" Type="Decimal" Precision="20" Scale="2" />
+    <NavigationProperty Name="ip_quote_tax_rates1" Relationship="AMDModel.FK_ip_quote_tax_rates_ip_quote_tax_rates" FromRole="ip_quote_tax_rates" ToRole="ip_quote_tax_rates1" />
+    <NavigationProperty Name="ip_quote_tax_rates2" Relationship="AMDModel.FK_ip_quote_tax_rates_ip_quote_tax_rates" FromRole="ip_quote_tax_rates1" ToRole="ip_quote_tax_rates" />
+    <NavigationProperty Name="ip_tax_rates" Relationship="AMDModel.FK_ip_quote_tax_rates_ip_tax_rates" FromRole="ip_quote_tax_rates" ToRole="ip_tax_rates" />
+  </EntityType>
+  <EntityType Name="ip_quotes">
+    <Key>
+      <PropertyRef Name="quote_id" />
+    </Key>
+    <Property Name="quote_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="client_id" Type="Int32" Nullable="false" />
+    <Property Name="invoice_group_id" Type="Int32" Nullable="false" />
+    <Property Name="quote_status_id" Type="Int16" Nullable="false" />
+    <Property Name="quote_date_created" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="quote_date_modified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="quote_date_expires" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="quote_number" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="quote_discount_amount" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="quote_discount_percent" Type="Decimal" Precision="20" Scale="2" />
+    <Property Name="quote_url_key" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="quote_password" Type="String" MaxLength="90" FixedLength="false" Unicode="false" />
+    <Property Name="notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ip_quote_custom" Type="Int32" Nullable="false" />
+    <Property Name="is_quote" Type="Boolean" />
+    <Property Name="payment_method" Type="Int32" />
+    <Property Name="delivery_notes" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="delivery_date" Type="DateTime" Precision="3" />
+    <Property Name="payment_notes" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ispayment_completed" Type="Boolean" />
+    <Property Name="is_quote_delete" Type="Boolean" />
+    <Property Name="ispurchase" Type="Boolean" />
+    <Property Name="taxType" Type="Int32" />
+    <Property Name="type" Type="Int32" />
+    <NavigationProperty Name="ip_clients" Relationship="AMDModel.FK_ip_quotes_ip_clients" FromRole="ip_quotes" ToRole="ip_clients" />
+    <NavigationProperty Name="ip_invoice_groups" Relationship="AMDModel.FK_ip_quotes_ip_invoice_groups" FromRole="ip_quotes" ToRole="ip_invoice_groups" />
+    <NavigationProperty Name="ip_payments" Relationship="AMDModel.FK_ip_quote_ip_payments" FromRole="ip_quotes" ToRole="ip_payments" />
+    <NavigationProperty Name="ip_quote_amounts" Relationship="AMDModel.FK__ip_quote___quote__5441852A" FromRole="ip_quotes" ToRole="ip_quote_amounts" />
+    <NavigationProperty Name="ip_quote_items" Relationship="AMDModel.FK_ip_quote_items_ip_quotes" FromRole="ip_quotes" ToRole="ip_quote_items" />
+    <NavigationProperty Name="ip_users" Relationship="AMDModel.FK_ip_quotes_ip_users" FromRole="ip_quotes" ToRole="ip_users" />
+  </EntityType>
+  <EntityType Name="ip_Spares">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="JobId" />
+      <PropertyRef Name="Spares_name" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="Amount" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="JobId" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Spares_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="Amount" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+  </EntityType>
+  <EntityType Name="ip_tax_rates">
+    <Key>
+      <PropertyRef Name="tax_rate_id" />
+    </Key>
+    <Property Name="tax_rate_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tax_rate_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="tax_rate_percent" Type="Decimal" Nullable="false" Precision="5" Scale="2" />
+    <NavigationProperty Name="ip_products" Relationship="AMDModel.FK_ip_products_ip_tax_rates" FromRole="ip_tax_rates" ToRole="ip_products" />
+    <NavigationProperty Name="ip_quote_tax_rates" Relationship="AMDModel.FK_ip_quote_tax_rates_ip_tax_rates" FromRole="ip_tax_rates" ToRole="ip_quote_tax_rates" />
+  </EntityType>
+  <EntityType Name="ip_user_clients">
+    <Key>
+      <PropertyRef Name="user_client_id" />
+      <PropertyRef Name="user_id" />
+      <PropertyRef Name="client_id" />
+    </Key>
+    <Property Name="user_client_id" Type="Int32" Nullable="false" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="client_id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ip_user_custom">
+    <Key>
+      <PropertyRef Name="user_custom_id" />
+      <PropertyRef Name="user_id" />
+      <PropertyRef Name="user_custom_bank_name" />
+      <PropertyRef Name="user_custom_account_number" />
+      <PropertyRef Name="user_custom_ifsc_code" />
+      <PropertyRef Name="user_custom_branch" />
+    </Key>
+    <Property Name="user_custom_id" Type="Int32" Nullable="false" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="user_custom_bank_name" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="user_custom_account_number" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="user_custom_ifsc_code" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="user_custom_branch" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ip_users">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_type" Type="Int32" Nullable="false" />
+    <Property Name="user_active" Type="Int16" />
+    <Property Name="user_date_created" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="user_date_modified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="user_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="user_company" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="user_address_1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="user_address_2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="user_city" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="user_state" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="user_zip" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="user_country" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="user_phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="user_fax" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="user_mobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="user_email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="user_password" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="user_web" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="user_vat_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="user_tax_code" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="user_psalt" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="user_passwordreset_token" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ip_invoices" Relationship="AMDModel.FK__ip_invoic__user___339FAB6E" FromRole="ip_users" ToRole="ip_invoices" />
+    <NavigationProperty Name="ip_invoices1" Relationship="AMDModel.FK__ip_invoic__user___5CD6CB2B" FromRole="ip_users" ToRole="ip_invoices" />
+    <NavigationProperty Name="ip_invoices2" Relationship="AMDModel.FK__ip_invoic__user___5EBF139D" FromRole="ip_users" ToRole="ip_invoices" />
+    <NavigationProperty Name="ip_quotes" Relationship="AMDModel.FK_ip_quotes_ip_users" FromRole="ip_users" ToRole="ip_quotes" />
+  </EntityType>
+  <EntityType Name="ip_versions">
+    <Key>
+      <PropertyRef Name="version_id" />
+      <PropertyRef Name="version_date_applied" />
+      <PropertyRef Name="version_file" />
+      <PropertyRef Name="version_sql_errors" />
+    </Key>
+    <Property Name="version_id" Type="Int32" Nullable="false" />
+    <Property Name="version_date_applied" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="version_file" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="version_sql_errors" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ip_email_templates">
+    <Key>
+      <PropertyRef Name="email_template_id" />
+      <PropertyRef Name="email_template_body" />
+    </Key>
+    <Property Name="email_template_id" Type="Int32" Nullable="false" />
+    <Property Name="email_template_title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="email_template_type" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="email_template_body" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="email_template_subject" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="email_template_from_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="email_template_from_email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="email_template_cc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="email_template_bcc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="email_template_pdf_template" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ip_item_lookups">
+    <Key>
+      <PropertyRef Name="item_lookup_id" />
+      <PropertyRef Name="item_name" />
+      <PropertyRef Name="item_description" />
+      <PropertyRef Name="item_price" />
+    </Key>
+    <Property Name="item_lookup_id" Type="Int32" Nullable="false" />
+    <Property Name="item_name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="item_description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="item_price" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="ip_sessions">
+    <Key>
+      <PropertyRef Name="session_id" />
+      <PropertyRef Name="ip_address" />
+      <PropertyRef Name="user_agent" />
+      <PropertyRef Name="last_activity" />
+      <PropertyRef Name="user_data" />
+    </Key>
+    <Property Name="session_id" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="ip_address" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="user_agent" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="last_activity" Type="Int32" Nullable="false" />
+    <Property Name="user_data" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ip_settings">
+    <Key>
+      <PropertyRef Name="setting_id" />
+      <PropertyRef Name="setting_key" />
+      <PropertyRef Name="setting_value" />
+    </Key>
+    <Property Name="setting_id" Type="Int32" Nullable="false" />
+    <Property Name="setting_key" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="setting_value" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ip_tasks">
+    <Key>
+      <PropertyRef Name="task_id" />
+      <PropertyRef Name="project_id" />
+      <PropertyRef Name="task_description" />
+      <PropertyRef Name="task_finish_date" />
+      <PropertyRef Name="task_status" />
+    </Key>
+    <Property Name="task_id" Type="Int32" Nullable="false" />
+    <Property Name="project_id" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="task_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="task_description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="task_price" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="task_finish_date" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="task_status" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ip_uploads">
+    <Key>
+      <PropertyRef Name="upload_id" />
+      <PropertyRef Name="client_id" />
+      <PropertyRef Name="url_key" />
+      <PropertyRef Name="file_name_original" />
+      <PropertyRef Name="file_name_new" />
+      <PropertyRef Name="uploaded_date" />
+    </Key>
+    <Property Name="upload_id" Type="Int32" Nullable="false" />
+    <Property Name="client_id" Type="Int32" Nullable="false" />
+    <Property Name="url_key" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="file_name_original" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="file_name_new" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="uploaded_date" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <Association Name="FK__ip_client__clien__060DEAE8">
+    <End Type="AMDModel.ip_clients" Role="ip_clients" Multiplicity="1" />
+    <End Type="AMDModel.ip_client_custom" Role="ip_client_custom" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ip_clients">
+        <PropertyRef Name="client_id" />
+      </Principal>
+      <Dependent Role="ip_client_custom">
+        <PropertyRef Name="client_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ip_client__clien__5D95E53A">
+    <End Type="AMDModel.ip_clients" Role="ip_clients" Multiplicity="1" />
+    <End Type="AMDModel.ip_client_custom" Role="ip_client_custom" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ip_clients">
+        <PropertyRef Name="client_id" />
+      </Principal>
+      <Dependent Role="ip_client_custom">
+        <PropertyRef Name="client_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ip_client__clien__5E8A0973">
+    <End Type="AMDModel.ip_clients" Role="ip_clients" Multiplicity="1" />
+    <End Type="AMDModel.ip_client_custom" Role="ip_client_custom" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ip_clients">
+        <PropertyRef Name="client_id" />
+      </Principal>
+      <Dependent Role="ip_client_custom">
+        <PropertyRef Name="client_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ip_client__clien__5F7E2DAC">
+    <End Type="AMDModel.ip_clients" Role="ip_clients" Multiplicity="1" />
+    <End Type="AMDModel.ip_client_custom" Role="ip_client_custom" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ip_clients">
+        <PropertyRef Name="client_id" />
+      </Principal>
+      <Dependent Role="ip_client_custom">
+        <PropertyRef Name="client_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ip_client__clien__607251E5">
+    <End Type="AMDModel.ip_clients" Role="ip_clients" Multiplicity="1" />
+    <End Type="AMDModel.ip_client_custom" Role="ip_client_custom" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ip_clients">
+        <PropertyRef Name="client_id" />
+      </Principal>
+      <Dependent Role="ip_client_custom">
+        <PropertyRef Name="client_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ip_client__clien__6166761E">
+    <End Type="AMDModel.ip_clients" Role="ip_clients" Multiplicity="1" />
+    <End Type="AMDModel.ip_client_custom" Role="ip_client_custom" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ip_clients">
+        <PropertyRef Name="client_id" />
+      </Principal>
+      <Dependent Role="ip_client_custom">
+        <PropertyRef Name="client_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ip_client__clien__625A9A57">
+    <End Type="AMDModel.ip_clients" Role="ip_clients" Multiplicity="1" />
+    <End Type="AMDModel.ip_client_custom" Role="ip_client_custom" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ip_clients">
+        <PropertyRef Name="client_id" />
+      </Principal>
+      <Dependent Role="ip_client_custom">
+        <PropertyRef Name="client_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ip_client__clien__634EBE90">
+    <End Type="AMDModel.ip_clients" Role="ip_clients" Multiplicity="1" />
+    <End Type="AMDModel.ip_client_custom" Role="ip_client_custom" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ip_clients">
+        <PropertyRef Name="client_id" />
+      </Principal>
+      <Dependent Role="ip_client_custom">
+        <PropertyRef Name="client_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ip_client__clien__6442E2C9">
+    <End Type="AMDModel.ip_clients" Role="ip_clients" Multiplicity="1" />
+    <End Type="AMDModel.ip_client_custom" Role="ip_client_custom" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ip_clients">
+        <PropertyRef Name="client_id" />
+      </Principal>
+      <Dependent Role="ip_client_custom">
+        <PropertyRef Name="client_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ip_client__clien__0AD2A005">
+    <End Type="AMDModel.ip_clients" Role="ip_clients" Multiplicity="1" />
+    <End Type="AMDModel.ip_client_notes" Role="ip_client_notes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ip_clients">
+        <PropertyRef Name="client_id" />
+      </Principal>
+      <Dependent Role="ip_client_notes">
+        <PropertyRef Name="client_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ip_client__clien__5BAD9CC8">
+    <End Type="AMDModel.ip_clients" Role="ip_clients" Multiplicity="1" />
+    <End Type="AMDModel.ip_client_notes" Role="ip_client_notes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ip_clients">
+        <PropertyRef Name="client_id" />
+      </Principal>
+      <Dependent Role="ip_client_notes">
+        <PropertyRef Name="client_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ip_invoic__clien__31B762FC">
+    <End Type="AMDModel.ip_clients" Role="ip_clients" Multiplicity="1" />
+    <End Type="AMDModel.ip_invoices" Role="ip_invoices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ip_clients">
+        <PropertyRef Name="client_id" />
+      </Principal>
+      <Dependent Role="ip_invoices">
+        <PropertyRef Name="client_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ip_invoic__clien__32E0915F">
+    <End Type="AMDModel.ip_clients" Role="ip_clients" Multiplicity="1" />
+    <End Type="AMDModel.ip_invoices" Role="ip_invoices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ip_clients">
+        <PropertyRef Name="client_id" />
+      </Principal>
+      <Dependent Role="ip_invoices">
+        <PropertyRef Name="client_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ip_invoic__clien__5DCAEF64">
+    <End Type="AMDModel.ip_clients" Role="ip_clients" Multiplicity="1" />
+    <End Type="AMDModel.ip_invoices" Role="ip_invoices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ip_clients">
+        <PropertyRef Name="client_id" />
+      </Principal>
+      <Dependent Role="ip_invoices">
+        <PropertyRef Name="client_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ip_invoic__clien__5FB337D6">
+    <End Type="AMDModel.ip_clients" Role="ip_clients" Multiplicity="1" />
+    <End Type="AMDModel.ip_invoices" Role="ip_invoices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ip_clients">
+        <PropertyRef Name="client_id" />
+      </Principal>
+      <Dependent Role="ip_invoices">
+        <PropertyRef Name="client_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ip_quotes_ip_clients">
+    <End Type="AMDModel.ip_clients" Role="ip_clients" Multiplicity="1" />
+    <End Type="AMDModel.ip_quotes" Role="ip_quotes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ip_clients">
+        <PropertyRef Name="client_id" />
+      </Principal>
+      <Dependent Role="ip_quotes">
+        <PropertyRef Name="client_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ip_products_ip_families">
+    <End Type="AMDModel.ip_families" Role="ip_families" Multiplicity="0..1" />
+    <End Type="AMDModel.ip_products" Role="ip_products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ip_families">
+        <PropertyRef Name="family_id" />
+      </Principal>
+      <Dependent Role="ip_products">
+        <PropertyRef Name="family_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ip_invoic__invoi__43D61337">
+    <End Type="AMDModel.ip_invoices" Role="ip_invoices" Multiplicity="1" />
+    <End Type="AMDModel.ip_invoice_amounts" Role="ip_invoice_amounts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ip_invoices">
+        <PropertyRef Name="invoice_id" />
+      </Principal>
+      <Dependent Role="ip_invoice_amounts">
+        <PropertyRef Name="invoice_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ip_invoic__invoi__628FA481">
+    <End Type="AMDModel.ip_invoices" Role="ip_invoices" Multiplicity="1" />
+    <End Type="AMDModel.ip_invoice_amounts" Role="ip_invoice_amounts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ip_invoices">
+        <PropertyRef Name="invoice_id" />
+      </Principal>
+      <Dependent Role="ip_invoice_amounts">
+        <PropertyRef Name="invoice_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ip_invoic__invoi__73BA3083">
+    <End Type="AMDModel.ip_invoices" Role="ip_invoices" Multiplicity="1" />
+    <End Type="AMDModel.ip_invoice_amounts" Role="ip_invoice_amounts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ip_invoices">
+        <PropertyRef Name="invoice_id" />
+      </Principal>
+      <Dependent Role="ip_invoice_amounts">
+        <PropertyRef Name="invoice_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ip_invoic__invoi__41EDCAC5">
+    <End Type="AMDModel.ip_invoices" Role="ip_invoices" Multiplicity="1" />
+    <End Type="AMDModel.ip_invoice_custom" Role="ip_invoice_custom" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ip_invoices">
+        <PropertyRef Name="invoice_id" />
+      </Principal>
+      <Dependent Role="ip_invoice_custom">
+        <PropertyRef Name="invoice_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ip_invoic__invoi__619B8048">
+    <End Type="AMDModel.ip_invoices" Role="ip_invoices" Multiplicity="1" />
+    <End Type="AMDModel.ip_invoice_custom" Role="ip_invoice_custom" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ip_invoices">
+        <PropertyRef Name="invoice_id" />
+      </Principal>
+      <Dependent Role="ip_invoice_custom">
+        <PropertyRef Name="invoice_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ip_invoic__invoi__30F848ED">
+    <End Type="AMDModel.ip_invoice_groups" Role="ip_invoice_groups" Multiplicity="1" />
+    <End Type="AMDModel.ip_invoices" Role="ip_invoices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ip_invoice_groups">
+        <PropertyRef Name="invoice_group_id" />
+      </Principal>
+      <Dependent Role="ip_invoices">
+        <PropertyRef Name="invoice_group_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ip_invoic__invoi__32AB8735">
+    <End Type="AMDModel.ip_invoice_groups" Role="ip_invoice_groups" Multiplicity="1" />
+    <End Type="AMDModel.ip_invoices" Role="ip_invoices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ip_invoice_groups">
+        <PropertyRef Name="invoice_group_id" />
+      </Principal>
+      <Dependent Role="ip_invoices">
+        <PropertyRef Name="invoice_group_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ip_invoic__invoi__5BE2A6F2">
+    <End Type="AMDModel.ip_invoice_groups" Role="ip_invoice_groups" Multiplicity="1" />
+    <End Type="AMDModel.ip_invoices" Role="ip_invoices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ip_invoice_groups">
+        <PropertyRef Name="invoice_group_id" />
+      </Principal>
+      <Dependent Role="ip_invoices">
+        <PropertyRef Name="invoice_group_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ip_invoic__invoi__60A75C0F">
+    <End Type="AMDModel.ip_invoice_groups" Role="ip_invoice_groups" Multiplicity="1" />
+    <End Type="AMDModel.ip_invoices" Role="ip_invoices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ip_invoice_groups">
+        <PropertyRef Name="invoice_group_id" />
+      </Principal>
+      <Dependent Role="ip_invoices">
+        <PropertyRef Name="invoice_group_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ip_quotes_ip_invoice_groups">
+    <End Type="AMDModel.ip_invoice_groups" Role="ip_invoice_groups" Multiplicity="1" />
+    <End Type="AMDModel.ip_quotes" Role="ip_quotes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ip_invoice_groups">
+        <PropertyRef Name="invoice_group_id" />
+      </Principal>
+      <Dependent Role="ip_quotes">
+        <PropertyRef Name="invoice_group_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ip_invoic__user___339FAB6E">
+    <End Type="AMDModel.ip_users" Role="ip_users" Multiplicity="1" />
+    <End Type="AMDModel.ip_invoices" Role="ip_invoices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ip_users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="ip_invoices">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ip_invoic__user___5CD6CB2B">
+    <End Type="AMDModel.ip_users" Role="ip_users" Multiplicity="1" />
+    <End Type="AMDModel.ip_invoices" Role="ip_invoices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ip_users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="ip_invoices">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ip_invoic__user___5EBF139D">
+    <End Type="AMDModel.ip_users" Role="ip_users" Multiplicity="1" />
+    <End Type="AMDModel.ip_invoices" Role="ip_invoices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ip_users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="ip_invoices">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ip_quote_ip_payments">
+    <End Type="AMDModel.ip_quotes" Role="ip_quotes" Multiplicity="1" />
+    <End Type="AMDModel.ip_payments" Role="ip_payments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ip_quotes">
+        <PropertyRef Name="quote_id" />
+      </Principal>
+      <Dependent Role="ip_payments">
+        <PropertyRef Name="quote_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ip_products_ip_tax_rates">
+    <End Type="AMDModel.ip_tax_rates" Role="ip_tax_rates" Multiplicity="0..1" />
+    <End Type="AMDModel.ip_products" Role="ip_products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ip_tax_rates">
+        <PropertyRef Name="tax_rate_id" />
+      </Principal>
+      <Dependent Role="ip_products">
+        <PropertyRef Name="tax_rate_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ip_quote_items_ip_products">
+    <End Type="AMDModel.ip_products" Role="ip_products" Multiplicity="0..1" />
+    <End Type="AMDModel.ip_quote_items" Role="ip_quote_items" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ip_products">
+        <PropertyRef Name="product_id" />
+      </Principal>
+      <Dependent Role="ip_quote_items">
+        <PropertyRef Name="item_product_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ip_quote___quote__5441852A">
+    <End Type="AMDModel.ip_quotes" Role="ip_quotes" Multiplicity="1" />
+    <End Type="AMDModel.ip_quote_amounts" Role="ip_quote_amounts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ip_quotes">
+        <PropertyRef Name="quote_id" />
+      </Principal>
+      <Dependent Role="ip_quote_amounts">
+        <PropertyRef Name="quote_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ip_quote_items_ip_quotes">
+    <End Type="AMDModel.ip_quotes" Role="ip_quotes" Multiplicity="1" />
+    <End Type="AMDModel.ip_quote_items" Role="ip_quote_items" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ip_quotes">
+        <PropertyRef Name="quote_id" />
+      </Principal>
+      <Dependent Role="ip_quote_items">
+        <PropertyRef Name="quote_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ip_quote_tax_rates_ip_quote_tax_rates">
+    <End Type="AMDModel.ip_quote_tax_rates" Role="ip_quote_tax_rates" Multiplicity="1" />
+    <End Type="AMDModel.ip_quote_tax_rates" Role="ip_quote_tax_rates1" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ip_quote_tax_rates">
+        <PropertyRef Name="quote_tax_rate_id" />
+      </Principal>
+      <Dependent Role="ip_quote_tax_rates1">
+        <PropertyRef Name="quote_tax_rate_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ip_quote_tax_rates_ip_tax_rates">
+    <End Type="AMDModel.ip_tax_rates" Role="ip_tax_rates" Multiplicity="1" />
+    <End Type="AMDModel.ip_quote_tax_rates" Role="ip_quote_tax_rates" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ip_tax_rates">
+        <PropertyRef Name="tax_rate_id" />
+      </Principal>
+      <Dependent Role="ip_quote_tax_rates">
+        <PropertyRef Name="quote_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ip_quotes_ip_users">
+    <End Type="AMDModel.ip_users" Role="ip_users" Multiplicity="1" />
+    <End Type="AMDModel.ip_quotes" Role="ip_quotes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ip_users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="ip_quotes">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

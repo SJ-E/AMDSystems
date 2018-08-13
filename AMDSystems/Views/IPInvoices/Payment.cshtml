@@ -1,0 +1,221 @@
+﻿
+@using Core_Project.Model
+@model IEnumerable<IPQuotesModel>
+
+
+
+
+
+<div>
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+                <h4 class="page-title">Payment Form</h4>
+                
+            </div>
+        </div>
+    </div>
+    <br />
+    <!-- ============================================================== -->
+    <!-- End Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid">
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <form id="formPayment" class="form-horizontal" method="post" action="/IPInvoices/Payment">
+
+                        @{
+                            ViewBag.Title = "Payment";
+                            int i = -1;
+                        }
+
+                        @*<script type="text/javascript">
+                            $(function () {
+                                $('#client_name').focus();
+                                $("#client_country").select2({
+                                    placeholder: "Country",
+                                    allowClear: true,
+
+                                });
+                            });
+                        </script>*@
+                        <div class="card-body">
+                            <h4 class="card-title"></h4>
+
+                            <div class="form-group row">
+                                <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Invoice No</label>
+                                <div class="col-sm-9">
+                                    @*<select id="client_active" name="client_active" class="select2 form-control custom-select" style="width: 100%; height:36px;">
+                                        <option value="1">Client</option>
+                                        <option value="2">Supplier</option>
+                                    </select>*@
+
+                                    <select name="quote_id" id="quote_id" class="select2 form-control custom-select" style="width: 100%; height:36px;">
+                                        @foreach (IPQuotesModel quote in Model)
+                                        {
+                                            <option value="@quote.quote_id" data-total='@(quote.quote_amount.quote_total.HasValue?quote.quote_amount.quote_total.Value.ToString("00"):"0")' data-method="@quote.payment.payment_method_id" data-note="@quote.payment.payment_note">
+                                                @quote.quote_id - @quote.client.Client_Name - @(quote.quote_amount.quote_total.HasValue ? quote.quote_amount.quote_total.Value.ToString("00") : "0")
+                                            </option>
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Total</label>
+                                <div class="col-sm-9">
+                                    <input type="text" readonly="readonly" name="total_amount" id="total_amount" class="form-control" >
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="fname" class="col-sm-3 text-right control-label col-form-label"> Amount paid</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="payment_amount" id="payment_amount" class="form-control" value="">                            
+                                </div>
+                            </div>
+
+                            @*<div class="form-group row">
+                                <label for="fname" class="col-sm-3 text-right control-label col-form-label"> Balance</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="payment_amount" id="payment_amount" class="form-control" value="">
+                                </div>
+                            </div>*@
+
+                            
+
+                            <div class="form-group row">
+                                <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Payment Method</label>
+                                <div class="col-sm-9">
+                                    <select id="payment_method_id" name="payment_method_id" class="select2 form-control custom-select" style="width: 100%; height:36px;">
+
+                                        <option value="4">
+                                            CASH
+                                        </option>
+                                        <option value="5">
+                                            CHEQ
+                                        </option>
+                                        <option value="6">
+                                            PDC 06
+                                        </option>
+                                        <option value="7">
+                                            PDC 12
+                                        </option>
+                                        <option value="8">
+                                            PDC 24
+                                        </option>
+                                        <option value="9">
+                                            PDC 50
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                @*<label for="fname" class="col-sm-3 text-right control-label col-form-label"> Name</label>*@
+                                <label for="quote_password" class="col-sm-3 text-right control-label col-form-label">Payment Date</label>
+                                <div class="col-sm-9">
+                                    <input type="date" name="quote_date_created" id="quote_date_created" class="form-control" value="02-Jun-2018">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Note</label>
+                                <div class="col-sm-9">
+                                    <textarea name="payment_note" class="form-control"></textarea>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="border-top">
+                            <div class="card-body">
+                                <button id="btn-submit" type="button" class="btn btn-success btn-sm ajax-loader" onclick="SavePayment()" >
+                                    <i class="fa fa-check"></i> Save
+                                </button>
+                                @*<button id="btn-cancel"  class="btn btn-danger btn-sm" >
+                                    <i class="fa fa-times"></i> Cancel
+                                </button>*@
+                                @*<input type="submit" value="Save" class="btn btn-success btn-sm ajax-loader" />
+    <button id="btn-submit" name="btn_submit" class="btn btn-success" value="1">
+        <i class="fa fa-check"></i> Save
+    </button>*@
+                                @*<button id="btn-cancel" name="btn_cancel" class="btn btn-danger btn-sm" value="1">
+        <i class="fa fa-times"></i> Cancel
+    </button>
+                <button id="btn-cancel" name="btn_cancel" class="btn btn-danger" value="1">
+                    <i class="fa fa-times"></i> Cancel
+                </button>*@
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+
+
+
+            </div>
+
+        </div>
+        <!-- editor -->
+        <!-- ============================================================== -->
+        <!-- End PAge Content -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Right sidebar -->
+        <!-- ============================================================== -->
+        <!-- .right-sidebar -->
+        <!-- ============================================================== -->
+        <!-- End Right sidebar -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Container fluid  -->
+    <!-- ============================================================== -->
+
+
+</div>
+
+<script>
+    $(document).ready(function () {
+
+        $("#quote_id ").change(function () {
+            changeDropDown();
+        });
+        changeDropDown();
+        
+
+    });
+
+
+    function SavePayment() {
+       
+        $.ajax({
+            method: "GET",
+            url: "/IPInvoices/SavePayment",
+            params: $("#formPayment").serialize()
+        })
+      .done(function (msg) {
+          window.location.href = window.location.href;
+      });
+    }
+
+
+    function changeDropDown() {
+        var option = $("#quote_id option:selected");
+
+        $("#payment_amount").val($(option).attr("data-Total"));
+        $("#total_amount").val($(option).attr("data-Total"));
+        $("#payment_note").val($(option).attr("data-note"));
+        $("#payment_method_id").val($(option).attr("data-payment_method_id"));
+    }
+</script>

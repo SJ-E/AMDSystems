@@ -1,0 +1,123 @@
+﻿@using Core_Project.Model;
+@model IEnumerable<IPPaymentsModel>
+
+
+
+
+
+<link href="../../Content/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
+
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+                <h4 class="page-title">View Payments</h4>
+                @*<h1 class="viewclient-heading">@Html.ActionLink("Add Client", "AddClient", "IPClients")</h1>*@
+
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid">
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <div class="col-12">
+                
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">@Html.ActionLink("Add Payment", "EnterPayment", "IPInvoices")</h5>
+                        <div class="table-responsive">
+                            <table id="zero_config" class="table table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Payment Date</th>
+                                        <th>Invoice Date</th>
+                                        <th>Invoice</th>
+                                        <th>Client</th>
+                                        <th>Amount</th>
+                                        <th>Payment Method</th>
+                                        <th>Note</th>
+                                        <th>Options</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            
+                                        </td>
+                                        <td>
+                                            
+                                        </td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            <div class="options btn-group">
+                                                <a class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" href="#">
+                                                    <i class="fa fa-cog"></i> Options
+                                                </a>
+                                                <ul class="dropdown-menu" style="padding-left:10px;">
+                                                    <li>
+                                                        <a href="http://amdsystems.in/billing/payments/form/11">
+                                                            <i class="fa fa-edit fa-margin"></i>
+                                                            Edit
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="http://amdsystems.in/billing/payments/delete/11" onclick="return confirm('Are you sure you wish to delete this record?');">
+                                                            <i class="fas fa-trash-alt fa-margin"></i>
+                                                            Delete
+                                                        </a>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                               
+                                </tbody>
+                               
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End PAge Content -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Right sidebar -->
+        <!-- ============================================================== -->
+        <!-- .right-sidebar -->
+        <!-- ============================================================== -->
+        <!-- End Right sidebar -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Container fluid  -->
+    <!-- ============================================================== -->
+   
+<script src="../../Content/assets/extra-libs/DataTables/datatables.min.js"></script>
+<script>
+    /****************************************
+     *       Basic Table                   *
+     ****************************************/
+    $('#zero_config').DataTable({
+        columnDefs: [{ orderable: false, targets: [7] }]
+    });
+</script>
